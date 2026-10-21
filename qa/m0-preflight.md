@@ -47,3 +47,7 @@ No package.json or lockfile has been written. Registry checks found:
 ## Status
 
 T-01 is blocked on the two owner items above. T-02 and T-03 remain todo. M0 is not complete: no lint, typecheck, build, unit/integration suite or CI static job has run. The QA ledger records only the two attempted preflight cases; the remaining cases are planned, not passed.
+
+## Follow-up after owner approval
+
+The owner logged in and approved tsdown. A-01 now passes: npm whoami returns firatkill, scope access exits zero, and the package still returns E404. D-56 records the approved fallback. T-01 local acceptance passed with the package manifest’s exact versions and Node 22. The earlier findings above are retained as preflight history; the ledger appends passing attempts. CI is introduced by T-03.

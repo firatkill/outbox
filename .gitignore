@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+site/api/
+site/.vitepress/dist/
+site/.vitepress/cache/
+bench/out/
+.env*
+.DS_Store

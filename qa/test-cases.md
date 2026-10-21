@@ -4,31 +4,31 @@ These cases are derived from PRD requirements, TRD sections and T-01..T-03 accep
 
 The owner-decisions file controls the support matrix (PRD D-54). T-02’s PostgreSQL 18 acceptance clause is therefore pending reconciliation; no PostgreSQL 18 result is claimed.
 
-| TC ID | Task | PRD reference | TRD test / acceptance reference | Title | Priority | Automatable |
-|---|---|---|---|---|---|---|
-| TC-001 | T-01 | FR-01 | A-01 | npm ownership and package availability | High | yes |
-| TC-002 | T-01 | FR-01; NFR-40 | A-07 | Maintained dual-format build tool | High | yes |
-| TC-003 | T-01 | NFR-40 | A-17 | Compatible pinned development tools | High | yes |
-| TC-004 | T-01 | FR-01; NFR-21 | T-01 acceptance; TRD 4.1 | Reproducible install with no runtime dependencies | High | yes |
-| TC-005 | T-01 | NFR-40 | T-01 acceptance; TRD 4.3/4.5 | Strict lint, formatting and type checking | High | yes |
-| TC-006 | T-01 | FR-05; FR-07 | UT-15 | Build-time version matches the package | High | yes |
-| TC-007 | T-01 | FR-01; FR-04 | T-01 acceptance; TRD 4.1/4.2 | ESM, CJS and declarations exist for all entries | High | yes |
-| TC-008 | T-02 | FR-92 | T-02 acceptance; TRD 16.7 | Local database services become healthy | High | yes |
-| TC-009 | T-02 | FR-91; FR-92 | INT-08 | Harness isolates schemas and cleans up its own data | High | yes |
-| TC-010 | T-02 | FR-92 | INT-08; T-02 acceptance | Two harness runs remain isolated | High | yes |
-| TC-011 | T-02 | FR-92 | TRD 15.4; T-02 acceptance | Database URL selects the intended server | High | yes |
-| TC-012 | T-03 | NFR-21 | UT-16; TRD 16.6 | G-1 accepts valid input and rejects a violation | High | yes |
-| TC-013 | T-03 | NFR-03 | UT-16; TRD 16.6 | G-2 accepts valid input and rejects a violation | High | yes |
-| TC-014 | T-03 | NFR-05 | UT-16; TRD 16.6 | G-3 accepts valid input and rejects a violation | High | yes |
-| TC-015 | T-03 | FR-04 | UT-16; TRD 16.6 | G-4 accepts valid input and rejects a violation | High | yes |
-| TC-016 | T-03 | NFR-04 | UT-16; TRD 16.6 | G-5 accepts valid input and rejects a violation | High | yes |
-| TC-017 | T-03 | FR-84 | UT-16; TRD 16.6 | G-6 accepts valid input and rejects a violation | High | yes |
-| TC-018 | T-03 | NFR-21 | UT-16; TRD 16.6 | G-7 accepts valid input and rejects a violation | High | yes |
-| TC-019 | T-03 | FR-91 | UT-16; TRD 16.6 | G-8 accepts valid input and rejects a violation | High | yes |
-| TC-020 | T-03 | FR-96 | UT-16; TRD 19.1 | Changeset policy handles source, exempt and local changes | High | yes |
-| TC-021 | T-03 | NFR-03; NFR-05 | T-03 acceptance | Live guard command reports a planted violation | High | yes |
-| TC-022 | T-03 | FR-96 | T-03 acceptance; TRD 16.1/19.1 | GitHub static checks enforce and rerun the changeset rule | High | yes |
-| TC-023 | T-03 | FR-96 | A-10; TRD 19.1 | Action pins and Changesets configuration match the specification | Medium | yes |
+| TC ID  | Task | PRD reference  | TRD test / acceptance reference | Title                                                            | Priority | Automatable |
+| ------ | ---- | -------------- | ------------------------------- | ---------------------------------------------------------------- | -------- | ----------- |
+| TC-001 | T-01 | FR-01          | A-01                            | npm ownership and package availability                           | High     | yes         |
+| TC-002 | T-01 | FR-01; NFR-40  | A-07                            | Maintained dual-format build tool                                | High     | yes         |
+| TC-003 | T-01 | NFR-40         | A-17                            | Compatible pinned development tools                              | High     | yes         |
+| TC-004 | T-01 | FR-01; NFR-21  | T-01 acceptance; TRD 4.1        | Reproducible install with no runtime dependencies                | High     | yes         |
+| TC-005 | T-01 | NFR-40         | T-01 acceptance; TRD 4.3/4.5    | Strict lint, formatting and type checking                        | High     | yes         |
+| TC-006 | T-01 | FR-05; FR-07   | UT-15                           | Build-time version matches the package                           | High     | yes         |
+| TC-007 | T-01 | FR-01; FR-04   | T-01 acceptance; TRD 4.1/4.2    | ESM, CJS and declarations exist for all entries                  | High     | yes         |
+| TC-008 | T-02 | FR-92          | T-02 acceptance; TRD 16.7       | Local database services become healthy                           | High     | yes         |
+| TC-009 | T-02 | FR-91; FR-92   | INT-08                          | Harness isolates schemas and cleans up its own data              | High     | yes         |
+| TC-010 | T-02 | FR-92          | INT-08; T-02 acceptance         | Two harness runs remain isolated                                 | High     | yes         |
+| TC-011 | T-02 | FR-92          | TRD 15.4; T-02 acceptance       | Database URL selects the intended server                         | High     | yes         |
+| TC-012 | T-03 | NFR-21         | UT-16; TRD 16.6                 | G-1 accepts valid input and rejects a violation                  | High     | yes         |
+| TC-013 | T-03 | NFR-03         | UT-16; TRD 16.6                 | G-2 accepts valid input and rejects a violation                  | High     | yes         |
+| TC-014 | T-03 | NFR-05         | UT-16; TRD 16.6                 | G-3 accepts valid input and rejects a violation                  | High     | yes         |
+| TC-015 | T-03 | FR-04          | UT-16; TRD 16.6                 | G-4 accepts valid input and rejects a violation                  | High     | yes         |
+| TC-016 | T-03 | NFR-04         | UT-16; TRD 16.6                 | G-5 accepts valid input and rejects a violation                  | High     | yes         |
+| TC-017 | T-03 | FR-84          | UT-16; TRD 16.6                 | G-6 accepts valid input and rejects a violation                  | High     | yes         |
+| TC-018 | T-03 | NFR-21         | UT-16; TRD 16.6                 | G-7 accepts valid input and rejects a violation                  | High     | yes         |
+| TC-019 | T-03 | FR-91          | UT-16; TRD 16.6                 | G-8 accepts valid input and rejects a violation                  | High     | yes         |
+| TC-020 | T-03 | FR-96          | UT-16; TRD 19.1                 | Changeset policy handles source, exempt and local changes        | High     | yes         |
+| TC-021 | T-03 | NFR-03; NFR-05 | T-03 acceptance                 | Live guard command reports a planted violation                   | High     | yes         |
+| TC-022 | T-03 | FR-96          | T-03 acceptance; TRD 16.1/19.1  | GitHub static checks enforce and rerun the changeset rule        | High     | yes         |
+| TC-023 | T-03 | FR-96          | A-10; TRD 19.1                  | Action pins and Changesets configuration match the specification | Medium   | yes         |
 
 ## TC-001: npm ownership and package availability
 
