@@ -1,6 +1,6 @@
 # Progress
 
-Local repository setup completed on 2026-10-21. M0 (T-01..T-03) and M1 (T-04..T-11) are complete. Owner authorized M2; T-12 is complete; T-13 is complete; T-14 is complete; T-15 is complete; T-16 is complete; T-17 is complete; T-18 is underway. Stop at the end of M2 for owner review.
+Local repository setup completed on 2026-10-21. M0 (T-01..T-03), M1 (T-04..T-11) and M2 (T-12..T-18) are complete. Stopped at the M2 milestone boundary for owner review; T-19 has not started.
 
 - Read AGENTS.md and all four specification documents from start to finish.
 - Verified the required Git author and committer identity; enabled the executable `.githooks/commit-msg` hook.
@@ -31,7 +31,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-15 | M2 | Handler timeout and abort | done | 558b4b5 |
 | T-16 | M2 | Reclaim, fencing and crash recovery | done | 72222d0 |
 | T-17 | M2 | Lifecycle: start, stop, drain, signal | done | 9aaed86 |
-| T-18 | M2 | Concurrency and resilience | doing | — |
+| T-18 | M2 | Concurrency and resilience | done | f548dfa |
 | T-19 | M3 | Retries and dead transitions | todo | — |
 | T-20 | M3 | Admin helpers | todo | — |
 | T-21 | M3 | stats and CLI stats | todo | — |
@@ -99,7 +99,9 @@ A completion commit is recorded only after the task meets its acceptance criteri
 
 - T-17: startup schema checks, graceful/forced drain, late outcome suppression, release attempt accounting, idempotence and abort signals pass. Bounded flush retry failure remains recoverable. Full suite 184 unit / 103 PG17 integration, static/package/size gates pass (core 10.97kB). [PR CI](https://github.com/firatkill/outbox/actions/runs/39594729822) passes; final documentation checks required before merge.
 
-- T-18: both 10000-message/four-relay workloads, connection-loss recovery, prepare:false, claim mapping and pool override checks pass. Full suite: 184 unit; 113 integration on each of PG14.24/16.15/17.11 with both drivers. Static gates pass. Fault-test teardown now explicitly closes caller-owned postgres.js pools after drain; D-70 records test configuration and cleanup. PR CI pending.
+- T-18: both 10000-message/four-relay workloads, connection-loss recovery, prepare:false, claim mapping and pool override checks pass. Full suite: 184 unit; 113 integration on each of PG14.24/16.15/17.11 with both drivers. Static gates pass. Fault-test teardown now explicitly closes caller-owned postgres.js pools after drain; D-70 records test configuration and cleanup. [PR CI](https://github.com/firatkill/outbox/actions/runs/39596449111) passes; final report-commit checks required before merge.
+
+- M2 evidence and limits: [milestone report](../qa/m2-report.md) and [QA review](../qa/m2-review.md). All 35 M2 cases are resolved. No chaos, ordering/inbox concurrency, full Node matrix, benchmark, docs or example readiness is claimed beyond the scheduled scope.
 
 ## Open questions for the owner
 
