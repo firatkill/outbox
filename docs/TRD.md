@@ -782,6 +782,8 @@ export interface RelayCommonOptions {
 | `signal` | none | AbortSignal | Calls `stop()` on abort |
 | `tracer` | none | §14.2 | |
 
+All count and millisecond options above must be finite integers within their ranges; `retry.factor` may be any finite number from 1 through 10 (owner decision D-67).
+
 Unknown option names throw `OUTBOX_CONFIG` (catches `maxRetries`, `attempts`, `backoff` typos, which is the class of bug this library exists to prevent). In handlers mode, a handler value that is not a function, or an empty handlers object, throws `OUTBOX_CONFIG`.
 
 `relayId` must be unique among relays running at the same time against one table. Fencing (§9.3) compares `(locked_by, attempts)`, and `attempts` is not strictly increasing (shutdown release decrements it, `retryDead` resets it), so two live relays sharing an id weaken the fence. The library cannot detect a shared id; the default includes 4 random bytes, and the TSDoc and docs "Operations" say "only set `relayId` if each process sets a different value".
@@ -2450,6 +2452,8 @@ Test-writing rules (also in AGENTS.md):
 | UT-17 | `wait.test.ts` | T-02: condition and event waits default to 3 seconds; filter events and unsubscribe after resolution/timeout; deferred resolves/rejects |
 
 | UT-18 | `migrations.test.ts` | T-05: known SHA-256 vector; CRLF normalized to LF before template hashing |
+
+Concurrency gates apply from their scheduled implementation onward (owner decision D-66): INT-24 in T-16, INT-22 in T-18, INT-41 in T-23, INT-62 in T-26, and both chaos modes in T-30. Earlier task reports must explicitly state which later gates remain unverified. INT-82 claim mapping is completed in T-18, listDead in T-20, and stats in T-21.
 
 ### 15.3 Integration tests
 

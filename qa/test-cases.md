@@ -683,3 +683,310 @@ Designed before M1 implementation from PRD FR-02..FR-27, FR-86, NFR-04/13 and TR
 - Preconditions: Current library build exists.
 - Steps: Run size-limit on the built entry points with the TRD thresholds.
 - Expected result: Every currently built entry remains within its specified min+brotli budget.
+
+# M2 test cases
+
+Designed from PRD 6.4/6.5 and TRD 5.4, 9.2–9.6, 12.3 and 15 before M2 code. Both adapters and isolated schemas apply to all database cases unless explicitly restricted. Staged future gates and integer count/millisecond validation are owner-approved in PRD D-66/D-67.
+
+| TC ID  | Task | PRD reference               | TRD reference                    | Title                                    | Priority | Automatable | Expected result                                                                                                                                              |
+| ------ | ---- | --------------------------- | -------------------------------- | ---------------------------------------- | -------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| TC-068 | T-12 | FR-45; FR-90                | UT-01                            | Backoff ceilings and overflow            | High     | yes         | No-jitter output is the floored capped exponential; overflow caps at max.                                                                                    |
+| TC-069 | T-12 | FR-45; FR-90                | UT-01                            | Full jitter and input errors             | High     | yes         | Jitter is an integer in the inclusive ceiling range; invalid inputs throw RangeError.                                                                        |
+| TC-070 | T-12 | FR-30; FR-34; FR-35         | UT-02                            | Relay defaults and numeric boundaries    | High     | yes         | Defaults match TRD 5.4; invalid values produce aggregated OUTBOX_CONFIG issues. Counts/milliseconds must be integers; retry.factor may be fractional (D-67). |
+| TC-071 | T-12 | FR-30; FR-40                | UT-02                            | Delivery mode and option validation      | High     | yes         | Exactly one delivery target is required; handler mode forbids topics; invalid options are named in issues.                                                   |
+| TC-072 | T-13 | FR-31                       | INT-21; TRD 9.2                  | Claims skip locked rows                  | High     | yes         | Four rows claim without waiting; the locked row remains pending until released.                                                                              |
+| TC-073 | T-13 | FR-31; FR-32                | TRD 9.2/9.3; T-13 acceptance     | Claim and outcome statement contracts    | High     | yes         | Claim increments attempts and sets DB-time leases; only the matching in-flight attempt can complete.                                                         |
+| TC-074 | T-13 | FR-32; FR-45; FR-48         | TRD 9.3.2; T-13 acceptance       | Fail statements retry or become dead     | High     | yes         | Retry schedules DB-time delay; terminal/exhausted rows become dead; stale outcomes change nothing.                                                           |
+| TC-075 | T-13 | FR-33; FR-36                | TRD 9.6.1/9.6.2; T-13 acceptance | Reclaim and release statements           | High     | yes         | Reclaim makes rows ready or dead with expired-holder error; fenced release decrements attempts and clears leases.                                            |
+| TC-076 | T-14 | FR-34; FR-38                | UT-08                            | Scheduler and polling backoff            | High     | yes         | Decisions follow TRD 9.5.1; idle intervals are 100,200,400,800,1600,2000,2000 and wake resets.                                                               |
+| TC-077 | T-14 | FR-32; NFR-03               | UT-09                            | Group commit and drain                   | High     | yes         | Exactly one follow-up completion statement batches the 50 items; both buffers empty before drain resolves.                                                   |
+| TC-078 | T-14 | FR-32; FR-38                | UT-09                            | Flush retry and expired outcomes         | High     | yes         | Items retry at front; expired items are dropped with one error event listing ids; missing result ids emit leaseLost.                                         |
+| TC-079 | T-14 | FR-35; FR-47; FR-48         | UT-10                            | Delivery classification and timeout      | High     | yes         | Correct outcome/delay, aborted signal, freed slot and no late duplicate outcome or unhandled rejection.                                                      |
+| TC-080 | T-14 | FR-30; FR-31; FR-32         | INT-20                           | End-to-end handler delivery              | High     | yes         | One matching handler call, attempt 1 and valid context; done row has completion time and cleared lease.                                                      |
+| TC-081 | T-14 | FR-40                       | INT-27; INT-02                   | Topic and outbox isolation               | High     | yes         | Only subscribed topics delivered; c and the other outbox remain pending.                                                                                     |
+| TC-082 | T-14 | FR-39                       | INT-28                           | Single-batch runOnce                     | High     | yes         | Counts are 10,10,5 with confirmed deliveries; started relay rejects runOnce.                                                                                 |
+| TC-083 | T-14 | FR-24; FR-39                | INT-15; INT-16                   | Relay honors delayed availability        | High     | yes         | No early claim; each message claimed after its availability instant.                                                                                         |
+| TC-084 | T-15 | FR-35; FR-47; FR-48         | INT-26; UT-10                    | Timeout abort and stored failure         | High     | yes         | Abort reason and last_error are OUTBOX_HANDLER_TIMEOUT; pending with approximately 1000ms delay and failed event.                                            |
+| TC-085 | T-16 | FR-33; GU-04; GU-09         | INT-23                           | Process crash recovery                   | High     | yes         | Expired claim reclaimed and delivered at attempt 2; last_error names child holder.                                                                           |
+| TC-086 | T-16 | FR-32; GU-04                | INT-24                           | Late completion fencing                  | High     | yes         | A emits leaseLost, no delivered event; B completion remains unchanged.                                                                                       |
+| TC-087 | T-16 | FR-33; GU-09                | INT-25                           | Claim-before-delivery crash recovery     | High     | yes         | Reclaimed then delivered once by handler with attempts 2.                                                                                                    |
+| TC-088 | T-17 | FR-15; FR-36                | INT-06                           | Relay schema prerequisite                | High     | yes         | Rejects OUTBOX_NOT_MIGRATED with migration command; state becomes stopped.                                                                                   |
+| TC-089 | T-17 | FR-36                       | INT-70                           | Graceful drain stops claims              | High     | yes         | Drains 20, releases zero, leaves ten pending and no in-flight rows.                                                                                          |
+| TC-090 | T-17 | FR-35; FR-36                | INT-71                           | Forced shutdown releases attempts        | High     | yes         | Returns within 1s, drained false/released five; handlers receive SHUTDOWN; attempts reset to zero.                                                           |
+| TC-091 | T-17 | FR-37                       | INT-72                           | Single-use lifecycle and idempotent stop | High     | yes         | Invalid starts reject; repeated stops share result; idle stop drains immediately.                                                                            |
+| TC-092 | T-17 | FR-37                       | INT-73                           | External signal stops relay              | High     | yes         | In-flight work drains and state becomes stopped.                                                                                                             |
+| TC-093 | T-18 | FR-31; GU-02; GU-04; NFR-01 | INT-22                           | Concurrent relays divide deliveries      | High     | yes         | All done under 60s; each id handled once, attempts 1, each relay >=100; no leaseLost/reclaimed.                                                              |
+| TC-094 | T-18 | FR-38                       | INT-29                           | Database reconnect resilience            | High     | yes         | Claim/flush errors emitted; relay survives; all done within 30s reconnect allowance.                                                                         |
+| TC-095 | T-18 | FR-04; FR-31                | INT-81                           | Unprepared postgres.js queries           | High     | yes         | Delivery and concurrency scenarios pass without prepared statements.                                                                                         |
+| TC-096 | T-18 | FR-04                       | INT-82                           | Driver-neutral claim mapping             | High     | yes         | seq is string, dates are Date, JSON matches and numeric values match.                                                                                        |
+| TC-097 | T-18 | FR-30                       | INT-83                           | Relay pool override                      | High     | yes         | Relay statements use B.                                                                                                                                      |
+
+## TC-068: Backoff ceilings and overflow
+
+- Milestone: M2 Relay and leases; task: T-12.
+- PRD: FR-45; FR-90; TRD/test reference: UT-01.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Compute attempts 1, 2, 10 and 2000; factor 1; base 0; fractional exponential ceilings.
+- Expected result: No-jitter output is the floored capped exponential; overflow caps at max.
+
+## TC-069: Full jitter and input errors
+
+- Milestone: M2 Relay and leases; task: T-12.
+- PRD: FR-45; FR-90; TRD/test reference: UT-01.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Use random 0 and 0.999999, 10000 seeded values, invalid attempts and invalid random outputs.
+- Expected result: Jitter is an integer in the inclusive ceiling range; invalid inputs throw RangeError.
+
+## TC-070: Relay defaults and numeric boundaries
+
+- Milestone: M2 Relay and leases; task: T-12.
+- PRD: FR-30; FR-34; FR-35; TRD/test reference: UT-02.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Resolve defaults and every numeric range endpoint; exercise outside bounds and cross-field limits.
+- Expected result: Defaults match TRD 5.4; invalid values produce aggregated OUTBOX_CONFIG issues. Counts/milliseconds must be integers; retry.factor may be fractional (D-67).
+
+## TC-071: Delivery mode and option validation
+
+- Milestone: M2 Relay and leases; task: T-12.
+- PRD: FR-30; FR-40; TRD/test reference: UT-02.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Try handlers, publisher, both, neither, empty/non-function handlers, filtered topics, unknown top-level and nested options.
+- Expected result: Exactly one delivery target is required; handler mode forbids topics; invalid options are named in issues.
+
+## TC-072: Claims skip locked rows
+
+- Milestone: M2 Relay and leases; task: T-13.
+- PRD: FR-31; TRD/test reference: INT-21; TRD 9.2.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Enqueue five messages, hold the first row lock in a separate transaction, claim before and after release.
+- Expected result: Four rows claim without waiting; the locked row remains pending until released.
+
+## TC-073: Claim and outcome statement contracts
+
+- Milestone: M2 Relay and leases; task: T-13.
+- PRD: FR-31; FR-32; TRD/test reference: TRD 9.2/9.3; T-13 acceptance.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Claim ready rows; inspect leases and attempts; complete with matching and mismatched holder/attempt; repeat after completion.
+- Expected result: Claim increments attempts and sets DB-time leases; only the matching in-flight attempt can complete.
+
+## TC-074: Fail statements retry or become dead
+
+- Milestone: M2 Relay and leases; task: T-13.
+- PRD: FR-32; FR-45; FR-48; TRD/test reference: TRD 9.3.2; T-13 acceptance.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Fail leased rows with ordinary, terminal and exhausted outcomes; try stale fences.
+- Expected result: Retry schedules DB-time delay; terminal/exhausted rows become dead; stale outcomes change nothing.
+
+## TC-075: Reclaim and release statements
+
+- Milestone: M2 Relay and leases; task: T-13.
+- PRD: FR-33; FR-36; TRD/test reference: TRD 9.6.1/9.6.2; T-13 acceptance.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Advance clock beyond leases; reclaim with and without attempts exhausted; release matching and stale attempts.
+- Expected result: Reclaim makes rows ready or dead with expired-holder error; fenced release decrements attempts and clears leases.
+
+## TC-076: Scheduler and polling backoff
+
+- Milestone: M2 Relay and leases; task: T-14.
+- PRD: FR-34; FR-38; TRD/test reference: UT-08.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Table-test exit, free-slot thresholds, first/wake/full claims and partial/empty waits; run interval sequence.
+- Expected result: Decisions follow TRD 9.5.1; idle intervals are 100,200,400,800,1600,2000,2000 and wake resets.
+
+## TC-077: Group commit and drain
+
+- Milestone: M2 Relay and leases; task: T-14.
+- PRD: FR-32; NFR-03; TRD/test reference: UT-09.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Hold a fake complete statement while adding 50 completions; mix failures and await drain.
+- Expected result: Exactly one follow-up completion statement batches the 50 items; both buffers empty before drain resolves.
+
+## TC-078: Flush retry and expired outcomes
+
+- Milestone: M2 Relay and leases; task: T-14.
+- PRD: FR-32; FR-38; TRD/test reference: UT-09.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Inject statement failures and advance fake timers through error backoff and local lease estimates.
+- Expected result: Items retry at front; expired items are dropped with one error event listing ids; missing result ids emit leaseLost.
+
+## TC-079: Delivery classification and timeout
+
+- Milestone: M2 Relay and leases; task: T-14.
+- PRD: FR-35; FR-47; FR-48; TRD/test reference: UT-10.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Use fake timers with synchronous throws, terminal/retryable errors, delayed promises and timeout.
+- Expected result: Correct outcome/delay, aborted signal, freed slot and no late duplicate outcome or unhandled rejection.
+
+## TC-080: End-to-end handler delivery
+
+- Milestone: M2 Relay and leases; task: T-14.
+- PRD: FR-30; FR-31; FR-32; TRD/test reference: INT-20.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Enqueue full message; start handler relay; await delivered then stop.
+- Expected result: One matching handler call, attempt 1 and valid context; done row has completion time and cleared lease.
+
+## TC-081: Topic and outbox isolation
+
+- Milestone: M2 Relay and leases; task: T-14.
+- PRD: FR-40; TRD/test reference: INT-27; INT-02.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Enqueue a,b,c; run handler a and filtered publisher b; also run a relay on one of two outboxes.
+- Expected result: Only subscribed topics delivered; c and the other outbox remain pending.
+
+## TC-082: Single-batch runOnce
+
+- Milestone: M2 Relay and leases; task: T-14.
+- PRD: FR-39; TRD/test reference: INT-28.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Enqueue 25; call runOnce three times at batch size 10; try after start.
+- Expected result: Counts are 10,10,5 with confirmed deliveries; started relay rejects runOnce.
+
+## TC-083: Relay honors delayed availability
+
+- Milestone: M2 Relay and leases; task: T-14.
+- PRD: FR-24; FR-39; TRD/test reference: INT-15; INT-16.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Use relative 60-second and absolute 5-second availability; run before/after test-clock advances.
+- Expected result: No early claim; each message claimed after its availability instant.
+
+## TC-084: Timeout abort and stored failure
+
+- Milestone: M2 Relay and leases; task: T-15.
+- PRD: FR-35; FR-47; FR-48; TRD/test reference: INT-26; UT-10.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Run a 200ms timeout handler awaiting abort with 1200ms lease and deterministic 1000ms retry.
+- Expected result: Abort reason and last_error are OUTBOX_HANDLER_TIMEOUT; pending with approximately 1000ms delay and failed event.
+
+## TC-085: Process crash recovery
+
+- Milestone: M2 Relay and leases; task: T-16.
+- PRD: FR-33; GU-04; GU-09; TRD/test reference: INT-23.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Spawn relay child, wait for started row, SIGKILL, advance 6000ms, start second relay.
+- Expected result: Expired claim reclaimed and delivered at attempt 2; last_error names child holder.
+
+## TC-086: Late completion fencing
+
+- Milestone: M2 Relay and leases; task: T-16.
+- PRD: FR-32; GU-04; TRD/test reference: INT-24.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Hold A handler ignoring abort; advance 121000ms; B reclaims/completes; resolve A.
+- Expected result: A emits leaseLost, no delivered event; B completion remains unchanged.
+
+## TC-087: Claim-before-delivery crash recovery
+
+- Milestone: M2 Relay and leases; task: T-16.
+- PRD: FR-33; GU-09; TRD/test reference: INT-25.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Claim directly as ghost, advance beyond lease, start relay B.
+- Expected result: Reclaimed then delivered once by handler with attempts 2.
+
+## TC-088: Relay schema prerequisite
+
+- Milestone: M2 Relay and leases; task: T-17.
+- PRD: FR-15; FR-36; TRD/test reference: INT-06.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Start a relay in an unmigrated isolated schema.
+- Expected result: Rejects OUTBOX_NOT_MIGRATED with migration command; state becomes stopped.
+
+## TC-089: Graceful drain stops claims
+
+- Milestone: M2 Relay and leases; task: T-17.
+- PRD: FR-36; TRD/test reference: INT-70.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Start 20 deliveries taking 300ms; enqueue ten more after claimed; stop with 5000ms drain.
+- Expected result: Drains 20, releases zero, leaves ten pending and no in-flight rows.
+
+## TC-090: Forced shutdown releases attempts
+
+- Milestone: M2 Relay and leases; task: T-17.
+- PRD: FR-35; FR-36; TRD/test reference: INT-71.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Start five abort-aware handlers; stop with 200ms drain timeout.
+- Expected result: Returns within 1s, drained false/released five; handlers receive SHUTDOWN; attempts reset to zero.
+
+## TC-091: Single-use lifecycle and idempotent stop
+
+- Milestone: M2 Relay and leases; task: T-17.
+- PRD: FR-37; TRD/test reference: INT-72.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Start twice, stop twice, restart, and stop an idle relay.
+- Expected result: Invalid starts reject; repeated stops share result; idle stop drains immediately.
+
+## TC-092: External signal stops relay
+
+- Milestone: M2 Relay and leases; task: T-17.
+- PRD: FR-37; TRD/test reference: INT-73.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Start with AbortController signal, abort and await stopped.
+- Expected result: In-flight work drains and state becomes stopped.
+
+## TC-093: Concurrent relays divide deliveries
+
+- Milestone: M2 Relay and leases; task: T-18.
+- PRD: FR-31; GU-02; GU-04; NFR-01; TRD/test reference: INT-22.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: 10000 messages/10 topics, four pools and relays with 50 slots, handlers take random 0–2ms.
+- Expected result: All done under 60s; each id handled once, attempts 1, each relay >=100; no leaseLost/reclaimed.
+
+## TC-094: Database reconnect resilience
+
+- Milestone: M2 Relay and leases; task: T-18.
+- PRD: FR-38; TRD/test reference: INT-29.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Enqueue 2000; terminate only named relay backends every 200ms for 2s.
+- Expected result: Claim/flush errors emitted; relay survives; all done within 30s reconnect allowance.
+
+## TC-095: Unprepared postgres.js queries
+
+- Milestone: M2 Relay and leases; task: T-18.
+- PRD: FR-04; FR-31; TRD/test reference: INT-81.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Run INT-20 and reduced 1000-message INT-22 with prepare false.
+- Expected result: Delivery and concurrency scenarios pass without prepared statements.
+
+## TC-096: Driver-neutral claim mapping
+
+- Milestone: M2 Relay and leases; task: T-18.
+- PRD: FR-04; TRD/test reference: INT-82.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Compare full claimed message JS values through both drivers; listDead comparison is scheduled in T-20, stats in T-21 (D-66).
+- Expected result: seq is string, dates are Date, JSON matches and numeric values match.
+
+## TC-097: Relay pool override
+
+- Milestone: M2 Relay and leases; task: T-18.
+- PRD: FR-30; TRD/test reference: INT-83.
+- Priority: High; automatable: yes.
+- Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
+- Steps: Create outbox on pool A and relay on named pool B; observe backend statements.
+- Expected result: Relay statements use B.
