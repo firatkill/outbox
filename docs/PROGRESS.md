@@ -1,6 +1,6 @@
 # Progress
 
-Local repository setup completed on 2026-10-21. M0 (T-01..T-03) acceptance is complete. Stopped at the milestone boundary; T-04 has not started.
+Local repository setup completed on 2026-10-21. M0 (T-01..T-03) is complete. The owner approved continuing; M1 is underway.
 
 - Read AGENTS.md and all four specification documents from start to finish.
 - Verified the required Git author and committer identity; enabled the executable `.githooks/commit-msg` hook.
@@ -17,7 +17,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-01 | M0 | Repository and tooling | done | 99f3421 |
 | T-02 | M0 | Local databases and test harness | done | d1a70eb |
 | T-03 | M0 | CI static job, guards and Changesets | done | 1f50dd1 |
-| T-04 | M1 | Identifiers, config, errors and rendering | todo | — |
+| T-04 | M1 | Identifiers, config, errors and rendering | done | e07f5cd |
 | T-05 | M1 | Migration 0001 and runner | todo | — |
 | T-06 | M1 | migrationSql and CLI migrate | todo | — |
 | T-07 | M1 | Message validation, JSON and UUIDv7 | todo | — |
@@ -70,6 +70,8 @@ A completion commit is recorded only after the task meets its acceptance criteri
 
 - T-03: 26 unit tests and 4 PostgreSQL integration checks pass locally. The expected missing-changeset failure and label-triggered green rerun are verified in [CI](https://github.com/firatkill/outbox/actions/runs/39565227105).
 - Milestone evidence and verification limits: [M0 report](../qa/m0-report.md) and [QA review](../qa/m0-review.md). Package quality, documentation, chaos and the full runtime CI matrix belong to later tasks and are not verified here.
+
+- T-04: config, naming, rendering and error tests pass (57 unit / 6 integration in the available suite); [PR static CI](https://github.com/firatkill/outbox/actions/runs/39566952773) passes.
 
 ## Open questions for the owner
 
