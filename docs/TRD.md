@@ -130,7 +130,7 @@ Exact versions are resolved on the implementation date and pinned exactly in `pa
 | Language | TypeScript 5.9+ (`strict`) | If TypeScript 6 or 7 is current, use it if `tsup`, `typedoc` and `typescript-eslint` support it; otherwise the latest 5.x |
 | Runtime | Node.js 22 and 24 (supported, required CI cells); Node.js 20.11+ best-effort (one non-blocking CI cell, PRD D-41) | `.nvmrc` = `22` for local development; `engines.node` stays `>=20.11` so Node 20 users can still install |
 | Package manager | pnpm 10 | `packageManager` field set; Corepack |
-| Build | tsup 8 | ESM + CJS + `.d.ts`/`.d.cts` (A-07) |
+| Build | tsdown 0.23.1 | Owner-approved A-07 fallback (D-56); ESM + CJS + `.d.ts`/`.d.cts` |
 | Tests | Vitest 3 or 4, `@vitest/coverage-v8` | Projects `unit` and `integration` |
 | Lint / format | ESLint 9 flat config + `typescript-eslint` strict-type-checked; Prettier 3 | |
 | Versioning | `@changesets/cli` 2 | |
@@ -160,8 +160,8 @@ outbox/
 ├── .size-limit.json
 ├── compose.yml                     # local Postgres 14/16/17/18 + Redis (§16.7)
 ├── tsconfig.json                   # editor + typecheck (src, tests, scripts, site)
-├── tsconfig.build.json             # src only, used by tsup dts
-├── tsup.config.ts
+├── tsconfig.build.json             # src only, used by tsdown dts
+├── tsdown.config.ts
 ├── vitest.config.ts
 ├── eslint.config.mjs
 ├── prettier.config.mjs
@@ -304,7 +304,7 @@ outbox/
   "dependencies": {},
   "publishConfig": { "access": "public", "provenance": true },
   "scripts": {
-    "build": "tsup",
+    "build": "tsdown",
     "clean": "rm -rf dist coverage",
     "lint": "eslint . && prettier --check .",
     "format": "prettier --write .",
@@ -339,11 +339,13 @@ Notes:
 - `publishConfig.provenance: true` makes `npm publish` request provenance; the workflow also passes `--provenance` explicitly (§16.4).
 - `"types": "./dist/index.d.cts"` exists for tools that ignore `exports`; `attw` runs with `--profile node16` because subpath exports cannot resolve under `node10` resolution by design (A-18).
 
-### 4.2 tsup.config.ts (normative)
+### 4.2 tsdown.config.ts (normative; owner-approved A-07 fallback, PRD D-56)
+
+Build tooling runs on Node 22.18+ (or another runtime supported by the pinned tsdown release), while output targets Node 20. The published runtime floor and entry map remain unchanged.
 
 ```ts
 import { readFileSync } from 'node:fs';
-import { defineConfig } from 'tsup';
+import { defineConfig } from 'tsdown';
 
 const { version } = JSON.parse(readFileSync('./package.json', 'utf8')) as { version: string };
 const define = { __OUTBOX_VERSION__: JSON.stringify(version) };
@@ -360,32 +362,32 @@ export default defineConfig([
       testing: 'src/testing.ts',
     },
     format: ['esm', 'cjs'],
-    dts: { compilerOptions: { composite: false } },
+    dts: true,
     tsconfig: 'tsconfig.build.json',
     target: 'node20',
     platform: 'node',
-    splitting: true,
     sourcemap: true,
     clean: true,
     treeshake: true,
-    external: ['pg', 'postgres'],
+    deps: { neverBundle: ['pg', 'postgres'] },
+    outExtensions: ({ format }) => ({ js: format === 'es' ? '.js' : '.cjs' }),
   },
   {
     define,
     entry: { cli: 'src/cli.ts' },
     format: ['esm'],
+    dts: false,
     target: 'node20',
     platform: 'node',
-    banner: { js: '#!/usr/bin/env node' },
     sourcemap: true,
-    external: ['pg', 'postgres'],
+    clean: false,
+    deps: { neverBundle: ['pg', 'postgres'] },
+    outExtensions: () => ({ js: '.js' }),
   },
 ]);
 ```
 
-Version string (normative): the library's own version is never read from `package.json` at runtime. `src/env.d.ts` declares `declare const __OUTBOX_VERSION__: string;`, tsup replaces it at build time (above), and `vitest.config.ts` sets the same `define` (§15.4). It is used by `outbox --version` and the webhook `user-agent` header (§13.2), and exported from the core entry as `VERSION` (§5.7). Because `version` bumps `package.json` before `publish.yml` builds, the published build always carries the released version.
-
-The second config must not set `clean: true` (it would delete the first build's output). If CJS code splitting misbehaves (A-07), set `splitting: false` for CJS by splitting the first config into an ESM and a CJS config; core code is then duplicated per CJS entry, which is acceptable because error identity does not rely on `instanceof` (PRD D-29).
+The library version is never read from package.json at runtime. `src/env.d.ts` declares `__OUTBOX_VERSION__`; tsdown and Vitest inline the package version. The CLI source carries the executable shebang. The CLI config explicitly sets `clean: false`, preventing it from deleting library output. tsdown emits ESM/CJS chunks and declarations with the extensions required by §4.1.
 
 ### 4.3 tsconfig.json
 
@@ -2591,11 +2593,12 @@ import { defineConfig } from 'vitest/config';
 const { version } = JSON.parse(readFileSync('./package.json', 'utf8')) as { version: string };
 
 export default defineConfig({
-  define: { __OUTBOX_VERSION__: JSON.stringify(version) },   // same as tsup (§4.2)
+  define: { __OUTBOX_VERSION__: JSON.stringify(version) },   // same as tsdown (§4.2)
   test: {
     projects: [
-      { test: { name: 'unit', include: ['tests/unit/**/*.test.ts'], testTimeout: 10_000 } },
+      { extends: true, test: { name: 'unit', include: ['tests/unit/**/*.test.ts'], testTimeout: 10_000 } },
       {
+        extends: true,
         test: {
           name: 'integration',
           include: ['tests/integration/**/*.test.ts'],
@@ -3579,7 +3582,7 @@ Each assumption has an owner task. If verification fails, apply the stated fallb
 
 | ID | Assumption | How to verify | Fallback | Task |
 |---|---|---|---|---|
-| A-01 | The npm scope `@firatkill` belongs to the owner's npm account and `@firatkill/outbox` is free (GitHub user is `firatkill`) | `npm whoami` (logged in as owner) prints `firatkil`; `npm view @firatkill/outbox` returns 404; `npm access list packages @firatkill` works | Use `@firatkill/outbox` (or an org scope the owner creates); global rename in one commit; PRD §14 row | T-01 |
+| A-01 | The npm scope `@firatkill` belongs to the owner's npm account and `@firatkill/outbox` is free (GitHub user is `firatkill`) | `npm whoami` (logged in as owner) prints `firatkill`; `npm view @firatkill/outbox` returns 404; `npm access list packages @firatkill` works | Use `@firatkill/outbox` (or an org scope the owner creates); global rename in one commit; PRD §14 row | T-01 |
 | A-02 | npm trusted publishing (OIDC from GitHub Actions) requires npm CLI ≥ 11.5.1 and can be configured only for a package that already exists, so the first publish uses a short-lived granular token (§16.4, PRD D-44); provenance is generated for public packages from public repositories when `id-token: write` is granted and `repository.url` matches | npm docs "Trusted publishers" and "Generating provenance statements" on the implementation date; after 0.1.0, configure npmjs.com → package → Settings → Trusted publisher (GitHub Actions, `firatkill/outbox`, `publish.yml`, environment `npm`) | If npm allows configuring a trusted publisher before the first publish, skip the token. If trusted publishing is unavailable, keep a granular token in `NPM_TOKEN` (rotated before expiry) and keep `--provenance` | T-38, T-39 |
 | A-03 | postgres.js 3.4+: `unsafe(text, params)` sends string parameters that cast with `$n::jsonb`; `unsafe(text, [])` (empty params) uses the simple query protocol and runs multiple statements (if not, call `.simple()` on the returned query); `listen(channel, fn, onlisten)` quotes the channel, reconnects, and calls `onlisten` after each reconnect; returned rows are array-like | INT-10/12/50/52 with postgres.js; read `postgres` README sections "unsafe" and "listen" | Quote the channel ourselves; wrap multi-statement migrations in a loop over statements split by a `-- statement` marker; implement reconnect detection with a periodic `select 1` on the listen connection | T-08, T-24 |
 | A-04 | node-postgres 8.11+: parameter-free `client.query(text)` runs multiple statements; `notification` and `error` events behave as described; type parsers do not alter `::text` / `float8` / `int4` results | INT-01, INT-52, INT-82 with pg | Split migrations as in A-03; set per-query `types` to identity parsers | T-09, T-24 |
