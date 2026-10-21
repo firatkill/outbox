@@ -1,6 +1,6 @@
 # Progress
 
-Local repository setup completed on 2026-10-21. M0 (T-01..T-03) is complete. The owner approved continuing; M1 is underway.
+Local repository setup completed on 2026-10-21. M0 (T-01..T-03) and M1 (T-04..T-11) are complete. Stop before M2 for owner review.
 
 - Read AGENTS.md and all four specification documents from start to finish.
 - Verified the required Git author and committer identity; enabled the executable `.githooks/commit-msg` hook.
@@ -24,7 +24,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-08 | M1 | postgres.js adapter and createOutboxCore skeleton | done | a5955a3 |
 | T-09 | M1 | pg adapter | done | 595ea7d |
 | T-10 | M1 | enqueue | done | 818de4d |
-| T-11 | M1 | Test clock and delays | doing | — |
+| T-11 | M1 | Test clock and delays | done | 82f0d56 |
 | T-12 | M2 | Relay options and backoff (pure) | todo | — |
 | T-13 | M2 | Claim, complete, fail and lease SQL | todo | — |
 | T-14 | M2 | Relay engine: scheduler, loop, deliverer, flusher | todo | — |
@@ -85,12 +85,14 @@ A completion commit is recorded only after the task meets its acceptance criteri
 
 - T-10: 124 unit / 50 integration tests pass on PG17; all 18 enqueue cases pass on PG14/16 with both drivers. Atomicity, dedupe races, least privilege and batching verified; [CI](https://github.com/firatkill/outbox/actions/runs/39579342226) and package/size gates pass.
 
+- T-11 / M1: final suite passes 126 unit tests and 58 integration tests on PG17, with four explicit T-14 relay todos. All 58 integration tests also pass on PG14/16 with both drivers. Package, declaration, size and [implementation CI](https://github.com/firatkill/outbox/actions/runs/39580611281) pass. Final report/test commit checks are enforced on [PR #11](https://github.com/firatkill/outbox/pull/11) before merge. [M1 report](../qa/m1-report.md) and [review](../qa/m1-review.md) document coverage and limitations.
+
 ## Open questions for the owner
 
 None. The owner approved the pg optional payload type correction (D-65); T-09 checks pass.
 
 Owner approved the A-03 text-first JSON cast correction (D-64); implementation and verification are complete for T-08.
 
-Docs gates are deferred until T-34 (D-61). Staged adapter size measurements are approved only until T-08/T-09, with unchanged limits and restoration required in those tasks (D-63).
+Docs gates are deferred until T-34 (D-61). Both adapter size checks were restored to createOutbox imports in T-08/T-09, as required by D-63.
 
 Previous decisions resolved: The owner resolved A-01 and approved A-07’s fallback (D-56); M0 local and static CI acceptance is complete.
