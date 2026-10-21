@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { afterAll, describe, expect, it } from 'vitest';
 import { NonRetryableError } from '../../src/core/errors.js';
 import { createOutboxCore } from '../../src/core/outbox.js';
@@ -6,6 +7,7 @@ import type { MessageInput, Relay, RelayOptions } from '../../src/core/types.js'
 import { testClock } from '../../src/testing.js';
 import { ADAPTERS, createAdapter } from '../helpers/adapters.js';
 import { createTestSchema } from '../helpers/db.js';
+import { waitFor } from '../helpers/wait.js';
 
 describe.each(ADAPTERS)('%s per-key ordering', (name) => {
   const driver = createAdapter(name);
@@ -144,4 +146,102 @@ describe.each(ADAPTERS)('%s per-key ordering', (name) => {
     expect((await a.runOnce()).delivered).toBe(1);
     expect(seen).toEqual([first[0]?.id, second[0]?.id]);
   });
+  // 6,000 deliveries with per-key serialisation; allow setup/cleanup around the 60s delivery bound.
+  it('INT-41 TC-121 preserves ordering across four concurrent relays', async () => {
+    const owned = await createTestSchema();
+    const producer = createAdapter(name);
+    const workers = Array.from({ length: 4 }, () => createAdapter(name, { max: 4 }));
+    const running: Relay[] = [];
+    const active = new Map<string, number>();
+    const maxima = new Map<string, number>();
+    const seen = new Map<string, number>();
+    let delivered = 0;
+    try {
+      // Deliberately no test clock: INV-08 compares real database timestamps.
+      const outbox = createOutboxCore(producer.adapter, { schema: owned.schema });
+      await outbox.migrate();
+      await producer.adapter.query(
+        `create table "${owned.schema}".chaos_deliveries (message_id uuid not null, started_at timestamptz not null default clock_timestamp())`,
+        [],
+      );
+      const messages: MessageInput[] = [];
+      for (let round = 0; round < 25; round++) {
+        for (let key = 0; key < 200; key++) {
+          messages.push({ topic: 't', key: 'k' + String(key), payload: null });
+          if (key % 5 === 0) messages.push({ topic: 't', payload: null });
+        }
+      }
+      for (let offset = 0; offset < messages.length; offset += 1000)
+        await producer.adapter.transaction((tx) => outbox.enqueue(tx, messages.slice(offset, offset + 1000)));
+      for (const worker of workers) {
+        const relay = createOutboxCore(worker.adapter, { schema: owned.schema }).createRelay({
+          ordering: 'key',
+          listen: false,
+          concurrency: 20,
+          batchSize: 20,
+          publisher: async (m) => {
+            seen.set(m.id, (seen.get(m.id) ?? 0) + 1);
+            if (m.key !== null) {
+              const count = (active.get(m.key) ?? 0) + 1;
+              active.set(m.key, count);
+              maxima.set(m.key, Math.max(maxima.get(m.key) ?? 0, count));
+            }
+            try {
+              await worker.adapter.query(
+                `insert into "${owned.schema}".chaos_deliveries (message_id) values ($1::uuid)`,
+                [m.id],
+              );
+              // Normative INT-41 simulated handler latency, not a readiness wait.
+              await new Promise((resolve) => setTimeout(resolve, Math.floor(Math.random() * 6)));
+            } finally {
+              if (m.key !== null) active.set(m.key, (active.get(m.key) ?? 1) - 1);
+            }
+          },
+        });
+        relay.on('delivered', () => {
+          delivered++;
+        });
+        running.push(relay);
+      }
+      const started = performance.now();
+      await Promise.all(running.map((r) => r.start()));
+      // 6,000 deliveries with per-key serialisation require a real workload deadline.
+      await waitFor(() => delivered === 6000, { timeoutMs: 60000 });
+      expect(performance.now() - started).toBeLessThan(60000);
+      await Promise.all(running.map((r) => r.stop()));
+      expect(seen.size).toBe(6000);
+      expect([...seen.values()].every((n) => n === 1)).toBe(true);
+      expect(maxima.size).toBe(200);
+      expect([...maxima.values()].every((n) => n === 1)).toBe(true);
+      const counts = await producer.adapter.query(
+        render(
+          "select count(*)::int4 as total, count(*) filter (where key is null)::int4 as unkeyed from {{messages}} where status = 'done' and attempts = 1",
+          outbox.config,
+        ),
+        [],
+      );
+      expect(counts).toEqual([{ total: 6000, unkeyed: 1000 }]);
+      const invariant = readFileSync(new URL('../../scripts/chaos/invariants.sql', import.meta.url), 'utf8');
+      expect(await producer.adapter.query(render(invariant, outbox.config), [])).toEqual([]);
+      // Assert first-start ordering separately from the completion fence invariant.
+      const starts = await producer.adapter.query(
+        render(
+          `with firsts as (
+        select message_id, min(started_at) as started_at from {{schema}}.chaos_deliveries group by message_id
+      ), ordered as (
+        select m.id, f.started_at, lag(f.started_at) over (partition by m.key order by m.seq) as previous_start
+        from {{messages}} m join firsts f on f.message_id = m.id where m.key is not null
+      ) select id::text from ordered where started_at <= previous_start`,
+          outbox.config,
+        ),
+        [],
+      );
+      expect(starts).toEqual([]);
+    } finally {
+      await Promise.all(running.map((r) => r.stop()));
+      await Promise.all(workers.map((w) => w.close()));
+      await producer.close();
+      await owned.drop();
+    }
+  }, 120000);
 });
