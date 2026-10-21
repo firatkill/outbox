@@ -201,6 +201,18 @@
           "actual_result": "T-12 lint and typecheck pass after fixing test union access and strict lint style.",
           "note": "T-12 lint and typecheck pass after fixing test union access and strict lint style.",
           "at": "2026-10-21T10:29:15.544788+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "T-14 lint: void-arrow style, unnecessary assertions/optional chain, async without await, and TypeScript control-flow narrowing across awaits. Typecheck and targeted tests passed; correcting lint without weakening rules.",
+          "note": "T-14 lint: void-arrow style, unnecessary assertions/optional chain, async without await, and TypeScript control-flow narrowing across awaits. Typecheck and targeted tests passed; correcting lint without weakening rules.",
+          "at": "2026-10-21T10:56:55.971311+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 lint, typecheck and static guards pass after preserving async-state reads and abort reasons while satisfying strict lint.",
+          "note": "T-14 lint, typecheck and static guards pass after preserving async-state reads and abort reasons while satisfying strict lint.",
+          "at": "2026-10-21T10:58:52.103855+00:00"
         }
       ],
       "regression_of": null,
@@ -208,7 +220,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-12 lint and typecheck pass after fixing test union access and strict lint style."
+      "actual_result": "T-14 lint, typecheck and static guards pass after preserving async-state reads and abort reasons while satisfying strict lint."
     },
     {
       "tc_reference": "TC-006",
@@ -1374,6 +1386,12 @@
           "actual_result": "T-12 final build, publint/attw and size pass: core 5.8kB, postgres-js 5.28kB, pg 5.33kB, testing 1.15kB; unchanged thresholds.",
           "note": "T-12 final build, publint/attw and size pass: core 5.8kB, postgres-js 5.28kB, pg 5.33kB, testing 1.15kB; unchanged thresholds.",
           "at": "2026-10-21T10:29:40.979252+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 final dual build and publint/attw pass all configured entry-point checks.",
+          "note": "T-14 final dual build and publint/attw pass all configured entry-point checks.",
+          "at": "2026-10-21T11:00:43.800999+00:00"
         }
       ],
       "regression_of": null,
@@ -1381,7 +1399,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-12 final build, publint/attw and size pass: core 5.8kB, postgres-js 5.28kB, pg 5.33kB, testing 1.15kB; unchanged thresholds."
+      "actual_result": "T-14 final dual build and publint/attw pass all configured entry-point checks."
     },
     {
       "tc_reference": "TC-067",
@@ -1447,14 +1465,32 @@
           "actual_result": "T-12 final build, publint/attw and size pass: core 5.8kB, postgres-js 5.28kB, pg 5.33kB, testing 1.15kB; unchanged thresholds.",
           "note": "T-12 final build, publint/attw and size pass: core 5.8kB, postgres-js 5.28kB, pg 5.33kB, testing 1.15kB; unchanged thresholds.",
           "at": "2026-10-21T10:29:40.979416+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "T-14 size gate: core 10.47kB exceeds the unchanged 10kB limit by 474 bytes. Adapters remain within 12kB (10.12/10.18kB). Build and publint/attw pass.",
+          "note": "T-14 size gate: core 10.47kB exceeds the unchanged 10kB limit by 474 bytes. Adapters remain within 12kB (10.12/10.18kB). Build and publint/attw pass.",
+          "at": "2026-10-21T10:56:56.012549+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Final T-14 build measures core 10494 bytes against 10000-byte limit; adapters 10.15/10.20kB pass their 12kB limits. All other implemented local gates pass. Proposal to raise only core to 12kB is pending owner approval in docs/CORE-SIZE-PROPOSAL.md.",
+          "note": "Final T-14 build measures core 10494 bytes against 10000-byte limit; adapters 10.15/10.20kB pass their 12kB limits. All other implemented local gates pass. Proposal to raise only core to 12kB is pending owner approval in docs/CORE-SIZE-PROPOSAL.md.",
+          "at": "2026-10-21T11:00:43.691760+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Owner approved D-69: only core limit raised to 12kB. Size gate now passes: core 10.49kB, postgres-js 10.15kB, pg 10.20kB, testing 1.15kB; other limits unchanged.",
+          "note": "Owner approved D-69: only core limit raised to 12kB. Size gate now passes: core 10.49kB, postgres-js 10.15kB, pg 10.20kB, testing 1.15kB; other limits unchanged.",
+          "at": "2026-10-21T11:25:46.674798+00:00"
         }
       ],
       "regression_of": null,
-      "root_cause_group": null,
+      "root_cause_group": "t14-core-size-budget",
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-12 final build, publint/attw and size pass: core 5.8kB, postgres-js 5.28kB, pg 5.33kB, testing 1.15kB; unchanged thresholds."
+      "actual_result": "Owner approved D-69: only core limit raised to 12kB. Size gate now passes: core 10.49kB, postgres-js 10.15kB, pg 10.20kB, testing 1.15kB; other limits unchanged."
     },
     {
       "tc_reference": "TC-041",
@@ -2583,6 +2619,405 @@
       "retraction_reason": null,
       "automatable": true,
       "actual_result": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge."
+    },
+    {
+      "tc_reference": "TC-076",
+      "ac_reference": "FR-34; FR-38",
+      "milestone": "M2 Relay and leases",
+      "title": "Scheduler and polling backoff",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Table-test exit, free-slot thresholds, first/wake/full claims and partial/empty waits; run interval sequence.",
+      "expected_result": "Decisions follow TRD 9.5.1; idle intervals are 100,200,400,800,1600,2000,2000 and wake resets.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-14 targeted scheduler, flusher, deliverer, emitter and wait-helper tests pass (26 tests). Fake timers verify retry intervals and orphan handling; 50 buffered completions form one follow-up statement.",
+          "note": "T-14 targeted scheduler, flusher, deliverer, emitter and wait-helper tests pass (26 tests). Fake timers verify retry intervals and orphan handling; 50 buffered completions form one follow-up statement.",
+          "at": "2026-10-21T10:55:33.017621+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
+          "note": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
+          "at": "2026-10-21T11:00:43.738137+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "at": "2026-10-21T11:29:29.117917+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
+    },
+    {
+      "tc_reference": "TC-077",
+      "ac_reference": "FR-32; NFR-03",
+      "milestone": "M2 Relay and leases",
+      "title": "Group commit and drain",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Hold a fake complete statement while adding 50 completions; mix failures and await drain.",
+      "expected_result": "Exactly one follow-up completion statement batches the 50 items; both buffers empty before drain resolves.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-14 targeted scheduler, flusher, deliverer, emitter and wait-helper tests pass (26 tests). Fake timers verify retry intervals and orphan handling; 50 buffered completions form one follow-up statement.",
+          "note": "T-14 targeted scheduler, flusher, deliverer, emitter and wait-helper tests pass (26 tests). Fake timers verify retry intervals and orphan handling; 50 buffered completions form one follow-up statement.",
+          "at": "2026-10-21T10:55:33.018029+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
+          "note": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
+          "at": "2026-10-21T11:00:43.738356+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "at": "2026-10-21T11:29:29.118196+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
+    },
+    {
+      "tc_reference": "TC-078",
+      "ac_reference": "FR-32; FR-38",
+      "milestone": "M2 Relay and leases",
+      "title": "Flush retry and expired outcomes",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Inject statement failures and advance fake timers through error backoff and local lease estimates.",
+      "expected_result": "Items retry at front; expired items are dropped with one error event listing ids; missing result ids emit leaseLost.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-14 targeted scheduler, flusher, deliverer, emitter and wait-helper tests pass (26 tests). Fake timers verify retry intervals and orphan handling; 50 buffered completions form one follow-up statement.",
+          "note": "T-14 targeted scheduler, flusher, deliverer, emitter and wait-helper tests pass (26 tests). Fake timers verify retry intervals and orphan handling; 50 buffered completions form one follow-up statement.",
+          "at": "2026-10-21T10:55:33.018358+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
+          "note": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
+          "at": "2026-10-21T11:00:43.738361+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "at": "2026-10-21T11:29:29.118206+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
+    },
+    {
+      "tc_reference": "TC-079",
+      "ac_reference": "FR-35; FR-47; FR-48",
+      "milestone": "M2 Relay and leases",
+      "title": "Delivery classification and timeout",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Use fake timers with synchronous throws, terminal/retryable errors, delayed promises and timeout.",
+      "expected_result": "Correct outcome/delay, aborted signal, freed slot and no late duplicate outcome or unhandled rejection.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-14 targeted scheduler, flusher, deliverer, emitter and wait-helper tests pass (26 tests). Fake timers verify retry intervals and orphan handling; 50 buffered completions form one follow-up statement.",
+          "note": "T-14 targeted scheduler, flusher, deliverer, emitter and wait-helper tests pass (26 tests). Fake timers verify retry intervals and orphan handling; 50 buffered completions form one follow-up statement.",
+          "at": "2026-10-21T10:55:33.018668+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
+          "note": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
+          "at": "2026-10-21T11:00:43.738365+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "at": "2026-10-21T11:29:29.118218+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
+    },
+    {
+      "tc_reference": "TC-098",
+      "ac_reference": "FR-80",
+      "milestone": "M2 Relay and leases",
+      "title": "Synchronous listener isolation and subscription cleanup",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Attach multiple listeners, throw from one, observe the listener-phase error, then unsubscribe and remove listeners; throw from the error listener.",
+      "expected_result": "Other listeners still run synchronously; on returns an unsubscribe function; off removes the listener; error-listener exceptions do not recurse.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-14 targeted scheduler, flusher, deliverer, emitter and wait-helper tests pass (26 tests). Fake timers verify retry intervals and orphan handling; 50 buffered completions form one follow-up statement.",
+          "note": "T-14 targeted scheduler, flusher, deliverer, emitter and wait-helper tests pass (26 tests). Fake timers verify retry intervals and orphan handling; 50 buffered completions form one follow-up statement.",
+          "at": "2026-10-21T10:55:33.019095+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
+          "note": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
+          "at": "2026-10-21T11:00:43.738378+00:00"
+        },
+        {
+          "result": "pass",
+          "note": "Corrected requirement trace to PRD FR-80 (typed events/listener isolation); prior unit and full-suite results remain valid."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "at": "2026-10-21T11:29:29.118251+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
+    },
+    {
+      "tc_reference": "TC-080",
+      "ac_reference": "FR-30; FR-31; FR-32",
+      "milestone": "M2 Relay and leases",
+      "title": "End-to-end handler delivery",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Enqueue full message; start handler relay; await delivered then stop.",
+      "expected_result": "One matching handler call, attempt 1 and valid context; done row has completion time and cleared lease.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-14 targeted relay and enqueue integration files pass 32 tests on PG17 for both drivers. INT-15/16 relay todos replaced by passing clock-driven runOnce cases.",
+          "note": "T-14 targeted relay and enqueue integration files pass 32 tests on PG17 for both drivers. INT-15/16 relay todos replaced by passing clock-driven runOnce cases.",
+          "at": "2026-10-21T10:56:56.049113+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
+          "note": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
+          "at": "2026-10-21T11:00:43.738367+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "at": "2026-10-21T11:29:29.118225+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
+    },
+    {
+      "tc_reference": "TC-081",
+      "ac_reference": "FR-40",
+      "milestone": "M2 Relay and leases",
+      "title": "Topic and outbox isolation",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Enqueue a,b,c; run handler a and filtered publisher b; also run a relay on one of two outboxes.",
+      "expected_result": "Only subscribed topics delivered; c and the other outbox remain pending.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-14 targeted relay and enqueue integration files pass 32 tests on PG17 for both drivers. INT-15/16 relay todos replaced by passing clock-driven runOnce cases.",
+          "note": "T-14 targeted relay and enqueue integration files pass 32 tests on PG17 for both drivers. INT-15/16 relay todos replaced by passing clock-driven runOnce cases.",
+          "at": "2026-10-21T10:56:56.049607+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
+          "note": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
+          "at": "2026-10-21T11:00:43.738370+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "at": "2026-10-21T11:29:29.118232+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
+    },
+    {
+      "tc_reference": "TC-082",
+      "ac_reference": "FR-39",
+      "milestone": "M2 Relay and leases",
+      "title": "Single-batch runOnce",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Enqueue 25; call runOnce three times at batch size 10; try after start.",
+      "expected_result": "Counts are 10,10,5 with confirmed deliveries; started relay rejects runOnce.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-14 targeted relay and enqueue integration files pass 32 tests on PG17 for both drivers. INT-15/16 relay todos replaced by passing clock-driven runOnce cases.",
+          "note": "T-14 targeted relay and enqueue integration files pass 32 tests on PG17 for both drivers. INT-15/16 relay todos replaced by passing clock-driven runOnce cases.",
+          "at": "2026-10-21T10:56:56.049935+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
+          "note": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
+          "at": "2026-10-21T11:00:43.738373+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "at": "2026-10-21T11:29:29.118238+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
+    },
+    {
+      "tc_reference": "TC-083",
+      "ac_reference": "FR-24; FR-39",
+      "milestone": "M2 Relay and leases",
+      "title": "Relay honors delayed availability",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Use relative 60-second and absolute 5-second availability; run before/after test-clock advances.",
+      "expected_result": "No early claim; each message claimed after its availability instant.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-14 targeted relay and enqueue integration files pass 32 tests on PG17 for both drivers. INT-15/16 relay todos replaced by passing clock-driven runOnce cases.",
+          "note": "T-14 targeted relay and enqueue integration files pass 32 tests on PG17 for both drivers. INT-15/16 relay todos replaced by passing clock-driven runOnce cases.",
+          "at": "2026-10-21T10:56:56.050254+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
+          "note": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
+          "at": "2026-10-21T11:00:43.738376+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "at": "2026-10-21T11:29:29.118244+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
+    },
+    {
+      "tc_reference": "TC-099",
+      "ac_reference": "FR-31; FR-34; NFR-03",
+      "milestone": "M2 Relay and leases",
+      "title": "Capacity-bound delivery and released claim locks",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Start relay; wait for two handlers; inspect pending/in-flight counts; have handlers acquire their own row locks with NOWAIT; release their gate and await all deliveries.",
+      "expected_result": "Only two messages are in flight while blocked, maximum handler concurrency is two, no claim lock remains during delivery, and starts follow sequence order within each batch.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
+          "note": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
+          "at": "2026-10-21T11:00:43.738804+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "at": "2026-10-21T11:29:29.118257+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
+    },
+    {
+      "tc_reference": "TC-100",
+      "ac_reference": "FR-32; FR-39; FR-47; FR-48",
+      "milestone": "M2 Relay and leases",
+      "title": "runOnce reports confirmed failure and dead counts",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "runOnce with a handler that throws ordinary or NonRetryableError as appropriate; inspect returned counts and database statuses.",
+      "expected_result": "Three claims, three failures, two dead, zero deliveries; only the non-exhausted ordinary failure remains pending.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
+          "note": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
+          "at": "2026-10-21T11:00:43.739156+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "at": "2026-10-21T11:29:29.118264+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
     }
   ]
 }

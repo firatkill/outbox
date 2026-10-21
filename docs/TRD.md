@@ -425,7 +425,7 @@ What `pnpm typecheck` covers and why (normative): the root config deliberately e
 
 ```json
 [
-  { "name": "core", "path": "dist/index.js", "import": "*", "limit": "10 kB", "ignore": ["node:crypto", "node:os"] },
+  { "name": "core", "path": "dist/index.js", "import": "*", "limit": "12 kB", "ignore": ["node:crypto", "node:os"] },
   { "name": "postgres-js createOutbox", "path": "dist/postgres-js.js", "import": "{ createOutbox }", "limit": "12 kB", "ignore": ["node:crypto", "node:os", "postgres"] },
   { "name": "pg createOutbox", "path": "dist/pg.js", "import": "{ createOutbox }", "limit": "12 kB", "ignore": ["node:crypto", "node:os", "pg"] },
   { "name": "webhook", "path": "dist/webhook.js", "import": "*", "limit": "3 kB", "ignore": ["node:crypto"] },
@@ -1744,6 +1744,8 @@ Rules (normative):
 - `claimed === 0` → `min(maxIntervalMs, max(minIntervalMs, prevMs * 2))` when the previous claim was also empty, else `minIntervalMs`.
 - A wake-up sets `intervalMs = minIntervalMs` and `wakePending = true`; a claim clears `wakePending`.
 
+The loop passes `prevMs = 0` when the preceding claim was not empty or a wake reset the interval; otherwise it passes the last interval. This keeps the pure signature above while retaining the preceding-empty condition (PRD D-68).
+
 Example: an idle relay with defaults sleeps 100, 200, 400, 800, 1600, 2000, 2000, ... ms between empty claims. UT-08 covers each rule with table-driven cases.
 
 #### 9.5.2 Loop (`src/core/relay/loop.ts`, normative behaviour)
@@ -2605,6 +2607,9 @@ INT-21 also runs directly against claim SQL before the relay exists.
 | INT-95 | both | Batch retry, terminal and exhausted failures; stale holder/attempt and repeated fail | Pending delay uses DB time; dead rows retain availability, set dead_at; leases cleared; stale updates affect nothing |
 | INT-96 | both | Claim as ghost, advance beyond lease, reclaim in bounded batches, re-claim with same holder, apply stale outcomes | Immediate retry or dead on exhaustion; expiry error retains prior holder; old attempt cannot complete/fail/release |
 | INT-97 | both | Release matching and mismatched claims, then claim again | Release clears lease and decrements attempts once; source status and holder/attempt are fenced |
+
+| INT-98 | both | Five ready messages, relay concurrency/batchSize two; gated handlers acquire own row locks NOWAIT, then finish | Two in-flight while blocked, at most two concurrent handlers, no held claim locks, sequence-ordered batch starts |
+| INT-99 | both | runOnce on ordinary retry, NonRetryableError and exhausted messages | Confirmed counts claimed 3 / failed 3 / dead 2 / delivered 0 and matching database statuses |
 
 ### 15.4 Test harness
 
