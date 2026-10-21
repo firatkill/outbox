@@ -1,6 +1,6 @@
 # Progress
 
-Local repository setup completed on 2026-10-21. M0 (T-01..T-03) and M1 (T-04..T-11) are complete. Owner authorized M2; T-12 is complete; T-13 is complete; T-14 is complete; T-15 is complete; T-16 is underway. Stop at the end of M2 for owner review.
+Local repository setup completed on 2026-10-21. M0 (T-01..T-03) and M1 (T-04..T-11) are complete. Owner authorized M2; T-12 is complete; T-13 is complete; T-14 is complete; T-15 is complete; T-16 is complete. Stop at the end of M2 for owner review.
 
 - Read AGENTS.md and all four specification documents from start to finish.
 - Verified the required Git author and committer identity; enabled the executable `.githooks/commit-msg` hook.
@@ -29,7 +29,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-13 | M2 | Claim, complete, fail and lease SQL | done | eb65f3e |
 | T-14 | M2 | Relay engine: scheduler, loop, deliverer, flusher | done | 1a0b70f |
 | T-15 | M2 | Handler timeout and abort | done | 558b4b5 |
-| T-16 | M2 | Reclaim, fencing and crash recovery | doing | — |
+| T-16 | M2 | Reclaim, fencing and crash recovery | done | 72222d0 |
 | T-17 | M2 | Lifecycle: start, stop, drain, signal | todo | — |
 | T-18 | M2 | Concurrency and resilience | todo | — |
 | T-19 | M3 | Retries and dead transitions | todo | — |
@@ -95,7 +95,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 
 - T-15: INT-26 passes with both drivers; timeout reason, stored error, retry delay and slot reuse verified. Full suite 183 unit / 86 PG17 integration and static checks pass. [PR CI](https://github.com/firatkill/outbox/actions/runs/39593104193) passes. A schema-owned trigger captures delay at the failure update to avoid CI scheduling consuming the tolerance; assertions unchanged. Final documentation checks required before merge.
 
-- T-16: SIGKILL recovery, stale completion fencing, startup reclaim and periodic batch/dead events pass (seven targeted checks). Full suite 183 unit / 93 PG17 integration, static/package/size gates pass. INT-24 passes; future concurrency/chaos gates follow D-66. PR CI pending.
+- T-16: SIGKILL recovery, stale completion fencing, startup reclaim and periodic batch/dead events pass (seven targeted checks). Full suite 183 unit / 93 PG17 integration, static/package/size gates pass. INT-24 passes; future concurrency/chaos gates follow D-66. [PR CI](https://github.com/firatkill/outbox/actions/runs/39593697735) passes; final documentation checks required before merge.
 
 ## Open questions for the owner
 

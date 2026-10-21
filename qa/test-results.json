@@ -3102,6 +3102,12 @@
           "actual_result": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66.",
           "note": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66.",
           "at": "2026-10-21T11:40:21.769343+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass.",
+          "note": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass.",
+          "at": "2026-10-21T11:42:36.608661+00:00"
         }
       ],
       "regression_of": null,
@@ -3109,7 +3115,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66."
+      "actual_result": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass."
     },
     {
       "tc_reference": "TC-086",
@@ -3133,6 +3139,12 @@
           "actual_result": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66.",
           "note": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66.",
           "at": "2026-10-21T11:40:21.769548+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass.",
+          "note": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass.",
+          "at": "2026-10-21T11:42:36.609243+00:00"
         }
       ],
       "regression_of": null,
@@ -3140,7 +3152,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66."
+      "actual_result": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass."
     },
     {
       "tc_reference": "TC-087",
@@ -3164,6 +3176,12 @@
           "actual_result": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66.",
           "note": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66.",
           "at": "2026-10-21T11:40:21.769553+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass.",
+          "note": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass.",
+          "at": "2026-10-21T11:42:36.609338+00:00"
         }
       ],
       "regression_of": null,
@@ -3171,7 +3189,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66."
+      "actual_result": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass."
     },
     {
       "tc_reference": "TC-101",
@@ -3195,6 +3213,12 @@
           "actual_result": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66.",
           "note": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66.",
           "at": "2026-10-21T11:40:21.769557+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass.",
+          "note": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass.",
+          "at": "2026-10-21T11:42:36.609396+00:00"
         }
       ],
       "regression_of": null,
@@ -3202,7 +3226,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66."
+      "actual_result": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass."
     }
   ]
 }
