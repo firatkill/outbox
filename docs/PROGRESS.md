@@ -1,6 +1,6 @@
 # Progress
 
-Local repository setup completed on 2026-10-21. M0 (T-01..T-03), M1 (T-04..T-11), M2 (T-12..T-18) and M3 (T-19..T-21) are complete. Owner approved continuing into M4; T-22 and T-23 are complete. T-24 is complete under owner-approved D-73/D-74; T-25 follows.
+Local repository setup completed on 2026-10-21. M0 (T-01..T-03), M1 (T-04..T-11), M2 (T-12..T-18), M3 (T-19..T-21) and M4 (T-22..T-25) are complete. Stopped at the M4 boundary for owner review; T-26 has not started.
 
 - Read AGENTS.md and all four specification documents from start to finish.
 - Verified the required Git author and committer identity; enabled the executable `.githooks/commit-msg` hook.
@@ -38,7 +38,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-22 | M4 | Ordering-mode claim | done | 3bcaf44 |
 | T-23 | M4 | Ordering under concurrency | done | 1ffbea3 |
 | T-24 | M4 | NOTIFY and LISTEN in adapters | done | e84095c |
-| T-25 | M4 | Wake-up scheduling and latency | todo | — |
+| T-25 | M4 | Wake-up scheduling and latency | done | 695b2c3 |
 | T-26 | M5 | Inbox | todo | — |
 | T-27 | M5 | Events, tracer and console fallback | todo | — |
 | T-28 | M5 | BullMQ publisher | todo | — |
@@ -114,6 +114,8 @@ A completion commit is recorded only after the task meets its acceptance criteri
 - T-23: INT-41 passed three consecutive runs with both drivers, each under 60 s; reusable INV-08 reports zero violations. Full suite: 186 unit / 153 PG17 integration. Static and ledger gates pass. [PR CI](https://github.com/firatkill/outbox/actions/runs/39635909129) passes; final documentation checks enforced before merge.
 
 - T-24: notification commit/suppression, reconnect, separate listen pools and lifecycle races pass with both drivers. Full suite: 187 unit / 163 PG17 integration. Static/build/package/size/ledger pass. [PR CI](https://github.com/firatkill/outbox/actions/runs/39661905308) passes; final documentation CI enforced before merge. D-74 explicitly retains the postgres.js server-subscription cleanup limitation.
+
+- T-25 / M4: all six latency/polling checks passed three consecutive runs with both drivers. Full suite: 187 unit / 169 PG17 integration. Static/ledger gates and [implementation CI](https://github.com/firatkill/outbox/actions/runs/39663538826) pass; final report-commit CI enforced before merge. [M4 report](../qa/m4-report.md) and [review](../qa/m4-review.md) disclose the approved driver cleanup limitation, the initial latency outlier and deferred gates.
 
 ## Open questions for the owner
 
