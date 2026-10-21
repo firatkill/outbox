@@ -2464,6 +2464,8 @@ Conventions for this table: "both" = runs for postgres.js and pg. `tc` = the tes
 | INT-07 | both | Empty schema; `migrate({ dryRun: true })` | Returns SQL containing `create table`; afterwards the schema has no tables (`to_regclass` null) |
 | INT-08 | both | T-02 harness: create two unique schemas, create and write a table in one, inspect the other, then clean up the test-owned schemas | Table/data isolation holds for both drivers; cleanup removes only the test-owned schemas; two concurrent harness runs pass independently |
 
+| INT-09 | both | T-04: render custom names in a test-owned schema, create a table, insert SQL-looking data through a parameter and read it | Qualified identifiers resolve to the test schema; parameter data is unchanged and cannot become SQL |
+
 #### Enqueue (`tests/integration/enqueue.test.ts`)
 
 | ID | Adapters | Setup and steps | Assertions |
