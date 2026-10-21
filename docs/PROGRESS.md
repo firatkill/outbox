@@ -21,7 +21,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-05 | M1 | Migration 0001 and runner | done | 16010ec |
 | T-06 | M1 | migrationSql and CLI migrate | done | 80c67b2 |
 | T-07 | M1 | Message validation, JSON and UUIDv7 | done | be11b48 |
-| T-08 | M1 | postgres.js adapter and createOutboxCore skeleton | doing | — |
+| T-08 | M1 | postgres.js adapter and createOutboxCore skeleton | done | a5955a3 |
 | T-09 | M1 | pg adapter | todo | — |
 | T-10 | M1 | enqueue | todo | — |
 | T-11 | M1 | Test clock and delays | todo | — |
@@ -79,9 +79,11 @@ A completion commit is recorded only after the task meets its acceptance criteri
 
 - T-07: validation, UTF-8 byte limits, dedupe collapse and UUID monotonicity pass (108 unit / 18 integration locally); [static and integration CI](https://github.com/firatkill/outbox/actions/runs/39572052918) pass. Final review also rejects trailing newline topics.
 
+- T-08: real postgres.js adapter, public migration factories and row decoding pass (124 unit / 18 integration locally); build/package/declaration/size gates and [CI](https://github.com/firatkill/outbox/actions/runs/39573697097) pass. A-03 JSON casts corrected with owner D-64; LISTEN remains T-24.
+
 ## Open questions for the owner
 
-None. Owner approved the A-03 text-first JSON cast correction (D-64); implementation and verification are in progress.
+None. Owner approved the A-03 text-first JSON cast correction (D-64); implementation and verification are complete for T-08.
 
 Docs gates are deferred until T-34 (D-61). Staged adapter size measurements are approved only until T-08/T-09, with unchanged limits and restoration required in those tasks (D-63).
 
