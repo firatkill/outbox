@@ -1,6 +1,6 @@
 # Progress
 
-Local repository setup completed on 2026-10-21. M0 (T-01..T-03), M1 (T-04..T-11) and M2 (T-12..T-18) are complete. Owner authorized M3; T-19 is complete. T-20 is in progress; owner approved admin validation (D-71).
+Local repository setup completed on 2026-10-21. M0 (T-01..T-03), M1 (T-04..T-11) and M2 (T-12..T-18) are complete. Owner authorized M3; T-19 is complete. T-20 is complete; T-21 is next. Owner approved D-71/D-72.
 
 - Read AGENTS.md and all four specification documents from start to finish.
 - Verified the required Git author and committer identity; enabled the executable `.githooks/commit-msg` hook.
@@ -33,7 +33,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-17 | M2 | Lifecycle: start, stop, drain, signal | done | 9aaed86 |
 | T-18 | M2 | Concurrency and resilience | done | f548dfa |
 | T-19 | M3 | Retries and dead transitions | done | ff9b685 |
-| T-20 | M3 | Admin helpers | doing | — |
+| T-20 | M3 | Admin helpers | done | c194e74 |
 | T-21 | M3 | stats and CLI stats | todo | — |
 | T-22 | M4 | Ordering-mode claim | todo | — |
 | T-23 | M4 | Ordering under concurrency | todo | — |
@@ -105,7 +105,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 
 - T-19: all ten retry/dead-transition checks pass for both drivers; full suite 184 unit / 123 PG17 integration passes. Lint, typecheck, guards and QA ledger pass. [PR CI](https://github.com/firatkill/outbox/actions/runs/39605620125) passes, including package/size checks; final documentation commit CI required before merge. No production changes were needed.
 
-- T-20: admin implementation and acceptance pass on PG14/16/17 with both drivers. D-71/D-72 approvals are applied; targeted fault recovery and approved size gates pass. Full-suite and PR verification are in progress.
+- T-20: admin implementation and acceptance pass on PG14/16/17 with both drivers. D-71/D-72 approvals are applied; targeted fault recovery and approved size gates pass. Full suite passes 186 unit / 133 PG17 integration tests. [PR CI](https://github.com/firatkill/outbox/actions/runs/39629253196) passes; final documentation commit checks required before merge.
 
 ## Open questions for the owner
 
