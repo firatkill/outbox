@@ -5175,6 +5175,12 @@
           "actual_result": "T-23 final standard suite passed: 186 unit and 153 PG17 integration, including INT-22/24/41; lint, types and guards pass. Three consecutive dedicated INT-41 runs passed both drivers. INT-62/chaos/docs remain deferred by D-66/D-61.",
           "note": "T-23 final standard suite passed: 186 unit and 153 PG17 integration, including INT-22/24/41; lint, types and guards pass. Three consecutive dedicated INT-41 runs passed both drivers. INT-62/chaos/docs remain deferred by D-66/D-61.",
           "at": "2026-10-21T16:33:38.807299+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-23 implementation CI 39635909129 passed static and integration; earlier duplicate run was cancelled when the no-changeset label triggered its replacement. Final documentation CI required before merge.",
+          "note": "T-23 implementation CI 39635909129 passed static and integration; earlier duplicate run was cancelled when the no-changeset label triggered its replacement. Final documentation CI required before merge.",
+          "at": "2026-10-21T16:36:05.649977+00:00"
         }
       ],
       "regression_of": null,
@@ -5182,7 +5188,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-23 final standard suite passed: 186 unit and 153 PG17 integration, including INT-22/24/41; lint, types and guards pass. Three consecutive dedicated INT-41 runs passed both drivers. INT-62/chaos/docs remain deferred by D-66/D-61."
+      "actual_result": "T-23 implementation CI 39635909129 passed static and integration; earlier duplicate run was cancelled when the no-changeset label triggered its replacement. Final documentation CI required before merge."
     }
   ]
 }
