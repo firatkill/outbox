@@ -224,6 +224,10 @@ describe.each(ADAPTERS)('%s migrations', (name) => {
       code: 'OUTBOX_NOT_MIGRATED',
     });
     await expect(schemaVersion(driver.adapter, config)).rejects.toThrow('npx outbox migrate --schema');
+    const outbox = createOutboxCore(driver.adapter, { schema: config.schema, tablePrefix: config.tablePrefix });
+    const missing = outbox.createRelay({ listen: false, publisher: () => Promise.resolve() });
+    await expect(missing.start()).rejects.toMatchObject({ code: 'OUTBOX_NOT_MIGRATED' });
+    expect(missing.state).toBe('stopped');
     await migrate(driver.adapter, config);
     await driver.adapter.query(
       render('insert into {{migrations}} (version, name, checksum) values ($1::int4, $2::text, $3::text)', config),
@@ -231,6 +235,13 @@ describe.each(ADAPTERS)('%s migrations', (name) => {
     );
     expect(await schemaVersion(driver.adapter, config)).toEqual({ current: 2, required: 1 });
     expect(await migrate(driver.adapter, config)).toMatchObject({ currentVersion: 2, applied: [] });
+    const newer = outbox.createRelay({ listen: false, publisher: () => Promise.resolve() });
+    try {
+      await newer.start();
+      expect(newer.state).toBe('running');
+    } finally {
+      await newer.stop();
+    }
   });
   it('INT-07 TC-035 returns dry-run SQL without creating any table', async () => {
     const config = await setup();
