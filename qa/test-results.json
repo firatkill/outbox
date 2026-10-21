@@ -3079,6 +3079,130 @@
       "retraction_reason": null,
       "automatable": true,
       "actual_result": "T-15 CI run 39593104193 static and PG17 integration checks pass after database-side timing capture."
+    },
+    {
+      "tc_reference": "TC-085",
+      "ac_reference": "FR-33; GU-04; GU-09",
+      "milestone": "M2 Relay and leases",
+      "title": "Process crash recovery",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Spawn relay child, wait for started row, SIGKILL, advance 6000ms, start second relay.",
+      "expected_result": "Expired claim reclaimed and delivered at attempt 2; last_error names child holder.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-16 targeted PG17 leases suite passes seven checks: SIGKILL child recovery, both-driver late completion fencing and ghost startup recovery, and periodic batch/dead events.",
+          "note": "T-16 targeted PG17 leases suite passes seven checks: SIGKILL child recovery, both-driver late completion fencing and ghost startup recovery, and periodic batch/dead events.",
+          "at": "2026-10-21T11:39:08.250551+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66.",
+          "note": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66.",
+          "at": "2026-10-21T11:40:21.769343+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66."
+    },
+    {
+      "tc_reference": "TC-086",
+      "ac_reference": "FR-32; GU-04",
+      "milestone": "M2 Relay and leases",
+      "title": "Late completion fencing",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Hold A handler ignoring abort; advance 121000ms; B reclaims/completes; resolve A.",
+      "expected_result": "A emits leaseLost, no delivered event; B completion remains unchanged.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-16 targeted PG17 leases suite passes seven checks: SIGKILL child recovery, both-driver late completion fencing and ghost startup recovery, and periodic batch/dead events.",
+          "note": "T-16 targeted PG17 leases suite passes seven checks: SIGKILL child recovery, both-driver late completion fencing and ghost startup recovery, and periodic batch/dead events.",
+          "at": "2026-10-21T11:39:08.251257+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66.",
+          "note": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66.",
+          "at": "2026-10-21T11:40:21.769548+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66."
+    },
+    {
+      "tc_reference": "TC-087",
+      "ac_reference": "FR-33; GU-09",
+      "milestone": "M2 Relay and leases",
+      "title": "Claim-before-delivery crash recovery",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Claim directly as ghost, advance beyond lease, start relay B.",
+      "expected_result": "Reclaimed then delivered once by handler with attempts 2.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-16 targeted PG17 leases suite passes seven checks: SIGKILL child recovery, both-driver late completion fencing and ghost startup recovery, and periodic batch/dead events.",
+          "note": "T-16 targeted PG17 leases suite passes seven checks: SIGKILL child recovery, both-driver late completion fencing and ghost startup recovery, and periodic batch/dead events.",
+          "at": "2026-10-21T11:39:08.251586+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66.",
+          "note": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66.",
+          "at": "2026-10-21T11:40:21.769553+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66."
+    },
+    {
+      "tc_reference": "TC-101",
+      "ac_reference": "FR-33; FR-47; GU-09",
+      "milestone": "M2",
+      "title": "Periodic full-batch reclaim and dead reporting",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Claim five ghost leases, one exhausted, then start a relay with reclaimBatchSize two. Advance database time past expiry and await recovery events.",
+      "expected_result": "Periodic reclamation visits all five once in batches of at most two; four are delivered with attempt two and one is dead with matching deadIds and dead event.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-16 targeted PG17 leases suite passes seven checks: SIGKILL child recovery, both-driver late completion fencing and ghost startup recovery, and periodic batch/dead events.",
+          "note": "T-16 targeted PG17 leases suite passes seven checks: SIGKILL child recovery, both-driver late completion fencing and ghost startup recovery, and periodic batch/dead events.",
+          "at": "2026-10-21T11:39:08.252360+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66.",
+          "note": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66.",
+          "at": "2026-10-21T11:40:21.769557+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-16 final local gates pass: 183 unit / 93 PG17 integration; lint, types, guards, build, publint, attw and all size limits. INT-24 active concurrency gate passes; later gates deferred by D-66."
     }
   ]
 }

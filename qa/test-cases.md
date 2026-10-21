@@ -1017,3 +1017,12 @@ Designed from PRD 6.4/6.5 and TRD 5.4, 9.2–9.6, 12.3 and 15 before M2 code. Bo
 - Preconditions: Isolated schema with retryable, terminal and exhausted messages.
 - Steps: runOnce with a handler that throws ordinary or NonRetryableError as appropriate; inspect returned counts and database statuses.
 - Expected result: Three claims, three failures, two dead, zero deliveries; only the non-exhausted ordinary failure remains pending.
+
+## TC-101: Periodic full-batch reclaim and dead reporting
+
+- Milestone: M2; task: T-16.
+- PRD: FR-33; FR-47; GU-09; TRD/test reference: INT-100; TRD 9.6.1.
+- Priority: High.
+- Automatable: yes.
+- Steps: Claim five ghost leases, one exhausted, then start a relay with reclaimBatchSize two. Advance database time past expiry and await recovery events.
+- Expected result: Periodic reclamation visits all five once in batches of at most two; four are delivered with attempt two and one is dead with matching deadIds and dead event.

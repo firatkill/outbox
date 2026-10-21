@@ -2611,6 +2611,8 @@ INT-21 also runs directly against claim SQL before the relay exists.
 | INT-98 | both | Five ready messages, relay concurrency/batchSize two; gated handlers acquire own row locks NOWAIT, then finish | Two in-flight while blocked, at most two concurrent handlers, no held claim locks, sequence-ordered batch starts |
 | INT-99 | both | runOnce on ordinary retry, NonRetryableError and exhausted messages | Confirmed counts claimed 3 / failed 3 / dead 2 / delivered 0 and matching database statuses |
 
+| INT-100 | both | Start with five unexpired ghost leases, reclaimBatchSize two, one exhausted message; advance test clock past expiry | Periodic reclaim loops through full batches, reports each id once and exhausted deadIds, delivers four and emits one dead event |
+
 ### 15.4 Test harness
 
 - `tests/global-setup.ts`: connects to `TEST_DATABASE_URL` (default `postgres://postgres:postgres@localhost:54317/outbox_test`), creating database `outbox_test` from `postgres` if missing. Prints the server version.
