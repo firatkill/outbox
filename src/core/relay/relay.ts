@@ -3,6 +3,7 @@ import { createEmitter } from '../emitter.js';
 import { schemaVersion } from '../migrations/runner.js';
 import { claim, claimSql } from '../sql/claim.js';
 import { release } from '../sql/lease.js';
+import { createListener } from './listen.js';
 import { createReclaimer } from './reclaim.js';
 import type {
   DriverAdapter,
@@ -43,6 +44,23 @@ export function createRelay<TDb, TTx>(
     wakePending: false,
     stopping: false,
   };
+  const listenAdapter = typeof options.listen === 'object' ? original.withDb(options.listen.db as TDb) : adapter;
+  const listener =
+    options.listen && listenAdapter.listen
+      ? createListener(
+          listenAdapter,
+          config.channel,
+          () => {
+            if (scheduler.stopping) return;
+            scheduler.intervalMs = options.poll.minIntervalMs;
+            scheduler.wakePending = true;
+            wake.emit();
+          },
+          (error) => {
+            emitter.emit('error', { relayId, phase: 'listen', error });
+          },
+        )
+      : undefined;
   let state: Relay['state'] = 'idle';
   let loop: Promise<void> | undefined;
   let starting: Promise<void> | undefined;
@@ -148,6 +166,7 @@ export function createRelay<TDb, TTx>(
     scheduler.stopping = true;
     stopSignal.emit();
     reclaimer.stop();
+    const closingListener = listener?.close();
     options.signal?.removeEventListener('abort', onAbort);
     stopPromise = (async () => {
       let timer: ReturnType<typeof setTimeout> | undefined;
@@ -157,6 +176,7 @@ export function createRelay<TDb, TTx>(
         }, overrides.drainTimeoutMs ?? options.drainTimeoutMs);
       });
       const drain = (async () => {
+        await closingListener;
         await starting?.catch(() => undefined);
         await loop;
         await Promise.all(active.keys());
@@ -222,6 +242,8 @@ export function createRelay<TDb, TTx>(
         }
         if (stopping()) return;
         await reclaimer.safely();
+        if (stopping()) return;
+        await listener?.start();
         if (stopping()) return;
         reclaimer.start();
         state = 'running';

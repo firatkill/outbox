@@ -288,8 +288,8 @@ Owner-approved staged verification (PRD D-66): concurrency gates become mandator
 ### T-24 NOTIFY and LISTEN in adapters
 
 - Goal: enqueue notifies; both adapters can listen and reconnect.
-- Files: `src/adapters/postgres-js.ts`, `src/adapters/pg.ts`, `tests/integration/enqueue.test.ts` (INT-19 enabled), `tests/integration/wakeup.test.ts` (INT-52, INT-54).
-- Steps: adapter `listen` per TRD §6.2, §6.3, §10.3; verify A-03 and A-04 listen behaviour; `listen: { db }` override.
+- Files: `src/adapters/postgres-js.ts`, `src/adapters/pg.ts`, `src/core/relay/listen.ts`, `src/core/relay/relay.ts`, `src/core/relay/loop.ts`, `tests/integration/enqueue.test.ts` (INT-19 enabled), `tests/integration/wakeup.test.ts` (INT-52, INT-54).
+- Steps: adapter `listen` per TRD §6.2, §6.3, §10.3; verify A-03 and A-04 listen behaviour; `listen: { db }` override. Include relay start/stop, opening retries and notification/reconnect wake wiring (owner D-73).
 - Acceptance: INT-19, INT-52 and INT-54 pass for both adapters.
 - Depends on: T-17. Covers: FR-26, FR-61, FR-63.
 
@@ -297,7 +297,7 @@ Owner-approved staged verification (PRD D-66): concurrency gates become mandator
 
 - Goal: relays wake on notifications, back off when idle, and still deliver without notifications.
 - Files: `src/core/relay/loop.ts`, `src/core/relay/relay.ts`, `tests/integration/wakeup.test.ts` (INT-50, INT-51, INT-53).
-- Steps: wire `onNotify`/`onReconnect` into `wakePending`; reset interval on wake; the LISTEN step of `start()`.
+- Steps: verify the LISTEN and wake wiring completed in T-24 under owner D-73; measure latency and idle backoff, verify polling fallback, and fix any failures.
 - Acceptance: INT-50 (p50 ≤ 50 ms, max ≤ 500 ms), INT-51 and INT-53 pass for both adapters, run three times in a row.
 - Depends on: T-24. Covers: FR-60..FR-62, GU-08, NFR-11, NFR-12.
 

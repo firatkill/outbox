@@ -1188,20 +1188,21 @@ Designed from PRD 6.4/6.5 and TRD 5.4, 9.2–9.6, 12.3 and 15 before M2 code. Bo
 
 Designed from the normative ordering and LISTEN requirements before M4 implementation.
 
-| TC ID  | Task | PRD reference              | TRD test | Title                                  | Priority | Automatable |
-| ------ | ---- | -------------------------- | -------- | -------------------------------------- | -------- | ----------- |
-| TC-116 | T-22 | FR-55..FR-57; GU-06        | INT-40   | Serial delivery per key                | High     | yes         |
-| TC-117 | T-22 | FR-55..FR-57; GU-06        | INT-42   | Backoff blocks only its key            | High     | yes         |
-| TC-118 | T-22 | FR-55..FR-57; GU-06        | INT-43   | Dead head requires skip or retry       | High     | yes         |
-| TC-119 | T-22 | FR-55..FR-57; GU-06        | INT-44   | Blocked keys do not block other work   | High     | yes         |
-| TC-120 | T-22 | FR-55..FR-57; GU-06        | INT-45   | Ordering spans topic filters           | High     | yes         |
-| TC-121 | T-23 | FR-55..FR-57; GU-06        | INT-41   | Ordering across four concurrent relays | High     | yes         |
-| TC-122 | T-24 | FR-26; FR-60..FR-63; GU-08 | INT-19   | Transactional enqueue notification     | High     | yes         |
-| TC-123 | T-24 | FR-26; FR-60..FR-63; GU-08 | INT-52   | Listener reconnect recovery            | High     | yes         |
-| TC-124 | T-24 | FR-26; FR-60..FR-63; GU-08 | INT-54   | Separate listen pool                   | High     | yes         |
-| TC-125 | T-25 | FR-26; FR-60..FR-63; GU-08 | INT-50   | Notification wake latency              | High     | yes         |
-| TC-126 | T-25 | FR-26; FR-60..FR-63; GU-08 | INT-51   | Polling without notifications          | High     | yes         |
-| TC-127 | T-25 | FR-26; FR-60..FR-63; GU-08 | INT-53   | Idle polling backoff                   | High     | yes         |
+| TC ID  | Task | PRD reference              | TRD test       | Title                                      | Priority | Automatable |
+| ------ | ---- | -------------------------- | -------------- | ------------------------------------------ | -------- | ----------- |
+| TC-116 | T-22 | FR-55..FR-57; GU-06        | INT-40         | Serial delivery per key                    | High     | yes         |
+| TC-117 | T-22 | FR-55..FR-57; GU-06        | INT-42         | Backoff blocks only its key                | High     | yes         |
+| TC-118 | T-22 | FR-55..FR-57; GU-06        | INT-43         | Dead head requires skip or retry           | High     | yes         |
+| TC-119 | T-22 | FR-55..FR-57; GU-06        | INT-44         | Blocked keys do not block other work       | High     | yes         |
+| TC-120 | T-22 | FR-55..FR-57; GU-06        | INT-45         | Ordering spans topic filters               | High     | yes         |
+| TC-121 | T-23 | FR-55..FR-57; GU-06        | INT-41         | Ordering across four concurrent relays     | High     | yes         |
+| TC-122 | T-24 | FR-26; FR-60..FR-63; GU-08 | INT-19         | Transactional enqueue notification         | High     | yes         |
+| TC-123 | T-24 | FR-26; FR-60..FR-63; GU-08 | INT-52         | Listener reconnect recovery                | High     | yes         |
+| TC-124 | T-24 | FR-26; FR-60..FR-63; GU-08 | INT-54         | Separate listen pool                       | High     | yes         |
+| TC-125 | T-25 | FR-26; FR-60..FR-63; GU-08 | INT-50         | Notification wake latency                  | High     | yes         |
+| TC-126 | T-25 | FR-26; FR-60..FR-63; GU-08 | INT-51         | Polling without notifications              | High     | yes         |
+| TC-127 | T-25 | FR-26; FR-60..FR-63; GU-08 | INT-53         | Idle polling backoff                       | High     | yes         |
+| TC-128 | T-24 | FR-61..FR-63               | UT-21; INT-104 | Listener opening failure and shutdown race | High     | yes         |
 
 ## TC-116: Serial delivery per key
 
@@ -1322,3 +1323,13 @@ Designed from the normative ordering and LISTEN requirements before M4 implement
 - Preconditions: Isolated migrated schema and both PostgreSQL adapters; task prerequisites complete.
 - Steps: Relay(`listen: false`, `poll: { minIntervalMs: 100, maxIntervalMs: 1000 }`), spy executor counting claim statements; idle 3 s (comment: measuring idle backoff needs real time)
 - Expected result: Claims between 4 and 9 (expected 100+200+400+800+1000... ≈ 6)
+
+## TC-128: Listener opening failure and shutdown race
+
+- Milestone: M4; task: T-24.
+- PRD: FR-61..FR-63; TRD/test reference: UT-21; INT-104; TRD 9.6.3.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated schema and both drivers.
+- Steps: Fail the first listener opening, enqueue without notifications, and observe retry; separately stop during a pending opening and release it.
+- Expected result: Polling remains running; error phase listen; retry wakes delivery; shutdown closes the late-opened handle exactly once.
