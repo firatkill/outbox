@@ -1,7 +1,8 @@
+import { S1, S2 } from './sql/stats.js';
 import type { ParsedAdminOptions } from './admin-options.js';
 import { isUuid, parseAdminOptions } from './admin-options.js';
 import { OutboxError } from './errors.js';
-import { mapMessageRow } from './row.js';
+import { dateFromEpoch, mapMessageRow } from './row.js';
 import { LIST_DEAD, PURGE_DEAD, PURGE_INBOX, PURGE_TERMINAL, RETRY_DEAD, SKIP } from './sql/admin.js';
 import { render } from './sql/render.js';
 import type { Outbox, ResolvedOutboxConfig, SqlExecutor, SqlParam } from './types.js';
@@ -17,6 +18,18 @@ export async function adminQuery(
   try {
     return await executor.query(render(sql, config), params);
   } catch (cause) {
+    if (
+      statement === 'stats' &&
+      typeof cause === 'object' &&
+      cause !== null &&
+      'code' in cause &&
+      cause.code === '42P01'
+    )
+      throw new OutboxError(
+        'OUTBOX_NOT_MIGRATED',
+        'Run: npx outbox migrate --schema ' + config.schema + ' --prefix ' + config.tablePrefix,
+        { cause },
+      );
     throw new OutboxError('OUTBOX_DRIVER', 'Admin statement failed: ' + statement, { cause, details: { statement } });
   }
 }
@@ -80,4 +93,35 @@ export function createAdmin(
       return (await query('listDead', LIST_DEAD, [options.topic ?? null, options.limit ?? 100])).map(mapMessageRow);
     },
   };
+}
+
+/** Read database-time counts using the partial-index queries. */
+export async function readStats(
+  executor: SqlExecutor,
+  config: ResolvedOutboxConfig,
+  input?: { includeTerminal?: boolean },
+): Promise<import('./types.js').OutboxStats> {
+  const options = parseAdminOptions('stats', input);
+  const [row] = await adminQuery(executor, config, 'stats', S1, []);
+  const number = (source: Record<string, unknown> | undefined, key: string): number => {
+    const value = source?.[key];
+    if (typeof value !== 'number' || !Number.isFinite(value))
+      throw new OutboxError('OUTBOX_INTERNAL', 'Invalid stats column: ' + key + '. Please report.');
+    return value;
+  };
+  const result: import('./types.js').OutboxStats = {
+    ready: number(row, 'ready'),
+    scheduled: number(row, 'scheduled'),
+    inFlight: number(row, 'in_flight'),
+    expiredLeases: number(row, 'expired_leases'),
+    dead: number(row, 'dead'),
+    oldestReadyAgeMs: number(row, 'oldest_ready_age_ms'),
+    measuredAt: dateFromEpoch(row?.['measured_at_ms'], 'measured_at_ms'),
+  };
+  if (options.includeTerminal) {
+    const [terminal] = await adminQuery(executor, config, 'stats', S2, []);
+    result.done = number(terminal, 'done');
+    result.skipped = number(terminal, 'skipped');
+  }
+  return result;
 }

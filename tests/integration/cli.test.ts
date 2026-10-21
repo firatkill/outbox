@@ -89,3 +89,29 @@ it('INT-91 TC-037 TC-038 reports usage errors and redacts connection errors', as
   expect(failure.code).toBe(1);
   expect(failure.stderr).not.toContain('fixture-secret');
 });
+
+it.each(['postgres-js', 'pg'])('INT-91 TC-113 %s prints JSON and text stats after migrate', async (driver) => {
+  const owned = await schema();
+  const flags = ['--url', TEST_DATABASE_URL, '--schema', owned.schema, '--driver', driver];
+  const migration = await cli(['migrate', ...flags]);
+  expect(migration.code, migration.stderr).toBe(0);
+  const result = await cli(['stats', ...flags, '--json']);
+  expect(result.code, result.stderr).toBe(0);
+  const stats = JSON.parse(result.stdout) as Record<string, unknown>;
+  expect(stats).toEqual({
+    ready: 0,
+    scheduled: 0,
+    inFlight: 0,
+    expiredLeases: 0,
+    dead: 0,
+    done: 0,
+    skipped: 0,
+    oldestReadyAgeMs: 0,
+    measuredAt: expect.any(String) as unknown,
+  });
+  expect(Number.isFinite(Date.parse(String(stats['measuredAt'])))).toBe(true);
+  const text = await cli(['stats', ...flags]);
+  expect(text.code, text.stderr).toBe(0);
+  for (const key of Object.keys(stats)) expect(text.stdout).toContain(key + ': ');
+  expect(text.stdout.trim().split('\n')).toHaveLength(9);
+});

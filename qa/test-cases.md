@@ -1051,6 +1051,8 @@ Designed from PRD 6.4/6.5 and TRD 5.4, 9.2–9.6, 12.3 and 15 before M2 code. Bo
 | TC-111 | FR-52               | INT-39; INT-82 | High     | yes         | Newest first; full neutral message shape with string sequence and decoded JSON/dates.                       |
 | TC-112 | FR-81               | INT-37; INT-82 | High     | yes         | Exact counts, age within 50 ms, optional terminal counts; claim index used and S1 no message Seq Scan.      |
 | TC-113 | FR-87               | INT-91         | High     | yes         | Valid JSON with terminal statistics and readable text output.                                               |
+| TC-114 | FR-49..FR-52; D-71  | UT-20; INT-102 | High     | yes         | Invalid admin input rejects before SQL; driver errors retain context.                                       |
+| TC-115 | FR-81; D-71         | INT-103        | High     | yes         | Missing schema guidance and stats input/error handling.                                                     |
 
 ## TC-103: Exponential retry and retained error
 
@@ -1171,3 +1173,13 @@ Designed from PRD 6.4/6.5 and TRD 5.4, 9.2–9.6, 12.3 and 15 before M2 code. Bo
 - Preconditions: Pure parser and migrated isolated schema, both drivers.
 - Steps: Exercise defaults, every numeric boundary, invalid IDs, strings, booleans and unknown options; spy on SQL and inject a driver failure.
 - Expected result: Approved codes and all option issues are returned before SQL; driver failures retain cause and statement.
+
+## TC-115: Stats errors and option validation
+
+- Milestone: M3; task: T-21.
+- PRD: FR-81; D-71; TRD/test reference: INT-103; TRD 5.9/9.9.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated unmigrated schema, both drivers.
+- Steps: Request stats before migration, pass an invalid option, then inject a non-schema database error.
+- Expected result: OUTBOX_NOT_MIGRATED includes migration guidance; validation rejects before SQL; other driver errors preserve their cause.
