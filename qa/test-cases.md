@@ -1035,3 +1035,129 @@ Designed from PRD 6.4/6.5 and TRD 5.4, 9.2–9.6, 12.3 and 15 before M2 code. Bo
 - Automatable: yes.
 - Steps: Fail the completion statement, stop without drain time, then advance database time beyond the retained lease and recover with a healthy relay.
 - Expected result: Shutdown stops retrying after at most three retries one second apart; the unconfirmed message remains recoverable and completes at attempt two.
+
+## M3 case summary
+
+| TC     | PRD                 | TRD            | Priority | Automatable | Expected                                                                                                    |
+| ------ | ------------------- | -------------- | -------- | ----------- | ----------------------------------------------------------------------------------------------------------- |
+| TC-103 | FR-45; FR-48        | INT-30         | High     | yes         | Delays are 1000 and 2000 ms within 150 ms; failed events agree; success at attempt three retains the error. |
+| TC-104 | FR-46; FR-47        | INT-31         | High     | yes         | Three failures, one dead event, dead timestamp and Error: boom; no further claim.                           |
+| TC-105 | FR-47               | INT-32         | High     | yes         | Dead after one attempt with OUTBOX_NON_RETRYABLE stored.                                                    |
+| TC-106 | FR-45; FR-47        | INT-33         | High     | yes         | First delay 5000; second clamped to maxDelayMs.                                                             |
+| TC-107 | FR-46; FR-47; GU-03 | INT-34         | High     | yes         | Dead at attempt one; reclaimed.deadIds and dead event identify message.                                     |
+| TC-108 | FR-49               | INT-35         | High     | yes         | Correct IDs become pending with zero attempts, cleared dead timestamp and retained error.                   |
+| TC-109 | FR-51               | INT-36         | High     | yes         | Eleven done delete statements; recent and pending survive; deleted dedupe key reusable.                     |
+| TC-110 | FR-50               | INT-38         | High     | yes         | Pending/dead skipped with previous status; other statuses reject; absent/malformed not found.               |
+| TC-111 | FR-52               | INT-39; INT-82 | High     | yes         | Newest first; full neutral message shape with string sequence and decoded JSON/dates.                       |
+| TC-112 | FR-81               | INT-37; INT-82 | High     | yes         | Exact counts, age within 50 ms, optional terminal counts; claim index used and S1 no message Seq Scan.      |
+| TC-113 | FR-87               | INT-91         | High     | yes         | Valid JSON with terminal statistics and readable text output.                                               |
+
+## TC-103: Exponential retry and retained error
+
+- Milestone: M3; task: T-19.
+- PRD: FR-45; FR-48; TRD/test reference: INT-30.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated PostgreSQL schema, both drivers; test clock installed.
+- Steps: Fail twice then succeed, advancing the test clock after each failure.
+- Expected result: Delays are 1000 and 2000 ms within 150 ms; failed events agree; success at attempt three retains the error.
+
+## TC-104: Exhausted retry budget
+
+- Milestone: M3; task: T-19.
+- PRD: FR-46; FR-47; TRD/test reference: INT-31.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated PostgreSQL schema, both drivers; test clock installed.
+- Steps: Always throw boom with maxAttempts three; advance clock between runOnce calls.
+- Expected result: Three failures, one dead event, dead timestamp and Error: boom; no further claim.
+
+## TC-105: Non-retryable delivery
+
+- Milestone: M3; task: T-19.
+- PRD: FR-47; TRD/test reference: INT-32.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated PostgreSQL schema, both drivers; test clock installed.
+- Steps: Throw NonRetryableError on first delivery.
+- Expected result: Dead after one attempt with OUTBOX_NON_RETRYABLE stored.
+
+## TC-106: Explicit retry delay and clamp
+
+- Milestone: M3; task: T-19.
+- PRD: FR-45; FR-47; TRD/test reference: INT-33.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated PostgreSQL schema, both drivers; test clock installed.
+- Steps: Throw RetryableError with 5000 then 10000000 milliseconds.
+- Expected result: First delay 5000; second clamped to maxDelayMs.
+
+## TC-107: Exhausted crashed attempt
+
+- Milestone: M3; task: T-19.
+- PRD: FR-46; FR-47; GU-03; TRD/test reference: INT-34.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated PostgreSQL schema, both drivers; test clock installed.
+- Steps: Ghost-claim maxAttempts one, advance beyond lease and reclaim.
+- Expected result: Dead at attempt one; reclaimed.deadIds and dead event identify message.
+
+## TC-108: Retry dead filters
+
+- Milestone: M3; task: T-20.
+- PRD: FR-49; TRD/test reference: INT-35.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated PostgreSQL schema, both drivers; test clock installed.
+- Steps: Retry dead messages by topic, IDs, key and limit, then deliver.
+- Expected result: Correct IDs become pending with zero attempts, cleared dead timestamp and retained error.
+
+## TC-109: Batched retention and dedupe window
+
+- Milestone: M3; task: T-20.
+- PRD: FR-51; TRD/test reference: INT-36.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated PostgreSQL schema, both drivers; test clock installed.
+- Steps: Purge 1050 old done rows in batches of 100, then include old dead rows.
+- Expected result: Eleven done delete statements; recent and pending survive; deleted dedupe key reusable.
+
+## TC-110: Skip status validation
+
+- Milestone: M3; task: T-20.
+- PRD: FR-50; TRD/test reference: INT-38.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated PostgreSQL schema, both drivers; test clock installed.
+- Steps: Skip pending, dead, in-flight, done, absent and malformed IDs.
+- Expected result: Pending/dead skipped with previous status; other statuses reject; absent/malformed not found.
+
+## TC-111: Dead listing and driver mapping
+
+- Milestone: M3; task: T-20.
+- PRD: FR-52; TRD/test reference: INT-39; INT-82.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated PostgreSQL schema, both drivers; test clock installed.
+- Steps: List dead messages with topic and limit including a sequence above 2^53.
+- Expected result: Newest first; full neutral message shape with string sequence and decoded JSON/dates.
+
+## TC-112: Indexed database-time statistics
+
+- Milestone: M3; task: T-21.
+- PRD: FR-81; TRD/test reference: INT-37; INT-82.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated PostgreSQL schema, both drivers; test clock installed.
+- Steps: Measure known status mix; insert 100000 done rows, analyze and EXPLAIN claim and S1.
+- Expected result: Exact counts, age within 50 ms, optional terminal counts; claim index used and S1 no message Seq Scan.
+
+## TC-113: CLI stats output
+
+- Milestone: M3; task: T-21.
+- PRD: FR-87; TRD/test reference: INT-91.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated PostgreSQL schema, both drivers; test clock installed.
+- Steps: Migrate then invoke CLI stats with JSON and text output.
+- Expected result: Valid JSON with terminal statistics and readable text output.

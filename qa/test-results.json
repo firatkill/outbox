@@ -3928,6 +3928,191 @@
       "retraction_reason": null,
       "automatable": true,
       "actual_result": "T-18 PR #18 implementation CI 39596449111 static and PG17 integration checks pass. M2 report and quality review completed; final report-commit checks required before merge."
+    },
+    {
+      "tc_reference": "TC-103",
+      "ac_reference": "FR-45; FR-48",
+      "milestone": "M3",
+      "title": "Exponential retry and retained error",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Fail twice then succeed, advancing the test clock after each failure.",
+      "expected_result": "Delays are 1000 and 2000 ms within 150 ms; failed events agree; success at attempt three retains the error.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-19 targeted INT-30..34: ten integration checks passed on PostgreSQL 17 with both drivers.",
+          "note": "T-19 targeted INT-30..34: ten integration checks passed on PostgreSQL 17 with both drivers.",
+          "at": "2026-10-21T13:08:59.700278+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed.",
+          "note": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed.",
+          "at": "2026-10-21T13:09:41.929826+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
+          "note": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
+          "at": "2026-10-21T13:12:29.503564+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates."
+    },
+    {
+      "tc_reference": "TC-104",
+      "ac_reference": "FR-46; FR-47",
+      "milestone": "M3",
+      "title": "Exhausted retry budget",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Always throw boom with maxAttempts three; advance clock between runOnce calls.",
+      "expected_result": "Three failures, one dead event, dead timestamp and Error: boom; no further claim.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-19 targeted INT-30..34: ten integration checks passed on PostgreSQL 17 with both drivers.",
+          "note": "T-19 targeted INT-30..34: ten integration checks passed on PostgreSQL 17 with both drivers.",
+          "at": "2026-10-21T13:08:59.700707+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed.",
+          "note": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed.",
+          "at": "2026-10-21T13:09:41.929956+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
+          "note": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
+          "at": "2026-10-21T13:12:29.503692+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates."
+    },
+    {
+      "tc_reference": "TC-105",
+      "ac_reference": "FR-47",
+      "milestone": "M3",
+      "title": "Non-retryable delivery",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Throw NonRetryableError on first delivery.",
+      "expected_result": "Dead after one attempt with OUTBOX_NON_RETRYABLE stored.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-19 targeted INT-30..34: ten integration checks passed on PostgreSQL 17 with both drivers.",
+          "note": "T-19 targeted INT-30..34: ten integration checks passed on PostgreSQL 17 with both drivers.",
+          "at": "2026-10-21T13:08:59.701017+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed.",
+          "note": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed.",
+          "at": "2026-10-21T13:09:41.929961+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
+          "note": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
+          "at": "2026-10-21T13:12:29.503696+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates."
+    },
+    {
+      "tc_reference": "TC-106",
+      "ac_reference": "FR-45; FR-47",
+      "milestone": "M3",
+      "title": "Explicit retry delay and clamp",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Throw RetryableError with 5000 then 10000000 milliseconds.",
+      "expected_result": "First delay 5000; second clamped to maxDelayMs.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-19 targeted INT-30..34: ten integration checks passed on PostgreSQL 17 with both drivers.",
+          "note": "T-19 targeted INT-30..34: ten integration checks passed on PostgreSQL 17 with both drivers.",
+          "at": "2026-10-21T13:08:59.701320+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed.",
+          "note": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed.",
+          "at": "2026-10-21T13:09:41.929965+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
+          "note": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
+          "at": "2026-10-21T13:12:29.503700+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates."
+    },
+    {
+      "tc_reference": "TC-107",
+      "ac_reference": "FR-46; FR-47; GU-03",
+      "milestone": "M3",
+      "title": "Exhausted crashed attempt",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Ghost-claim maxAttempts one, advance beyond lease and reclaim.",
+      "expected_result": "Dead at attempt one; reclaimed.deadIds and dead event identify message.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-19 targeted INT-30..34: ten integration checks passed on PostgreSQL 17 with both drivers.",
+          "note": "T-19 targeted INT-30..34: ten integration checks passed on PostgreSQL 17 with both drivers.",
+          "at": "2026-10-21T13:08:59.701626+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed.",
+          "note": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed.",
+          "at": "2026-10-21T13:09:41.929968+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
+          "note": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
+          "at": "2026-10-21T13:12:29.503703+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates."
     }
   ]
 }

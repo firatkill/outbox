@@ -1,6 +1,6 @@
 # Progress
 
-Local repository setup completed on 2026-10-21. M0 (T-01..T-03), M1 (T-04..T-11) and M2 (T-12..T-18) are complete. Stopped at the M2 milestone boundary for owner review; T-19 has not started.
+Local repository setup completed on 2026-10-21. M0 (T-01..T-03), M1 (T-04..T-11) and M2 (T-12..T-18) are complete. Owner authorized M3; T-19 is complete. T-20 admin validation clarification awaits approval.
 
 - Read AGENTS.md and all four specification documents from start to finish.
 - Verified the required Git author and committer identity; enabled the executable `.githooks/commit-msg` hook.
@@ -32,7 +32,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-16 | M2 | Reclaim, fencing and crash recovery | done | 72222d0 |
 | T-17 | M2 | Lifecycle: start, stop, drain, signal | done | 9aaed86 |
 | T-18 | M2 | Concurrency and resilience | done | f548dfa |
-| T-19 | M3 | Retries and dead transitions | todo | — |
+| T-19 | M3 | Retries and dead transitions | done | ff9b685 |
 | T-20 | M3 | Admin helpers | todo | — |
 | T-21 | M3 | stats and CLI stats | todo | — |
 | T-22 | M4 | Ordering-mode claim | todo | — |
@@ -103,9 +103,13 @@ A completion commit is recorded only after the task meets its acceptance criteri
 
 - M2 evidence and limits: [milestone report](../qa/m2-report.md) and [QA review](../qa/m2-review.md). All 35 M2 cases are resolved. No chaos, ordering/inbox concurrency, full Node matrix, benchmark, docs or example readiness is claimed beyond the scheduled scope.
 
+- T-19: all ten retry/dead-transition checks pass for both drivers; full suite 184 unit / 123 PG17 integration passes. Lint, typecheck, guards and QA ledger pass. [PR CI](https://github.com/firatkill/outbox/actions/runs/39605620125) passes, including package/size checks; final documentation commit CI required before merge. No production changes were needed.
+
 ## Open questions for the owner
 
-None. Owner approved the [12kB core limit](CORE-SIZE-PROPOSAL.md) (D-69).
+Pending: [M3 admin validation clarification](M3-APPROVAL-PROPOSAL.md), requested under owner checkpoint 2.
+
+Owner approved the [12kB core limit](CORE-SIZE-PROPOSAL.md) (D-69).
 
 Owner approved the [M2 proposal](M2-APPROVAL-PROPOSAL.md): staged future verification gates (D-66) and integer relay counts/milliseconds (D-67). The owner approved the pg optional payload type correction (D-65); T-09 checks pass.
 
