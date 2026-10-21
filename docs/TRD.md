@@ -2445,6 +2445,7 @@ Test-writing rules (also in AGENTS.md):
 | UT-14 | `emitter.test.ts` | Listener isolation (throwing listener does not stop others, produces `error` phase `listener`); `on` returns an unsubscribe function; console fallback when no `error` listener, rate-limited to one line per phase per 10 s (fake timers) |
 | UT-15 | `smoke.test.ts` | T-01: exported build-time `VERSION` equals `package.json` version |
 | UT-16 | `guards.test.ts` | T-03: one passing and one failing fixture for every G-1..G-8 rule; changeset policy cases from §19.1 |
+| UT-17 | `wait.test.ts` | T-02: condition and event waits default to 3 seconds; filter events and unsubscribe after resolution/timeout; deferred resolves/rejects |
 
 ### 15.3 Integration tests
 
@@ -3146,13 +3147,6 @@ services:
     command: ['postgres', '-c', 'max_connections=300']
     ports: ['54316:5432']
     healthcheck: { test: ['CMD-SHELL', 'pg_isready -U postgres'], interval: 2s, timeout: 5s, retries: 30 }
-  postgres18:
-    profiles: [matrix]
-    image: postgres:18
-    environment: { POSTGRES_PASSWORD: postgres, POSTGRES_DB: outbox_test }
-    command: ['postgres', '-c', 'max_connections=300']
-    ports: ['54318:5432']
-    healthcheck: { test: ['CMD-SHELL', 'pg_isready -U postgres'], interval: 2s, timeout: 5s, retries: 30 }
   postgres14:
     profiles: [matrix]
     image: postgres:14
@@ -3166,7 +3160,7 @@ services:
     healthcheck: { test: ['CMD', 'redis-cli', 'ping'], interval: 2s, timeout: 5s, retries: 30 }
 ```
 
-No service mounts a volume, so the `postgres:18` image's changed data directory layout (`/var/lib/postgresql/18/docker`) does not matter. Run the suite against another version with `TEST_DATABASE_URL=postgres://postgres:postgres@localhost:54314/outbox_test pnpm test:integration` (54316 for 16, 54318 for 18). Defaults: `TEST_DATABASE_URL=postgres://postgres:postgres@localhost:54317/outbox_test`, `REDIS_URL=redis://localhost:63790`; `pnpm chaos` and `pnpm bench` use `DATABASE_URL`, defaulting to the same Postgres.
+No service mounts a volume. The local matrix follows OWNER-DECISIONS.md (PRD D-54): PostgreSQL 14, 16 and 17. Run the suite against another version with `TEST_DATABASE_URL=postgres://postgres:postgres@localhost:54314/outbox_test pnpm test:integration` (54316 for 16). Defaults: `TEST_DATABASE_URL=postgres://postgres:postgres@localhost:54317/outbox_test`, `REDIS_URL=redis://localhost:63790`; `pnpm chaos` and `pnpm bench` use `DATABASE_URL`, defaulting to the same Postgres.
 
 ---
 
