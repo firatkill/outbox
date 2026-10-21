@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { parseArgs } from 'node:util';
+import { readStats } from './core/admin.js';
 import { createPgAdapter } from './adapters/pg.js';
 import { createPostgresJsAdapter } from './adapters/postgres-js.js';
 import { CLI_HELP, CLI_OPTIONS, redactPassword, resolveCliArgs } from './core/cli-args.js';
@@ -12,6 +13,14 @@ import type { DriverAdapter } from './core/types.js';
 
 async function execute<TDb, TTx>(args: CliArgs, adapter: DriverAdapter<TDb, TTx>): Promise<number> {
   const config = parseOutboxConfig({ db: adapter.db, schema: args.schema, tablePrefix: args.tablePrefix });
+  if (args.command === 'stats') {
+    const result = await readStats(adapter, config, { includeTerminal: true });
+    if (args.json) console.log(JSON.stringify(result));
+    else
+      for (const [key, value] of Object.entries(result))
+        console.log(key + ': ' + (value instanceof Date ? value.toISOString() : String(value)));
+    return 0;
+  }
   if (args.status) {
     const present = await adapter.query('select to_regclass($1::text) is not null as present', [
       config.schema + '.' + config.tablePrefix + 'schema_migrations',
@@ -82,10 +91,6 @@ async function main(): Promise<number> {
   if (args.command === 'version') {
     console.log(__OUTBOX_VERSION__);
     return 0;
-  }
-  if (args.command === 'stats') {
-    console.error('stats is not implemented');
-    return 2;
   }
   try {
     if (args.print) {
