@@ -294,6 +294,10 @@ Designed before M1 implementation from PRD FR-02..FR-27, FR-86, NFR-04/13 and TR
 
 | TC-063 | T-04 | FR-10; NFR-04 | INT-09 | Rendered SQL works with both drivers | High | yes | Qualified names resolve and parameter text stays data. |
 
+| TC-064 | T-05 | FR-13 | UT-18 | Migration template checksum normalization | High | yes | Known SHA-256 and normalized line endings match. |
+
+| TC-065 | T-05 | FR-13 | INT-01b | Failed migration rolls back its DDL | High | yes | No partial migration or version row; cause retained. |
+
 ## TC-025: Configuration defaults and names
 
 - Milestone: M1 Schema, enqueue, migrations; task: T-04.
@@ -644,3 +648,21 @@ Designed before M1 implementation from PRD FR-02..FR-27, FR-86, NFR-04/13 and TR
 - Preconditions: Isolated PostgreSQL schema; both drivers installed.
 - Steps: Render custom qualified names; create a table and round-trip SQL-looking text through a parameter with each driver.
 - Expected result: Names address only the test-owned schema; parameter text is preserved as data.
+
+## TC-064: Migration template checksum normalization
+
+- Milestone: M1 Schema, enqueue, migrations; task: T-05.
+- PRD: FR-13; TRD/test reference: UT-18; TRD 8.1.
+- Priority: High; automatable: yes.
+- Preconditions: Migration checksum helper exists.
+- Steps: Hash the known abc SHA-256 vector and equivalent CRLF/LF templates.
+- Expected result: The hash matches the known vector and line-ending variants produce identical hashes.
+
+## TC-065: Failed migration rolls back its DDL
+
+- Milestone: M1 Schema, enqueue, migrations; task: T-05.
+- PRD: FR-13; TRD/test reference: INT-01b; TRD 8.2/5.9.
+- Priority: High; automatable: yes.
+- Preconditions: Isolated schema with a deliberately conflicting messages table.
+- Steps: Run migration and inspect the error, version rows, function and pre-existing table.
+- Expected result: OUTBOX_MIGRATION_FAILED retains version and PostgreSQL cause; migration DDL rolls back and the existing table remains.
