@@ -2262,6 +2262,12 @@
           "actual_result": "T-12 final full suite passes: 160 unit, 58 integration on PostgreSQL 17 with both drivers; four existing T-14 relay todos remain. No concurrency behavior changed. Static guards pass.",
           "note": "T-12 final full suite passes: 160 unit, 58 integration on PostgreSQL 17 with both drivers; four existing T-14 relay todos remain. No concurrency behavior changed. Static guards pass.",
           "at": "2026-10-21T10:29:41.009103+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge.",
+          "note": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge.",
+          "at": "2026-10-21T10:31:55.878188+00:00"
         }
       ],
       "regression_of": null,
@@ -2269,7 +2275,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-12 final full suite passes: 160 unit, 58 integration on PostgreSQL 17 with both drivers; four existing T-14 relay todos remain. No concurrency behavior changed. Static guards pass."
+      "actual_result": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge."
     },
     {
       "tc_reference": "TC-069",
@@ -2305,6 +2311,12 @@
           "actual_result": "T-12 final full suite passes: 160 unit, 58 integration on PostgreSQL 17 with both drivers; four existing T-14 relay todos remain. No concurrency behavior changed. Static guards pass.",
           "note": "T-12 final full suite passes: 160 unit, 58 integration on PostgreSQL 17 with both drivers; four existing T-14 relay todos remain. No concurrency behavior changed. Static guards pass.",
           "at": "2026-10-21T10:29:41.009238+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge.",
+          "note": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge.",
+          "at": "2026-10-21T10:31:55.879034+00:00"
         }
       ],
       "regression_of": null,
@@ -2312,7 +2324,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-12 final full suite passes: 160 unit, 58 integration on PostgreSQL 17 with both drivers; four existing T-14 relay todos remain. No concurrency behavior changed. Static guards pass."
+      "actual_result": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge."
     },
     {
       "tc_reference": "TC-070",
@@ -2342,6 +2354,12 @@
           "actual_result": "T-12 final full suite passes: 160 unit, 58 integration on PostgreSQL 17 with both drivers; four existing T-14 relay todos remain. No concurrency behavior changed. Static guards pass.",
           "note": "T-12 final full suite passes: 160 unit, 58 integration on PostgreSQL 17 with both drivers; four existing T-14 relay todos remain. No concurrency behavior changed. Static guards pass.",
           "at": "2026-10-21T10:29:41.009242+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge.",
+          "note": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge.",
+          "at": "2026-10-21T10:31:55.879043+00:00"
         }
       ],
       "regression_of": null,
@@ -2349,7 +2367,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-12 final full suite passes: 160 unit, 58 integration on PostgreSQL 17 with both drivers; four existing T-14 relay todos remain. No concurrency behavior changed. Static guards pass."
+      "actual_result": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge."
     },
     {
       "tc_reference": "TC-071",
@@ -2379,6 +2397,12 @@
           "actual_result": "T-12 final full suite passes: 160 unit, 58 integration on PostgreSQL 17 with both drivers; four existing T-14 relay todos remain. No concurrency behavior changed. Static guards pass.",
           "note": "T-12 final full suite passes: 160 unit, 58 integration on PostgreSQL 17 with both drivers; four existing T-14 relay todos remain. No concurrency behavior changed. Static guards pass.",
           "at": "2026-10-21T10:29:41.009245+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge.",
+          "note": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge.",
+          "at": "2026-10-21T10:31:55.879047+00:00"
         }
       ],
       "regression_of": null,
@@ -2386,7 +2410,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-12 final full suite passes: 160 unit, 58 integration on PostgreSQL 17 with both drivers; four existing T-14 relay todos remain. No concurrency behavior changed. Static guards pass."
+      "actual_result": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge."
     }
   ]
 }
