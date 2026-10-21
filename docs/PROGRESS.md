@@ -23,7 +23,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-07 | M1 | Message validation, JSON and UUIDv7 | done | be11b48 |
 | T-08 | M1 | postgres.js adapter and createOutboxCore skeleton | done | a5955a3 |
 | T-09 | M1 | pg adapter | done | 595ea7d |
-| T-10 | M1 | enqueue | todo | — |
+| T-10 | M1 | enqueue | doing | — |
 | T-11 | M1 | Test clock and delays | todo | — |
 | T-12 | M2 | Relay options and backoff (pure) | todo | — |
 | T-13 | M2 | Claim, complete, fail and lease SQL | todo | — |
