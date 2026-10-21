@@ -1308,6 +1308,12 @@
           "actual_result": "Final build passes publint and attw node16-profile checks across all entry points, using the repository-local npm cache. No package/type-resolution problems in supported profiles.",
           "note": "Final build passes publint and attw node16-profile checks across all entry points, using the repository-local npm cache. No package/type-resolution problems in supported profiles.",
           "at": "2026-10-21T08:36:15.135883+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-08 checks passed: 124 unit, 18 PG17 integration tests; build, publint/attw and driver-free declarations; core 3.63 kB and restored postgres-js createOutbox measurement 3.18 kB, within unchanged limits. LISTEN remains T-24.",
+          "note": "Final T-08 checks passed: 124 unit, 18 PG17 integration tests; build, publint/attw and driver-free declarations; core 3.63 kB and restored postgres-js createOutbox measurement 3.18 kB, within unchanged limits. LISTEN remains T-24.",
+          "at": "2026-10-21T09:00:58.236254+00:00"
         }
       ],
       "regression_of": null,
@@ -1315,7 +1321,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Final build passes publint and attw node16-profile checks across all entry points, using the repository-local npm cache. No package/type-resolution problems in supported profiles."
+      "actual_result": "Final T-08 checks passed: 124 unit, 18 PG17 integration tests; build, publint/attw and driver-free declarations; core 3.63 kB and restored postgres-js createOutbox measurement 3.18 kB, within unchanged limits. LISTEN remains T-24."
     },
     {
       "tc_reference": "TC-067",
@@ -1345,6 +1351,12 @@
           "actual_result": "Owner approved staged adapter imports (D-63). pnpm size now passes with every byte limit unchanged: core 2.72 kB min+brotli, current placeholder entries 104 B each. Adapter measurements must switch to createOutbox in T-08/T-09; these numbers do not measure future implementations.",
           "note": "Owner approved staged adapter imports (D-63). pnpm size now passes with every byte limit unchanged: core 2.72 kB min+brotli, current placeholder entries 104 B each. Adapter measurements must switch to createOutbox in T-08/T-09; these numbers do not measure future implementations.",
           "at": "2026-10-21T08:36:15.162328+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-08 checks passed: 124 unit, 18 PG17 integration tests; build, publint/attw and driver-free declarations; core 3.63 kB and restored postgres-js createOutbox measurement 3.18 kB, within unchanged limits. LISTEN remains T-24.",
+          "note": "Final T-08 checks passed: 124 unit, 18 PG17 integration tests; build, publint/attw and driver-free declarations; core 3.63 kB and restored postgres-js createOutbox measurement 3.18 kB, within unchanged limits. LISTEN remains T-24.",
+          "at": "2026-10-21T09:00:58.236260+00:00"
         }
       ],
       "regression_of": null,
@@ -1352,7 +1364,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Owner approved staged adapter imports (D-63). pnpm size now passes with every byte limit unchanged: core 2.72 kB min+brotli, current placeholder entries 104 B each. Adapter measurements must switch to createOutbox in T-08/T-09; these numbers do not measure future implementations."
+      "actual_result": "Final T-08 checks passed: 124 unit, 18 PG17 integration tests; build, publint/attw and driver-free declarations; core 3.63 kB and restored postgres-js createOutbox measurement 3.18 kB, within unchanged limits. LISTEN remains T-24."
     },
     {
       "tc_reference": "TC-041",
@@ -1513,6 +1525,86 @@
       "retraction_reason": null,
       "automatable": true,
       "actual_result": "Final review added trailing-newline rejection and explicit size/limit error text. Targeted validation and full suite pass: 108 unit, 18 integration; lint/typecheck pass. Initial PR CI 39572052918 passed."
+    },
+    {
+      "tc_reference": "TC-045",
+      "ac_reference": "FR-02; FR-04; FR-05",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "postgres.js migration adapter",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Run migration acceptance through the real adapter; exercise multi-statement execution and cast JSON parameters; inspect built declarations.",
+      "expected_result": "Migration checks pass, rows normalize, parameters cast, and declarations contain no driver imports.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Adapter preflight lint rejected an unbound query method reference; changed to a forwarding closure.",
+          "note": "Adapter preflight lint rejected an unbound query method reference; changed to a forwarding closure.",
+          "at": "2026-10-21T08:56:04.780506+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Targeted migration and row-mapping tests passed with the real postgres.js adapter; lint/typecheck pass.",
+          "note": "Targeted migration and row-mapping tests passed with the real postgres.js adapter; lint/typecheck pass.",
+          "at": "2026-10-21T08:56:04.926235+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "A-03 failed: direct jsonb parameter cast double-encodes pre-serialized JSON in postgres.js. Proposed text-first cast verified by read-only PG17 probe for both drivers; owner approval pending under AGENTS checkpoint 2. See docs/JSON-PARAMETER-CAST-PROPOSAL.md.",
+          "note": "A-03 failed: direct jsonb parameter cast double-encodes pre-serialized JSON in postgres.js. Proposed text-first cast verified by read-only PG17 probe for both drivers; owner approval pending under AGENTS checkpoint 2. See docs/JSON-PARAMETER-CAST-PROPOSAL.md. Owner subsequently approved the correction (D-64); awaiting retest.",
+          "at": "2026-10-21T08:59:04.222910+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "D-64 correction passes INT-01 and INT-01b: real postgres.js migrations, public factory, parameter casts and rollback verified.",
+          "note": "D-64 correction passes INT-01 and INT-01b: real postgres.js migrations, public factory, parameter casts and rollback verified.",
+          "at": "2026-10-21T09:00:11.139501+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-08 checks passed: 124 unit, 18 PG17 integration tests; build, publint/attw and driver-free declarations; core 3.63 kB and restored postgres-js createOutbox measurement 3.18 kB, within unchanged limits. LISTEN remains T-24.",
+          "note": "Final T-08 checks passed: 124 unit, 18 PG17 integration tests; build, publint/attw and driver-free declarations; core 3.63 kB and restored postgres-js createOutbox measurement 3.18 kB, within unchanged limits. LISTEN remains T-24.",
+          "at": "2026-10-21T09:00:58.235443+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "Final T-08 checks passed: 124 unit, 18 PG17 integration tests; build, publint/attw and driver-free declarations; core 3.63 kB and restored postgres-js createOutbox measurement 3.18 kB, within unchanged limits. LISTEN remains T-24."
+    },
+    {
+      "tc_reference": "TC-046",
+      "ac_reference": "FR-04",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Driver-neutral message row mapping",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Map a complete SQL result row; replace each field with a wrong type in turn.",
+      "expected_result": "Dates, JSON, string sequence and numeric fields map exactly; wrong types throw OUTBOX_INTERNAL naming the column.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Targeted migration and row-mapping tests passed with the real postgres.js adapter; lint/typecheck pass.",
+          "note": "Targeted migration and row-mapping tests passed with the real postgres.js adapter; lint/typecheck pass.",
+          "at": "2026-10-21T08:56:04.929060+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-08 checks passed: 124 unit, 18 PG17 integration tests; build, publint/attw and driver-free declarations; core 3.63 kB and restored postgres-js createOutbox measurement 3.18 kB, within unchanged limits. LISTEN remains T-24.",
+          "note": "Final T-08 checks passed: 124 unit, 18 PG17 integration tests; build, publint/attw and driver-free declarations; core 3.63 kB and restored postgres-js createOutbox measurement 3.18 kB, within unchanged limits. LISTEN remains T-24.",
+          "at": "2026-10-21T09:00:58.236222+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "Final T-08 checks passed: 124 unit, 18 PG17 integration tests; build, publint/attw and driver-free declarations; core 3.63 kB and restored postgres-js createOutbox measurement 3.18 kB, within unchanged limits. LISTEN remains T-24."
     }
   ]
 }

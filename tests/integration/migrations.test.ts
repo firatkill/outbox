@@ -1,3 +1,5 @@
+import { createOutboxCore } from '../../src/core/outbox.js';
+import { createOutbox } from '../../src/postgres-js.js';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { parseOutboxConfig } from '../../src/core/config.js';
 import { MIGRATIONS, migrationChecksum, migrationSql } from '../../src/core/migrations/index.js';
@@ -6,7 +8,7 @@ import { render } from '../../src/core/sql/render.js';
 import { ADAPTERS, createAdapter } from '../helpers/adapters.js';
 import { createTestSchema } from '../helpers/db.js';
 
-// The runner uses a temporary structural helper until T-08; T-09 adds pg here.
+// Real postgres.js adapter; T-09 adds pg to the shared driver matrix.
 describe.each(ADAPTERS)('%s migrations', () => {
   const owned: Awaited<ReturnType<typeof createTestSchema>>[] = [];
   let driver: ReturnType<typeof createAdapter>;
@@ -24,13 +26,23 @@ describe.each(ADAPTERS)('%s migrations', () => {
   }
   it('INT-01 TC-031 installs the specified catalog and is idempotent', async () => {
     const config = await setup();
-    expect(await migrate(driver.adapter, config)).toMatchObject({
+    const outbox = createOutbox({ db: driver.adapter.db, schema: config.schema });
+    expect(await outbox.migrate()).toMatchObject({
       applied: [{ version: 1, name: 'initial' }],
       currentVersion: 1,
       dryRun: false,
     });
-    expect(await migrate(driver.adapter, config)).toMatchObject({ applied: [], currentVersion: 1 });
-    expect(await schemaVersion(driver.adapter, config)).toEqual({ current: 1, required: 1 });
+    expect(await outbox.migrate()).toMatchObject({ applied: [], currentVersion: 1 });
+    expect(await createOutboxCore(driver.adapter, { schema: config.schema }).schemaVersion()).toEqual({
+      current: 1,
+      required: 1,
+    });
+    expect(
+      await driver.adapter.query(
+        'select $1::text::jsonb::text as payload, $2::int8::text as seq, $3::boolean as flag',
+        ['{"id":1}', '9007199254740993', true],
+      ),
+    ).toEqual([{ payload: '{"id": 1}', seq: '9007199254740993', flag: true }]);
     const migration = MIGRATIONS[0];
     if (migration === undefined) throw new Error('Initial migration missing');
     expect(

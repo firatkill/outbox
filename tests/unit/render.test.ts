@@ -1,3 +1,4 @@
+import { mapMessageRow } from '../../src/core/row.js';
 import { readFileSync } from 'node:fs';
 import { BOOTSTRAP } from '../../src/core/migrations/bootstrap.js';
 import { MIGRATIONS } from '../../src/core/migrations/index.js';
@@ -46,4 +47,51 @@ it('UT-04 TC-028 renders the normative migration and bootstrap snapshots', () =>
       );
     }
   }
+});
+
+const messageRow = {
+  id: '019a39b9-0000-7000-8000-000000000000',
+  seq: '9007199254740993',
+  topic: 'order.created',
+  key: null,
+  payload: '{"id":1}',
+  headers: '{"traceparent":"trace"}',
+  dedupe_key: null,
+  status: 'pending',
+  attempts: 0,
+  max_attempts: 10,
+  created_at_ms: 1700000000000,
+  available_at_ms: 1700000001000,
+  last_error: null,
+};
+it('UT-04 TC-046 maps every driver-neutral column without losing sequence precision', () => {
+  expect(mapMessageRow(messageRow)).toEqual({
+    id: messageRow.id,
+    seq: '9007199254740993',
+    topic: 'order.created',
+    key: null,
+    payload: { id: 1 },
+    headers: { traceparent: 'trace' },
+    dedupeKey: null,
+    status: 'pending',
+    attempts: 0,
+    maxAttempts: 10,
+    createdAt: new Date(1700000000000),
+    availableAt: new Date(1700000001000),
+    lastError: null,
+  });
+  expect(mapMessageRow({ ...messageRow, key: 'key', dedupe_key: 'dedupe', last_error: 'error' })).toMatchObject({
+    key: 'key',
+    dedupeKey: 'dedupe',
+    lastError: 'error',
+  });
+});
+it.each(Object.keys(messageRow))('UT-04 TC-046 names wrong-type column %s', (column) => {
+  expect(() => mapMessageRow({ ...messageRow, [column]: {} })).toThrow(column);
+  expect(() => mapMessageRow({ ...messageRow, [column]: {} })).toThrow(
+    expect.objectContaining({ code: 'OUTBOX_INTERNAL' }),
+  );
+});
+it.each(['headers', 'payload'])('UT-04 TC-046 names malformed JSON column %s', (column) => {
+  expect(() => mapMessageRow({ ...messageRow, [column]: '{invalid' })).toThrow(column);
 });
