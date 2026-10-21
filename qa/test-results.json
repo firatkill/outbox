@@ -1,0 +1,67 @@
+{
+  "project": "@firatkill/outbox",
+  "cases": [
+    {
+      "tc_reference": "TC-001",
+      "ac_reference": "FR-01",
+      "milestone": "M0 Setup",
+      "title": "npm ownership and package availability",
+      "description": "T-01 prerequisite verification before writing package.json.",
+      "steps_to_reproduce": "Run npm whoami, npm access list packages @firatkill, and npm view @firatkill/outbox.",
+      "expected_result": "Authenticated account is firatkill, scope access succeeds, and the unpublished package returns E404.",
+      "actual_result": "Owner authenticated as firatkill; scope access exited 0 and package lookup returned E404. Owner approved tsdown fallback (D-56); Node 22 build runtime installed within .git/toolchain.",
+      "priority": "High",
+      "automatable": true,
+      "status": "resolved",
+      "environment": "macOS arm64; Node v24.10.0; pnpm 10.18.3; Docker 28.5.1; Compose v2.40.2; 2026-10-21",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "npm whoami exited 1 with ENEEDAUTH. npm view @firatkill/outbox returned E404 as expected. Scope access was not attempted after authentication failed.",
+          "note": "Owner action required: authenticate locally, or explicitly approve deferring authenticated ownership verification. Package identity remains unchanged."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Owner authenticated as firatkill; scope access exited 0 and package lookup returned E404. Owner approved tsdown fallback (D-56); Node 22 build runtime installed within .git/toolchain.",
+          "note": "Owner authenticated as firatkill; scope access exited 0 and package lookup returned E404. Owner approved tsdown fallback (D-56); Node 22 build runtime installed within .git/toolchain.",
+          "at": "2026-10-21T07:35:33.151967+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": "docs/PROGRESS.md#open-questions-for-the-owner (AGENTS.md repository override: owner escalation; no ClickUp)",
+      "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-002",
+      "ac_reference": "FR-01; NFR-40",
+      "milestone": "M0 Setup",
+      "title": "Maintained dual-format build tool",
+      "description": "T-01 prerequisite verification before writing package.json.",
+      "steps_to_reproduce": "Read the build-tool maintainer notice and registry metadata; check the selected tool against A-07.",
+      "expected_result": "The specified build tool remains maintained, or the owner approves the documented fallback before adoption.",
+      "actual_result": "Owner authenticated as firatkill; scope access exited 0 and package lookup returned E404. Owner approved tsdown fallback (D-56); Node 22 build runtime installed within .git/toolchain.",
+      "priority": "High",
+      "automatable": true,
+      "status": "resolved",
+      "environment": "macOS arm64; Node v24.10.0; pnpm 10.18.3; Docker 28.5.1; Compose v2.40.2; 2026-10-21",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "The tsup maintainer README states that the project is no longer actively maintained. A-07 cannot be satisfied as written.",
+          "note": "Proposed A-07 fallback: tsdown, preserving all six entry points, dual module/declaration outputs and Node runtime support. Await owner approval under AGENTS.md checkpoint 2."
+        },
+        {
+          "result": "pass",
+          "actual_result": "Owner authenticated as firatkill; scope access exited 0 and package lookup returned E404. Owner approved tsdown fallback (D-56); Node 22 build runtime installed within .git/toolchain.",
+          "note": "Owner authenticated as firatkill; scope access exited 0 and package lookup returned E404. Owner approved tsdown fallback (D-56); Node 22 build runtime installed within .git/toolchain.",
+          "at": "2026-10-21T07:35:33.152084+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": "docs/PROGRESS.md#open-questions-for-the-owner (AGENTS.md repository override: owner escalation; no ClickUp)",
+      "retraction_reason": null
+    }
+  ]
+}
