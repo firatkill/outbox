@@ -1,6 +1,6 @@
 # Progress
 
-Local repository setup completed on 2026-10-21. M0 (T-01..T-03) and M1 (T-04..T-11) are complete. Owner authorized M2; T-12 is complete; T-13 is complete; T-14 is next. Stop at the end of M2 for owner review.
+Local repository setup completed on 2026-10-21. M0 (T-01..T-03) and M1 (T-04..T-11) are complete. Owner authorized M2; T-12 is complete; T-13 is complete; T-14 is underway. Stop at the end of M2 for owner review.
 
 - Read AGENTS.md and all four specification documents from start to finish.
 - Verified the required Git author and committer identity; enabled the executable `.githooks/commit-msg` hook.
@@ -27,7 +27,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-11 | M1 | Test clock and delays | done | 82f0d56 |
 | T-12 | M2 | Relay options and backoff (pure) | done | 32b8e51 |
 | T-13 | M2 | Claim, complete, fail and lease SQL | done | eb65f3e |
-| T-14 | M2 | Relay engine: scheduler, loop, deliverer, flusher | todo | — |
+| T-14 | M2 | Relay engine: scheduler, loop, deliverer, flusher | doing | — |
 | T-15 | M2 | Handler timeout and abort | todo | — |
 | T-16 | M2 | Reclaim, fencing and crash recovery | todo | — |
 | T-17 | M2 | Lifecycle: start, stop, drain, signal | todo | — |
@@ -91,9 +91,13 @@ A completion commit is recorded only after the task meets its acceptance criteri
 
 - T-13: all 12 statement tests pass for both drivers; full suite 160 unit / 70 PG17 integration pass with four existing T-14 relay todos. Static checks and [PR CI](https://github.com/firatkill/outbox/actions/runs/39586706280) pass; final documentation commit checks required before merge. Initial postgres-js checks failed during a local PostgreSQL restart; recovered retest passed unchanged. Underlying host cause remains unverified and is retained in the QA ledger. Future concurrency/chaos checks follow D-66.
 
+- T-14: engine implemented; 183 unit / 84 PG17 integration tests pass, including all former delay todos. Lint, types, guards, build and package checks pass. Owner approved the 12kB core limit (D-69); size gate passes. PR CI pending.
+
 ## Open questions for the owner
 
-None. Owner approved the [M2 proposal](M2-APPROVAL-PROPOSAL.md): staged future verification gates (D-66) and integer relay counts/milliseconds (D-67). The owner approved the pg optional payload type correction (D-65); T-09 checks pass.
+None. Owner approved the [12kB core limit](CORE-SIZE-PROPOSAL.md) (D-69).
+
+Owner approved the [M2 proposal](M2-APPROVAL-PROPOSAL.md): staged future verification gates (D-66) and integer relay counts/milliseconds (D-67). The owner approved the pg optional payload type correction (D-65); T-09 checks pass.
 
 Owner approved the A-03 text-first JSON cast correction (D-64); implementation and verification are complete for T-08.
 
