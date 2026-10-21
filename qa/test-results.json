@@ -1513,6 +1513,12 @@
           "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
           "note": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
           "at": "2026-10-21T16:07:19.546434+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "note": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "at": "2026-10-21T16:10:19.980243+00:00"
         }
       ],
       "regression_of": null,
@@ -1520,7 +1526,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed."
+      "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge."
     },
     {
       "tc_reference": "TC-041",
@@ -3110,6 +3116,12 @@
           "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
           "note": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
           "at": "2026-10-21T16:07:19.546848+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "note": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "at": "2026-10-21T16:10:19.981146+00:00"
         }
       ],
       "regression_of": "Passing targeted or full acceptance before T-21 full run",
@@ -3117,7 +3129,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed."
+      "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge."
     },
     {
       "tc_reference": "TC-099",
@@ -3410,6 +3422,12 @@
           "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
           "note": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
           "at": "2026-10-21T16:07:19.546862+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "note": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "at": "2026-10-21T16:10:19.981158+00:00"
         }
       ],
       "regression_of": "Passing targeted or full acceptance before T-21 full run",
@@ -3417,7 +3435,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed."
+      "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge."
     },
     {
       "tc_reference": "TC-101",
@@ -3483,6 +3501,12 @@
           "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
           "note": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
           "at": "2026-10-21T16:07:19.546890+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "note": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "at": "2026-10-21T16:10:19.981237+00:00"
         }
       ],
       "regression_of": "Passing targeted or full acceptance before T-21 full run",
@@ -3490,7 +3514,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed."
+      "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge."
     },
     {
       "tc_reference": "TC-089",
@@ -3838,6 +3862,12 @@
           "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
           "note": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
           "at": "2026-10-21T16:07:19.546873+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "note": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "at": "2026-10-21T16:10:19.981212+00:00"
         }
       ],
       "regression_of": "Passing targeted or full acceptance before T-21 full run",
@@ -3845,7 +3875,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed."
+      "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge."
     },
     {
       "tc_reference": "TC-097",
@@ -4118,6 +4148,12 @@
           "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
           "note": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
           "at": "2026-10-21T16:07:19.546882+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "note": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "at": "2026-10-21T16:10:19.981229+00:00"
         }
       ],
       "regression_of": "M2 passing INT-29 runs recorded before T-20",
@@ -4125,7 +4161,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed."
+      "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge."
     },
     {
       "tc_reference": "TC-103",
@@ -4161,6 +4197,12 @@
           "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
           "note": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
           "at": "2026-10-21T16:06:58.211223+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "note": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "at": "2026-10-21T16:10:19.981245+00:00"
         }
       ],
       "regression_of": null,
@@ -4168,7 +4210,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled."
+      "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge."
     },
     {
       "tc_reference": "TC-104",
@@ -4204,6 +4246,12 @@
           "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
           "note": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
           "at": "2026-10-21T16:06:58.211359+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "note": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "at": "2026-10-21T16:10:19.981254+00:00"
         }
       ],
       "regression_of": null,
@@ -4211,7 +4259,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled."
+      "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge."
     },
     {
       "tc_reference": "TC-105",
@@ -4247,6 +4295,12 @@
           "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
           "note": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
           "at": "2026-10-21T16:06:58.211364+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "note": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "at": "2026-10-21T16:10:19.981279+00:00"
         }
       ],
       "regression_of": null,
@@ -4254,7 +4308,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled."
+      "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge."
     },
     {
       "tc_reference": "TC-106",
@@ -4290,6 +4344,12 @@
           "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
           "note": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
           "at": "2026-10-21T16:06:58.211367+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "note": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "at": "2026-10-21T16:10:19.981305+00:00"
         }
       ],
       "regression_of": null,
@@ -4297,7 +4357,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled."
+      "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge."
     },
     {
       "tc_reference": "TC-107",
@@ -4333,6 +4393,12 @@
           "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
           "note": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
           "at": "2026-10-21T16:06:58.211370+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "note": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "at": "2026-10-21T16:10:19.981318+00:00"
         }
       ],
       "regression_of": null,
@@ -4340,7 +4406,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled."
+      "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge."
     },
     {
       "tc_reference": "TC-114",
@@ -4400,6 +4466,12 @@
           "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
           "note": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
           "at": "2026-10-21T16:06:58.211391+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "note": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "at": "2026-10-21T16:10:19.981345+00:00"
         }
       ],
       "regression_of": null,
@@ -4407,7 +4479,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled."
+      "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge."
     },
     {
       "tc_reference": "TC-108",
@@ -4455,6 +4527,12 @@
           "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
           "note": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
           "at": "2026-10-21T16:06:58.211373+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "note": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "at": "2026-10-21T16:10:19.981323+00:00"
         }
       ],
       "regression_of": null,
@@ -4462,7 +4540,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled."
+      "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge."
     },
     {
       "tc_reference": "TC-110",
@@ -4510,6 +4588,12 @@
           "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
           "note": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
           "at": "2026-10-21T16:06:58.211379+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "note": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "at": "2026-10-21T16:10:19.981330+00:00"
         }
       ],
       "regression_of": null,
@@ -4517,7 +4601,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled."
+      "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge."
     },
     {
       "tc_reference": "TC-109",
@@ -4577,6 +4661,12 @@
           "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
           "note": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
           "at": "2026-10-21T16:06:58.211376+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "note": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "at": "2026-10-21T16:10:19.981326+00:00"
         }
       ],
       "regression_of": null,
@@ -4584,7 +4674,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled."
+      "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge."
     },
     {
       "tc_reference": "TC-111",
@@ -4644,6 +4734,12 @@
           "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
           "note": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
           "at": "2026-10-21T16:06:58.211382+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "note": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "at": "2026-10-21T16:10:19.981333+00:00"
         }
       ],
       "regression_of": null,
@@ -4651,7 +4747,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled."
+      "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge."
     },
     {
       "tc_reference": "TC-112",
@@ -4705,6 +4801,12 @@
           "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
           "note": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
           "at": "2026-10-21T16:07:19.546902+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "note": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "at": "2026-10-21T16:10:19.981336+00:00"
         }
       ],
       "regression_of": "Passing targeted or full acceptance before T-21 full run",
@@ -4712,7 +4814,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed."
+      "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge."
     },
     {
       "tc_reference": "TC-113",
@@ -4748,6 +4850,12 @@
           "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
           "note": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
           "at": "2026-10-21T16:07:19.546911+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "note": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "at": "2026-10-21T16:10:19.981342+00:00"
         }
       ],
       "regression_of": null,
@@ -4755,7 +4863,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed."
+      "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge."
     },
     {
       "tc_reference": "TC-115",
@@ -4809,6 +4917,12 @@
           "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
           "note": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
           "at": "2026-10-21T16:07:19.547027+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "note": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge.",
+          "at": "2026-10-21T16:10:19.981348+00:00"
         }
       ],
       "regression_of": "Passing targeted or full acceptance before T-21 full run",
@@ -4816,7 +4930,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed."
+      "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge."
     }
   ]
 }
