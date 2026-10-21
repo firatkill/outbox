@@ -5140,6 +5140,49 @@
       "retraction_reason": null,
       "automatable": true,
       "actual_result": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge."
+    },
+    {
+      "tc_reference": "TC-121",
+      "ac_reference": "FR-55..FR-57; GU-06",
+      "milestone": "M4",
+      "title": "Ordering across four concurrent relays",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Own schema created inside the test, without the test clock (INV-08 compares `outbox_now()` with `clock_timestamp()`, so the offset must be 0 even if other tests in the file advanced theirs). 200 keys × 25 messages (5,000) plus 1,000 unkeyed, interleaved; 4 relays with `ordering: 'key'`, `concurrency: 20`, `batchSize: 20`, handler latency random 0–5 ms; wait for all done (timeout 60 s, comment: 6,000 deliveries with per-key serialisation)",
+      "expected_result": "For each key, the first-delivery start times follow `seq` order and each starts after the previous message's `completed_at`; max in-flight per key = 1 across all relays; unkeyed all delivered; INV-08 SQL returns 0 rows",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "INT-41 stress pass 1: both drivers delivered all 6000 once; maximum per-key active handlers one; first-start order and INV-08 zero violations; each delivery workload below 60s.",
+          "note": "INT-41 stress pass 1: both drivers delivered all 6000 once; maximum per-key active handlers one; first-start order and INV-08 zero violations; each delivery workload below 60s.",
+          "at": "2026-10-21T16:32:35.472324+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "INT-41 stress pass 2: both drivers passed unchanged; 6000 deliveries each, no order/fence/concurrency violations, each below 60s.",
+          "note": "INT-41 stress pass 2: both drivers passed unchanged; 6000 deliveries each, no order/fence/concurrency violations, each below 60s.",
+          "at": "2026-10-21T16:32:53.017323+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "INT-41 stress pass 3: both drivers passed unchanged; 6000 deliveries each, no ordering violations, each below 60s. Three consecutive required runs passed.",
+          "note": "INT-41 stress pass 3: both drivers passed unchanged; 6000 deliveries each, no ordering violations, each below 60s. Three consecutive required runs passed.",
+          "at": "2026-10-21T16:33:13.806223+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-23 final standard suite passed: 186 unit and 153 PG17 integration, including INT-22/24/41; lint, types and guards pass. Three consecutive dedicated INT-41 runs passed both drivers. INT-62/chaos/docs remain deferred by D-66/D-61.",
+          "note": "T-23 final standard suite passed: 186 unit and 153 PG17 integration, including INT-22/24/41; lint, types and guards pass. Three consecutive dedicated INT-41 runs passed both drivers. INT-62/chaos/docs remain deferred by D-66/D-61.",
+          "at": "2026-10-21T16:33:38.807299+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-23 final standard suite passed: 186 unit and 153 PG17 integration, including INT-22/24/41; lint, types and guards pass. Three consecutive dedicated INT-41 runs passed both drivers. INT-62/chaos/docs remain deferred by D-66/D-61."
     }
   ]
 }
