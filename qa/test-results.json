@@ -2411,6 +2411,154 @@
       "retraction_reason": null,
       "automatable": true,
       "actual_result": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge."
+    },
+    {
+      "tc_reference": "TC-072",
+      "ac_reference": "FR-31",
+      "milestone": "M2 Relay and leases",
+      "title": "Claims skip locked rows",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Enqueue five messages, hold the first row lock in a separate transaction, claim before and after release.",
+      "expected_result": "Four rows claim without waiting; the locked row remains pending until released.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "First T-13 run: postgres-js connection closed, followed by PostgreSQL recovery-mode errors and cleanup timeout; pg cases passed after recovery. Inspecting server logs before retry. Timeouts unchanged.",
+          "note": "First T-13 run: postgres-js connection closed, followed by PostgreSQL recovery-mode errors and cleanup timeout; pg cases passed after recovery. Inspecting server logs before retry. Timeouts unchanged.",
+          "at": "2026-10-21T10:40:42.352043+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 12 T-13 statement tests pass for postgres-js and pg after PostgreSQL recovered; no code or timeout changes were needed. Server logs show backend exit code 2 and recovery, including an earlier restart before this test run; underlying host cause remains unverified.",
+          "note": "All 12 T-13 statement tests pass for postgres-js and pg after PostgreSQL recovered; no code or timeout changes were needed. Server logs show backend exit code 2 and recovery, including an earlier restart before this test run; underlying host cause remains unverified.",
+          "at": "2026-10-21T10:42:14.766341+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66.",
+          "note": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66.",
+          "at": "2026-10-21T10:43:06.947150+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": "t13-postgresql-recovery",
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66."
+    },
+    {
+      "tc_reference": "TC-073",
+      "ac_reference": "FR-31; FR-32",
+      "milestone": "M2 Relay and leases",
+      "title": "Claim and outcome statement contracts",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Claim ready rows; inspect leases and attempts; complete with matching and mismatched holder/attempt; repeat after completion.",
+      "expected_result": "Claim increments attempts and sets DB-time leases; only the matching in-flight attempt can complete.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "First T-13 run: postgres-js connection closed, followed by PostgreSQL recovery-mode errors and cleanup timeout; pg cases passed after recovery. Inspecting server logs before retry. Timeouts unchanged.",
+          "note": "First T-13 run: postgres-js connection closed, followed by PostgreSQL recovery-mode errors and cleanup timeout; pg cases passed after recovery. Inspecting server logs before retry. Timeouts unchanged.",
+          "at": "2026-10-21T10:40:42.355361+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 12 T-13 statement tests pass for postgres-js and pg after PostgreSQL recovered; no code or timeout changes were needed. Server logs show backend exit code 2 and recovery, including an earlier restart before this test run; underlying host cause remains unverified.",
+          "note": "All 12 T-13 statement tests pass for postgres-js and pg after PostgreSQL recovered; no code or timeout changes were needed. Server logs show backend exit code 2 and recovery, including an earlier restart before this test run; underlying host cause remains unverified.",
+          "at": "2026-10-21T10:42:14.766803+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66.",
+          "note": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66.",
+          "at": "2026-10-21T10:43:06.951174+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": "t13-postgresql-recovery",
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66."
+    },
+    {
+      "tc_reference": "TC-074",
+      "ac_reference": "FR-32; FR-45; FR-48",
+      "milestone": "M2 Relay and leases",
+      "title": "Fail statements retry or become dead",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Fail leased rows with ordinary, terminal and exhausted outcomes; try stale fences.",
+      "expected_result": "Retry schedules DB-time delay; terminal/exhausted rows become dead; stale outcomes change nothing.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "First T-13 run: postgres-js connection closed, followed by PostgreSQL recovery-mode errors and cleanup timeout; pg cases passed after recovery. Inspecting server logs before retry. Timeouts unchanged.",
+          "note": "First T-13 run: postgres-js connection closed, followed by PostgreSQL recovery-mode errors and cleanup timeout; pg cases passed after recovery. Inspecting server logs before retry. Timeouts unchanged.",
+          "at": "2026-10-21T10:40:42.355962+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 12 T-13 statement tests pass for postgres-js and pg after PostgreSQL recovered; no code or timeout changes were needed. Server logs show backend exit code 2 and recovery, including an earlier restart before this test run; underlying host cause remains unverified.",
+          "note": "All 12 T-13 statement tests pass for postgres-js and pg after PostgreSQL recovered; no code or timeout changes were needed. Server logs show backend exit code 2 and recovery, including an earlier restart before this test run; underlying host cause remains unverified.",
+          "at": "2026-10-21T10:42:14.766810+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66.",
+          "note": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66.",
+          "at": "2026-10-21T10:43:06.951181+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": "t13-postgresql-recovery",
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66."
+    },
+    {
+      "tc_reference": "TC-075",
+      "ac_reference": "FR-33; FR-36",
+      "milestone": "M2 Relay and leases",
+      "title": "Reclaim and release statements",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Advance clock beyond leases; reclaim with and without attempts exhausted; release matching and stale attempts.",
+      "expected_result": "Reclaim makes rows ready or dead with expired-holder error; fenced release decrements attempts and clears leases.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "First T-13 run: postgres-js connection closed, followed by PostgreSQL recovery-mode errors and cleanup timeout; pg cases passed after recovery. Inspecting server logs before retry. Timeouts unchanged.",
+          "note": "First T-13 run: postgres-js connection closed, followed by PostgreSQL recovery-mode errors and cleanup timeout; pg cases passed after recovery. Inspecting server logs before retry. Timeouts unchanged.",
+          "at": "2026-10-21T10:40:42.356424+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 12 T-13 statement tests pass for postgres-js and pg after PostgreSQL recovered; no code or timeout changes were needed. Server logs show backend exit code 2 and recovery, including an earlier restart before this test run; underlying host cause remains unverified.",
+          "note": "All 12 T-13 statement tests pass for postgres-js and pg after PostgreSQL recovered; no code or timeout changes were needed. Server logs show backend exit code 2 and recovery, including an earlier restart before this test run; underlying host cause remains unverified.",
+          "at": "2026-10-21T10:42:14.766814+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66.",
+          "note": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66.",
+          "at": "2026-10-21T10:43:06.951185+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": "t13-postgresql-recovery",
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66."
     }
   ]
 }

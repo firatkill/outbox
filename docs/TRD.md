@@ -2595,6 +2595,17 @@ Conventions for this table: "both" = runs for postgres.js and pg. `tc` = the tes
 | INT-92 | both | Install twice, set/advance/reset offsets, reject negative/non-finite offsets, migrate again, compare a separate schema, uninstall | Internal access property is read-only and non-enumerable; offsets affect only outbox time; reinstall preserves offset; applied migrations preserve the clock; schemas are isolated; uninstall restores the production body and drops the test table |
 | INT-93 | both | Set a schema offset; setLocal on one transaction; read through another connection and after commit | Local override wins only in that transaction and does not leak through connection reuse |
 
+#### Relay statement contracts (`tests/integration/sql.test.ts`, T-13)
+
+INT-21 also runs directly against claim SQL before the relay exists.
+
+| ID | Adapters | Setup and steps | Assertions |
+|---|---|---|---|
+| INT-94 | both | Ready and delayed topics; filtered/unfiltered claim, complete with wrong holder/attempt and after expiry before reclaim | One statement per batch; neutral fields, DB-time lease, source-status and attempt fences; late unreclaimed completion succeeds |
+| INT-95 | both | Batch retry, terminal and exhausted failures; stale holder/attempt and repeated fail | Pending delay uses DB time; dead rows retain availability, set dead_at; leases cleared; stale updates affect nothing |
+| INT-96 | both | Claim as ghost, advance beyond lease, reclaim in bounded batches, re-claim with same holder, apply stale outcomes | Immediate retry or dead on exhaustion; expiry error retains prior holder; old attempt cannot complete/fail/release |
+| INT-97 | both | Release matching and mismatched claims, then claim again | Release clears lease and decrements attempts once; source status and holder/attempt are fenced |
+
 ### 15.4 Test harness
 
 - `tests/global-setup.ts`: connects to `TEST_DATABASE_URL` (default `postgres://postgres:postgres@localhost:54317/outbox_test`), creating database `outbox_test` from `postgres` if missing. Prints the server version.
