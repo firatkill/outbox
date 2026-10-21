@@ -1,6 +1,6 @@
 import { afterAll, describe, expect, it } from 'vitest';
 import { createOutboxCore } from '../../src/core/outbox.js';
-import type { DriverAdapter, Relay, SqlExecutor } from '../../src/core/types.js';
+import type { DriverAdapter, Relay, SqlExecutor, SqlParam } from '../../src/core/types.js';
 import { ADAPTERS, createAdapter } from '../helpers/adapters.js';
 import { createTestSchema } from '../helpers/db.js';
 import { deferred, waitFor } from '../helpers/wait.js';
@@ -194,5 +194,79 @@ describe.each(ADAPTERS)('%s notification wake-up', (name) => {
     await stopping;
     expect(closes).toBe(1);
     expect(relay.state).toBe('stopped');
+  });
+  it('INT-50 TC-125 wakes twenty committed messages within the latency budget', async () => {
+    const { pool, outbox } = await setup();
+    const starts: number[] = [];
+    const relay = outbox.createRelay({
+      listen: true,
+      poll: { minIntervalMs: 5000, maxIntervalMs: 5000 },
+      publisher: () => {
+        starts.push(performance.now());
+        return Promise.resolve();
+      },
+    });
+    relays.push(relay);
+    await relay.start();
+    // INT-50 specifies a real 300ms idle window before measuring notification latency.
+    await new Promise((resolve) => setTimeout(resolve, 300));
+    const latencies: number[] = [];
+    for (let i = 0; i < 20; i++) {
+      await pool.adapter.transaction((tx) => outbox.enqueue(tx, { topic: 't', payload: null }));
+      const committed = performance.now();
+      await waitFor(() => starts.length === i + 1);
+      const started = starts[i];
+      if (started === undefined) throw new Error('missing handler timestamp');
+      latencies.push(started - committed);
+      // Specified 100ms inter-sample pacing; this is a latency experiment, not a readiness wait.
+      await new Promise((resolve) => setTimeout(resolve, 100));
+    }
+    await relay.stop();
+    latencies.sort((a, b) => a - b);
+    expect(latencies).toHaveLength(20);
+    expect(((latencies[9] ?? Infinity) + (latencies[10] ?? Infinity)) / 2).toBeLessThanOrEqual(50);
+    expect(Math.max(...latencies)).toBeLessThanOrEqual(500);
+  });
+  it('INT-51 TC-126 delivers by polling with LISTEN disabled', async () => {
+    const { pool, outbox } = await setup();
+    let delivered = 0;
+    const relay = outbox.createRelay({
+      listen: false,
+      poll: { minIntervalMs: 50, maxIntervalMs: 300 },
+      publisher: () => {
+        delivered++;
+        return Promise.resolve();
+      },
+    });
+    relays.push(relay);
+    await relay.start();
+    // INT-51 specifies one second idle to reach the maximum polling interval.
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await pool.adapter.transaction((tx) => outbox.enqueue(tx, { topic: 't', payload: null }));
+    await waitFor(() => delivered === 1, { timeoutMs: 1000 });
+    await relay.stop();
+  });
+  it('INT-53 TC-127 backs off idle claims over a real three-second observation', async () => {
+    const { owned, pool } = await setup();
+    let claims = 0;
+    const adapter = {
+      ...pool.adapter,
+      query: (text: string, params: readonly SqlParam[]) => {
+        if (/set status\s*=\s*'in_flight'/.test(text)) claims++;
+        return pool.adapter.query(text, params);
+      },
+    };
+    const relay = createOutboxCore(adapter, { schema: owned.schema }).createRelay({
+      listen: false,
+      poll: { minIntervalMs: 100, maxIntervalMs: 1000 },
+      publisher: () => Promise.resolve(),
+    });
+    relays.push(relay);
+    await relay.start();
+    // Measuring idle backoff needs real time: TRD INT-53 requires a three-second window.
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+    await relay.stop();
+    expect(claims).toBeGreaterThanOrEqual(4);
+    expect(claims).toBeLessThanOrEqual(9);
   });
 });
