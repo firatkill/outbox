@@ -1507,6 +1507,12 @@
           "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
           "note": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
           "at": "2026-10-21T15:52:28.434590+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
+          "note": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
+          "at": "2026-10-21T16:07:19.546434+00:00"
         }
       ],
       "regression_of": null,
@@ -1514,7 +1520,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge."
+      "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed."
     },
     {
       "tc_reference": "TC-041",
@@ -3074,14 +3080,44 @@
           "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
           "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
           "at": "2026-10-21T12:02:12.342403+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "T-21 full run failed across multiple files: database operations exceeded 30s, the 10000-message run exceeded 60s, and a relative-delay fixture consumed its 1s margin. Host load averaged 31.46 afterward; resource contention is suspected, not proven. No timeouts or assertions changed; targeted retest follows.",
+          "note": "T-21 full run failed across multiple files: database operations exceeded 30s, the 10000-message run exceeded 60s, and a relative-delay fixture consumed its 1s margin. Host load averaged 31.46 afterward; resource contention is suspected, not proven. No timeouts or assertions changed; targeted retest follows.",
+          "at": "2026-10-21T16:01:24.615332+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 18 affected acceptance checks passed unchanged on targeted retest in 15.30s, with original timeout and assertion limits. Earlier full-run timeout cause remains unconfirmed.",
+          "note": "All 18 affected acceptance checks passed unchanged on targeted retest in 15.30s, with original timeout and assertion limits. Earlier full-run timeout cause remains unconfirmed.",
+          "at": "2026-10-21T16:02:01.529232+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Second full run passed these cases unchanged. All 186 unit and 138 of 139 integration tests passed; only INT-29 exceeded its recovery deadline.",
+          "note": "Second full run passed these cases unchanged. All 186 unit and 138 of 139 integration tests passed; only INT-29 exceeded its recovery deadline.",
+          "at": "2026-10-21T16:04:03.725328+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full pnpm test --maxWorkers=1 command passed 186 unit / 139 PG17 integration tests with no unhandled errors. Project config still declares maxWorkers 4; effective serialization is not claimed. Standard command will be confirmed before closure.",
+          "note": "Full pnpm test --maxWorkers=1 command passed 186 unit / 139 PG17 integration tests with no unhandled errors. Project config still declares maxWorkers 4; effective serialization is not claimed. Standard command will be confirmed before closure.",
+          "at": "2026-10-21T16:05:40.739736+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
+          "note": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
+          "at": "2026-10-21T16:07:19.546848+00:00"
         }
       ],
-      "regression_of": null,
-      "root_cause_group": null,
+      "regression_of": "Passing targeted or full acceptance before T-21 full run",
+      "root_cause_group": "m3-full-run-timeouts-unconfirmed",
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
+      "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed."
     },
     {
       "tc_reference": "TC-099",
@@ -3344,14 +3380,44 @@
           "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
           "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
           "at": "2026-10-21T12:02:12.342413+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "T-21 full run failed across multiple files: database operations exceeded 30s, the 10000-message run exceeded 60s, and a relative-delay fixture consumed its 1s margin. Host load averaged 31.46 afterward; resource contention is suspected, not proven. No timeouts or assertions changed; targeted retest follows.",
+          "note": "T-21 full run failed across multiple files: database operations exceeded 30s, the 10000-message run exceeded 60s, and a relative-delay fixture consumed its 1s margin. Host load averaged 31.46 afterward; resource contention is suspected, not proven. No timeouts or assertions changed; targeted retest follows.",
+          "at": "2026-10-21T16:01:24.615484+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 18 affected acceptance checks passed unchanged on targeted retest in 15.30s, with original timeout and assertion limits. Earlier full-run timeout cause remains unconfirmed.",
+          "note": "All 18 affected acceptance checks passed unchanged on targeted retest in 15.30s, with original timeout and assertion limits. Earlier full-run timeout cause remains unconfirmed.",
+          "at": "2026-10-21T16:02:01.529511+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Second full run passed these cases unchanged. All 186 unit and 138 of 139 integration tests passed; only INT-29 exceeded its recovery deadline.",
+          "note": "Second full run passed these cases unchanged. All 186 unit and 138 of 139 integration tests passed; only INT-29 exceeded its recovery deadline.",
+          "at": "2026-10-21T16:04:03.725477+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full pnpm test --maxWorkers=1 command passed 186 unit / 139 PG17 integration tests with no unhandled errors. Project config still declares maxWorkers 4; effective serialization is not claimed. Standard command will be confirmed before closure.",
+          "note": "Full pnpm test --maxWorkers=1 command passed 186 unit / 139 PG17 integration tests with no unhandled errors. Project config still declares maxWorkers 4; effective serialization is not claimed. Standard command will be confirmed before closure.",
+          "at": "2026-10-21T16:05:40.739929+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
+          "note": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
+          "at": "2026-10-21T16:07:19.546862+00:00"
         }
       ],
-      "regression_of": null,
-      "root_cause_group": null,
+      "regression_of": "Passing targeted or full acceptance before T-21 full run",
+      "root_cause_group": "m3-full-run-timeouts-unconfirmed",
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
+      "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed."
     },
     {
       "tc_reference": "TC-101",
@@ -3387,14 +3453,44 @@
           "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
           "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
           "at": "2026-10-21T12:02:12.342449+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "T-21 full run failed across multiple files: database operations exceeded 30s, the 10000-message run exceeded 60s, and a relative-delay fixture consumed its 1s margin. Host load averaged 31.46 afterward; resource contention is suspected, not proven. No timeouts or assertions changed; targeted retest follows.",
+          "note": "T-21 full run failed across multiple files: database operations exceeded 30s, the 10000-message run exceeded 60s, and a relative-delay fixture consumed its 1s margin. Host load averaged 31.46 afterward; resource contention is suspected, not proven. No timeouts or assertions changed; targeted retest follows.",
+          "at": "2026-10-21T16:01:24.615493+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 18 affected acceptance checks passed unchanged on targeted retest in 15.30s, with original timeout and assertion limits. Earlier full-run timeout cause remains unconfirmed.",
+          "note": "All 18 affected acceptance checks passed unchanged on targeted retest in 15.30s, with original timeout and assertion limits. Earlier full-run timeout cause remains unconfirmed.",
+          "at": "2026-10-21T16:02:01.529533+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Second full run passed these cases unchanged. All 186 unit and 138 of 139 integration tests passed; only INT-29 exceeded its recovery deadline.",
+          "note": "Second full run passed these cases unchanged. All 186 unit and 138 of 139 integration tests passed; only INT-29 exceeded its recovery deadline.",
+          "at": "2026-10-21T16:04:03.725486+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full pnpm test --maxWorkers=1 command passed 186 unit / 139 PG17 integration tests with no unhandled errors. Project config still declares maxWorkers 4; effective serialization is not claimed. Standard command will be confirmed before closure.",
+          "note": "Full pnpm test --maxWorkers=1 command passed 186 unit / 139 PG17 integration tests with no unhandled errors. Project config still declares maxWorkers 4; effective serialization is not claimed. Standard command will be confirmed before closure.",
+          "at": "2026-10-21T16:05:40.739942+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
+          "note": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
+          "at": "2026-10-21T16:07:19.546890+00:00"
         }
       ],
-      "regression_of": null,
-      "root_cause_group": null,
+      "regression_of": "Passing targeted or full acceptance before T-21 full run",
+      "root_cause_group": "m3-full-run-timeouts-unconfirmed",
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
+      "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed."
     },
     {
       "tc_reference": "TC-089",
@@ -3712,14 +3808,44 @@
           "actual_result": "T-18 PR #18 implementation CI 39596449111 static and PG17 integration checks pass. M2 report and quality review completed; final report-commit checks required before merge.",
           "note": "T-18 PR #18 implementation CI 39596449111 static and PG17 integration checks pass. M2 report and quality review completed; final report-commit checks required before merge.",
           "at": "2026-10-21T12:05:25.026396+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "T-21 full run failed across multiple files: database operations exceeded 30s, the 10000-message run exceeded 60s, and a relative-delay fixture consumed its 1s margin. Host load averaged 31.46 afterward; resource contention is suspected, not proven. No timeouts or assertions changed; targeted retest follows.",
+          "note": "T-21 full run failed across multiple files: database operations exceeded 30s, the 10000-message run exceeded 60s, and a relative-delay fixture consumed its 1s margin. Host load averaged 31.46 afterward; resource contention is suspected, not proven. No timeouts or assertions changed; targeted retest follows.",
+          "at": "2026-10-21T16:01:24.615490+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 18 affected acceptance checks passed unchanged on targeted retest in 15.30s, with original timeout and assertion limits. Earlier full-run timeout cause remains unconfirmed.",
+          "note": "All 18 affected acceptance checks passed unchanged on targeted retest in 15.30s, with original timeout and assertion limits. Earlier full-run timeout cause remains unconfirmed.",
+          "at": "2026-10-21T16:02:01.529525+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Second full run passed these cases unchanged. All 186 unit and 138 of 139 integration tests passed; only INT-29 exceeded its recovery deadline.",
+          "note": "Second full run passed these cases unchanged. All 186 unit and 138 of 139 integration tests passed; only INT-29 exceeded its recovery deadline.",
+          "at": "2026-10-21T16:04:03.725482+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full pnpm test --maxWorkers=1 command passed 186 unit / 139 PG17 integration tests with no unhandled errors. Project config still declares maxWorkers 4; effective serialization is not claimed. Standard command will be confirmed before closure.",
+          "note": "Full pnpm test --maxWorkers=1 command passed 186 unit / 139 PG17 integration tests with no unhandled errors. Project config still declares maxWorkers 4; effective serialization is not claimed. Standard command will be confirmed before closure.",
+          "at": "2026-10-21T16:05:40.739934+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
+          "note": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
+          "at": "2026-10-21T16:07:19.546873+00:00"
         }
       ],
-      "regression_of": null,
-      "root_cause_group": null,
+      "regression_of": "Passing targeted or full acceptance before T-21 full run",
+      "root_cause_group": "m3-full-run-timeouts-unconfirmed",
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-18 PR #18 implementation CI 39596449111 static and PG17 integration checks pass. M2 report and quality review completed; final report-commit checks required before merge."
+      "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed."
     },
     {
       "tc_reference": "TC-097",
@@ -3968,6 +4094,30 @@
           "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
           "note": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
           "at": "2026-10-21T15:52:28.434886+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Second T-21 full run: postgres-js INT-29 exceeded its unchanged 30s recovery deadline under concurrent file execution; no internal type-discovery rejection occurred. Run was 51s overall. Retest targeted, then execute local full suite with one file worker to remove cross-file resource contention without changing within-test relay concurrency.",
+          "note": "Second T-21 full run: postgres-js INT-29 exceeded its unchanged 30s recovery deadline under concurrent file execution; no internal type-discovery rejection occurred. Run was 51s overall. Retest targeted, then execute local full suite with one file worker to remove cross-file resource contention without changing within-test relay concurrency.",
+          "at": "2026-10-21T16:04:03.755444+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Both-driver INT-29 targeted retest passed unchanged; no unhandled errors. Original 30s recovery deadline retained.",
+          "note": "Both-driver INT-29 targeted retest passed unchanged; no unhandled errors. Original 30s recovery deadline retained.",
+          "at": "2026-10-21T16:04:35.174701+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full pnpm test --maxWorkers=1 command passed 186 unit / 139 PG17 integration tests with no unhandled errors. Project config still declares maxWorkers 4; effective serialization is not claimed. Standard command will be confirmed before closure.",
+          "note": "Full pnpm test --maxWorkers=1 command passed 186 unit / 139 PG17 integration tests with no unhandled errors. Project config still declares maxWorkers 4; effective serialization is not claimed. Standard command will be confirmed before closure.",
+          "at": "2026-10-21T16:05:40.739939+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
+          "note": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
+          "at": "2026-10-21T16:07:19.546882+00:00"
         }
       ],
       "regression_of": "M2 passing INT-29 runs recorded before T-20",
@@ -3975,7 +4125,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge."
+      "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed."
     },
     {
       "tc_reference": "TC-103",
@@ -4005,6 +4155,12 @@
           "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
           "note": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
           "at": "2026-10-21T13:12:29.503564+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "note": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "at": "2026-10-21T16:06:58.211223+00:00"
         }
       ],
       "regression_of": null,
@@ -4012,7 +4168,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates."
+      "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled."
     },
     {
       "tc_reference": "TC-104",
@@ -4042,6 +4198,12 @@
           "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
           "note": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
           "at": "2026-10-21T13:12:29.503692+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "note": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "at": "2026-10-21T16:06:58.211359+00:00"
         }
       ],
       "regression_of": null,
@@ -4049,7 +4211,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates."
+      "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled."
     },
     {
       "tc_reference": "TC-105",
@@ -4079,6 +4241,12 @@
           "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
           "note": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
           "at": "2026-10-21T13:12:29.503696+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "note": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "at": "2026-10-21T16:06:58.211364+00:00"
         }
       ],
       "regression_of": null,
@@ -4086,7 +4254,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates."
+      "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled."
     },
     {
       "tc_reference": "TC-106",
@@ -4116,6 +4284,12 @@
           "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
           "note": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
           "at": "2026-10-21T13:12:29.503700+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "note": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "at": "2026-10-21T16:06:58.211367+00:00"
         }
       ],
       "regression_of": null,
@@ -4123,7 +4297,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates."
+      "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled."
     },
     {
       "tc_reference": "TC-107",
@@ -4153,6 +4327,12 @@
           "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
           "note": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
           "at": "2026-10-21T13:12:29.503703+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "note": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "at": "2026-10-21T16:06:58.211370+00:00"
         }
       ],
       "regression_of": null,
@@ -4160,7 +4340,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates."
+      "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled."
     },
     {
       "tc_reference": "TC-114",
@@ -4214,6 +4394,12 @@
           "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
           "note": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
           "at": "2026-10-21T15:52:28.434909+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "note": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "at": "2026-10-21T16:06:58.211391+00:00"
         }
       ],
       "regression_of": null,
@@ -4221,7 +4407,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge."
+      "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled."
     },
     {
       "tc_reference": "TC-108",
@@ -4263,6 +4449,12 @@
           "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
           "note": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
           "at": "2026-10-21T15:52:28.434893+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "note": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "at": "2026-10-21T16:06:58.211373+00:00"
         }
       ],
       "regression_of": null,
@@ -4270,7 +4462,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge."
+      "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled."
     },
     {
       "tc_reference": "TC-110",
@@ -4312,6 +4504,12 @@
           "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
           "note": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
           "at": "2026-10-21T15:52:28.434902+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "note": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "at": "2026-10-21T16:06:58.211379+00:00"
         }
       ],
       "regression_of": null,
@@ -4319,7 +4517,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge."
+      "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled."
     },
     {
       "tc_reference": "TC-109",
@@ -4373,6 +4571,12 @@
           "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
           "note": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
           "at": "2026-10-21T15:52:28.434898+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "note": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "at": "2026-10-21T16:06:58.211376+00:00"
         }
       ],
       "regression_of": null,
@@ -4380,7 +4584,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge."
+      "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled."
     },
     {
       "tc_reference": "TC-111",
@@ -4434,6 +4638,12 @@
           "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
           "note": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
           "at": "2026-10-21T15:52:28.434905+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "note": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "at": "2026-10-21T16:06:58.211382+00:00"
         }
       ],
       "regression_of": null,
@@ -4441,7 +4651,172 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge."
+      "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled."
+    },
+    {
+      "tc_reference": "TC-112",
+      "ac_reference": "FR-81",
+      "milestone": "M3",
+      "title": "Indexed database-time statistics",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Measure known status mix; insert 100000 done rows, analyze and EXPLAIN claim and S1.",
+      "expected_result": "Exact counts, age within 50 ms, optional terminal counts; claim index used and S1 no message Seq Scan.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-21 targeted acceptance passes on PG17 for both drivers: exact counts and ages, empty stats, terminal opt-in, 100000-row claim/S1 plans, schema/error handling, and built CLI JSON/text output.",
+          "note": "T-21 targeted acceptance passes on PG17 for both drivers: exact counts and ages, empty stats, terminal opt-in, 100000-row claim/S1 plans, schema/error handling, and built CLI JSON/text output.",
+          "at": "2026-10-21T15:57:41.068542+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "T-21 full run failed across multiple files: database operations exceeded 30s, the 10000-message run exceeded 60s, and a relative-delay fixture consumed its 1s margin. Host load averaged 31.46 afterward; resource contention is suspected, not proven. No timeouts or assertions changed; targeted retest follows.",
+          "note": "T-21 full run failed across multiple files: database operations exceeded 30s, the 10000-message run exceeded 60s, and a relative-delay fixture consumed its 1s margin. Host load averaged 31.46 afterward; resource contention is suspected, not proven. No timeouts or assertions changed; targeted retest follows.",
+          "at": "2026-10-21T16:01:24.615497+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 18 affected acceptance checks passed unchanged on targeted retest in 15.30s, with original timeout and assertion limits. Earlier full-run timeout cause remains unconfirmed.",
+          "note": "All 18 affected acceptance checks passed unchanged on targeted retest in 15.30s, with original timeout and assertion limits. Earlier full-run timeout cause remains unconfirmed.",
+          "at": "2026-10-21T16:02:01.529556+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Second full run passed these cases unchanged. All 186 unit and 138 of 139 integration tests passed; only INT-29 exceeded its recovery deadline.",
+          "note": "Second full run passed these cases unchanged. All 186 unit and 138 of 139 integration tests passed; only INT-29 exceeded its recovery deadline.",
+          "at": "2026-10-21T16:04:03.725490+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full pnpm test --maxWorkers=1 command passed 186 unit / 139 PG17 integration tests with no unhandled errors. Project config still declares maxWorkers 4; effective serialization is not claimed. Standard command will be confirmed before closure.",
+          "note": "Full pnpm test --maxWorkers=1 command passed 186 unit / 139 PG17 integration tests with no unhandled errors. Project config still declares maxWorkers 4; effective serialization is not claimed. Standard command will be confirmed before closure.",
+          "at": "2026-10-21T16:05:40.739946+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "note": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "at": "2026-10-21T16:06:58.211385+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
+          "note": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
+          "at": "2026-10-21T16:07:19.546902+00:00"
+        }
+      ],
+      "regression_of": "Passing targeted or full acceptance before T-21 full run",
+      "root_cause_group": "m3-full-run-timeouts-unconfirmed",
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed."
+    },
+    {
+      "tc_reference": "TC-113",
+      "ac_reference": "FR-87",
+      "milestone": "M3",
+      "title": "CLI stats output",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Migrate then invoke CLI stats with JSON and text output.",
+      "expected_result": "Valid JSON with terminal statistics and readable text output.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-21 targeted acceptance passes on PG17 for both drivers: exact counts and ages, empty stats, terminal opt-in, 100000-row claim/S1 plans, schema/error handling, and built CLI JSON/text output.",
+          "note": "T-21 targeted acceptance passes on PG17 for both drivers: exact counts and ages, empty stats, terminal opt-in, 100000-row claim/S1 plans, schema/error handling, and built CLI JSON/text output.",
+          "at": "2026-10-21T15:57:41.069032+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full pnpm test --maxWorkers=1 command passed 186 unit / 139 PG17 integration tests with no unhandled errors. Project config still declares maxWorkers 4; effective serialization is not claimed. Standard command will be confirmed before closure.",
+          "note": "Full pnpm test --maxWorkers=1 command passed 186 unit / 139 PG17 integration tests with no unhandled errors. Project config still declares maxWorkers 4; effective serialization is not claimed. Standard command will be confirmed before closure.",
+          "at": "2026-10-21T16:05:40.739950+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "note": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "at": "2026-10-21T16:06:58.211388+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
+          "note": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
+          "at": "2026-10-21T16:07:19.546911+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed."
+    },
+    {
+      "tc_reference": "TC-115",
+      "ac_reference": "FR-81; D-71",
+      "milestone": "M3",
+      "title": "Stats errors and option validation",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Request stats before migration, pass an invalid option, then inject a non-schema database error.",
+      "expected_result": "OUTBOX_NOT_MIGRATED includes migration guidance; validation rejects before SQL; other driver errors preserve their cause.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-21 targeted acceptance passes on PG17 for both drivers: exact counts and ages, empty stats, terminal opt-in, 100000-row claim/S1 plans, schema/error handling, and built CLI JSON/text output.",
+          "note": "T-21 targeted acceptance passes on PG17 for both drivers: exact counts and ages, empty stats, terminal opt-in, 100000-row claim/S1 plans, schema/error handling, and built CLI JSON/text output.",
+          "at": "2026-10-21T15:57:41.069382+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "T-21 full run failed across multiple files: database operations exceeded 30s, the 10000-message run exceeded 60s, and a relative-delay fixture consumed its 1s margin. Host load averaged 31.46 afterward; resource contention is suspected, not proven. No timeouts or assertions changed; targeted retest follows.",
+          "note": "T-21 full run failed across multiple files: database operations exceeded 30s, the 10000-message run exceeded 60s, and a relative-delay fixture consumed its 1s margin. Host load averaged 31.46 afterward; resource contention is suspected, not proven. No timeouts or assertions changed; targeted retest follows.",
+          "at": "2026-10-21T16:01:24.615500+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "All 18 affected acceptance checks passed unchanged on targeted retest in 15.30s, with original timeout and assertion limits. Earlier full-run timeout cause remains unconfirmed.",
+          "note": "All 18 affected acceptance checks passed unchanged on targeted retest in 15.30s, with original timeout and assertion limits. Earlier full-run timeout cause remains unconfirmed.",
+          "at": "2026-10-21T16:02:01.529567+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Second full run passed these cases unchanged. All 186 unit and 138 of 139 integration tests passed; only INT-29 exceeded its recovery deadline.",
+          "note": "Second full run passed these cases unchanged. All 186 unit and 138 of 139 integration tests passed; only INT-29 exceeded its recovery deadline.",
+          "at": "2026-10-21T16:04:03.725493+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Full pnpm test --maxWorkers=1 command passed 186 unit / 139 PG17 integration tests with no unhandled errors. Project config still declares maxWorkers 4; effective serialization is not claimed. Standard command will be confirmed before closure.",
+          "note": "Full pnpm test --maxWorkers=1 command passed 186 unit / 139 PG17 integration tests with no unhandled errors. Project config still declares maxWorkers 4; effective serialization is not claimed. Standard command will be confirmed before closure.",
+          "at": "2026-10-21T16:05:40.739953+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "note": "M3 integration acceptance passed on PG14.24 and PG16.15 with both drivers: 27 selected checks per version, including 100000-row query plans and built CLI stats. Four unrelated CLI migrate checks were excluded by the target filter, not disabled.",
+          "at": "2026-10-21T16:06:58.211394+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
+          "note": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed.",
+          "at": "2026-10-21T16:07:19.547027+00:00"
+        }
+      ],
+      "regression_of": "Passing targeted or full acceptance before T-21 full run",
+      "root_cause_group": "m3-full-run-timeouts-unconfirmed",
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "Standard pnpm test (unchanged four-worker integration configuration) passes: 186 unit and 139 PG17 integration tests, no skips or unhandled errors. Integration duration 16.05s. Build/package/size and static gates pass; earlier host-timeout cause remains unconfirmed."
     }
   ]
 }
