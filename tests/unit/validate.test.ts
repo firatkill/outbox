@@ -1,3 +1,4 @@
+import { invalidMessages as invalid } from '../fixtures/invalid-messages.js';
 import { describe, expect, it } from 'vitest';
 import { parseOutboxConfig } from '../../src/core/config.js';
 import { encodeJson } from '../../src/core/json.js';
@@ -5,54 +6,6 @@ import { collapseDuplicates, validateMessages } from '../../src/core/validate.js
 
 const config = parseOutboxConfig({ db: {} });
 const base = { topic: 'orders.created', payload: { id: 1 } };
-const cycle: Record<string, unknown> = {};
-cycle['self'] = cycle;
-const invalid: [string, unknown][] = [
-  ['topic', ''],
-  ['topic', '-order'],
-  ['topic', 'a b'],
-  ['topic', 'a\n'],
-  ['topic', 'a'.repeat(201)],
-  ['topic', 1],
-  ['key', ''],
-  ['key', 'a'.repeat(201)],
-  ['key', 1],
-  ['dedupeKey', ''],
-  ['dedupeKey', 'a'.repeat(201)],
-  ['dedupeKey', null],
-  ['headers', null],
-  ['headers', []],
-  ['headers', new Date()],
-  ['headers', { '': 'value' }],
-  ['headers', { ['x'.repeat(101)]: 'value' }],
-  ['headers', { x: 1 }],
-  ['headers', { x: 'a'.repeat(2001) }],
-  ['headers', Object.fromEntries(Array.from({ length: 51 }, (_, i) => [String(i), 'v']))],
-  ['delayMs', -1],
-  ['delayMs', 0.5],
-  ['delayMs', 31_536_000_001],
-  ['delayMs', NaN],
-  ['delayMs', '1'],
-  ['availableAt', '2026-01-01'],
-  ['availableAt', new Date(NaN)],
-  ['availableAt', null],
-  ['maxAttempts', 0],
-  ['maxAttempts', 1001],
-  ['maxAttempts', 1.5],
-  ['maxAttempts', '1'],
-  ['payload', undefined],
-  ['payload', 1n],
-  ['payload', cycle],
-  [
-    'payload',
-    {
-      toJSON() {
-        throw new Error('cannot serialize');
-      },
-    },
-  ],
-  ['dedupe_key', 'typo'],
-];
 
 describe('UT-05 message validation', () => {
   it.each(invalid)('UT-05 rejects invalid %s with index, field and reason (%#)', (field, value) => {
