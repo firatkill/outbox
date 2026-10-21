@@ -75,6 +75,6 @@ A completion commit is recorded only after the task meets its acceptance criteri
 
 ## Open questions for the owner
 
-- Pending: approve deferring only docs:check/docs:build until their tooling is implemented in T-34, or move that tooling ahead of the remaining tasks. AGENTS.md:147 otherwise requires those unavailable commands for current documentation/API changes.
+None. The owner approved deferring only docs:check/docs:build until T-34 (PRD D-61); all other applicable gates remain mandatory.
 
 Previous decisions resolved: The owner resolved A-01 and approved A-07’s fallback (D-56); M0 local and static CI acceptance is complete.
