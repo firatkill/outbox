@@ -5391,6 +5391,159 @@
       "retraction_reason": null,
       "automatable": true,
       "actual_result": "T-24 implementation CI 39661905308 passed static/package/size and integration jobs. D-74 cleanup limitation remains documented. Final documentation CI required before merge."
+    },
+    {
+      "tc_reference": "TC-125",
+      "ac_reference": "FR-26; FR-60..FR-63; GU-08",
+      "milestone": "M4",
+      "title": "Notification wake latency",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Relay(`listen: true`, `poll: { minIntervalMs: 5000, maxIntervalMs: 5000 }`); start; wait 300 ms for idle; 20 times: record `t0 = performance.now()` right after the enqueuing transaction commits, record `t1` at handler start, wait 100 ms",
+      "expected_result": "p50 (t1 − t0) ≤ 50 ms, max ≤ 500 ms (NFR-11)",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "First T-25 run: postgres.js maximum wake latency was 830.53ms, exceeding the unchanged 500ms bound; p50 assertion passed and pg latency passed. Cause unconfirmed; investigate and retest affected case without relaxing limits.",
+          "note": "First T-25 run: postgres.js maximum wake latency was 830.53ms, exceeding the unchanged 500ms bound; p50 assertion passed and pg latency passed. Cause unconfirmed; investigate and retest affected case without relaxing limits.",
+          "at": "2026-10-21T19:35:17.412093+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Affected INT-50 retest passed unchanged for both drivers. Host load averages were about 30 during investigation, but causation of the earlier 830.53ms sample is unconfirmed. Starting three consecutive complete T-25 acceptance runs.",
+          "note": "Affected INT-50 retest passed unchanged for both drivers. Host load averages were about 30 during investigation, but causation of the earlier 830.53ms sample is unconfirmed. Starting three consecutive complete T-25 acceptance runs.",
+          "at": "2026-10-21T19:35:58.926946+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-25 consecutive acceptance run 1 passed all six checks with both drivers: p50 <=50ms, max <=500ms, polling within 1s, and 4..9 claims over 3s. Limits and test configuration unchanged.",
+          "note": "T-25 consecutive acceptance run 1 passed all six checks with both drivers: p50 <=50ms, max <=500ms, polling within 1s, and 4..9 claims over 3s. Limits and test configuration unchanged.",
+          "at": "2026-10-21T19:36:16.808821+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-25 consecutive acceptance run 2 passed all six checks with both drivers: p50 <=50ms, max <=500ms, polling within 1s, and 4..9 claims over 3s. Limits and test configuration unchanged.",
+          "note": "T-25 consecutive acceptance run 2 passed all six checks with both drivers: p50 <=50ms, max <=500ms, polling within 1s, and 4..9 claims over 3s. Limits and test configuration unchanged.",
+          "at": "2026-10-21T19:36:33.291959+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-25 consecutive acceptance run 3 passed all six checks with both drivers: p50 <=50ms, max <=500ms, polling within 1s, and 4..9 claims over 3s. Limits and test configuration unchanged.",
+          "note": "T-25 consecutive acceptance run 3 passed all six checks with both drivers: p50 <=50ms, max <=500ms, polling within 1s, and 4..9 claims over 3s. Limits and test configuration unchanged.",
+          "at": "2026-10-21T19:36:50.349401+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-25 final standard suite passed 187 unit and 169 PG17 integration tests with no skips/todos. Three consecutive dedicated acceptance runs passed both drivers. Lint, typecheck, guards and ledger pass. Earlier 830.53ms outlier remains recorded with unconfirmed cause.",
+          "note": "T-25 final standard suite passed 187 unit and 169 PG17 integration tests with no skips/todos. Three consecutive dedicated acceptance runs passed both drivers. Lint, typecheck, guards and ledger pass. Earlier 830.53ms outlier remains recorded with unconfirmed cause.",
+          "at": "2026-10-21T19:38:43.926978+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-25 final standard suite passed 187 unit and 169 PG17 integration tests with no skips/todos. Three consecutive dedicated acceptance runs passed both drivers. Lint, typecheck, guards and ledger pass. Earlier 830.53ms outlier remains recorded with unconfirmed cause."
+    },
+    {
+      "tc_reference": "TC-126",
+      "ac_reference": "FR-26; FR-60..FR-63; GU-08",
+      "milestone": "M4",
+      "title": "Polling without notifications",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Relay(`listen: false`, `poll: { minIntervalMs: 50, maxIntervalMs: 300 }`); idle 1 s; enqueue",
+      "expected_result": "Delivered within 1 s (`waitFor` 1000 ms)",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "First T-25 run: polling fallback and three-second idle-backoff claim counts passed with both drivers.",
+          "note": "First T-25 run: polling fallback and three-second idle-backoff claim counts passed with both drivers.",
+          "at": "2026-10-21T19:35:17.438935+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-25 consecutive acceptance run 1 passed all six checks with both drivers: p50 <=50ms, max <=500ms, polling within 1s, and 4..9 claims over 3s. Limits and test configuration unchanged.",
+          "note": "T-25 consecutive acceptance run 1 passed all six checks with both drivers: p50 <=50ms, max <=500ms, polling within 1s, and 4..9 claims over 3s. Limits and test configuration unchanged.",
+          "at": "2026-10-21T19:36:16.809118+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-25 consecutive acceptance run 2 passed all six checks with both drivers: p50 <=50ms, max <=500ms, polling within 1s, and 4..9 claims over 3s. Limits and test configuration unchanged.",
+          "note": "T-25 consecutive acceptance run 2 passed all six checks with both drivers: p50 <=50ms, max <=500ms, polling within 1s, and 4..9 claims over 3s. Limits and test configuration unchanged.",
+          "at": "2026-10-21T19:36:33.292149+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-25 consecutive acceptance run 3 passed all six checks with both drivers: p50 <=50ms, max <=500ms, polling within 1s, and 4..9 claims over 3s. Limits and test configuration unchanged.",
+          "note": "T-25 consecutive acceptance run 3 passed all six checks with both drivers: p50 <=50ms, max <=500ms, polling within 1s, and 4..9 claims over 3s. Limits and test configuration unchanged.",
+          "at": "2026-10-21T19:36:50.349594+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-25 final standard suite passed 187 unit and 169 PG17 integration tests with no skips/todos. Three consecutive dedicated acceptance runs passed both drivers. Lint, typecheck, guards and ledger pass. Earlier 830.53ms outlier remains recorded with unconfirmed cause.",
+          "note": "T-25 final standard suite passed 187 unit and 169 PG17 integration tests with no skips/todos. Three consecutive dedicated acceptance runs passed both drivers. Lint, typecheck, guards and ledger pass. Earlier 830.53ms outlier remains recorded with unconfirmed cause.",
+          "at": "2026-10-21T19:38:43.927209+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-25 final standard suite passed 187 unit and 169 PG17 integration tests with no skips/todos. Three consecutive dedicated acceptance runs passed both drivers. Lint, typecheck, guards and ledger pass. Earlier 830.53ms outlier remains recorded with unconfirmed cause."
+    },
+    {
+      "tc_reference": "TC-127",
+      "ac_reference": "FR-26; FR-60..FR-63; GU-08",
+      "milestone": "M4",
+      "title": "Idle polling backoff",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Relay(`listen: false`, `poll: { minIntervalMs: 100, maxIntervalMs: 1000 }`), spy executor counting claim statements; idle 3 s (comment: measuring idle backoff needs real time)",
+      "expected_result": "Claims between 4 and 9 (expected 100+200+400+800+1000... ≈ 6)",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "First T-25 run: polling fallback and three-second idle-backoff claim counts passed with both drivers.",
+          "note": "First T-25 run: polling fallback and three-second idle-backoff claim counts passed with both drivers.",
+          "at": "2026-10-21T19:35:17.439470+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-25 consecutive acceptance run 1 passed all six checks with both drivers: p50 <=50ms, max <=500ms, polling within 1s, and 4..9 claims over 3s. Limits and test configuration unchanged.",
+          "note": "T-25 consecutive acceptance run 1 passed all six checks with both drivers: p50 <=50ms, max <=500ms, polling within 1s, and 4..9 claims over 3s. Limits and test configuration unchanged.",
+          "at": "2026-10-21T19:36:16.809132+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-25 consecutive acceptance run 2 passed all six checks with both drivers: p50 <=50ms, max <=500ms, polling within 1s, and 4..9 claims over 3s. Limits and test configuration unchanged.",
+          "note": "T-25 consecutive acceptance run 2 passed all six checks with both drivers: p50 <=50ms, max <=500ms, polling within 1s, and 4..9 claims over 3s. Limits and test configuration unchanged.",
+          "at": "2026-10-21T19:36:33.292157+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-25 consecutive acceptance run 3 passed all six checks with both drivers: p50 <=50ms, max <=500ms, polling within 1s, and 4..9 claims over 3s. Limits and test configuration unchanged.",
+          "note": "T-25 consecutive acceptance run 3 passed all six checks with both drivers: p50 <=50ms, max <=500ms, polling within 1s, and 4..9 claims over 3s. Limits and test configuration unchanged.",
+          "at": "2026-10-21T19:36:50.349599+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-25 final standard suite passed 187 unit and 169 PG17 integration tests with no skips/todos. Three consecutive dedicated acceptance runs passed both drivers. Lint, typecheck, guards and ledger pass. Earlier 830.53ms outlier remains recorded with unconfirmed cause.",
+          "note": "T-25 final standard suite passed 187 unit and 169 PG17 integration tests with no skips/todos. Three consecutive dedicated acceptance runs passed both drivers. Lint, typecheck, guards and ledger pass. Earlier 830.53ms outlier remains recorded with unconfirmed cause.",
+          "at": "2026-10-21T19:38:43.927216+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-25 final standard suite passed 187 unit and 169 PG17 integration tests with no skips/todos. Three consecutive dedicated acceptance runs passed both drivers. Lint, typecheck, guards and ledger pass. Earlier 830.53ms outlier remains recorded with unconfirmed cause."
     }
   ]
 }

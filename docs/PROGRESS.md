@@ -1,6 +1,6 @@
 # Progress
 
-Local repository setup completed on 2026-10-21. M0 (T-01..T-03), M1 (T-04..T-11), M2 (T-12..T-18) and M3 (T-19..T-21) are complete. Owner approved continuing into M4; T-22 and T-23 are complete. T-24 is complete under owner-approved D-73/D-74; T-25 follows.
+Local repository setup completed on 2026-10-21. M0 (T-01..T-03), M1 (T-04..T-11), M2 (T-12..T-18) and M3 (T-19..T-21) are complete. Owner approved continuing into M4; T-22 and T-23 are complete. T-24 is complete under owner-approved D-73/D-74; T-25 is in progress.
 
 - Read AGENTS.md and all four specification documents from start to finish.
 - Verified the required Git author and committer identity; enabled the executable `.githooks/commit-msg` hook.
@@ -38,7 +38,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-22 | M4 | Ordering-mode claim | done | 3bcaf44 |
 | T-23 | M4 | Ordering under concurrency | done | 1ffbea3 |
 | T-24 | M4 | NOTIFY and LISTEN in adapters | done | e84095c |
-| T-25 | M4 | Wake-up scheduling and latency | todo | — |
+| T-25 | M4 | Wake-up scheduling and latency | doing | — |
 | T-26 | M5 | Inbox | todo | — |
 | T-27 | M5 | Events, tracer and console fallback | todo | — |
 | T-28 | M5 | BullMQ publisher | todo | — |
