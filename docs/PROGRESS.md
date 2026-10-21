@@ -1,6 +1,6 @@
 # Progress
 
-Local repository setup completed on 2026-10-21. M0 (T-01..T-03) and M1 (T-04..T-11) are complete. Stop before M2 for owner review.
+Local repository setup completed on 2026-10-21. M0 (T-01..T-03) and M1 (T-04..T-11) are complete. Owner authorized M2; T-12 is complete; T-13 is next. Stop at the end of M2 for owner review.
 
 - Read AGENTS.md and all four specification documents from start to finish.
 - Verified the required Git author and committer identity; enabled the executable `.githooks/commit-msg` hook.
@@ -25,7 +25,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-09 | M1 | pg adapter | done | 595ea7d |
 | T-10 | M1 | enqueue | done | 818de4d |
 | T-11 | M1 | Test clock and delays | done | 82f0d56 |
-| T-12 | M2 | Relay options and backoff (pure) | todo | — |
+| T-12 | M2 | Relay options and backoff (pure) | done | 32b8e51 |
 | T-13 | M2 | Claim, complete, fail and lease SQL | todo | — |
 | T-14 | M2 | Relay engine: scheduler, loop, deliverer, flusher | todo | — |
 | T-15 | M2 | Handler timeout and abort | todo | — |
@@ -87,9 +87,11 @@ A completion commit is recorded only after the task meets its acceptance criteri
 
 - T-11 / M1: final suite passes 126 unit tests and 58 integration tests on PG17, with four explicit T-14 relay todos. All 58 integration tests also pass on PG14/16 with both drivers. Package, declaration, size and [implementation CI](https://github.com/firatkill/outbox/actions/runs/39580611281) pass. Final report/test commit checks are enforced on [PR #11](https://github.com/firatkill/outbox/pull/11) before merge. [M1 report](../qa/m1-report.md) and [review](../qa/m1-review.md) document coverage and limitations.
 
+- T-12: backoff and relay-option acceptance passes with 100% targeted lines/branches/functions/statements; 160 unit and 58 PG17 integration tests pass (four T-14 relay todos remain). Lint, typecheck, guards, build, package and size pass. [PR CI](https://github.com/firatkill/outbox/actions/runs/39585043181) passes; final documentation commit checks are enforced before merge. D-66/D-67 approved; docs gates remain deferred per D-61.
+
 ## Open questions for the owner
 
-None. The owner approved the pg optional payload type correction (D-65); T-09 checks pass.
+None. Owner approved the [M2 proposal](M2-APPROVAL-PROPOSAL.md): staged future verification gates (D-66) and integer relay counts/milliseconds (D-67). The owner approved the pg optional payload type correction (D-65); T-09 checks pass.
 
 Owner approved the A-03 text-first JSON cast correction (D-64); implementation and verification are complete for T-08.
 

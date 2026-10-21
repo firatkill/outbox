@@ -228,6 +228,7 @@ export interface DeliveryContext {
 }
 
 /** Relay Common Options. */
+/** Relay settings. Counts and millisecond values must be finite integers; retry.factor may be fractional. */
 export interface RelayCommonOptions {
   /** Override the outbox db for this relay (e.g. a dedicated pool). Same driver type as the outbox. */
   db?: unknown; // typed per adapter as TDb

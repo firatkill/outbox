@@ -168,6 +168,8 @@ Conventions for every task:
 
 ## M2 Relay and leases
 
+Owner-approved staged verification (PRD D-66): concurrency gates become mandatory as implemented: INT-24/T-16, INT-22/T-18, INT-41/T-23, INT-62/T-26 and both chaos modes/T-30. Until then run all available task gates and explicitly report the future checks as unverified. INT-82 claim mapping lands in T-18, listDead in T-20 and stats in T-21.
+
 ### T-12 Relay options and backoff (pure)
 
 - Goal: `parseRelayOptions` and `computeBackoffMs`, fully unit-tested.
@@ -230,7 +232,7 @@ Conventions for every task:
 ### T-18 Concurrency and resilience
 
 - Goal: prove many relays deliver everything exactly once without crashes and survive dropped connections.
-- Files: `tests/integration/concurrency.test.ts` (INT-22, INT-29), `tests/integration/adapters.test.ts` (INT-81, INT-82 complete, INT-83).
+- Files: `tests/integration/concurrency.test.ts` (INT-22, INT-29), `tests/integration/adapters.test.ts` (INT-81, INT-82 claim mapping, INT-83).
 - Steps: implement the tests exactly as TRD §15.3; set `application_name` on test pools so INT-29 can terminate only the relay's connections; INT-22 timeout comment.
 - Acceptance: `pnpm vitest run tests/integration/concurrency.test.ts tests/integration/adapters.test.ts` passes for both adapters; INT-22 finishes in under 60 s locally.
 - Depends on: T-17. Covers: FR-31, FR-38, GU-02, GU-04, NFR-01 (partial).

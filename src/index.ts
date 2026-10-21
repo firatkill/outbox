@@ -14,3 +14,4 @@ export type { OutboxErrorCode } from './core/errors.js';
 export type * from './core/types.js';
 
 export { createOutboxCore } from './core/outbox.js';
+export { computeBackoffMs } from './core/backoff.js';
