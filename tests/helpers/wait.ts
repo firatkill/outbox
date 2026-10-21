@@ -1,3 +1,4 @@
+import type { Relay, RelayEvents } from '../../src/core/types.js';
 export async function waitFor(
   predicate: () => boolean | Promise<boolean>,
   { timeoutMs = 3000, intervalMs = 20 }: { timeoutMs?: number; intervalMs?: number } = {},
@@ -10,15 +11,28 @@ export async function waitFor(
   }
 }
 
-/** Typed with the relay event map once the Relay interface is introduced. */
+/** Wait for a typed relay event, or an arbitrary event source used by harness tests. */
+export function waitForEvent<E extends keyof RelayEvents>(
+  relay: Relay,
+  name: E,
+  filter?: (payload: RelayEvents[E]) => boolean,
+  timeoutMs?: number,
+): Promise<RelayEvents[E]>;
 export function waitForEvent<T>(
   relay: { on(event: string, listener: (payload: T) => void): () => void },
+  name: string,
+  filter?: (payload: T) => boolean,
+  timeoutMs?: number,
+): Promise<T>;
+export function waitForEvent<T>(
+  relay: Relay | { on(event: string, listener: (payload: T) => void): () => void },
   name: string,
   filter: (payload: T) => boolean = () => true,
   timeoutMs = 3000,
 ): Promise<T> {
   return new Promise<T>((resolve, reject) => {
-    const unsubscribe = relay.on(name, (payload) => {
+    const source = relay as { on(event: string, listener: (payload: T) => void): () => void };
+    const unsubscribe = source.on(name, (payload) => {
       if (!filter(payload)) return;
       clearTimeout(timer);
       unsubscribe();
