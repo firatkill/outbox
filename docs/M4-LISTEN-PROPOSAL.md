@@ -23,4 +23,4 @@ Alternative: pause the postgres.js LISTEN implementation until a driver fix is a
 
 ## Other checks
 
-The initial build and size checks passed with the existing 13kB limits; later cleanup briefly exceeded core by 5 bytes and was reduced by removing redundant retry state without changing the limit. M4 is incomplete; T-24 is not committed as complete and T-25 has not started.
+The initial build and size checks passed with the existing 13kB limits; later cleanup briefly exceeded core by 5 bytes and was reduced by removing redundant retry state without changing the limit. T-24 implementation and CI pass under D-74. M4 remains incomplete until T-25 latency and polling acceptance finishes.

@@ -5218,6 +5218,12 @@
           "actual_result": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass.",
           "note": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass.",
           "at": "2026-10-21T19:27:33.265167+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-24 implementation CI 39661905308 passed static/package/size and integration jobs. D-74 cleanup limitation remains documented. Final documentation CI required before merge.",
+          "note": "T-24 implementation CI 39661905308 passed static/package/size and integration jobs. D-74 cleanup limitation remains documented. Final documentation CI required before merge.",
+          "at": "2026-10-21T19:30:31.544742+00:00"
         }
       ],
       "regression_of": null,
@@ -5225,7 +5231,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass."
+      "actual_result": "T-24 implementation CI 39661905308 passed static/package/size and integration jobs. D-74 cleanup limitation remains documented. Final documentation CI required before merge."
     },
     {
       "tc_reference": "TC-124",
@@ -5255,6 +5261,12 @@
           "actual_result": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass.",
           "note": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass.",
           "at": "2026-10-21T19:27:33.265723+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-24 implementation CI 39661905308 passed static/package/size and integration jobs. D-74 cleanup limitation remains documented. Final documentation CI required before merge.",
+          "note": "T-24 implementation CI 39661905308 passed static/package/size and integration jobs. D-74 cleanup limitation remains documented. Final documentation CI required before merge.",
+          "at": "2026-10-21T19:30:31.544897+00:00"
         }
       ],
       "regression_of": null,
@@ -5262,7 +5274,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass."
+      "actual_result": "T-24 implementation CI 39661905308 passed static/package/size and integration jobs. D-74 cleanup limitation remains documented. Final documentation CI required before merge."
     },
     {
       "tc_reference": "TC-128",
@@ -5316,6 +5328,12 @@
           "actual_result": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass.",
           "note": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass.",
           "at": "2026-10-21T19:27:33.265733+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-24 implementation CI 39661905308 passed static/package/size and integration jobs. D-74 cleanup limitation remains documented. Final documentation CI required before merge.",
+          "note": "T-24 implementation CI 39661905308 passed static/package/size and integration jobs. D-74 cleanup limitation remains documented. Final documentation CI required before merge.",
+          "at": "2026-10-21T19:30:31.544900+00:00"
         }
       ],
       "regression_of": null,
@@ -5323,7 +5341,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass."
+      "actual_result": "T-24 implementation CI 39661905308 passed static/package/size and integration jobs. D-74 cleanup limitation remains documented. Final documentation CI required before merge."
     },
     {
       "tc_reference": "TC-123",
@@ -5359,6 +5377,12 @@
           "actual_result": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass.",
           "note": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass.",
           "at": "2026-10-21T19:27:33.265709+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-24 implementation CI 39661905308 passed static/package/size and integration jobs. D-74 cleanup limitation remains documented. Final documentation CI required before merge.",
+          "note": "T-24 implementation CI 39661905308 passed static/package/size and integration jobs. D-74 cleanup limitation remains documented. Final documentation CI required before merge.",
+          "at": "2026-10-21T19:30:31.544891+00:00"
         }
       ],
       "regression_of": null,
@@ -5366,7 +5390,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass."
+      "actual_result": "T-24 implementation CI 39661905308 passed static/package/size and integration jobs. D-74 cleanup limitation remains documented. Final documentation CI required before merge."
     }
   ]
 }

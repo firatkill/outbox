@@ -1,6 +1,6 @@
 # Progress
 
-Local repository setup completed on 2026-10-21. M0 (T-01..T-03), M1 (T-04..T-11), M2 (T-12..T-18) and M3 (T-19..T-21) are complete. Owner approved continuing into M4; T-22 and T-23 are complete. T-24 is in progress under owner-approved D-73.
+Local repository setup completed on 2026-10-21. M0 (T-01..T-03), M1 (T-04..T-11), M2 (T-12..T-18) and M3 (T-19..T-21) are complete. Owner approved continuing into M4; T-22 and T-23 are complete. T-24 is complete under owner-approved D-73/D-74; T-25 follows.
 
 - Read AGENTS.md and all four specification documents from start to finish.
 - Verified the required Git author and committer identity; enabled the executable `.githooks/commit-msg` hook.
@@ -37,7 +37,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-21 | M3 | stats and CLI stats | done | 5f96956 |
 | T-22 | M4 | Ordering-mode claim | done | 3bcaf44 |
 | T-23 | M4 | Ordering under concurrency | done | 1ffbea3 |
-| T-24 | M4 | NOTIFY and LISTEN in adapters | doing | — |
+| T-24 | M4 | NOTIFY and LISTEN in adapters | done | e84095c |
 | T-25 | M4 | Wake-up scheduling and latency | todo | — |
 | T-26 | M5 | Inbox | todo | — |
 | T-27 | M5 | Events, tracer and console fallback | todo | — |
@@ -113,9 +113,11 @@ A completion commit is recorded only after the task meets its acceptance criteri
 
 - T-23: INT-41 passed three consecutive runs with both drivers, each under 60 s; reusable INV-08 reports zero violations. Full suite: 186 unit / 153 PG17 integration. Static and ledger gates pass. [PR CI](https://github.com/firatkill/outbox/actions/runs/39635909129) passes; final documentation checks enforced before merge.
 
+- T-24: notification commit/suppression, reconnect, separate listen pools and lifecycle races pass with both drivers. Full suite: 187 unit / 163 PG17 integration. Static/build/package/size/ledger pass. [PR CI](https://github.com/firatkill/outbox/actions/runs/39661905308) passes; final documentation CI enforced before merge. D-74 explicitly retains the postgres.js server-subscription cleanup limitation.
+
 ## Open questions for the owner
 
-None. Owner approved the [postgres.js reconnect cleanup workaround](M4-LISTEN-PROPOSAL.md), recorded as D-74; implementation and verification are in progress.
+None. Owner approved the [postgres.js reconnect cleanup workaround](M4-LISTEN-PROPOSAL.md), recorded as D-74; the approved contract passes verification.
 
 Owner approved moving relay LISTEN/wake wiring into T-24; D-73 records the decision.
 
