@@ -1,7 +1,7 @@
 import { OutboxError } from '../errors.js';
 import { createEmitter } from '../emitter.js';
 import { schemaVersion } from '../migrations/runner.js';
-import { claim } from '../sql/claim.js';
+import { claim, claimSql } from '../sql/claim.js';
 import { release } from '../sql/lease.js';
 import { createReclaimer } from './reclaim.js';
 import type {
@@ -19,14 +19,13 @@ import { createFlusher } from './flush.js';
 import { createSignal, runLoop } from './loop.js';
 import type { SchedulerState } from './scheduler.js';
 
-/** Construct the unordered relay engine with single-use lifecycle and fenced shutdown. */
+/** Construct the relay engine with single-use lifecycle and fenced shutdown. */
 export function createRelay<TDb, TTx>(
   original: DriverAdapter<TDb, TTx>,
   config: ResolvedOutboxConfig,
   input: unknown,
 ): Relay {
   const options = parseRelayOptions(input);
-  if (options.ordering === 'key') throw new OutboxError('OUTBOX_INTERNAL', 'Ordering is not implemented yet (T-22).');
   const adapter = options.db === undefined ? original : original.withDb(options.db as TDb);
   const { relayId } = options;
   const emitter = createEmitter(relayId);
@@ -72,11 +71,13 @@ export function createRelay<TDb, TTx>(
   });
   const topics =
     options.handlers === undefined ? ('topics' in options ? options.topics : undefined) : Object.keys(options.handlers);
+  const selectedClaim = claimSql(options.ordering, topics !== undefined);
   function claimBatch(limit: number) {
     return claim(adapter, config, {
       relayId,
       limit,
       leaseMs: options.leaseMs,
+      sql: selectedClaim,
       ...(topics === undefined ? {} : { topics }),
     });
   }

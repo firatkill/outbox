@@ -1183,3 +1183,142 @@ Designed from PRD 6.4/6.5 and TRD 5.4, 9.2–9.6, 12.3 and 15 before M2 code. Bo
 - Preconditions: Isolated unmigrated schema, both drivers.
 - Steps: Request stats before migration, pass an invalid option, then inject a non-schema database error.
 - Expected result: OUTBOX_NOT_MIGRATED includes migration guidance; validation rejects before SQL; other driver errors preserve their cause.
+
+# M4 test cases
+
+Designed from the normative ordering and LISTEN requirements before M4 implementation.
+
+| TC ID  | Task | PRD reference              | TRD test | Title                                  | Priority | Automatable |
+| ------ | ---- | -------------------------- | -------- | -------------------------------------- | -------- | ----------- |
+| TC-116 | T-22 | FR-55..FR-57; GU-06        | INT-40   | Serial delivery per key                | High     | yes         |
+| TC-117 | T-22 | FR-55..FR-57; GU-06        | INT-42   | Backoff blocks only its key            | High     | yes         |
+| TC-118 | T-22 | FR-55..FR-57; GU-06        | INT-43   | Dead head requires skip or retry       | High     | yes         |
+| TC-119 | T-22 | FR-55..FR-57; GU-06        | INT-44   | Blocked keys do not block other work   | High     | yes         |
+| TC-120 | T-22 | FR-55..FR-57; GU-06        | INT-45   | Ordering spans topic filters           | High     | yes         |
+| TC-121 | T-23 | FR-55..FR-57; GU-06        | INT-41   | Ordering across four concurrent relays | High     | yes         |
+| TC-122 | T-24 | FR-26; FR-60..FR-63; GU-08 | INT-19   | Transactional enqueue notification     | High     | yes         |
+| TC-123 | T-24 | FR-26; FR-60..FR-63; GU-08 | INT-52   | Listener reconnect recovery            | High     | yes         |
+| TC-124 | T-24 | FR-26; FR-60..FR-63; GU-08 | INT-54   | Separate listen pool                   | High     | yes         |
+| TC-125 | T-25 | FR-26; FR-60..FR-63; GU-08 | INT-50   | Notification wake latency              | High     | yes         |
+| TC-126 | T-25 | FR-26; FR-60..FR-63; GU-08 | INT-51   | Polling without notifications          | High     | yes         |
+| TC-127 | T-25 | FR-26; FR-60..FR-63; GU-08 | INT-53   | Idle polling backoff                   | High     | yes         |
+
+## TC-116: Serial delivery per key
+
+- Milestone: M4; task: T-22.
+- PRD: FR-55..FR-57; GU-06; TRD/test reference: INT-40; TRD 9.4/10/15.3.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated schema and both PostgreSQL adapters; task prerequisites complete.
+- Steps: Key `k`: 5 messages in one batch; Relay(`ordering: 'key'`, `concurrency: 10`), handler records order and tracks in-flight count per key
+- Expected result: Order equals `seq` order; max in-flight for `k` = 1
+
+## TC-117: Backoff blocks only its key
+
+- Milestone: M4; task: T-22.
+- PRD: FR-55..FR-57; GU-06; TRD/test reference: INT-42; TRD 9.4/10/15.3.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated schema and both PostgreSQL adapters; task prerequisites complete.
+- Steps: Key `k`: m1, m2. Handler fails m1 once (`baseDelayMs: 10000`); other key `j` has 3 messages
+- Expected result: While m1 is in backoff, `runOnce` delivers `j` messages but not m2; after advancing 10 s, m1 then m2 delivered in order
+
+## TC-118: Dead head requires skip or retry
+
+- Milestone: M4; task: T-22.
+- PRD: FR-55..FR-57; GU-06; TRD/test reference: INT-43; TRD 9.4/10/15.3.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated schema and both PostgreSQL adapters; task prerequisites complete.
+- Steps: Key `k`: m1 (NonRetryable → dead), m2, m3. Variant A: `skip(m1)`. Variant B: `retryDead({ ids: [m1] })` with a handler that now succeeds
+- Expected result: Before action: 3 runs claim nothing for `k`. A: m2, m3 delivered in order; m1 `skipped`. B: m1 delivered before m2, then m3
+
+## TC-119: Blocked keys do not block other work
+
+- Milestone: M4; task: T-22.
+- PRD: FR-55..FR-57; GU-06; TRD/test reference: INT-44; TRD 9.4/10/15.3.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated schema and both PostgreSQL adapters; task prerequisites complete.
+- Steps: Key `k` blocked by a dead head; 10 unkeyed and 10 messages on 10 other keys
+- Expected result: All 20 delivered; `k` messages untouched
+
+## TC-120: Ordering spans topic filters
+
+- Milestone: M4; task: T-22.
+- PRD: FR-55..FR-57; GU-06; TRD/test reference: INT-45; TRD 9.4/10/15.3.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated schema and both PostgreSQL adapters; task prerequisites complete.
+- Steps: Key `order-1`: `order.created` then `order.paid` (two transactions, sequential); Relay A handles only `order.paid`, Relay B only `order.created`; A runs first
+- Expected result: A claims nothing until B completed `order.created`
+
+## TC-121: Ordering across four concurrent relays
+
+- Milestone: M4; task: T-23.
+- PRD: FR-55..FR-57; GU-06; TRD/test reference: INT-41; TRD 9.4/10/15.3.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated schema and both PostgreSQL adapters; task prerequisites complete.
+- Steps: Own schema created inside the test, without the test clock (INV-08 compares `outbox_now()` with `clock_timestamp()`, so the offset must be 0 even if other tests in the file advanced theirs). 200 keys × 25 messages (5,000) plus 1,000 unkeyed, interleaved; 4 relays with `ordering: 'key'`, `concurrency: 20`, `batchSize: 20`, handler latency random 0–5 ms; wait for all done (timeout 60 s, comment: 6,000 deliveries with per-key serialisation)
+- Expected result: For each key, the first-delivery start times follow `seq` order and each starts after the previous message's `completed_at`; max in-flight per key = 1 across all relays; unkeyed all delivered; INV-08 SQL returns 0 rows
+
+## TC-122: Transactional enqueue notification
+
+- Milestone: M4; task: T-24.
+- PRD: FR-26; FR-60..FR-63; GU-08; TRD/test reference: INT-19; TRD 9.4/10/15.3.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated schema and both PostgreSQL adapters; task prerequisites complete.
+- Steps: Listener connection; enqueue in a transaction and wait 200 ms before commit; then an outbox with `notify: false`
+- Expected result: Notification arrives after commit, not before; one notification for a 10-message batch; none with `notify: false` and the statement text contains no `pg_notify` call path (spy shows `$2` = null)
+
+## TC-123: Listener reconnect recovery
+
+- Milestone: M4; task: T-24.
+- PRD: FR-26; FR-60..FR-63; GU-08; TRD/test reference: INT-52; TRD 9.4/10/15.3.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated schema and both PostgreSQL adapters; task prerequisites complete.
+- Steps: Listening relay; find its listen backend (`pg_stat_activity.query ilike 'listen%'`), `pg_terminate_backend`; then enqueue
+- Expected result: `error` phase `listen` emitted (pg) or reconnect observed (postgres.js `onListen`); message delivered within 2 s; relay still running
+
+## TC-124: Separate listen pool
+
+- Milestone: M4; task: T-24.
+- PRD: FR-26; FR-60..FR-63; GU-08; TRD/test reference: INT-54; TRD 9.4/10/15.3.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated schema and both PostgreSQL adapters; task prerequisites complete.
+- Steps: Relay with `db` = pool A and `listen: { db: pool B }`
+- Expected result: Listen backend belongs to pool B (`application_name`), statements to pool A; wake-up works
+
+## TC-125: Notification wake latency
+
+- Milestone: M4; task: T-25.
+- PRD: FR-26; FR-60..FR-63; GU-08; TRD/test reference: INT-50; TRD 9.4/10/15.3.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated schema and both PostgreSQL adapters; task prerequisites complete.
+- Steps: Relay(`listen: true`, `poll: { minIntervalMs: 5000, maxIntervalMs: 5000 }`); start; wait 300 ms for idle; 20 times: record `t0 = performance.now()` right after the enqueuing transaction commits, record `t1` at handler start, wait 100 ms
+- Expected result: p50 (t1 − t0) ≤ 50 ms, max ≤ 500 ms (NFR-11)
+
+## TC-126: Polling without notifications
+
+- Milestone: M4; task: T-25.
+- PRD: FR-26; FR-60..FR-63; GU-08; TRD/test reference: INT-51; TRD 9.4/10/15.3.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated schema and both PostgreSQL adapters; task prerequisites complete.
+- Steps: Relay(`listen: false`, `poll: { minIntervalMs: 50, maxIntervalMs: 300 }`); idle 1 s; enqueue
+- Expected result: Delivered within 1 s (`waitFor` 1000 ms)
+
+## TC-127: Idle polling backoff
+
+- Milestone: M4; task: T-25.
+- PRD: FR-26; FR-60..FR-63; GU-08; TRD/test reference: INT-53; TRD 9.4/10/15.3.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated schema and both PostgreSQL adapters; task prerequisites complete.
+- Steps: Relay(`listen: false`, `poll: { minIntervalMs: 100, maxIntervalMs: 1000 }`), spy executor counting claim statements; idle 3 s (comment: measuring idle backoff needs real time)
+- Expected result: Claims between 4 and 9 (expected 100+200+400+800+1000... ≈ 6)
