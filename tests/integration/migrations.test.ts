@@ -30,6 +30,16 @@ describe.each(ADAPTERS)('%s migrations', (name) => {
     const second = driver.outbox({ schema: b.schema, tablePrefix: b.tablePrefix });
     await first.migrate();
     await second.migrate();
+    for (const [config, topic] of [
+      [first.config, 'first'],
+      [second.config, 'second'],
+    ] as const) {
+      const instance = createOutboxCore(driver.adapter, { schema: config.schema, tablePrefix: config.tablePrefix });
+      await driver.adapter.transaction((tx) => instance.enqueue(tx, { topic, payload: null }));
+      expect(await driver.adapter.query(render('select topic::text from {{messages}}', config), [])).toEqual([
+        { topic },
+      ]);
+    }
     expect(first.config.channel).not.toBe(second.config.channel);
     expect(await first.schemaVersion()).toEqual({ current: 1, required: 1 });
     expect(await second.schemaVersion()).toEqual({ current: 1, required: 1 });
