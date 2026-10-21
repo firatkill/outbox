@@ -961,7 +961,7 @@ Designed from PRD 6.4/6.5 and TRD 5.4, 9.2–9.6, 12.3 and 15 before M2 code. Bo
 - PRD: FR-38; TRD/test reference: INT-29.
 - Priority: High; automatable: yes.
 - Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
-- Steps: Enqueue 2000; terminate only named relay backends every 200ms for 2s.
+- Steps: Enqueue 2000; use a 5s lease, 4s handler timeout and 500ms reclaim interval; terminate only named relay backends every 200ms for 2s. Close test-owned pools after relay drain (D-70).
 - Expected result: Claim/flush errors emitted; relay survives; all done within 30s reconnect allowance.
 
 ## TC-095: Unprepared postgres.js queries
