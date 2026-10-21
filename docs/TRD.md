@@ -2441,6 +2441,8 @@ Test-writing rules (also in AGENTS.md):
 | UT-12 | `cli.test.ts` | Argument parsing for every option; unknown option exit 2; URL password redaction (`postgres://u:secret@h/db` → `postgres://u:***@h/db`); `--print --from 1` output; help text snapshot |
 | UT-13 | `bullmq.test.ts` | Fake queue: `jobId = 'outbox-' + id`, matching `^outbox-[0-9a-f-]{36}$` (no `:`, not an integer); job options passed through; missing `attempts` → `OUTBOX_CONFIG` (static) or `NonRetryableError` (per message); user `jobId` rejected; topic map and function resolution; unknown topic → `NonRetryableError` |
 | UT-14 | `emitter.test.ts` | Listener isolation (throwing listener does not stop others, produces `error` phase `listener`); `on` returns an unsubscribe function; console fallback when no `error` listener, rate-limited to one line per phase per 10 s (fake timers) |
+| UT-15 | `smoke.test.ts` | T-01: exported build-time `VERSION` equals `package.json` version |
+| UT-16 | `guards.test.ts` | T-03: one passing and one failing fixture for every G-1..G-8 rule; changeset policy cases from §19.1 |
 
 ### 15.3 Integration tests
 
@@ -2457,6 +2459,7 @@ Conventions for this table: "both" = runs for postgres.js and pg. `tc` = the tes
 | INT-05 | one adapter | Schema A: execute `migrationSql({ schema: A })` as one script. Schema B: runner | `information_schema.columns`, `pg_constraint` definitions, `pg_indexes.indexdef` (schema name normalised) and version rows are identical |
 | INT-06 | both | Empty schema; `relay.start()`; `outbox.stats()` | Both reject with `OUTBOX_NOT_MIGRATED`; message contains `npx outbox migrate --schema` |
 | INT-07 | both | Empty schema; `migrate({ dryRun: true })` | Returns SQL containing `create table`; afterwards the schema has no tables (`to_regclass` null) |
+| INT-08 | both | T-02 harness: create two unique schemas, create and write a table in one, inspect the other, then clean up the test-owned schemas | Table/data isolation holds for both drivers; cleanup removes only the test-owned schemas; two concurrent harness runs pass independently |
 
 #### Enqueue (`tests/integration/enqueue.test.ts`)
 
