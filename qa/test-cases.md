@@ -1,6 +1,6 @@
 # M0 test cases
 
-These cases are derived from PRD requirements, TRD sections and T-01..T-03 acceptance criteria before implementation. M0 is not complete. Only attempted checks appear in test-results.json.
+These cases are derived from PRD requirements, TRD sections and T-01..T-03 acceptance criteria before implementation. M0 acceptance is complete. Execution evidence and historical failures are retained in test-results.json.
 
 The owner-decisions file controls the support matrix (PRD D-54). T-02’s PostgreSQL 18 acceptance clause has been reconciled to that decision; no PostgreSQL 18 result is claimed.
 
@@ -29,6 +29,7 @@ The owner-decisions file controls the support matrix (PRD D-54). T-02’s Postgr
 | TC-021 | T-03 | NFR-03; NFR-05 | T-03 acceptance                 | Live guard command reports a planted violation                   | High     | yes         |
 | TC-022 | T-03 | FR-96          | T-03 acceptance; TRD 16.1/19.1  | GitHub static checks enforce and rerun the changeset rule        | High     | yes         |
 | TC-023 | T-03 | FR-96          | A-10; TRD 19.1                  | Action pins and Changesets configuration match the specification | Medium   | yes         |
+| TC-024 | T-02 | FR-91          | UT-17; TRD 15.4                 | Harness wait and deferred helpers                                | High     | yes         |
 
 ## TC-001: npm ownership and package availability
 

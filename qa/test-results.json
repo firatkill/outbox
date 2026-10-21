@@ -623,6 +623,31 @@
       "retraction_reason": null,
       "automatable": true,
       "actual_result": "Verified official latest releases via GitHub API: checkout v7.0.1, setup-node v7.1.0, pnpm/action-setup v6.1.0. CI pins the major tags as specified. Changesets config matches TRD 19.1 and uses the installed CLI default README."
+    },
+    {
+      "tc_reference": "TC-022",
+      "ac_reference": "FR-96",
+      "milestone": "M0 Setup",
+      "title": "GitHub static checks enforce and rerun the changeset rule",
+      "description": "M0 acceptance case from the specifications.",
+      "steps_to_reproduce": "Push the T-03 PR and inspect static checks; use a test PR with a source change but no changeset; add no-changeset and inspect the rerun.",
+      "expected_result": "Normal PR is green; missing changeset fails; label event reruns and passes.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "The unlabeled PR failed exactly at the changeset guard: https://github.com/firatkill/outbox/actions/runs/39564875894. Adding no-changeset triggered a new run; frozen install, lint, typecheck, guards, 26 unit tests and build all passed: https://github.com/firatkill/outbox/actions/runs/39565227105. This is the expected negative/positive acceptance sequence, not a product failure.",
+          "note": "The unlabeled PR failed exactly at the changeset guard: https://github.com/firatkill/outbox/actions/runs/39564875894. Adding no-changeset triggered a new run; frozen install, lint, typecheck, guards, 26 unit tests and build all passed: https://github.com/firatkill/outbox/actions/runs/39565227105. This is the expected negative/positive acceptance sequence, not a product failure.",
+          "at": "2026-10-21T07:54:33.414860+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "The unlabeled PR failed exactly at the changeset guard: https://github.com/firatkill/outbox/actions/runs/39564875894. Adding no-changeset triggered a new run; frozen install, lint, typecheck, guards, 26 unit tests and build all passed: https://github.com/firatkill/outbox/actions/runs/39565227105. This is the expected negative/positive acceptance sequence, not a product failure."
     }
   ]
 }
