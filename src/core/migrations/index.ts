@@ -23,3 +23,5 @@ export const REQUIRED_SCHEMA_VERSION = 1;
 export function migrationChecksum(template: string): string {
   return createHash('sha256').update(template.replaceAll('\r\n', '\n')).digest('hex');
 }
+
+export { migrationSql } from './sql.js';
