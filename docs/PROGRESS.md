@@ -19,7 +19,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-03 | M0 | CI static job, guards and Changesets | done | 1f50dd1 |
 | T-04 | M1 | Identifiers, config, errors and rendering | done | e07f5cd |
 | T-05 | M1 | Migration 0001 and runner | done | 16010ec |
-| T-06 | M1 | migrationSql and CLI migrate | doing | — |
+| T-06 | M1 | migrationSql and CLI migrate | done | 80c67b2 |
 | T-07 | M1 | Message validation, JSON and UUIDv7 | todo | — |
 | T-08 | M1 | postgres.js adapter and createOutboxCore skeleton | todo | — |
 | T-09 | M1 | pg adapter | todo | — |
@@ -74,6 +74,8 @@ A completion commit is recorded only after the task meets its acceptance criteri
 - T-04: config, naming, rendering and error tests pass (57 unit / 6 integration in the available suite); [PR static CI](https://github.com/firatkill/outbox/actions/runs/39566952773) passes.
 
 - T-05: schema, checksums, concurrent migrations, rollback and dry-run checks pass (59 unit / 12 integration locally); [static and integration CI](https://github.com/firatkill/outbox/actions/runs/39568478372) pass.
+
+- T-06: CLI and printed-SQL catalog equivalence pass (64 unit / 18 integration locally); package checks and staged size limits pass; [static and integration CI](https://github.com/firatkill/outbox/actions/runs/39570779407) pass.
 
 ## Open questions for the owner
 
