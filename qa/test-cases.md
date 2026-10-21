@@ -705,7 +705,7 @@ Designed from PRD 6.4/6.5 and TRD 5.4, 9.2–9.6, 12.3 and 15 before M2 code. Bo
 | TC-080 | T-14 | FR-30; FR-31; FR-32         | INT-20                           | End-to-end handler delivery              | High     | yes         | One matching handler call, attempt 1 and valid context; done row has completion time and cleared lease.                                                      |
 | TC-081 | T-14 | FR-40                       | INT-27; INT-02                   | Topic and outbox isolation               | High     | yes         | Only subscribed topics delivered; c and the other outbox remain pending.                                                                                     |
 | TC-082 | T-14 | FR-39                       | INT-28                           | Single-batch runOnce                     | High     | yes         | Counts are 10,10,5 with confirmed deliveries; started relay rejects runOnce.                                                                                 |
-| TC-083 | T-14 | FR-23; FR-39                | INT-15; INT-16                   | Relay honors delayed availability        | High     | yes         | No early claim; each message claimed after its availability instant.                                                                                         |
+| TC-083 | T-14 | FR-24; FR-39                | INT-15; INT-16                   | Relay honors delayed availability        | High     | yes         | No early claim; each message claimed after its availability instant.                                                                                         |
 | TC-084 | T-15 | FR-35; FR-47; FR-48         | INT-26; UT-10                    | Timeout abort and stored failure         | High     | yes         | Abort reason and last_error are OUTBOX_HANDLER_TIMEOUT; pending with approximately 1000ms delay and failed event.                                            |
 | TC-085 | T-16 | FR-33; GU-04; GU-09         | INT-23                           | Process crash recovery                   | High     | yes         | Expired claim reclaimed and delivered at attempt 2; last_error names child holder.                                                                           |
 | TC-086 | T-16 | FR-32; GU-04                | INT-24                           | Late completion fencing                  | High     | yes         | A emits leaseLost, no delivered event; B completion remains unchanged.                                                                                       |
@@ -859,7 +859,7 @@ Designed from PRD 6.4/6.5 and TRD 5.4, 9.2–9.6, 12.3 and 15 before M2 code. Bo
 ## TC-083: Relay honors delayed availability
 
 - Milestone: M2 Relay and leases; task: T-14.
-- PRD: FR-23; FR-39; TRD/test reference: INT-15; INT-16.
+- PRD: FR-24; FR-39; TRD/test reference: INT-15; INT-16.
 - Priority: High; automatable: yes.
 - Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
 - Steps: Use relative 60-second and absolute 5-second availability; run before/after test-clock advances.
