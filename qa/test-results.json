@@ -648,6 +648,217 @@
       "retraction_reason": null,
       "automatable": true,
       "actual_result": "The unlabeled PR failed exactly at the changeset guard: https://github.com/firatkill/outbox/actions/runs/39564875894. Adding no-changeset triggered a new run; frozen install, lint, typecheck, guards, 26 unit tests and build all passed: https://github.com/firatkill/outbox/actions/runs/39565227105. This is the expected negative/positive acceptance sequence, not a product failure."
+    },
+    {
+      "tc_reference": "TC-025",
+      "ac_reference": "FR-10; NFR-04",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Configuration defaults and names",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Parse a config with a driver handle and no overrides; inspect all resolved options, names and channel.",
+      "expected_result": "Defaults match TRD 5.1; names are qualified and quoted; the channel is public.outbox_messages.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-04 targeted UT-03/04/07 run passed all 31 assertions/tests; lint and strict typecheck passed. Tests derive from TRD 5.1, 5.9, 7.1 and 15.2.",
+          "note": "T-04 targeted UT-03/04/07 run passed all 31 assertions/tests; lint and strict typecheck passed. Tests derive from TRD 5.1, 5.9, 7.1 and 15.2.",
+          "at": "2026-10-21T08:07:00.947026+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed.",
+          "note": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed.",
+          "at": "2026-10-21T08:07:38.563551+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed."
+    },
+    {
+      "tc_reference": "TC-026",
+      "ac_reference": "FR-10; NFR-04",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Identifier validation boundaries",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Try schema lengths 1/30/31, prefix 1/20/21, uppercase, hyphen, quote, empty, leading digit and valid underscores.",
+      "expected_result": "Only names matching the regex and length limits pass; invalid names report OUTBOX_CONFIG.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-04 targeted UT-03/04/07 run passed all 31 assertions/tests; lint and strict typecheck passed. Tests derive from TRD 5.1, 5.9, 7.1 and 15.2.",
+          "note": "T-04 targeted UT-03/04/07 run passed all 31 assertions/tests; lint and strict typecheck passed. Tests derive from TRD 5.1, 5.9, 7.1 and 15.2.",
+          "at": "2026-10-21T08:07:00.947426+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed.",
+          "note": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed.",
+          "at": "2026-10-21T08:07:38.563668+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed."
+    },
+    {
+      "tc_reference": "TC-027",
+      "ac_reference": "FR-10",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Config option boundaries and aggregate errors",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Try numeric limits, fractions, NaN, invalid notify, missing db and unknown options, including several invalid fields together.",
+      "expected_result": "Every invalid option is reported in details.issues; valid limits and false notify are preserved.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-04 targeted UT-03/04/07 run passed all 31 assertions/tests; lint and strict typecheck passed. Tests derive from TRD 5.1, 5.9, 7.1 and 15.2.",
+          "note": "T-04 targeted UT-03/04/07 run passed all 31 assertions/tests; lint and strict typecheck passed. Tests derive from TRD 5.1, 5.9, 7.1 and 15.2.",
+          "at": "2026-10-21T08:07:00.947568+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed.",
+          "note": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed.",
+          "at": "2026-10-21T08:07:38.563672+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed."
+    },
+    {
+      "tc_reference": "TC-028",
+      "ac_reference": "NFR-04; FR-10",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "SQL token rendering and escaping",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Render all seven tokens for defaults and app_events/ob_; quote an embedded double quote; render an unknown or incomplete token.",
+      "expected_result": "Snapshots match TRD 7.1; quote characters double; no token remains; unresolved tokens throw OUTBOX_INTERNAL.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-04 targeted UT-03/04/07 run passed all 31 assertions/tests; lint and strict typecheck passed. Tests derive from TRD 5.1, 5.9, 7.1 and 15.2.",
+          "note": "T-04 targeted UT-03/04/07 run passed all 31 assertions/tests; lint and strict typecheck passed. Tests derive from TRD 5.1, 5.9, 7.1 and 15.2.",
+          "at": "2026-10-21T08:07:00.947803+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed.",
+          "note": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed.",
+          "at": "2026-10-21T08:07:38.563674+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed."
+    },
+    {
+      "tc_reference": "TC-029",
+      "ac_reference": "FR-05; D-29",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Error branding and classification",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Construct each error class and a separately branded object; check helpers with matching and differing codes, unbranded errors, null and primitives.",
+      "expected_result": "Helpers use the shared symbol and code; cause/details are retained; retry and non-retryable classes are distinguished.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-04 targeted UT-03/04/07 run passed all 31 assertions/tests; lint and strict typecheck passed. Tests derive from TRD 5.1, 5.9, 7.1 and 15.2.",
+          "note": "T-04 targeted UT-03/04/07 run passed all 31 assertions/tests; lint and strict typecheck passed. Tests derive from TRD 5.1, 5.9, 7.1 and 15.2.",
+          "at": "2026-10-21T08:07:00.947956+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed.",
+          "note": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed.",
+          "at": "2026-10-21T08:07:38.563676+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed."
+    },
+    {
+      "tc_reference": "TC-030",
+      "ac_reference": "FR-05; D-29",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Last-error formatting",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Format library errors, ordinary errors and primitive throws; test exactly 2000 and longer formatted strings.",
+      "expected_result": "Code or error name prefixes text; output is at most 2000 UTF-16 units with trailing ellipsis only when truncated.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-04 targeted UT-03/04/07 run passed all 31 assertions/tests; lint and strict typecheck passed. Tests derive from TRD 5.1, 5.9, 7.1 and 15.2.",
+          "note": "T-04 targeted UT-03/04/07 run passed all 31 assertions/tests; lint and strict typecheck passed. Tests derive from TRD 5.1, 5.9, 7.1 and 15.2.",
+          "at": "2026-10-21T08:07:00.948094+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed.",
+          "note": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed.",
+          "at": "2026-10-21T08:07:38.563677+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed."
+    },
+    {
+      "tc_reference": "TC-063",
+      "ac_reference": "FR-10; NFR-04",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Rendered SQL works with both drivers",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Render custom qualified names; create a table and round-trip SQL-looking text through a parameter with each driver.",
+      "expected_result": "Names address only the test-owned schema; parameter text is preserved as data.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed.",
+          "note": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed.",
+          "at": "2026-10-21T08:07:38.563999+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed."
     }
   ]
 }
