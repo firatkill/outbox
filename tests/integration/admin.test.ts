@@ -1,8 +1,9 @@
+import { S1 } from '../../src/core/sql/stats.js';
 import { randomUUID } from 'node:crypto';
 import { afterAll, describe, expect, it, vi } from 'vitest';
 import { createOutboxCore } from '../../src/core/outbox.js';
 import { NonRetryableError } from '../../src/core/errors.js';
-import { claim } from '../../src/core/sql/claim.js';
+import { C1, claim } from '../../src/core/sql/claim.js';
 import { render } from '../../src/core/sql/render.js';
 import type { MessageInput, SqlParam } from '../../src/core/types.js';
 import { testClock } from '../../src/testing.js';
@@ -209,6 +210,91 @@ describe.each(ADAPTERS)('%s admin', (name) => {
         code: 'OUTBOX_DRIVER',
         cause,
         details: { statement: 'listDead' },
+      });
+    } finally {
+      spy.mockRestore();
+    }
+  });
+  it('INT-37 INT-82 TC-112 returns exact stats and uses partial indexes with a large terminal history', async () => {
+    const s = await setup();
+    const empty = await s.outbox.stats();
+    expect(empty).toEqual({
+      ready: 0,
+      scheduled: 0,
+      inFlight: 0,
+      expiredLeases: 0,
+      dead: 0,
+      oldestReadyAgeMs: 0,
+      measuredAt: expect.any(Date) as unknown,
+    });
+    await s.query(`insert into {{messages}} (id, topic, payload, status, available_at, attempts, locked_by, locked_until, completed_at, dead_at)
+      select gen_random_uuid(), 'fixture', 'null'::jsonb,
+        case when n <= 5 then 'pending' when n <= 7 then 'in_flight' when n = 8 then 'dead' when n <= 12 then 'done' else 'skipped' end,
+        case when n = 1 then {{now}} - interval '10 seconds' when n <= 3 then {{now}} - interval '1 second'
+          when n <= 5 then {{now}} + interval '1 hour' else {{now}} end,
+        case when n <= 5 then 0 else 1 end,
+        case when n in (6,7) then 'ghost' else null end,
+        case when n = 6 then {{now}} - interval '1 second' when n = 7 then {{now}} + interval '1 hour' else null end,
+        case when n >= 9 then {{now}} else null end,
+        case when n = 8 then {{now}} else null end
+      from generate_series(1,13) n`);
+    const stats = await s.outbox.stats();
+    expect(stats).toMatchObject({ ready: 3, scheduled: 2, inFlight: 2, expiredLeases: 1, dead: 1 });
+    expect(stats).not.toHaveProperty('done');
+    expect(stats).not.toHaveProperty('skipped');
+    const [oldest] = await s.query(
+      "select (extract(epoch from min(available_at))*1000)::float8 as ms from {{messages}} where status = 'pending'",
+    );
+    expect(
+      Math.abs(stats.oldestReadyAgeMs - (stats.measuredAt.getTime() - Number(oldest?.['ms']))),
+    ).toBeLessThanOrEqual(50);
+    expect(stats.oldestReadyAgeMs).toBeGreaterThanOrEqual(10000);
+    expect(await s.outbox.stats({ includeTerminal: true })).toMatchObject({
+      ready: 3,
+      scheduled: 2,
+      inFlight: 2,
+      expiredLeases: 1,
+      dead: 1,
+      done: 4,
+      skipped: 1,
+    });
+    await s.query(`insert into {{messages}} (id,topic,payload,status,completed_at)
+      select gen_random_uuid(), 'history', 'null'::jsonb, 'done', {{now}} from generate_series(1,100000)`);
+    await s.query('analyze {{messages}}');
+    const claimPlan = await s.query('explain (format json) ' + C1, ['plan-probe', 10, 60000]);
+    expect(JSON.stringify(claimPlan)).toContain('outbox_messages_claim_idx');
+    const statsPlan = await s.query('explain (format json) ' + S1);
+    function nodes(value: unknown): Record<string, unknown>[] {
+      if (Array.isArray(value)) return value.flatMap(nodes);
+      if (typeof value !== 'object' || value === null) return [];
+      const row = value as Record<string, unknown>;
+      return [row, ...Object.values(row).flatMap(nodes)];
+    }
+    expect(
+      nodes(statsPlan).some((node) => node['Node Type'] === 'Seq Scan' && node['Relation Name'] === 'outbox_messages'),
+    ).toBe(false);
+    expect(JSON.stringify(statsPlan)).toContain('outbox_messages_claim_idx');
+  });
+  it('INT-103 TC-115 reports missing stats schema and validates before querying', async () => {
+    const owned = await createTestSchema();
+    schemas.push(owned);
+    const outbox = createOutboxCore(driver.adapter, { schema: owned.schema });
+    await expect(outbox.stats()).rejects.toMatchObject({
+      code: 'OUTBOX_NOT_MIGRATED',
+      message: expect.stringContaining('npx outbox migrate --schema ' + owned.schema) as unknown,
+    });
+    const spy = vi.spyOn(driver.adapter, 'query');
+    try {
+      await expect(
+        outbox.stats({ includeTerminal: 'yes' } as unknown as { includeTerminal: boolean }),
+      ).rejects.toMatchObject({ code: 'OUTBOX_CONFIG' });
+      expect(spy).not.toHaveBeenCalled();
+      const cause = Object.assign(new Error('permission denied'), { code: '42501' });
+      spy.mockRejectedValueOnce(cause);
+      await expect(outbox.stats()).rejects.toMatchObject({
+        code: 'OUTBOX_DRIVER',
+        cause,
+        details: { statement: 'stats' },
       });
     } finally {
       spy.mockRestore();

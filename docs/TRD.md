@@ -2619,6 +2619,7 @@ INT-21 also runs directly against claim SQL before the relay exists.
 
 | INT-100 | both | Start with five unexpired ghost leases, reclaimBatchSize two, one exhausted message; advance test clock past expiry | Periodic reclaim loops through full batches, reports each id once and exhausted deadIds, delivers four and emits one dead event |
 
+| INT-103 | both | stats before migration; invalid boolean; non-schema driver failure | OUTBOX_NOT_MIGRATED with migration guidance; OUTBOX_CONFIG before SQL; OUTBOX_DRIVER retains cause |
 | INT-102 | both | Invalid admin options and IDs; query spy; injected driver error | D-71 codes before SQL; OUTBOX_DRIVER preserves cause and statement |
 | INT-101 | both | Inject complete-statement failures, stop with zero drain timeout, then advance past the lease and recover with another relay | Shutdown bounds final retries to three, retains unconfirmed lease, and recovery delivers attempt two |
 
