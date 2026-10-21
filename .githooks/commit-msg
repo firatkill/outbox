@@ -1,0 +1,42 @@
+#!/bin/sh
+# Enforces the authorship rule in AGENTS.md, whichever tool makes the commit:
+#  1. removes Co-authored-by trailers, "Generated with ..." lines and AI session links
+#  2. rejects the commit unless author and committer are the owner
+# Enable once per clone: git config core.hooksPath .githooks
+set -eu
+
+OWNER_NAME="Fırat Kıl"
+OWNER_EMAIL="72046564+firatkill@users.noreply.github.com"
+msg_file="$1"
+
+check_ident() {
+  # $1 = AUTHOR or COMMITTER
+  ident=$(git var "GIT_$1_IDENT")
+  name=${ident%% <*}
+  email=${ident#*<}
+  email=${email%%>*}
+  if [ "$name" != "$OWNER_NAME" ] || [ "$email" != "$OWNER_EMAIL" ]; then
+    echo "commit-msg: $1 is '$name <$email>', expected '$OWNER_NAME <$OWNER_EMAIL>'." >&2
+    echo "commit-msg: see AGENTS.md, Authorship. Fix the git config or the tool's attribution setting." >&2
+    exit 1
+  fi
+}
+check_ident AUTHOR
+check_ident COMMITTER
+
+tmp="$msg_file.tmp.$$"
+grep -v -i -E \
+  -e '^[[:space:]]*co-authored-by:' \
+  -e '^[[:space:]]*(🤖[[:space:]]*)?generated (with|by) ' \
+  -e '^[[:space:]]*(claude|codex|cursor|copilot|gemini|aider)[a-z-]*-session:' \
+  -e '^[[:space:]]*https://(claude\.ai|chatgpt\.com|cursor\.com)/' \
+  "$msg_file" | sed -E '1s/^aider: //' > "$tmp" || true
+
+# Drop trailing blank lines left behind by removed trailers.
+awk '{ lines[NR] = $0 } END { n = NR; while (n > 0 && lines[n] ~ /^[[:space:]]*$/) n--; for (i = 1; i <= n; i++) print lines[i] }' "$tmp" > "$msg_file"
+rm -f "$tmp"
+
+if ! grep -q -v -E '^[[:space:]]*(#|$)' "$msg_file"; then
+  echo "commit-msg: message is empty after removing attribution lines." >&2
+  exit 1
+fi

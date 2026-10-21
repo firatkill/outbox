@@ -1,0 +1,8 @@
+# Commits in this repository carry the owner's name only (see AGENTS.md, Authorship).
+attribute-author: false
+attribute-committer: false
+attribute-co-authored-by: false
+attribute-commit-message-author: false
+attribute-commit-message-committer: false
+# Run the repository's git hooks (Aider skips them by default).
+git-commit-verify: true
