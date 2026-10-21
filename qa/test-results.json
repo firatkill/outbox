@@ -171,6 +171,18 @@
           "actual_result": "T-06 lint retest passed after changing the two temporary CLI driver object type aliases to interfaces; strict lint rules remain unchanged.",
           "note": "T-06 lint retest passed after changing the two temporary CLI driver object type aliases to interfaces; strict lint rules remain unchanged.",
           "at": "2026-10-21T08:31:01.816117+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "M1 report preflight formatting check found the newly generated qa/m1-report.md table was not yet formatted; runtime tests were not run by this aborted gate sequence.",
+          "note": "M1 report preflight formatting check found the newly generated qa/m1-report.md table was not yet formatted; runtime tests were not run by this aborted gate sequence.",
+          "at": "2026-10-21T09:58:04.084418+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "M1 final report formatting corrected. Final lint and typecheck pass; full suite passes 126 unit and 58 integration tests with four plan-authorized T-14 todos.",
+          "note": "M1 final report formatting corrected. Final lint and typecheck pass; full suite passes 126 unit and 58 integration tests with four plan-authorized T-14 todos.",
+          "at": "2026-10-21T09:58:52.696428+00:00"
         }
       ],
       "regression_of": null,
@@ -178,7 +190,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-06 lint retest passed after changing the two temporary CLI driver object type aliases to interfaces; strict lint rules remain unchanged."
+      "actual_result": "M1 final report formatting corrected. Final lint and typecheck pass; full suite passes 126 unit and 58 integration tests with four plan-authorized T-14 todos."
     },
     {
       "tc_reference": "TC-006",
@@ -800,6 +812,12 @@
           "actual_result": "The normative default/custom SQL snapshots and failed-migration rollback case passed in the targeted run (5 tests). The expected SQL fixtures were copied from TRD 7.2/7.3 before comparison, not generated from implementation output.",
           "note": "The normative default/custom SQL snapshots and failed-migration rollback case passed in the targeted run (5 tests). The expected SQL fixtures were copied from TRD 7.2/7.3 before comparison, not generated from implementation output.",
           "at": "2026-10-21T08:16:14.284872+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M1 QA added TRD-sourced E1/E2 SQL fixtures for default/custom names. Targeted UT-04 and final full suite pass; 126 unit and 58 integration tests, four authorized relay-delay todos.",
+          "note": "Final M1 QA added TRD-sourced E1/E2 SQL fixtures for default/custom names. Targeted UT-04 and final full suite pass; 126 unit and 58 integration tests, four authorized relay-delay todos.",
+          "at": "2026-10-21T09:58:52.721323+00:00"
         }
       ],
       "regression_of": null,
@@ -807,7 +825,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "The normative default/custom SQL snapshots and failed-migration rollback case passed in the targeted run (5 tests). The expected SQL fixtures were copied from TRD 7.2/7.3 before comparison, not generated from implementation output."
+      "actual_result": "Final M1 QA added TRD-sourced E1/E2 SQL fixtures for default/custom names. Targeted UT-04 and final full suite pass; 126 unit and 58 integration tests, four authorized relay-delay todos."
     },
     {
       "tc_reference": "TC-029",
@@ -1326,6 +1344,12 @@
           "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
           "note": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
           "at": "2026-10-21T09:44:46.178533+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-11 final suite passes: 125 unit and 58 integration tests on PG17, with four plan-authorized T-14 relay todos. Full integration suites also pass on PG14 and PG16 with both drivers. Package/declaration/size checks pass; testing entry is 1.15 kB and test-clock SQL appears only in dist/testing.js and dist/testing.cjs.",
+          "note": "T-11 final suite passes: 125 unit and 58 integration tests on PG17, with four plan-authorized T-14 relay todos. Full integration suites also pass on PG14 and PG16 with both drivers. Package/declaration/size checks pass; testing entry is 1.15 kB and test-clock SQL appears only in dist/testing.js and dist/testing.cjs.",
+          "at": "2026-10-21T09:54:22.985534+00:00"
         }
       ],
       "regression_of": null,
@@ -1333,7 +1357,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion."
+      "actual_result": "T-11 final suite passes: 125 unit and 58 integration tests on PG17, with four plan-authorized T-14 relay todos. Full integration suites also pass on PG14 and PG16 with both drivers. Package/declaration/size checks pass; testing entry is 1.15 kB and test-clock SQL appears only in dist/testing.js and dist/testing.cjs."
     },
     {
       "tc_reference": "TC-067",
@@ -1387,6 +1411,12 @@
           "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
           "note": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
           "at": "2026-10-21T09:44:46.178535+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-11 final suite passes: 125 unit and 58 integration tests on PG17, with four plan-authorized T-14 relay todos. Full integration suites also pass on PG14 and PG16 with both drivers. Package/declaration/size checks pass; testing entry is 1.15 kB and test-clock SQL appears only in dist/testing.js and dist/testing.cjs.",
+          "note": "T-11 final suite passes: 125 unit and 58 integration tests on PG17, with four plan-authorized T-14 relay todos. Full integration suites also pass on PG14 and PG16 with both drivers. Package/declaration/size checks pass; testing entry is 1.15 kB and test-clock SQL appears only in dist/testing.js and dist/testing.cjs.",
+          "at": "2026-10-21T09:54:22.985537+00:00"
         }
       ],
       "regression_of": null,
@@ -1394,7 +1424,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion."
+      "actual_result": "T-11 final suite passes: 125 unit and 58 integration tests on PG17, with four plan-authorized T-14 relay todos. Full integration suites also pass on PG14 and PG16 with both drivers. Package/declaration/size checks pass; testing entry is 1.15 kB and test-clock SQL appears only in dist/testing.js and dist/testing.cjs."
     },
     {
       "tc_reference": "TC-041",
@@ -1430,6 +1460,12 @@
           "actual_result": "Final review added trailing-newline rejection and explicit size/limit error text. Targeted validation and full suite pass: 108 unit, 18 integration; lint/typecheck pass. Initial PR CI 39572052918 passed.",
           "note": "Final review added trailing-newline rejection and explicit size/limit error text. Targeted validation and full suite pass: 108 unit, 18 integration; lint/typecheck pass. Initial PR CI 39572052918 passed.",
           "at": "2026-10-21T08:50:18.283250+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final audit clarification: a direct Node regex probe confirms the original anchored topic regex already rejects trailing line terminators. T-07 added an explicit defensive newline guard and rejection test, not a reproduced regex failure. Earlier wording overstated that fix; no new runtime behavior change or regression is claimed.",
+          "note": "Final audit clarification: a direct Node regex probe confirms the original anchored topic regex already rejects trailing line terminators. T-07 added an explicit defensive newline guard and rejection test, not a reproduced regex failure. Earlier wording overstated that fix; no new runtime behavior change or regression is claimed.",
+          "at": "2026-10-21T09:54:23.025182+00:00"
         }
       ],
       "regression_of": null,
@@ -1437,7 +1473,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Final review added trailing-newline rejection and explicit size/limit error text. Targeted validation and full suite pass: 108 unit, 18 integration; lint/typecheck pass. Initial PR CI 39572052918 passed."
+      "actual_result": "Final audit clarification: a direct Node regex probe confirms the original anchored topic regex already rejects trailing line terminators. T-07 added an explicit defensive newline guard and rejection test, not a reproduced regex failure. Earlier wording overstated that fix; no new runtime behavior change or regression is claimed."
     },
     {
       "tc_reference": "TC-042",
@@ -2025,6 +2061,142 @@
       "retraction_reason": null,
       "automatable": true,
       "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion."
+    },
+    {
+      "tc_reference": "TC-059",
+      "ac_reference": "FR-17; FR-18",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Clock install and restoration",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Install twice, set/advance/reset the offset, reject negative/non-finite offsets, inspect now, confirm schema isolation, uninstall and inspect pg_get_functiondef.",
+      "expected_result": "Install is idempotent; offset affects outbox time; uninstall restores select now() and removes the test table.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "T-11 first preflight lint rejected a defensive null check on a statically non-null public argument; no runtime tests executed.",
+          "note": "T-11 first preflight lint rejected a defensive null check on a statically non-null public argument; no runtime tests executed.",
+          "at": "2026-10-21T09:51:58.735117+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "A second preflight repeated the same lint finding before the fix. Preserve the public overload and accept unknown only in the implementation, so the required runtime guard remains valid.",
+          "note": "A second preflight repeated the same lint finding before the fix. Preserve the public overload and accept unknown only in the implementation, so the required runtime guard remains valid.",
+          "at": "2026-10-21T09:51:58.769775+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-11 targeted clock, delay and row-conversion tests pass with both drivers on PG17. The runtime input guard keeps the normative public signature via an overload. Relay-only INT-15/16 assertions remain explicit T-14 todos.",
+          "note": "T-11 targeted clock, delay and row-conversion tests pass with both drivers on PG17. The runtime input guard keeps the normative public signature via an overload. Relay-only INT-15/16 assertions remain explicit T-14 todos.",
+          "at": "2026-10-21T09:52:10.826156+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-11 final suite passes: 125 unit and 58 integration tests on PG17, with four plan-authorized T-14 relay todos. Full integration suites also pass on PG14 and PG16 with both drivers. Package/declaration/size checks pass; testing entry is 1.15 kB and test-clock SQL appears only in dist/testing.js and dist/testing.cjs.",
+          "note": "T-11 final suite passes: 125 unit and 58 integration tests on PG17, with four plan-authorized T-14 relay todos. Full integration suites also pass on PG14 and PG16 with both drivers. Package/declaration/size checks pass; testing entry is 1.15 kB and test-clock SQL appears only in dist/testing.js and dist/testing.cjs.",
+          "at": "2026-10-21T09:54:22.985335+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-11 final suite passes: 125 unit and 58 integration tests on PG17, with four plan-authorized T-14 relay todos. Full integration suites also pass on PG14 and PG16 with both drivers. Package/declaration/size checks pass; testing entry is 1.15 kB and test-clock SQL appears only in dist/testing.js and dist/testing.cjs."
+    },
+    {
+      "tc_reference": "TC-060",
+      "ac_reference": "FR-17; FR-18",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Clock transaction isolation",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Use two connections; setLocal in one transaction and compare readings with the other connection and after commit.",
+      "expected_result": "Override affects only its transaction; other connections use the per-schema offset.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-11 targeted clock, delay and row-conversion tests pass with both drivers on PG17. The runtime input guard keeps the normative public signature via an overload. Relay-only INT-15/16 assertions remain explicit T-14 todos.",
+          "note": "T-11 targeted clock, delay and row-conversion tests pass with both drivers on PG17. The runtime input guard keeps the normative public signature via an overload. Relay-only INT-15/16 assertions remain explicit T-14 todos.",
+          "at": "2026-10-21T09:52:10.826652+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-11 final suite passes: 125 unit and 58 integration tests on PG17, with four plan-authorized T-14 relay todos. Full integration suites also pass on PG14 and PG16 with both drivers. Package/declaration/size checks pass; testing entry is 1.15 kB and test-clock SQL appears only in dist/testing.js and dist/testing.cjs.",
+          "note": "T-11 final suite passes: 125 unit and 58 integration tests on PG17, with four plan-authorized T-14 relay todos. Full integration suites also pass on PG14 and PG16 with both drivers. Package/declaration/size checks pass; testing entry is 1.15 kB and test-clock SQL appears only in dist/testing.js and dist/testing.cjs.",
+          "at": "2026-10-21T09:54:22.985519+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-11 final suite passes: 125 unit and 58 integration tests on PG17, with four plan-authorized T-14 relay todos. Full integration suites also pass on PG14 and PG16 with both drivers. Package/declaration/size checks pass; testing entry is 1.15 kB and test-clock SQL appears only in dist/testing.js and dist/testing.cjs."
+    },
+    {
+      "tc_reference": "TC-061",
+      "ac_reference": "FR-24; GU-07",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Relative delay and transaction-local claim",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Enqueue a 60-second delay; inspect interval and run C1 directly with setLocal +61 seconds while another connection sees unready.",
+      "expected_result": "Delay is exactly 60 seconds; transaction-local claim is eligible while other connection remains before available_at. Relay-based assertions follow T-14.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-11 targeted clock, delay and row-conversion tests pass with both drivers on PG17. The runtime input guard keeps the normative public signature via an overload. Relay-only INT-15/16 assertions remain explicit T-14 todos.",
+          "note": "T-11 targeted clock, delay and row-conversion tests pass with both drivers on PG17. The runtime input guard keeps the normative public signature via an overload. Relay-only INT-15/16 assertions remain explicit T-14 todos.",
+          "at": "2026-10-21T09:52:10.826899+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-11 final suite passes: 125 unit and 58 integration tests on PG17, with four plan-authorized T-14 relay todos. Full integration suites also pass on PG14 and PG16 with both drivers. Package/declaration/size checks pass; testing entry is 1.15 kB and test-clock SQL appears only in dist/testing.js and dist/testing.cjs.",
+          "note": "T-11 final suite passes: 125 unit and 58 integration tests on PG17, with four plan-authorized T-14 relay todos. Full integration suites also pass on PG14 and PG16 with both drivers. Package/declaration/size checks pass; testing entry is 1.15 kB and test-clock SQL appears only in dist/testing.js and dist/testing.cjs.",
+          "at": "2026-10-21T09:54:22.985527+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-11 final suite passes: 125 unit and 58 integration tests on PG17, with four plan-authorized T-14 relay todos. Full integration suites also pass on PG14 and PG16 with both drivers. Package/declaration/size checks pass; testing entry is 1.15 kB and test-clock SQL appears only in dist/testing.js and dist/testing.cjs."
+    },
+    {
+      "tc_reference": "TC-062",
+      "ac_reference": "FR-24; GU-07",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Absolute availability",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Enqueue with availableAt based on test-clock now plus 5 seconds; read its timestamp.",
+      "expected_result": "Stored timestamp equals the supplied instant to the millisecond. Relay no-early-delivery assertions follow T-14.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-11 targeted clock, delay and row-conversion tests pass with both drivers on PG17. The runtime input guard keeps the normative public signature via an overload. Relay-only INT-15/16 assertions remain explicit T-14 todos.",
+          "note": "T-11 targeted clock, delay and row-conversion tests pass with both drivers on PG17. The runtime input guard keeps the normative public signature via an overload. Relay-only INT-15/16 assertions remain explicit T-14 todos.",
+          "at": "2026-10-21T09:52:10.827182+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-11 final suite passes: 125 unit and 58 integration tests on PG17, with four plan-authorized T-14 relay todos. Full integration suites also pass on PG14 and PG16 with both drivers. Package/declaration/size checks pass; testing entry is 1.15 kB and test-clock SQL appears only in dist/testing.js and dist/testing.cjs.",
+          "note": "T-11 final suite passes: 125 unit and 58 integration tests on PG17, with four plan-authorized T-14 relay todos. Full integration suites also pass on PG14 and PG16 with both drivers. Package/declaration/size checks pass; testing entry is 1.15 kB and test-clock SQL appears only in dist/testing.js and dist/testing.cjs.",
+          "at": "2026-10-21T09:54:22.985531+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-11 final suite passes: 125 unit and 58 integration tests on PG17, with four plan-authorized T-14 relay todos. Full integration suites also pass on PG14 and PG16 with both drivers. Package/declaration/size checks pass; testing entry is 1.15 kB and test-clock SQL appears only in dist/testing.js and dist/testing.cjs."
     }
   ]
 }

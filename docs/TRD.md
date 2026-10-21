@@ -2584,6 +2584,13 @@ Conventions for this table: "both" = runs for postgres.js and pg. `tc` = the tes
 | INT-90 | n/a | `node dist/cli.js migrate --url $URL --schema s1`; `--status`; `--status --check` before and after; `--dry-run` on a fresh schema; `--print` | Exit codes 0, 0, 3 then 0, 0; status output format §8.4; dry run creates nothing; `--print` equals `migrationSql({ schema: 'public' })` |
 | INT-91 | n/a | `stats --json`; bad URL; no URL and no `DATABASE_URL`; unknown command | JSON parses to `OutboxStats` keys; exit 1 with password redacted; exit 2; exit 2 |
 
+#### Test clock (`tests/integration/test-clock.test.ts`)
+
+| ID | Adapters | Setup and steps | Assertions |
+|---|---|---|---|
+| INT-92 | both | Install twice, set/advance/reset offsets, reject negative/non-finite offsets, migrate again, compare a separate schema, uninstall | Internal access property is read-only and non-enumerable; offsets affect only outbox time; reinstall preserves offset; applied migrations preserve the clock; schemas are isolated; uninstall restores the production body and drops the test table |
+| INT-93 | both | Set a schema offset; setLocal on one transaction; read through another connection and after commit | Local override wins only in that transaction and does not leak through connection reuse |
+
 ### 15.4 Test harness
 
 - `tests/global-setup.ts`: connects to `TEST_DATABASE_URL` (default `postgres://postgres:postgres@localhost:54317/outbox_test`), creating database `outbox_test` from `postgres` if missing. Prints the server version.

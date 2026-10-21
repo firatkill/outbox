@@ -1,4 +1,5 @@
-import { mapMessageRow } from '../../src/core/row.js';
+import { E1, E2 } from '../../src/core/sql/enqueue.js';
+import { dateFromEpoch, mapMessageRow } from '../../src/core/row.js';
 import { readFileSync } from 'node:fs';
 import { BOOTSTRAP } from '../../src/core/migrations/bootstrap.js';
 import { MIGRATIONS } from '../../src/core/migrations/index.js';
@@ -94,4 +95,29 @@ it.each(Object.keys(messageRow))('UT-04 TC-046 names wrong-type column %s', (col
 });
 it.each(['headers', 'payload'])('UT-04 TC-046 names malformed JSON column %s', (column) => {
   expect(() => mapMessageRow({ ...messageRow, [column]: '{invalid' })).toThrow(column);
+});
+
+it('UT-04 TC-046 converts database epoch milliseconds for the testing entry', () => {
+  expect(dateFromEpoch(1700000000000, 'now_ms')).toEqual(new Date(1700000000000));
+  for (const value of ['1700000000000', null, NaN, Infinity, 9e20]) {
+    expect(() => dateFromEpoch(value, 'now_ms')).toThrow('now_ms');
+  }
+});
+
+// Expected enqueue SQL is copied from TRD 9.1, including owner D-64's text-first casts.
+it('UT-04 TC-028 snapshots normative enqueue and dedupe SQL for both naming configurations', () => {
+  for (const [variant, schema, tablePrefix] of [
+    ['default', 'public', 'outbox_'],
+    ['custom', 'app_events', 'ob_'],
+  ] as const) {
+    const config = parseOutboxConfig({ db: {}, schema, tablePrefix });
+    for (const [name, template] of [
+      ['enqueue', E1],
+      ['dedupe-lookup', E2],
+    ] as const) {
+      expect(render(template, config)).toBe(
+        readFileSync(new URL('../fixtures/' + name + '-' + variant + '.sql', import.meta.url), 'utf8').trimEnd(),
+      );
+    }
+  }
 });
