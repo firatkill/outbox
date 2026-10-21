@@ -171,6 +171,18 @@
           "actual_result": "T-06 lint retest passed after changing the two temporary CLI driver object type aliases to interfaces; strict lint rules remain unchanged.",
           "note": "T-06 lint retest passed after changing the two temporary CLI driver object type aliases to interfaces; strict lint rules remain unchanged.",
           "at": "2026-10-21T08:31:01.816117+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "M1 report preflight formatting check found the newly generated qa/m1-report.md table was not yet formatted; runtime tests were not run by this aborted gate sequence.",
+          "note": "M1 report preflight formatting check found the newly generated qa/m1-report.md table was not yet formatted; runtime tests were not run by this aborted gate sequence.",
+          "at": "2026-10-21T09:58:04.084418+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "M1 final report formatting corrected. Final lint and typecheck pass; full suite passes 126 unit and 58 integration tests with four plan-authorized T-14 todos.",
+          "note": "M1 final report formatting corrected. Final lint and typecheck pass; full suite passes 126 unit and 58 integration tests with four plan-authorized T-14 todos.",
+          "at": "2026-10-21T09:58:52.696428+00:00"
         }
       ],
       "regression_of": null,
@@ -178,7 +190,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-06 lint retest passed after changing the two temporary CLI driver object type aliases to interfaces; strict lint rules remain unchanged."
+      "actual_result": "M1 final report formatting corrected. Final lint and typecheck pass; full suite passes 126 unit and 58 integration tests with four plan-authorized T-14 todos."
     },
     {
       "tc_reference": "TC-006",
@@ -800,6 +812,12 @@
           "actual_result": "The normative default/custom SQL snapshots and failed-migration rollback case passed in the targeted run (5 tests). The expected SQL fixtures were copied from TRD 7.2/7.3 before comparison, not generated from implementation output.",
           "note": "The normative default/custom SQL snapshots and failed-migration rollback case passed in the targeted run (5 tests). The expected SQL fixtures were copied from TRD 7.2/7.3 before comparison, not generated from implementation output.",
           "at": "2026-10-21T08:16:14.284872+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M1 QA added TRD-sourced E1/E2 SQL fixtures for default/custom names. Targeted UT-04 and final full suite pass; 126 unit and 58 integration tests, four authorized relay-delay todos.",
+          "note": "Final M1 QA added TRD-sourced E1/E2 SQL fixtures for default/custom names. Targeted UT-04 and final full suite pass; 126 unit and 58 integration tests, four authorized relay-delay todos.",
+          "at": "2026-10-21T09:58:52.721323+00:00"
         }
       ],
       "regression_of": null,
@@ -807,7 +825,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "The normative default/custom SQL snapshots and failed-migration rollback case passed in the targeted run (5 tests). The expected SQL fixtures were copied from TRD 7.2/7.3 before comparison, not generated from implementation output."
+      "actual_result": "Final M1 QA added TRD-sourced E1/E2 SQL fixtures for default/custom names. Targeted UT-04 and final full suite pass; 126 unit and 58 integration tests, four authorized relay-delay todos."
     },
     {
       "tc_reference": "TC-029",
