@@ -1501,6 +1501,12 @@
           "actual_result": "D-72 size ceilings applied: all unchanged entry-point measurements pass their approved limits. Lint, typecheck and guards pass.",
           "note": "D-72 size ceilings applied: all unchanged entry-point measurements pass their approved limits. Lint, typecheck and guards pass.",
           "at": "2026-10-21T15:48:40.870906+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "note": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "at": "2026-10-21T15:52:28.434590+00:00"
         }
       ],
       "regression_of": null,
@@ -1508,7 +1514,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "D-72 size ceilings applied: all unchanged entry-point measurements pass their approved limits. Lint, typecheck and guards pass."
+      "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge."
     },
     {
       "tc_reference": "TC-041",
@@ -3956,6 +3962,12 @@
           "actual_result": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
           "note": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
           "at": "2026-10-21T15:49:45.414149+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "note": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "at": "2026-10-21T15:52:28.434886+00:00"
         }
       ],
       "regression_of": "M2 passing INT-29 runs recorded before T-20",
@@ -3963,7 +3975,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass."
+      "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge."
     },
     {
       "tc_reference": "TC-103",
@@ -4196,6 +4208,12 @@
           "actual_result": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
           "note": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
           "at": "2026-10-21T15:49:45.415339+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "note": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "at": "2026-10-21T15:52:28.434909+00:00"
         }
       ],
       "regression_of": null,
@@ -4203,7 +4221,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass."
+      "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge."
     },
     {
       "tc_reference": "TC-108",
@@ -4239,6 +4257,12 @@
           "actual_result": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
           "note": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
           "at": "2026-10-21T15:49:45.415319+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "note": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "at": "2026-10-21T15:52:28.434893+00:00"
         }
       ],
       "regression_of": null,
@@ -4246,7 +4270,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass."
+      "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge."
     },
     {
       "tc_reference": "TC-110",
@@ -4282,6 +4306,12 @@
           "actual_result": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
           "note": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
           "at": "2026-10-21T15:49:45.415331+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "note": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "at": "2026-10-21T15:52:28.434902+00:00"
         }
       ],
       "regression_of": null,
@@ -4289,7 +4319,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass."
+      "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge."
     },
     {
       "tc_reference": "TC-109",
@@ -4337,6 +4367,12 @@
           "actual_result": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
           "note": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
           "at": "2026-10-21T15:49:45.415327+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "note": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "at": "2026-10-21T15:52:28.434898+00:00"
         }
       ],
       "regression_of": null,
@@ -4344,7 +4380,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass."
+      "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge."
     },
     {
       "tc_reference": "TC-111",
@@ -4392,6 +4428,12 @@
           "actual_result": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
           "note": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
           "at": "2026-10-21T15:49:45.415335+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "note": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "at": "2026-10-21T15:52:28.434905+00:00"
         }
       ],
       "regression_of": null,
@@ -4399,7 +4441,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass."
+      "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge."
     }
   ]
 }
