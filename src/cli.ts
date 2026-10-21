@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { parseArgs } from 'node:util';
+import { createPgAdapter } from './adapters/pg.js';
 import { createPostgresJsAdapter } from './adapters/postgres-js.js';
 import { CLI_HELP, CLI_OPTIONS, redactPassword, resolveCliArgs } from './core/cli-args.js';
 import type { CliArgs } from './core/cli-args.js';
@@ -7,7 +8,7 @@ import { parseOutboxConfig } from './core/config.js';
 import { MIGRATIONS, migrationSql } from './core/migrations/index.js';
 import { migrate } from './core/migrations/runner.js';
 import { render } from './core/sql/render.js';
-import type { DriverAdapter, SqlExecutor } from './core/types.js';
+import type { DriverAdapter } from './core/types.js';
 
 async function execute<TDb, TTx>(args: CliArgs, adapter: DriverAdapter<TDb, TTx>): Promise<number> {
   const config = parseOutboxConfig({ db: adapter.db, schema: args.schema, tablePrefix: args.tablePrefix });
@@ -58,44 +59,8 @@ async function postgresJs(args: CliArgs): Promise<number> {
 async function nodePostgres(args: CliArgs): Promise<number> {
   const { default: pg } = await import('pg');
   const db = new pg.Pool({ connectionString: args.url, max: 1 });
-  interface Tx {
-    query: typeof db.query;
-    release(destroy?: boolean | Error): void;
-  }
-  const wrap = (client: Pick<Tx, 'query'>): SqlExecutor => ({
-    query: async (text, params) => {
-      const result = await client.query<Record<string, unknown>>(text, [...params]);
-      return result.rows;
-    },
-  });
-  const bind = (pool: typeof db): DriverAdapter<typeof db, Tx> => ({
-    name: 'pg',
-    db: pool,
-    query: (text, params) => wrap(pool).query(text, params),
-    forTransaction: wrap,
-    transaction: async (fn) => {
-      const client = await pool.connect();
-      let destroy = false;
-      try {
-        await client.query('begin');
-        const result = await fn(wrap(client));
-        await client.query('commit');
-        return result;
-      } catch (error) {
-        try {
-          await client.query('rollback');
-        } catch {
-          destroy = true;
-        }
-        throw error;
-      } finally {
-        client.release(destroy);
-      }
-    },
-    withDb: bind,
-  });
   try {
-    return await execute(args, bind(db));
+    return await execute(args, createPgAdapter(db));
   } finally {
     await db.end();
   }
