@@ -4931,6 +4931,215 @@
       "retraction_reason": null,
       "automatable": true,
       "actual_result": "T-21 implementation CI 39631946088 passed static/package/size and standard PostgreSQL integration jobs. M3 report and review completed; final report-commit CI required before merge."
+    },
+    {
+      "tc_reference": "TC-116",
+      "ac_reference": "FR-55..FR-57; GU-06",
+      "milestone": "M4",
+      "title": "Serial delivery per key",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Key `k`: 5 messages in one batch; Relay(`ordering: 'key'`, `concurrency: 10`), handler records order and tracks in-flight count per key",
+      "expected_result": "Order equals `seq` order; max in-flight for `k` = 1",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-22 targeted checks passed for both drivers on PostgreSQL 17.",
+          "note": "T-22 targeted checks passed for both drivers on PostgreSQL 17.",
+          "at": "2026-10-21T16:25:41.701808+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61.",
+          "note": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61.",
+          "at": "2026-10-21T16:27:33.296685+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge.",
+          "note": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge.",
+          "at": "2026-10-21T16:29:42.571426+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge."
+    },
+    {
+      "tc_reference": "TC-117",
+      "ac_reference": "FR-55..FR-57; GU-06",
+      "milestone": "M4",
+      "title": "Backoff blocks only its key",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Key `k`: m1, m2. Handler fails m1 once (`baseDelayMs: 10000`); other key `j` has 3 messages",
+      "expected_result": "While m1 is in backoff, `runOnce` delivers `j` messages but not m2; after advancing 10 s, m1 then m2 delivered in order",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-22 targeted checks passed for both drivers on PostgreSQL 17.",
+          "note": "T-22 targeted checks passed for both drivers on PostgreSQL 17.",
+          "at": "2026-10-21T16:25:41.702342+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61.",
+          "note": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61.",
+          "at": "2026-10-21T16:27:33.296773+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge.",
+          "note": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge.",
+          "at": "2026-10-21T16:29:42.571517+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge."
+    },
+    {
+      "tc_reference": "TC-120",
+      "ac_reference": "FR-55..FR-57; GU-06",
+      "milestone": "M4",
+      "title": "Ordering spans topic filters",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Key `order-1`: `order.created` then `order.paid` (two transactions, sequential); Relay A handles only `order.paid`, Relay B only `order.created`; A runs first",
+      "expected_result": "A claims nothing until B completed `order.created`",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-22 targeted checks passed for both drivers on PostgreSQL 17.",
+          "note": "T-22 targeted checks passed for both drivers on PostgreSQL 17.",
+          "at": "2026-10-21T16:25:41.702693+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61.",
+          "note": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61.",
+          "at": "2026-10-21T16:27:33.296784+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge.",
+          "note": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge.",
+          "at": "2026-10-21T16:29:42.571528+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge."
+    },
+    {
+      "tc_reference": "TC-118",
+      "ac_reference": "FR-55..FR-57; GU-06",
+      "milestone": "M4",
+      "title": "Dead head requires skip or retry",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Key `k`: m1 (NonRetryable → dead), m2, m3. Variant A: `skip(m1)`. Variant B: `retryDead({ ids: [m1] })` with a handler that now succeeds",
+      "expected_result": "Before action: 3 runs claim nothing for `k`. A: m2, m3 delivered in order; m1 `skipped`. B: m1 delivered before m2, then m3",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Fixture expected an array rather than the normative retryDead result object with ids; skip variants passed.",
+          "note": "Fixture expected an array rather than the normative retryDead result object with ids; skip variants passed.",
+          "at": "2026-10-21T16:25:41.730248+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Corrected fixture-only errors against TRD; all six targeted checks pass on both drivers, unchanged production ordering SQL.",
+          "note": "Corrected fixture-only errors against TRD; all six targeted checks pass on both drivers, unchanged production ordering SQL.",
+          "at": "2026-10-21T16:26:10.384532+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61.",
+          "note": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61.",
+          "at": "2026-10-21T16:27:33.296778+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge.",
+          "note": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge.",
+          "at": "2026-10-21T16:29:42.571521+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge."
+    },
+    {
+      "tc_reference": "TC-119",
+      "ac_reference": "FR-55..FR-57; GU-06",
+      "milestone": "M4",
+      "title": "Blocked keys do not block other work",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Key `k` blocked by a dead head; 10 unkeyed and 10 messages on 10 other keys",
+      "expected_result": "All 20 delivered; `k` messages untouched",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Inspection query ordered by the text seq alias, placing seq 10 before seq 2; delivery count passed. Correct fixture to order by numeric source seq.",
+          "note": "Inspection query ordered by the text seq alias, placing seq 10 before seq 2; delivery count passed. Correct fixture to order by numeric source seq.",
+          "at": "2026-10-21T16:25:41.756619+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Corrected fixture-only errors against TRD; all six targeted checks pass on both drivers, unchanged production ordering SQL.",
+          "note": "Corrected fixture-only errors against TRD; all six targeted checks pass on both drivers, unchanged production ordering SQL.",
+          "at": "2026-10-21T16:26:10.385424+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Lint rejected a numeric test-key template interpolation; changed to explicit String conversion without changing behavior.",
+          "note": "Lint rejected a numeric test-key template interpolation; changed to explicit String conversion without changing behavior.",
+          "at": "2026-10-21T16:26:39.553173+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "ESLint passed after explicit conversion; Prettier requires formatting of new test, cases and changeset.",
+          "note": "ESLint passed after explicit conversion; Prettier requires formatting of new test, cases and changeset.",
+          "at": "2026-10-21T16:27:03.733555+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61.",
+          "note": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61.",
+          "at": "2026-10-21T16:27:33.296781+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge.",
+          "note": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge.",
+          "at": "2026-10-21T16:29:42.571525+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge."
     }
   ]
 }

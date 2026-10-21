@@ -1,6 +1,6 @@
 # Progress
 
-Local repository setup completed on 2026-10-21. M0 (T-01..T-03), M1 (T-04..T-11), M2 (T-12..T-18) and M3 (T-19..T-21) are complete. Stopped at the M3 milestone boundary for owner review; T-22 has not started.
+Local repository setup completed on 2026-10-21. M0 (T-01..T-03), M1 (T-04..T-11), M2 (T-12..T-18) and M3 (T-19..T-21) are complete. Owner approved continuing into M4; T-22 is in progress.
 
 - Read AGENTS.md and all four specification documents from start to finish.
 - Verified the required Git author and committer identity; enabled the executable `.githooks/commit-msg` hook.
@@ -35,7 +35,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-19 | M3 | Retries and dead transitions | done | ff9b685 |
 | T-20 | M3 | Admin helpers | done | c194e74 |
 | T-21 | M3 | stats and CLI stats | done | 5f96956 |
-| T-22 | M4 | Ordering-mode claim | todo | — |
+| T-22 | M4 | Ordering-mode claim | done | 3bcaf44 |
 | T-23 | M4 | Ordering under concurrency | todo | — |
 | T-24 | M4 | NOTIFY and LISTEN in adapters | todo | — |
 | T-25 | M4 | Wake-up scheduling and latency | todo | — |
@@ -108,6 +108,8 @@ A completion commit is recorded only after the task meets its acceptance criteri
 - T-20: admin implementation and acceptance pass on PG14/16/17 with both drivers. D-71/D-72 approvals are applied; targeted fault recovery and approved size gates pass. Full suite passes 186 unit / 133 PG17 integration tests. [PR CI](https://github.com/firatkill/outbox/actions/runs/39629253196) passes; final documentation commit checks required before merge.
 
 - T-21 / M3: stats, missing-schema handling and built CLI pass. Final standard suite: 186 unit / 139 PG17 integration tests; M3 acceptance also passes on PG14/16, including both index-plan assertions. Static/build/package/size/ledger gates pass. [Implementation CI](https://github.com/firatkill/outbox/actions/runs/39631946088) passes; final report-commit CI is enforced before merge. [M3 report](../qa/m3-report.md) and [review](../qa/m3-review.md) retain the known driver limitation, unconfirmed local timeout history and deferred gates.
+
+- T-22: C2/C2T and all five ordering scenarios pass with both drivers. Full suite: 186 unit / 151 PG17 integration; static, build, package and size gates pass. [PR CI](https://github.com/firatkill/outbox/actions/runs/39634998508) passes; final documentation checks enforced before merge. INT-41 follows in T-23; later gates follow D-66/D-61.
 
 ## Open questions for the owner
 
