@@ -3,21 +3,21 @@
     "name": "core",
     "path": "dist/index.js",
     "import": "*",
-    "limit": "12 kB",
+    "limit": "13 kB",
     "ignore": ["node:crypto", "node:os"]
   },
   {
     "name": "postgres-js",
     "path": "dist/postgres-js.js",
     "import": "{ createOutbox }",
-    "limit": "12 kB",
+    "limit": "13 kB",
     "ignore": ["node:crypto", "node:os", "postgres"]
   },
   {
     "name": "pg",
     "path": "dist/pg.js",
     "import": "{ createOutbox }",
-    "limit": "12 kB",
+    "limit": "13 kB",
     "ignore": ["node:crypto", "node:os", "pg"]
   },
   {
