@@ -41,6 +41,7 @@ export function createAdapter(
       query: (text, params) => real.query(text, params),
       forTransaction: (tx) => tx,
       transaction: (fn) => real.transaction(fn),
+      ...(real.listen === undefined ? {} : { listen: real.listen.bind(real) }),
       withDb: (other) => erase(real.withDb(other as TDb)),
     };
   }
