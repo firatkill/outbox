@@ -125,7 +125,8 @@ Conventions for every task:
   1. Adapter per TRD §6.2 with structural types only (guard G-4 and the "no driver types" rule).
   2. `createOutboxCore(adapter, config)` wiring: resolved config, rendered statements cached per instance, `migrate`, `schemaVersion`; other methods throw `OUTBOX_INTERNAL('not implemented')` until their tasks.
   3. `mapMessageRow` and type mapping per TRD §6.4.
-  4. Verify A-03 (multi-statement `unsafe`, parameter casting); record the result in the PR.
+  4. Restore the postgres-js createOutbox-specific size measurement (owner D-63); run pnpm size.
+  5. Verify A-03 (multi-statement `unsafe`, parameter casting); record the result in the PR.
 - Acceptance: migration tests from T-05 now run through the real adapter and pass; `pnpm test:unit -t UT-04` passes; `pnpm build` then `grep -REn "from ['\"](pg|postgres|bullmq)['\"]|import\(['\"](pg|postgres|bullmq)['\"]\)" dist/*.d.ts dist/*.d.cts` prints nothing, proving the declarations need no driver types (uninstalling a driver is not used as the check, because `tests/helpers` legitimately import both drivers).
 - Depends on: T-05. Covers: FR-02, FR-04 (postgres.js), FR-05 (`createOutboxCore`).
 
@@ -137,6 +138,7 @@ Conventions for every task:
   1. Adapter per TRD §6.3 (transaction with rollback and destroy-on-failed-rollback, structural types).
   2. Make every existing integration test `describe.each(ADAPTERS)` where TRD §15.3 says "both".
   3. Verify A-04.
+  4. Restore the pg createOutbox-specific size measurement (owner D-63); run pnpm size.
 - Acceptance: `pnpm test:integration` passes for both adapters; INT-02 and INT-80 pass; the T-08 `dist/*.d.ts` grep still prints nothing.
 - Depends on: T-08. Covers: FR-03, FR-04 (pg).
 

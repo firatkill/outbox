@@ -434,6 +434,8 @@ What `pnpm typecheck` covers and why (normative): the root config deliberately e
 ]
 ```
 
+Temporary bootstrap exception (owner D-63): until T-08/T-09, each adapter entry measures `import: '*'` and is named as current exports with the implementation task pending. The 12 kB limits are unchanged. Restore the exact createOutbox imports above in the respective adapter task.
+
 Sizes are min + brotli as reported by `@size-limit/preset-small-lib` (A-08). `webhook` and `bullmq` sizes exclude core code they share (they import only `errors.ts` and `json.ts`).
 
 ### 4.5 Module boundaries

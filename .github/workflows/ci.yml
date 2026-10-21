@@ -34,6 +34,8 @@ jobs:
       - run: pnpm check:guards
       - run: pnpm test:unit
       - run: pnpm build
+      - run: pnpm check:package
+      - run: pnpm size
 
   integration:
     needs: static

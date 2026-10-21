@@ -19,7 +19,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-03 | M0 | CI static job, guards and Changesets | done | 1f50dd1 |
 | T-04 | M1 | Identifiers, config, errors and rendering | done | e07f5cd |
 | T-05 | M1 | Migration 0001 and runner | done | 16010ec |
-| T-06 | M1 | migrationSql and CLI migrate | todo | — |
+| T-06 | M1 | migrationSql and CLI migrate | done | 80c67b2 |
 | T-07 | M1 | Message validation, JSON and UUIDv7 | todo | — |
 | T-08 | M1 | postgres.js adapter and createOutboxCore skeleton | todo | — |
 | T-09 | M1 | pg adapter | todo | — |
@@ -75,8 +75,10 @@ A completion commit is recorded only after the task meets its acceptance criteri
 
 - T-05: schema, checksums, concurrent migrations, rollback and dry-run checks pass (59 unit / 12 integration locally); [static and integration CI](https://github.com/firatkill/outbox/actions/runs/39568478372) pass.
 
+- T-06: CLI and printed-SQL catalog equivalence pass (64 unit / 18 integration locally); package checks and staged size limits pass; [static and integration CI](https://github.com/firatkill/outbox/actions/runs/39570779407) pass.
+
 ## Open questions for the owner
 
-None. The owner approved deferring only docs:check/docs:build until T-34 (PRD D-61); all other applicable gates remain mandatory.
+None. Docs gates are deferred until T-34 (D-61). Staged adapter size measurements are approved only until T-08/T-09, with unchanged limits and restoration required in those tasks (D-63).
 
 Previous decisions resolved: The owner resolved A-01 and approved A-07’s fallback (D-56); M0 local and static CI acceptance is complete.
