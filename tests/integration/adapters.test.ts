@@ -1,5 +1,10 @@
+import { createOutboxCore } from '../../src/core/outbox.js';
+import { render } from '../../src/core/sql/render.js';
+import type { OutboxMessage } from '../../src/core/types.js';
+import { concurrentScenario } from '../helpers/concurrency.js';
+import { waitForEvent } from '../helpers/wait.js';
 import pg from 'pg';
-import { afterAll, beforeAll, describe, expect, it } from 'vitest';
+import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 import { createPgAdapter } from '../../src/adapters/pg.js';
 import type { PgPool } from '../../src/adapters/pg.js';
 import { mapMessageRow } from '../../src/core/row.js';
@@ -104,4 +109,162 @@ describe.each(ADAPTERS)('%s driver-neutral rows', (name) => {
       availableAt: new Date(1700000001000),
     });
   });
+});
+
+describe.each(ADAPTERS)('%s relay adapter integration', (name) => {
+  it('INT-82 TC-096 maps actual claim rows to driver-neutral JavaScript values', async () => {
+    const owned = await createTestSchema();
+    const driver = createAdapter(name);
+    const outbox = createOutboxCore(driver.adapter, { schema: owned.schema });
+    const captured: OutboxMessage[] = [];
+    const relay = outbox.createRelay({
+      listen: false,
+      publisher: (message) => {
+        captured.push(message);
+        return Promise.resolve();
+      },
+    });
+    try {
+      await outbox.migrate();
+      await driver.adapter.query(
+        render('alter table {{messages}} alter column seq restart with 9007199254740993', outbox.config),
+        [],
+      );
+      const inserted = await driver.adapter.transaction((tx) =>
+        outbox.enqueue(tx, {
+          topic: 'mapped',
+          payload: { nested: [1, true, null, 'text'] },
+          headers: { trace: 'fixture' },
+          key: 'key',
+          dedupeKey: 'dedupe',
+          maxAttempts: 7,
+        }),
+      );
+      await relay.runOnce();
+      const message = captured[0];
+      expect(message).toMatchObject({
+        id: inserted.id,
+        seq: '9007199254740993',
+        topic: 'mapped',
+        payload: { nested: [1, true, null, 'text'] },
+        headers: { trace: 'fixture' },
+        key: 'key',
+        dedupeKey: 'dedupe',
+        attempts: 1,
+        maxAttempts: 7,
+        status: 'in_flight',
+        lastError: null,
+      });
+      expect(message?.createdAt).toBeInstanceOf(Date);
+      expect(message?.availableAt).toBeInstanceOf(Date);
+      const [stored] = await driver.adapter.query(
+        render(
+          'select floor(extract(epoch from created_at) * 1000)::float8 as created, floor(extract(epoch from available_at) * 1000)::float8 as available from {{messages}}',
+          outbox.config,
+        ),
+        [],
+      );
+      expect(message?.createdAt.getTime()).toBe(stored?.['created']);
+      expect(message?.availableAt.getTime()).toBe(stored?.['available']);
+      expect(typeof message?.attempts).toBe('number');
+      expect(typeof message?.seq).toBe('string');
+    } finally {
+      await relay.stop();
+      await driver.close();
+      await owned.drop();
+    }
+  });
+  it('INT-83 TC-097 executes every relay statement on the override pool', async () => {
+    const owned = await createTestSchema();
+    const a = createAdapter(name, { max: 1, applicationName: owned.schema + '_a' });
+    const b = createAdapter(name, { max: 1, applicationName: owned.schema + '_b' });
+    const applications: unknown[] = [];
+    const outbox = createOutboxCore(
+      {
+        ...a.adapter,
+        withDb(db: unknown) {
+          const rebound = a.adapter.withDb(db);
+          return {
+            ...rebound,
+            query: async (text, params) => {
+              applications.push(
+                (await rebound.query("select current_setting('application_name') as app", []))[0]?.['app'],
+              );
+              return rebound.query(text, params);
+            },
+          };
+        },
+      },
+      { schema: owned.schema },
+    );
+    const relay = outbox.createRelay({ db: b.adapter.db, listen: false, publisher: () => Promise.resolve() });
+    try {
+      await outbox.migrate();
+      await a.adapter.transaction((tx) => outbox.enqueue(tx, { topic: 't', payload: null }));
+      expect(await relay.runOnce()).toMatchObject({ claimed: 1, delivered: 1 });
+      expect(applications.length).toBeGreaterThanOrEqual(5);
+      expect(new Set(applications)).toEqual(new Set([owned.schema + '_b']));
+      expect(await a.adapter.query("select current_setting('application_name') as app", [])).toEqual([
+        { app: owned.schema + '_a' },
+      ]);
+    } finally {
+      await relay.stop();
+      await a.close();
+      await b.close();
+      await owned.drop();
+    }
+  });
+});
+
+describe('postgres-js prepare:false relay', () => {
+  it('INT-81 TC-095 delivers the INT-20 message and context without prepared statements', async () => {
+    const owned = await createTestSchema();
+    const driver = createAdapter('postgres-js', { prepare: false });
+    const outbox = createOutboxCore(driver.adapter, { schema: owned.schema });
+    const target = vi.fn(() => Promise.resolve());
+    const relay = outbox.createRelay({ listen: false, handlers: { t: target } });
+    try {
+      await outbox.migrate();
+      const inserted = await driver.adapter.transaction((tx) =>
+        outbox.enqueue(tx, { topic: 't', payload: { value: 1 } }),
+      );
+      const delivered = waitForEvent(relay, 'delivered');
+      await relay.start();
+      const event = await delivered;
+      await relay.stop();
+      expect(event.message).toMatchObject({ id: inserted.id, topic: 't', payload: { value: 1 }, attempts: 1 });
+      expect(target).toHaveBeenCalledExactlyOnceWith(
+        event.message,
+        expect.objectContaining({
+          attempt: 1,
+          relayId: relay.id,
+          signal: expect.objectContaining({ aborted: false }) as unknown,
+        }),
+      );
+      expect(
+        await driver.adapter.query(
+          render(
+            'select status, attempts, completed_at is not null as completed, locked_by, locked_until from {{messages}}',
+            outbox.config,
+          ),
+          [],
+        ),
+      ).toEqual([{ status: 'done', attempts: 1, completed: true, locked_by: null, locked_until: null }]);
+    } finally {
+      await relay.stop();
+      await driver.close();
+      await owned.drop();
+    }
+  });
+  // 1,000 real deliveries across the same four-pool INT-22 workload, without prepared statements.
+  it('INT-81 TC-095 runs the reduced 1000-message concurrency workload without prepared statements', async () => {
+    const result = await concurrentScenario('postgres-js', 1000, false);
+    expect(result.seen.size).toBe(1000);
+    expect([...result.seen.values()].every((count) => count === 1)).toBe(true);
+    expect(result.rows).toEqual([{ status: 'done', attempts: 1, count: 1000 }]);
+    expect(result.delivered.every((count) => count >= 100)).toBe(true);
+    expect(result.leaseLost).toBe(0);
+    expect(result.reclaimed).toBe(0);
+    expect(result.durationMs).toBeLessThan(60000);
+  }, 120000);
 });

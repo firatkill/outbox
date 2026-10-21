@@ -2304,6 +2304,12 @@
           "actual_result": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge.",
           "note": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge.",
           "at": "2026-10-21T10:31:55.878188+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342255+00:00"
         }
       ],
       "regression_of": null,
@@ -2311,7 +2317,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-069",
@@ -2353,6 +2359,12 @@
           "actual_result": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge.",
           "note": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge.",
           "at": "2026-10-21T10:31:55.879034+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342368+00:00"
         }
       ],
       "regression_of": null,
@@ -2360,7 +2372,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-070",
@@ -2396,6 +2408,12 @@
           "actual_result": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge.",
           "note": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge.",
           "at": "2026-10-21T10:31:55.879043+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342372+00:00"
         }
       ],
       "regression_of": null,
@@ -2403,7 +2421,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-071",
@@ -2439,6 +2457,12 @@
           "actual_result": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge.",
           "note": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge.",
           "at": "2026-10-21T10:31:55.879047+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342375+00:00"
         }
       ],
       "regression_of": null,
@@ -2446,7 +2470,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-12 PR #12 implementation/test head 32b8e51 passes static and PostgreSQL integration CI run 39585043181. Final docs checks required before merge."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-072",
@@ -2482,6 +2506,12 @@
           "actual_result": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge.",
           "note": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge.",
           "at": "2026-10-21T10:46:25.552133+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342378+00:00"
         }
       ],
       "regression_of": null,
@@ -2489,7 +2519,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-073",
@@ -2525,6 +2555,12 @@
           "actual_result": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge.",
           "note": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge.",
           "at": "2026-10-21T10:46:25.552374+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342380+00:00"
         }
       ],
       "regression_of": null,
@@ -2532,7 +2568,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-074",
@@ -2568,6 +2604,12 @@
           "actual_result": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge.",
           "note": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge.",
           "at": "2026-10-21T10:46:25.552385+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342382+00:00"
         }
       ],
       "regression_of": null,
@@ -2575,7 +2617,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-075",
@@ -2611,6 +2653,12 @@
           "actual_result": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge.",
           "note": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge.",
           "at": "2026-10-21T10:46:25.552392+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342384+00:00"
         }
       ],
       "regression_of": null,
@@ -2618,7 +2666,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-076",
@@ -2648,6 +2696,12 @@
           "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
           "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
           "at": "2026-10-21T11:29:29.117917+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342387+00:00"
         }
       ],
       "regression_of": null,
@@ -2655,7 +2709,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-077",
@@ -2685,6 +2739,12 @@
           "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
           "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
           "at": "2026-10-21T11:29:29.118196+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342389+00:00"
         }
       ],
       "regression_of": null,
@@ -2692,7 +2752,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-078",
@@ -2722,6 +2782,12 @@
           "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
           "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
           "at": "2026-10-21T11:29:29.118206+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342391+00:00"
         }
       ],
       "regression_of": null,
@@ -2729,7 +2795,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-079",
@@ -2759,6 +2825,12 @@
           "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
           "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
           "at": "2026-10-21T11:29:29.118218+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342394+00:00"
         }
       ],
       "regression_of": null,
@@ -2766,7 +2838,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-098",
@@ -2800,6 +2872,12 @@
           "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
           "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
           "at": "2026-10-21T11:29:29.118251+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342441+00:00"
         }
       ],
       "regression_of": null,
@@ -2807,7 +2885,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-080",
@@ -2837,6 +2915,12 @@
           "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
           "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
           "at": "2026-10-21T11:29:29.118225+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342396+00:00"
         }
       ],
       "regression_of": null,
@@ -2844,7 +2928,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-081",
@@ -2874,6 +2958,12 @@
           "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
           "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
           "at": "2026-10-21T11:29:29.118232+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342398+00:00"
         }
       ],
       "regression_of": null,
@@ -2881,7 +2971,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-082",
@@ -2911,6 +3001,12 @@
           "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
           "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
           "at": "2026-10-21T11:29:29.118238+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342401+00:00"
         }
       ],
       "regression_of": null,
@@ -2918,7 +3014,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-083",
@@ -2948,6 +3044,12 @@
           "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
           "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
           "at": "2026-10-21T11:29:29.118244+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342403+00:00"
         }
       ],
       "regression_of": null,
@@ -2955,7 +3057,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-099",
@@ -2979,6 +3081,12 @@
           "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
           "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
           "at": "2026-10-21T11:29:29.118257+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342444+00:00"
         }
       ],
       "regression_of": null,
@@ -2986,7 +3094,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-100",
@@ -3010,6 +3118,12 @@
           "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
           "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
           "at": "2026-10-21T11:29:29.118264+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342446+00:00"
         }
       ],
       "regression_of": null,
@@ -3017,7 +3131,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-084",
@@ -3071,6 +3185,12 @@
           "actual_result": "T-15 CI run 39593104193 static and PG17 integration checks pass after database-side timing capture.",
           "note": "T-15 CI run 39593104193 static and PG17 integration checks pass after database-side timing capture.",
           "at": "2026-10-21T11:37:12.989500+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342405+00:00"
         }
       ],
       "regression_of": null,
@@ -3078,7 +3198,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-15 CI run 39593104193 static and PG17 integration checks pass after database-side timing capture."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-085",
@@ -3108,6 +3228,12 @@
           "actual_result": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass.",
           "note": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass.",
           "at": "2026-10-21T11:42:36.608661+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342408+00:00"
         }
       ],
       "regression_of": null,
@@ -3115,7 +3241,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-086",
@@ -3145,6 +3271,12 @@
           "actual_result": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass.",
           "note": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass.",
           "at": "2026-10-21T11:42:36.609243+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342410+00:00"
         }
       ],
       "regression_of": null,
@@ -3152,7 +3284,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-087",
@@ -3182,6 +3314,12 @@
           "actual_result": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass.",
           "note": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass.",
           "at": "2026-10-21T11:42:36.609338+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342413+00:00"
         }
       ],
       "regression_of": null,
@@ -3189,7 +3327,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-101",
@@ -3219,6 +3357,12 @@
           "actual_result": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass.",
           "note": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass.",
           "at": "2026-10-21T11:42:36.609396+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342449+00:00"
         }
       ],
       "regression_of": null,
@@ -3226,7 +3370,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-089",
@@ -3256,6 +3400,12 @@
           "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
           "note": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
           "at": "2026-10-21T11:50:44.688080+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342418+00:00"
         }
       ],
       "regression_of": null,
@@ -3263,7 +3413,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-090",
@@ -3293,6 +3443,12 @@
           "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
           "note": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
           "at": "2026-10-21T11:50:44.688085+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342421+00:00"
         }
       ],
       "regression_of": null,
@@ -3300,7 +3456,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-091",
@@ -3336,6 +3492,12 @@
           "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
           "note": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
           "at": "2026-10-21T11:50:44.688088+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342423+00:00"
         }
       ],
       "regression_of": null,
@@ -3343,7 +3505,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-092",
@@ -3373,6 +3535,12 @@
           "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
           "note": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
           "at": "2026-10-21T11:50:44.688091+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342426+00:00"
         }
       ],
       "regression_of": null,
@@ -3380,7 +3548,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-088",
@@ -3416,6 +3584,12 @@
           "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
           "note": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
           "at": "2026-10-21T11:50:44.687903+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342416+00:00"
         }
       ],
       "regression_of": null,
@@ -3423,7 +3597,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
     },
     {
       "tc_reference": "TC-102",
@@ -3459,6 +3633,12 @@
           "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
           "note": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
           "at": "2026-10-21T11:50:44.688094+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342451+00:00"
         }
       ],
       "regression_of": null,
@@ -3466,7 +3646,288 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass."
+      "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs."
+    },
+    {
+      "tc_reference": "TC-093",
+      "ac_reference": "FR-31; GU-02; GU-04; NFR-01",
+      "milestone": "M2 Relay and leases",
+      "title": "Concurrent relays divide deliveries",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "10000 messages/10 topics, four pools and relays with 50 slots, handlers take random 0–2ms.",
+      "expected_result": "All done under 60s; each id handled once, attempts 1, each relay >=100; no leaseLost/reclaimed.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-18 first run: both 10000-message/four-relay scenarios and both dedicated-pool tests pass; counts, fairness, attempts and zero lease loss/reclaim verified.",
+          "note": "T-18 first run: both 10000-message/four-relay scenarios and both dedicated-pool tests pass; counts, fairness, attempts and zero lease loss/reclaim verified.",
+          "at": "2026-10-21T11:54:58.470283+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 final local PG17 suite passes: 184 unit / 113 integration tests, including both 10000-message workloads, connection termination recovery, prepare:false and pool overrides. Lint, typecheck and guards pass.",
+          "note": "T-18 final local PG17 suite passes: 184 unit / 113 integration tests, including both 10000-message workloads, connection termination recovery, prepare:false and pool overrides. Lint, typecheck and guards pass.",
+          "at": "2026-10-21T12:00:44.248787+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 PostgreSQL 14.24 matrix validation: all 113 integration tests pass with both drivers, including concurrency, fault recovery and adapter cases.",
+          "note": "M2 PostgreSQL 14.24 matrix validation: all 113 integration tests pass with both drivers, including concurrency, fault recovery and adapter cases.",
+          "at": "2026-10-21T12:01:17.841216+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342429+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 PR #18 implementation CI 39596449111 static and PG17 integration checks pass. M2 report and quality review completed; final report-commit checks required before merge.",
+          "note": "T-18 PR #18 implementation CI 39596449111 static and PG17 integration checks pass. M2 report and quality review completed; final report-commit checks required before merge.",
+          "at": "2026-10-21T12:05:25.026396+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-18 PR #18 implementation CI 39596449111 static and PG17 integration checks pass. M2 report and quality review completed; final report-commit checks required before merge."
+    },
+    {
+      "tc_reference": "TC-097",
+      "ac_reference": "FR-30",
+      "milestone": "M2 Relay and leases",
+      "title": "Relay pool override",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Create outbox on pool A and relay on named pool B; observe backend statements.",
+      "expected_result": "Relay statements use B.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-18 first run: both 10000-message/four-relay scenarios and both dedicated-pool tests pass; counts, fairness, attempts and zero lease loss/reclaim verified.",
+          "note": "T-18 first run: both 10000-message/four-relay scenarios and both dedicated-pool tests pass; counts, fairness, attempts and zero lease loss/reclaim verified.",
+          "at": "2026-10-21T11:54:58.470748+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 final local PG17 suite passes: 184 unit / 113 integration tests, including both 10000-message workloads, connection termination recovery, prepare:false and pool overrides. Lint, typecheck and guards pass.",
+          "note": "T-18 final local PG17 suite passes: 184 unit / 113 integration tests, including both 10000-message workloads, connection termination recovery, prepare:false and pool overrides. Lint, typecheck and guards pass.",
+          "at": "2026-10-21T12:00:44.248891+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 PostgreSQL 14.24 matrix validation: all 113 integration tests pass with both drivers, including concurrency, fault recovery and adapter cases.",
+          "note": "M2 PostgreSQL 14.24 matrix validation: all 113 integration tests pass with both drivers, including concurrency, fault recovery and adapter cases.",
+          "at": "2026-10-21T12:01:17.841334+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342439+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 PR #18 implementation CI 39596449111 static and PG17 integration checks pass. M2 report and quality review completed; final report-commit checks required before merge.",
+          "note": "T-18 PR #18 implementation CI 39596449111 static and PG17 integration checks pass. M2 report and quality review completed; final report-commit checks required before merge.",
+          "at": "2026-10-21T12:05:25.026515+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-18 PR #18 implementation CI 39596449111 static and PG17 integration checks pass. M2 report and quality review completed; final report-commit checks required before merge."
+    },
+    {
+      "tc_reference": "TC-095",
+      "ac_reference": "FR-04; FR-31",
+      "milestone": "M2 Relay and leases",
+      "title": "Unprepared postgres.js queries",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Run INT-20 and reduced 1000-message INT-22 with prepare false.",
+      "expected_result": "Delivery and concurrency scenarios pass without prepared statements.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "T-18 fixtures destructured the result of single-message enqueue as an array. The API correctly returns one EnqueueResult. Reduced prepare:false concurrency passes; fix fixture shape and lint errors.",
+          "note": "T-18 fixtures destructured the result of single-message enqueue as an array. The API correctly returns one EnqueueResult. Reduced prepare:false concurrency passes; fix fixture shape and lint errors.",
+          "at": "2026-10-21T11:54:58.495203+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Targeted INT-81/82 runtime retest passes after correcting single-message enqueue fixture shape; exact persisted timestamp mapping is checked rather than assuming created_at equals available_at.",
+          "note": "Targeted INT-81/82 runtime retest passes after correcting single-message enqueue fixture shape; exact persisted timestamp mapping is checked rather than assuming created_at equals available_at.",
+          "at": "2026-10-21T11:57:40.031538+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 final local PG17 suite passes: 184 unit / 113 integration tests, including both 10000-message workloads, connection termination recovery, prepare:false and pool overrides. Lint, typecheck and guards pass.",
+          "note": "T-18 final local PG17 suite passes: 184 unit / 113 integration tests, including both 10000-message workloads, connection termination recovery, prepare:false and pool overrides. Lint, typecheck and guards pass.",
+          "at": "2026-10-21T12:00:44.248885+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 PostgreSQL 14.24 matrix validation: all 113 integration tests pass with both drivers, including concurrency, fault recovery and adapter cases.",
+          "note": "M2 PostgreSQL 14.24 matrix validation: all 113 integration tests pass with both drivers, including concurrency, fault recovery and adapter cases.",
+          "at": "2026-10-21T12:01:17.841328+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342434+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 PR #18 implementation CI 39596449111 static and PG17 integration checks pass. M2 report and quality review completed; final report-commit checks required before merge.",
+          "note": "T-18 PR #18 implementation CI 39596449111 static and PG17 integration checks pass. M2 report and quality review completed; final report-commit checks required before merge.",
+          "at": "2026-10-21T12:05:25.026508+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-18 PR #18 implementation CI 39596449111 static and PG17 integration checks pass. M2 report and quality review completed; final report-commit checks required before merge."
+    },
+    {
+      "tc_reference": "TC-096",
+      "ac_reference": "FR-04",
+      "milestone": "M2 Relay and leases",
+      "title": "Driver-neutral claim mapping",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Compare full claimed message JS values through both drivers; listDead comparison is scheduled in T-20, stats in T-21 (D-66).",
+      "expected_result": "seq is string, dates are Date, JSON matches and numeric values match.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "T-18 fixtures destructured the result of single-message enqueue as an array. The API correctly returns one EnqueueResult. Reduced prepare:false concurrency passes; fix fixture shape and lint errors.",
+          "note": "T-18 fixtures destructured the result of single-message enqueue as an array. The API correctly returns one EnqueueResult. Reduced prepare:false concurrency passes; fix fixture shape and lint errors.",
+          "at": "2026-10-21T11:54:58.495674+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Targeted INT-81/82 runtime retest passes after correcting single-message enqueue fixture shape; exact persisted timestamp mapping is checked rather than assuming created_at equals available_at.",
+          "note": "Targeted INT-81/82 runtime retest passes after correcting single-message enqueue fixture shape; exact persisted timestamp mapping is checked rather than assuming created_at equals available_at.",
+          "at": "2026-10-21T11:57:40.031687+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 final local PG17 suite passes: 184 unit / 113 integration tests, including both 10000-message workloads, connection termination recovery, prepare:false and pool overrides. Lint, typecheck and guards pass.",
+          "note": "T-18 final local PG17 suite passes: 184 unit / 113 integration tests, including both 10000-message workloads, connection termination recovery, prepare:false and pool overrides. Lint, typecheck and guards pass.",
+          "at": "2026-10-21T12:00:44.248888+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 PostgreSQL 14.24 matrix validation: all 113 integration tests pass with both drivers, including concurrency, fault recovery and adapter cases.",
+          "note": "M2 PostgreSQL 14.24 matrix validation: all 113 integration tests pass with both drivers, including concurrency, fault recovery and adapter cases.",
+          "at": "2026-10-21T12:01:17.841331+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342437+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 PR #18 implementation CI 39596449111 static and PG17 integration checks pass. M2 report and quality review completed; final report-commit checks required before merge.",
+          "note": "T-18 PR #18 implementation CI 39596449111 static and PG17 integration checks pass. M2 report and quality review completed; final report-commit checks required before merge.",
+          "at": "2026-10-21T12:05:25.026512+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-18 PR #18 implementation CI 39596449111 static and PG17 integration checks pass. M2 report and quality review completed; final report-commit checks required before merge."
+    },
+    {
+      "tc_reference": "TC-094",
+      "ac_reference": "FR-38",
+      "milestone": "M2 Relay and leases",
+      "title": "Database reconnect resilience",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Enqueue 2000; terminate only named relay backends every 200ms for 2s.",
+      "expected_result": "Claim/flush errors emitted; relay survives; all done within 30s reconnect allowance.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "First INT-29 run: pg passes; postgres-js exceeded 30s recovery then 60s test timeout because an uncertain claim response retained a default 60s lease. Inspection later showed all 2000 done. Configure the unspecified fault-test lease/reclaim options within its 30s recovery window; retain all assertions and production defaults.",
+          "note": "First INT-29 run: pg passes; postgres-js exceeded 30s recovery then 60s test timeout because an uncertain claim response retained a default 60s lease. Inspection later showed all 2000 done. Configure the unspecified fault-test lease/reclaim options within its 30s recovery window; retain all assertions and production defaults.",
+          "at": "2026-10-21T11:54:58.520260+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Second INT-29 attempt: postgres-js still timed out at 60s with 5s leases; pg passes. Earlier default-lease explanation remains a hypothesis, not established root cause. Investigate cleanup: postgres.js end() defaults to unlimited wait even for previously closed connections.",
+          "note": "Second INT-29 attempt: postgres-js still timed out at 60s with 5s leases; pg passes. Earlier default-lease explanation remains a hypothesis, not established root cause. Investigate cleanup: postgres.js end() defaults to unlimited wait even for previously closed connections.",
+          "at": "2026-10-21T11:57:40.062719+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Diagnostic postgres-js INT-29 retry passed in 7.9s with unchanged recovery assertions. Two earlier timeouts remain unexplained; continue investigating intermittent completion/cleanup before closure.",
+          "note": "Diagnostic postgres-js INT-29 retry passed in 7.9s with unchanged recovery assertions. Two earlier timeouts remain unexplained; continue investigating intermittent completion/cleanup before closure.",
+          "at": "2026-10-21T11:58:13.328513+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Diagnostic run confirmed all 2000 rows done and relay.stop resolved; timeout occurred inside worker.close/postgres.js end(), which waited indefinitely after terminated connections. Earlier lease-root-cause hypothesis is superseded by this observed cleanup failure.",
+          "note": "Diagnostic run confirmed all 2000 rows done and relay.stop resolved; timeout occurred inside worker.close/postgres.js end(), which waited indefinitely after terminated connections. Earlier lease-root-cause hypothesis is superseded by this observed cleanup failure.",
+          "at": "2026-10-21T11:59:55.318558+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "After explicit caller-owned postgres.js pool cleanup, INT-29 passes for both drivers in 11.1s total. All 2000 rows complete per driver within 30s, claim/flush errors occur, and the relay remains running before teardown.",
+          "note": "After explicit caller-owned postgres.js pool cleanup, INT-29 passes for both drivers in 11.1s total. All 2000 rows complete per driver within 30s, claim/flush errors occur, and the relay remains running before teardown.",
+          "at": "2026-10-21T12:00:20.154774+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 final local PG17 suite passes: 184 unit / 113 integration tests, including both 10000-message workloads, connection termination recovery, prepare:false and pool overrides. Lint, typecheck and guards pass.",
+          "note": "T-18 final local PG17 suite passes: 184 unit / 113 integration tests, including both 10000-message workloads, connection termination recovery, prepare:false and pool overrides. Lint, typecheck and guards pass.",
+          "at": "2026-10-21T12:00:44.248881+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "M2 PostgreSQL 14.24 matrix validation: all 113 integration tests pass with both drivers, including concurrency, fault recovery and adapter cases.",
+          "note": "M2 PostgreSQL 14.24 matrix validation: all 113 integration tests pass with both drivers, including concurrency, fault recovery and adapter cases.",
+          "at": "2026-10-21T12:01:17.841323+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "note": "Final M2 local validation: 184 unit tests pass on Node 22; all 113 integration tests pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers. Unit-only cases are database-independent. No todos or skipped cases in full runs.",
+          "at": "2026-10-21T12:02:12.342431+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-18 PR #18 implementation CI 39596449111 static and PG17 integration checks pass. M2 report and quality review completed; final report-commit checks required before merge.",
+          "note": "T-18 PR #18 implementation CI 39596449111 static and PG17 integration checks pass. M2 report and quality review completed; final report-commit checks required before merge.",
+          "at": "2026-10-21T12:05:25.026503+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": "postgres-js-terminated-test-pool-cleanup",
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-18 PR #18 implementation CI 39596449111 static and PG17 integration checks pass. M2 report and quality review completed; final report-commit checks required before merge."
     }
   ]
 }
