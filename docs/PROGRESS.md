@@ -1,6 +1,6 @@
 # Progress
 
-Local repository setup completed on 2026-10-21. M0 (T-01..T-03), M1 (T-04..T-11) and M2 (T-12..T-18) are complete. Stopped at the M2 milestone boundary for owner review; T-19 has not started.
+Local repository setup completed on 2026-10-21. M0 (T-01..T-03), M1 (T-04..T-11) and M2 (T-12..T-18) are complete. Owner authorized M3; T-19 is in progress.
 
 - Read AGENTS.md and all four specification documents from start to finish.
 - Verified the required Git author and committer identity; enabled the executable `.githooks/commit-msg` hook.
@@ -32,7 +32,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-16 | M2 | Reclaim, fencing and crash recovery | done | 72222d0 |
 | T-17 | M2 | Lifecycle: start, stop, drain, signal | done | 9aaed86 |
 | T-18 | M2 | Concurrency and resilience | done | f548dfa |
-| T-19 | M3 | Retries and dead transitions | todo | — |
+| T-19 | M3 | Retries and dead transitions | doing | — |
 | T-20 | M3 | Admin helpers | todo | — |
 | T-21 | M3 | stats and CLI stats | todo | — |
 | T-22 | M4 | Ordering-mode claim | todo | — |
