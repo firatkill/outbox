@@ -1314,6 +1314,12 @@
           "actual_result": "Final T-08 checks passed: 124 unit, 18 PG17 integration tests; build, publint/attw and driver-free declarations; core 3.63 kB and restored postgres-js createOutbox measurement 3.18 kB, within unchanged limits. LISTEN remains T-24.",
           "note": "Final T-08 checks passed: 124 unit, 18 PG17 integration tests; build, publint/attw and driver-free declarations; core 3.63 kB and restored postgres-js createOutbox measurement 3.18 kB, within unchanged limits. LISTEN remains T-24.",
           "at": "2026-10-21T09:00:58.236254+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass.",
+          "note": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass.",
+          "at": "2026-10-21T09:36:09.754187+00:00"
         }
       ],
       "regression_of": null,
@@ -1321,7 +1327,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Final T-08 checks passed: 124 unit, 18 PG17 integration tests; build, publint/attw and driver-free declarations; core 3.63 kB and restored postgres-js createOutbox measurement 3.18 kB, within unchanged limits. LISTEN remains T-24."
+      "actual_result": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass."
     },
     {
       "tc_reference": "TC-067",
@@ -1363,6 +1369,12 @@
           "actual_result": "Correction to the preceding note: the final measured postgres-js createOutbox size was 3.21 kB, not 3.18 kB; core was 3.63 kB. Both pass their unchanged 12/10 kB limits. No new measurement run.",
           "note": "Correction to the preceding note: the final measured postgres-js createOutbox size was 3.21 kB, not 3.18 kB; core was 3.63 kB. Both pass their unchanged 12/10 kB limits. No new measurement run.",
           "at": "2026-10-21T09:01:31.952054+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass.",
+          "note": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass.",
+          "at": "2026-10-21T09:36:09.754189+00:00"
         }
       ],
       "regression_of": null,
@@ -1370,7 +1382,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Correction to the preceding note: the final measured postgres-js createOutbox size was 3.21 kB, not 3.18 kB; core was 3.63 kB. Both pass their unchanged 12/10 kB limits. No new measurement run."
+      "actual_result": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass."
     },
     {
       "tc_reference": "TC-041",
@@ -1611,6 +1623,105 @@
       "retraction_reason": null,
       "automatable": true,
       "actual_result": "Final T-08 checks passed: 124 unit, 18 PG17 integration tests; build, publint/attw and driver-free declarations; core 3.63 kB and restored postgres-js createOutbox measurement 3.18 kB, within unchanged limits. LISTEN remains T-24."
+    },
+    {
+      "tc_reference": "TC-047",
+      "ac_reference": "FR-03; FR-04",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "pg adapter parity",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Run all adapter-relevant migration tests with both drivers; execute multistatements and check cast text/float8/int4 types.",
+      "expected_result": "Both drivers return equivalent results and driver-free declarations.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "T-09 preflight typecheck: the normative pg notification payload?: string excludes the installed driver optional payload undefined under exactOptionalPropertyTypes. A standalone probe verifies widening only this field fixes assignability; approval requested.",
+          "note": "T-09 preflight typecheck: the normative pg notification payload?: string excludes the installed driver optional payload undefined under exactOptionalPropertyTypes. A standalone probe verifies widening only this field fixes assignability; approval requested.",
+          "at": "2026-10-21T09:07:52.352604+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-09 targeted runtime suite: 21 adapter/migration cases passed on PG17, including both drivers, 50 transactions, destroy-on-failed-rollback, withDb, typed rows and custom prefixes. Public typecheck remains pending the separate optional payload approval.",
+          "note": "T-09 targeted runtime suite: 21 adapter/migration cases passed on PG17, including both drivers, 50 transactions, destroy-on-failed-rollback, withDb, typed rows and custom prefixes. Public typecheck remains pending the separate optional payload approval.",
+          "at": "2026-10-21T09:07:52.378852+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass.",
+          "note": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass.",
+          "at": "2026-10-21T09:36:09.754033+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass."
+    },
+    {
+      "tc_reference": "TC-048",
+      "ac_reference": "FR-03",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "pg transaction client release",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Run 50 transactions, half throwing; inspect pool counts; force rollback failure on a checked-out client.",
+      "expected_result": "All clients are released; failed rollback destroys its client.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-09 targeted runtime suite: 21 adapter/migration cases passed on PG17, including both drivers, 50 transactions, destroy-on-failed-rollback, withDb, typed rows and custom prefixes. Public typecheck remains pending the separate optional payload approval.",
+          "note": "T-09 targeted runtime suite: 21 adapter/migration cases passed on PG17, including both drivers, 50 transactions, destroy-on-failed-rollback, withDb, typed rows and custom prefixes. Public typecheck remains pending the separate optional payload approval.",
+          "at": "2026-10-21T09:07:52.379235+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass.",
+          "note": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass.",
+          "at": "2026-10-21T09:36:09.754180+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass."
+    },
+    {
+      "tc_reference": "TC-049",
+      "ac_reference": "FR-10",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Custom prefix isolation",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Migrate isolated schemas with default and ob_ prefixes; inspect qualified objects and differing channels.",
+      "expected_result": "Objects are isolated; enqueue checks follow T-10 and relay isolation follows T-14.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-09 targeted runtime suite: 21 adapter/migration cases passed on PG17, including both drivers, 50 transactions, destroy-on-failed-rollback, withDb, typed rows and custom prefixes. Public typecheck remains pending the separate optional payload approval.",
+          "note": "T-09 targeted runtime suite: 21 adapter/migration cases passed on PG17, including both drivers, 50 transactions, destroy-on-failed-rollback, withDb, typed rows and custom prefixes. Public typecheck remains pending the separate optional payload approval.",
+          "at": "2026-10-21T09:07:52.379415+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass.",
+          "note": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass.",
+          "at": "2026-10-21T09:36:09.754184+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass."
     }
   ]
 }

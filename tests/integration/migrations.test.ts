@@ -1,5 +1,4 @@
 import { createOutboxCore } from '../../src/core/outbox.js';
-import { createOutbox } from '../../src/postgres-js.js';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { parseOutboxConfig } from '../../src/core/config.js';
 import { MIGRATIONS, migrationChecksum, migrationSql } from '../../src/core/migrations/index.js';
@@ -8,12 +7,12 @@ import { render } from '../../src/core/sql/render.js';
 import { ADAPTERS, createAdapter } from '../helpers/adapters.js';
 import { createTestSchema } from '../helpers/db.js';
 
-// Real postgres.js adapter; T-09 adds pg to the shared driver matrix.
-describe.each(ADAPTERS)('%s migrations', () => {
+// Both real adapters exercise the shared migration contract.
+describe.each(ADAPTERS)('%s migrations', (name) => {
   const owned: Awaited<ReturnType<typeof createTestSchema>>[] = [];
   let driver: ReturnType<typeof createAdapter>;
   beforeAll(() => {
-    driver = createAdapter();
+    driver = createAdapter(name);
   });
   afterAll(async () => {
     await driver.close();
@@ -24,9 +23,25 @@ describe.each(ADAPTERS)('%s migrations', () => {
     owned.push(schema);
     return parseOutboxConfig({ db: driver.adapter.db, schema: schema.schema });
   }
+  it('INT-02 TC-049 isolates custom schema and prefix objects and channels', async () => {
+    const a = await setup();
+    const b = { ...(await setup()), tablePrefix: 'ob_' };
+    const first = driver.outbox({ schema: a.schema });
+    const second = driver.outbox({ schema: b.schema, tablePrefix: b.tablePrefix });
+    await first.migrate();
+    await second.migrate();
+    expect(first.config.channel).not.toBe(second.config.channel);
+    expect(await first.schemaVersion()).toEqual({ current: 1, required: 1 });
+    expect(await second.schemaVersion()).toEqual({ current: 1, required: 1 });
+    const rows = await driver.adapter.query(
+      'select to_regclass($1::text)::text as first, to_regclass($2::text)::text as second, to_regclass($3::text)::text as absent',
+      [a.schema + '.outbox_messages', b.schema + '.ob_messages', b.schema + '.outbox_messages'],
+    );
+    expect(rows).toEqual([{ first: a.schema + '.outbox_messages', second: b.schema + '.ob_messages', absent: null }]);
+  });
   it('INT-01 TC-031 installs the specified catalog and is idempotent', async () => {
     const config = await setup();
-    const outbox = createOutbox({ db: driver.adapter.db, schema: config.schema });
+    const outbox = driver.outbox({ schema: config.schema });
     expect(await outbox.migrate()).toMatchObject({
       applied: [{ version: 1, name: 'initial' }],
       currentVersion: 1,
