@@ -1,6 +1,6 @@
 # Progress
 
-Local repository setup completed on 2026-10-21. M0 (T-01..T-03) and M1 (T-04..T-11) are complete. Owner authorized M2; T-12 is complete; T-13 is complete; T-14 is complete; T-15 is complete; T-16 is complete; T-17 is underway. Stop at the end of M2 for owner review.
+Local repository setup completed on 2026-10-21. M0 (T-01..T-03) and M1 (T-04..T-11) are complete. Owner authorized M2; T-12 is complete; T-13 is complete; T-14 is complete; T-15 is complete; T-16 is complete; T-17 is complete. Stop at the end of M2 for owner review.
 
 - Read AGENTS.md and all four specification documents from start to finish.
 - Verified the required Git author and committer identity; enabled the executable `.githooks/commit-msg` hook.
@@ -30,7 +30,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-14 | M2 | Relay engine: scheduler, loop, deliverer, flusher | done | 1a0b70f |
 | T-15 | M2 | Handler timeout and abort | done | 558b4b5 |
 | T-16 | M2 | Reclaim, fencing and crash recovery | done | 72222d0 |
-| T-17 | M2 | Lifecycle: start, stop, drain, signal | doing | — |
+| T-17 | M2 | Lifecycle: start, stop, drain, signal | done | 9aaed86 |
 | T-18 | M2 | Concurrency and resilience | todo | — |
 | T-19 | M3 | Retries and dead transitions | todo | — |
 | T-20 | M3 | Admin helpers | todo | — |
@@ -97,7 +97,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 
 - T-16: SIGKILL recovery, stale completion fencing, startup reclaim and periodic batch/dead events pass (seven targeted checks). Full suite 183 unit / 93 PG17 integration, static/package/size gates pass. INT-24 passes; future concurrency/chaos gates follow D-66. [PR CI](https://github.com/firatkill/outbox/actions/runs/39593697735) passes; final documentation checks required before merge.
 
-- T-17: startup schema checks, graceful/forced drain, late outcome suppression, release attempt accounting, idempotence and abort signals pass. Bounded flush retry failure remains recoverable. Full suite 184 unit / 103 PG17 integration, static/package/size gates pass (core 10.97kB). PR CI pending.
+- T-17: startup schema checks, graceful/forced drain, late outcome suppression, release attempt accounting, idempotence and abort signals pass. Bounded flush retry failure remains recoverable. Full suite 184 unit / 103 PG17 integration, static/package/size gates pass (core 10.97kB). [PR CI](https://github.com/firatkill/outbox/actions/runs/39594729822) passes; final documentation checks required before merge.
 
 ## Open questions for the owner
 

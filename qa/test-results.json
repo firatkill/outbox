@@ -3250,6 +3250,12 @@
           "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
           "note": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
           "at": "2026-10-21T11:48:37.024360+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
+          "note": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
+          "at": "2026-10-21T11:50:44.688080+00:00"
         }
       ],
       "regression_of": null,
@@ -3257,7 +3263,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues."
+      "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass."
     },
     {
       "tc_reference": "TC-090",
@@ -3281,6 +3287,12 @@
           "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
           "note": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
           "at": "2026-10-21T11:48:37.024375+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
+          "note": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
+          "at": "2026-10-21T11:50:44.688085+00:00"
         }
       ],
       "regression_of": null,
@@ -3288,7 +3300,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues."
+      "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass."
     },
     {
       "tc_reference": "TC-091",
@@ -3318,6 +3330,12 @@
           "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
           "note": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
           "at": "2026-10-21T11:48:37.024380+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
+          "note": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
+          "at": "2026-10-21T11:50:44.688088+00:00"
         }
       ],
       "regression_of": null,
@@ -3325,7 +3343,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues."
+      "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass."
     },
     {
       "tc_reference": "TC-092",
@@ -3349,6 +3367,12 @@
           "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
           "note": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
           "at": "2026-10-21T11:48:37.024384+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
+          "note": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
+          "at": "2026-10-21T11:50:44.688091+00:00"
         }
       ],
       "regression_of": null,
@@ -3356,7 +3380,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues."
+      "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass."
     },
     {
       "tc_reference": "TC-088",
@@ -3386,6 +3410,12 @@
           "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
           "note": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
           "at": "2026-10-21T11:48:37.023777+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
+          "note": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
+          "at": "2026-10-21T11:50:44.687903+00:00"
         }
       ],
       "regression_of": null,
@@ -3393,7 +3423,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues."
+      "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass."
     },
     {
       "tc_reference": "TC-102",
@@ -3423,6 +3453,12 @@
           "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
           "note": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
           "at": "2026-10-21T11:48:37.024387+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
+          "note": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass.",
+          "at": "2026-10-21T11:50:44.688094+00:00"
         }
       ],
       "regression_of": null,
@@ -3430,7 +3466,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues."
+      "actual_result": "T-17 PR #17 CI run 39594729822 static and PG17 integration pass."
     }
   ]
 }
