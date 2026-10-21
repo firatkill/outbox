@@ -23,7 +23,7 @@ describe.each(ADAPTERS)('%s concurrency and resilience', (name) => {
     const owned = await createTestSchema();
     const producer = createAdapter(name);
     const app = owned.schema + '_relay';
-    const worker = createAdapter(name, { max: 4, applicationName: app });
+    const worker = createAdapter(name, { max: 4, applicationName: app, fetchTypes: false });
     const outbox = createOutboxCore(producer.adapter, { schema: owned.schema });
     const relay = createOutboxCore(worker.adapter, { schema: owned.schema }).createRelay({
       listen: false,

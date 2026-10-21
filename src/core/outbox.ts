@@ -1,3 +1,4 @@
+import { createAdmin } from './admin.js';
 import { createRelay } from './relay/relay.js';
 import { enqueueValidated } from './sql/enqueue.js';
 import { validateMessages } from './validate.js';
@@ -42,11 +43,7 @@ export function createOutboxCore<TDb, TTx, Topics extends TopicMap = DefaultTopi
     enqueue,
     createRelay: (options) => createRelay(adapter, resolved, options),
     withInbox: notImplemented,
-    purgeInbox: notImplemented,
-    retryDead: notImplemented,
-    skip: notImplemented,
-    purge: notImplemented,
-    listDead: notImplemented,
+    ...createAdmin(adapter, resolved),
     stats: notImplemented,
   };
   Object.defineProperty(outbox, Symbol.for('@firatkill/outbox/internal'), { value: { adapter, config: resolved } });
