@@ -7,11 +7,15 @@ export default defineConfig({
   define: { __OUTBOX_VERSION__: JSON.stringify(version) },
   test: {
     projects: [
-      { extends: true, test: { name: 'unit', include: ['tests/unit/**/*.test.ts'], testTimeout: 10_000 } },
+      {
+        extends: true,
+        test: { name: 'unit', sequence: { groupOrder: 0 }, include: ['tests/unit/**/*.test.ts'], testTimeout: 10_000 },
+      },
       {
         extends: true,
         test: {
           name: 'integration',
+          sequence: { groupOrder: 1 },
           include: ['tests/integration/**/*.test.ts'],
           globalSetup: ['tests/global-setup.ts'],
           testTimeout: 30_000,

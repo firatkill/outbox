@@ -141,6 +141,24 @@
           "actual_result": "Backfilled follow-up: moving the temporary flag to the integration script fixed typecheck; T-01 lint and typecheck passed. T-02 removes the flag entirely.",
           "note": "Backfilled follow-up: moving the temporary flag to the integration script fixed typecheck; T-01 lint and typecheck passed. T-02 removes the flag entirely.",
           "at": "2026-10-21T07:42:31.859553+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "T-05 adds the first src/adapters file, exposing an invalid ESLint no-restricted-imports configuration: patterns mixed strings and objects. The prior empty adapter directory had not exercised this rule.",
+          "note": "T-05 adds the first src/adapters file, exposing an invalid ESLint no-restricted-imports configuration: patterns mixed strings and objects. The prior empty adapter directory had not exercised this rule.",
+          "at": "2026-10-21T08:12:39.839468+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "The ESLint adapter configuration now loads. Lint found three local typing/style issues: untyped postgres.js unsafe rows, an extracted query method, and an any-typed Vitest asymmetric matcher in the migration test.",
+          "note": "The ESLint adapter configuration now loads. Lint found three local typing/style issues: untyped postgres.js unsafe rows, an extracted query method, and an any-typed Vitest asymmetric matcher in the migration test.",
+          "at": "2026-10-21T08:13:42.810188+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-05 lint retest passed after correcting the adapter restriction pattern shape, explicitly typing postgres.js rows, wrapping the query method and separating the matcher assertions. Strict rules remain enabled.",
+          "note": "T-05 lint retest passed after correcting the adapter restriction pattern shape, explicitly typing postgres.js rows, wrapping the query method and separating the matcher assertions. Strict rules remain enabled. Review clarification: the newly exercised ESLint scope exposed a latent error, not a recurrence of the earlier typecheck failure; regression_of is therefore unset.",
+          "at": "2026-10-21T08:14:51.331306+00:00"
         }
       ],
       "regression_of": null,
@@ -148,7 +166,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Backfilled follow-up: moving the temporary flag to the integration script fixed typecheck; T-01 lint and typecheck passed. T-02 removes the flag entirely."
+      "actual_result": "T-05 lint retest passed after correcting the adapter restriction pattern shape, explicitly typing postgres.js rows, wrapping the query method and separating the matcher assertions. Strict rules remain enabled."
     },
     {
       "tc_reference": "TC-006",
@@ -764,6 +782,12 @@
           "actual_result": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed.",
           "note": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed.",
           "at": "2026-10-21T08:07:38.563674+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "The normative default/custom SQL snapshots and failed-migration rollback case passed in the targeted run (5 tests). The expected SQL fixtures were copied from TRD 7.2/7.3 before comparison, not generated from implementation output.",
+          "note": "The normative default/custom SQL snapshots and failed-migration rollback case passed in the targeted run (5 tests). The expected SQL fixtures were copied from TRD 7.2/7.3 before comparison, not generated from implementation output.",
+          "at": "2026-10-21T08:16:14.284872+00:00"
         }
       ],
       "regression_of": null,
@@ -771,7 +795,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed."
+      "actual_result": "The normative default/custom SQL snapshots and failed-migration rollback case passed in the targeted run (5 tests). The expected SQL fixtures were copied from TRD 7.2/7.3 before comparison, not generated from implementation output."
     },
     {
       "tc_reference": "TC-029",
@@ -859,6 +883,235 @@
       "retraction_reason": null,
       "automatable": true,
       "actual_result": "T-04 final available suite passed: 57 unit tests and 6 real PostgreSQL integration checks, including both drivers for INT-09. Database preflight reported zero connections; lint, typecheck and G-1..G-8 passed."
+    },
+    {
+      "tc_reference": "TC-031",
+      "ac_reference": "FR-10; FR-11; FR-12; FR-13",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Migration installation and idempotence",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Migrate an empty isolated schema twice; inspect tables, columns, constraints, seven explicit indexes and migration checksum.",
+      "expected_result": "First applies version 1 initial, second applies none; catalog matches TRD 7 and schema version is 1/1.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Pre-test typecheck found postgres.js begin returns UnwrapPromiseArray<T>, incompatible with the temporary adapter Promise<T> generic. No migration assertion ran; the combined unit/integration invocation also stopped at Vitest project scheduling because maxWorkers differed without groupOrder.",
+          "note": "Pre-test typecheck found postgres.js begin returns UnwrapPromiseArray<T>, incompatible with the temporary adapter Promise<T> generic. No migration assertion ran; the combined unit/integration invocation also stopped at Vitest project scheduling because maxWorkers differed without groupOrder.",
+          "at": "2026-10-21T08:12:39.882778+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Targeted migration and checksum tests passed (6 tests) against PostgreSQL 17; typecheck passed after the temporary driver helper boxed its callback return to preserve generic values. Vitest project ordering now permits the combined targeted invocation.",
+          "note": "Targeted migration and checksum tests passed (6 tests) against PostgreSQL 17; typecheck passed after the temporary driver helper boxed its callback return to preserve generic values. Vitest project ordering now permits the combined targeted invocation.",
+          "at": "2026-10-21T08:13:42.775990+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "The explicit psql inspection showed all six messages indexes, inbox processed index and the three primary indexes in the temporary schema. The verification schema was then cleaned up.",
+          "note": "The explicit psql inspection showed all six messages indexes, inbox processed index and the three primary indexes in the temporary schema. The verification schema was then cleaned up.",
+          "at": "2026-10-21T08:16:14.421196+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-05 final local suite passed: 59 unit tests and 12 integration checks on PostgreSQL 17. Lint, typecheck, guards and the explicit psql index inspection also passed; the test database preflight reported zero connections. The PR will additionally run the new baseline integration CI job.",
+          "note": "T-05 final local suite passed: 59 unit tests and 12 integration checks on PostgreSQL 17. Lint, typecheck, guards and the explicit psql index inspection also passed; the test database preflight reported zero connections. The PR will additionally run the new baseline integration CI job.",
+          "at": "2026-10-21T08:19:12.867009+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-05 final local suite passed: 59 unit tests and 12 integration checks on PostgreSQL 17. Lint, typecheck, guards and the explicit psql index inspection also passed; the test database preflight reported zero connections. The PR will additionally run the new baseline integration CI job."
+    },
+    {
+      "tc_reference": "TC-032",
+      "ac_reference": "FR-13",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Changed migration checksum is rejected",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Migrate, alter the checksum in the test-owned version row and migrate again.",
+      "expected_result": "OUTBOX_MIGRATION_CHECKSUM reports version 1; the runner does not repair the row.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Targeted migration and checksum tests passed (6 tests) against PostgreSQL 17; typecheck passed after the temporary driver helper boxed its callback return to preserve generic values. Vitest project ordering now permits the combined targeted invocation.",
+          "note": "Targeted migration and checksum tests passed (6 tests) against PostgreSQL 17; typecheck passed after the temporary driver helper boxed its callback return to preserve generic values. Vitest project ordering now permits the combined targeted invocation.",
+          "at": "2026-10-21T08:13:42.776397+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-05 final local suite passed: 59 unit tests and 12 integration checks on PostgreSQL 17. Lint, typecheck, guards and the explicit psql index inspection also passed; the test database preflight reported zero connections. The PR will additionally run the new baseline integration CI job.",
+          "note": "T-05 final local suite passed: 59 unit tests and 12 integration checks on PostgreSQL 17. Lint, typecheck, guards and the explicit psql index inspection also passed; the test database preflight reported zero connections. The PR will additionally run the new baseline integration CI job.",
+          "at": "2026-10-21T08:19:12.867602+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-05 final local suite passed: 59 unit tests and 12 integration checks on PostgreSQL 17. Lint, typecheck, guards and the explicit psql index inspection also passed; the test database preflight reported zero connections. The PR will additionally run the new baseline integration CI job."
+    },
+    {
+      "tc_reference": "TC-033",
+      "ac_reference": "FR-13",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Concurrent migration runners serialize",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Run five migrations concurrently on separate connections to one isolated schema.",
+      "expected_result": "All resolve; exactly one applies initial and the version table contains one row.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Targeted migration and checksum tests passed (6 tests) against PostgreSQL 17; typecheck passed after the temporary driver helper boxed its callback return to preserve generic values. Vitest project ordering now permits the combined targeted invocation.",
+          "note": "Targeted migration and checksum tests passed (6 tests) against PostgreSQL 17; typecheck passed after the temporary driver helper boxed its callback return to preserve generic values. Vitest project ordering now permits the combined targeted invocation.",
+          "at": "2026-10-21T08:13:42.776552+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-05 final local suite passed: 59 unit tests and 12 integration checks on PostgreSQL 17. Lint, typecheck, guards and the explicit psql index inspection also passed; the test database preflight reported zero connections. The PR will additionally run the new baseline integration CI job.",
+          "note": "T-05 final local suite passed: 59 unit tests and 12 integration checks on PostgreSQL 17. Lint, typecheck, guards and the explicit psql index inspection also passed; the test database preflight reported zero connections. The PR will additionally run the new baseline integration CI job.",
+          "at": "2026-10-21T08:19:12.867641+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-05 final local suite passed: 59 unit tests and 12 integration checks on PostgreSQL 17. Lint, typecheck, guards and the explicit psql index inspection also passed; the test database preflight reported zero connections. The PR will additionally run the new baseline integration CI job."
+    },
+    {
+      "tc_reference": "TC-034",
+      "ac_reference": "FR-15; FR-16",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Schema-version gate",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Check an empty schema through schemaVersion; after migration check the required version and an additive higher version.",
+      "expected_result": "Missing version throws OUTBOX_NOT_MIGRATED with the command; version 1 and higher pass. Relay/stats coverage follows their tasks.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Targeted migration and checksum tests passed (6 tests) against PostgreSQL 17; typecheck passed after the temporary driver helper boxed its callback return to preserve generic values. Vitest project ordering now permits the combined targeted invocation.",
+          "note": "Targeted migration and checksum tests passed (6 tests) against PostgreSQL 17; typecheck passed after the temporary driver helper boxed its callback return to preserve generic values. Vitest project ordering now permits the combined targeted invocation.",
+          "at": "2026-10-21T08:13:42.776710+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-05 final local suite passed: 59 unit tests and 12 integration checks on PostgreSQL 17. Lint, typecheck, guards and the explicit psql index inspection also passed; the test database preflight reported zero connections. The PR will additionally run the new baseline integration CI job.",
+          "note": "T-05 final local suite passed: 59 unit tests and 12 integration checks on PostgreSQL 17. Lint, typecheck, guards and the explicit psql index inspection also passed; the test database preflight reported zero connections. The PR will additionally run the new baseline integration CI job.",
+          "at": "2026-10-21T08:19:12.867648+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-05 final local suite passed: 59 unit tests and 12 integration checks on PostgreSQL 17. Lint, typecheck, guards and the explicit psql index inspection also passed; the test database preflight reported zero connections. The PR will additionally run the new baseline integration CI job."
+    },
+    {
+      "tc_reference": "TC-035",
+      "ac_reference": "FR-13",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Migration dry run",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Run dryRun on an empty schema and inspect the returned SQL and database catalog.",
+      "expected_result": "SQL includes create table; no tables are created.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Targeted migration and checksum tests passed (6 tests) against PostgreSQL 17; typecheck passed after the temporary driver helper boxed its callback return to preserve generic values. Vitest project ordering now permits the combined targeted invocation.",
+          "note": "Targeted migration and checksum tests passed (6 tests) against PostgreSQL 17; typecheck passed after the temporary driver helper boxed its callback return to preserve generic values. Vitest project ordering now permits the combined targeted invocation.",
+          "at": "2026-10-21T08:13:42.776857+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-05 final local suite passed: 59 unit tests and 12 integration checks on PostgreSQL 17. Lint, typecheck, guards and the explicit psql index inspection also passed; the test database preflight reported zero connections. The PR will additionally run the new baseline integration CI job.",
+          "note": "T-05 final local suite passed: 59 unit tests and 12 integration checks on PostgreSQL 17. Lint, typecheck, guards and the explicit psql index inspection also passed; the test database preflight reported zero connections. The PR will additionally run the new baseline integration CI job.",
+          "at": "2026-10-21T08:19:12.867657+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-05 final local suite passed: 59 unit tests and 12 integration checks on PostgreSQL 17. Lint, typecheck, guards and the explicit psql index inspection also passed; the test database preflight reported zero connections. The PR will additionally run the new baseline integration CI job."
+    },
+    {
+      "tc_reference": "TC-064",
+      "ac_reference": "FR-13",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Migration template checksum normalization",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Hash the known abc SHA-256 vector and equivalent CRLF/LF templates.",
+      "expected_result": "The hash matches the known vector and line-ending variants produce identical hashes.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Targeted migration and checksum tests passed (6 tests) against PostgreSQL 17; typecheck passed after the temporary driver helper boxed its callback return to preserve generic values. Vitest project ordering now permits the combined targeted invocation.",
+          "note": "Targeted migration and checksum tests passed (6 tests) against PostgreSQL 17; typecheck passed after the temporary driver helper boxed its callback return to preserve generic values. Vitest project ordering now permits the combined targeted invocation.",
+          "at": "2026-10-21T08:13:42.777049+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-05 final local suite passed: 59 unit tests and 12 integration checks on PostgreSQL 17. Lint, typecheck, guards and the explicit psql index inspection also passed; the test database preflight reported zero connections. The PR will additionally run the new baseline integration CI job.",
+          "note": "T-05 final local suite passed: 59 unit tests and 12 integration checks on PostgreSQL 17. Lint, typecheck, guards and the explicit psql index inspection also passed; the test database preflight reported zero connections. The PR will additionally run the new baseline integration CI job.",
+          "at": "2026-10-21T08:19:12.867659+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-05 final local suite passed: 59 unit tests and 12 integration checks on PostgreSQL 17. Lint, typecheck, guards and the explicit psql index inspection also passed; the test database preflight reported zero connections. The PR will additionally run the new baseline integration CI job."
+    },
+    {
+      "tc_reference": "TC-065",
+      "ac_reference": "FR-13",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Failed migration rolls back its DDL",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Run migration and inspect the error, version rows, function and pre-existing table.",
+      "expected_result": "OUTBOX_MIGRATION_FAILED retains version and PostgreSQL cause; migration DDL rolls back and the existing table remains.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "The normative default/custom SQL snapshots and failed-migration rollback case passed in the targeted run (5 tests). The expected SQL fixtures were copied from TRD 7.2/7.3 before comparison, not generated from implementation output.",
+          "note": "The normative default/custom SQL snapshots and failed-migration rollback case passed in the targeted run (5 tests). The expected SQL fixtures were copied from TRD 7.2/7.3 before comparison, not generated from implementation output.",
+          "at": "2026-10-21T08:16:14.290288+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-05 final local suite passed: 59 unit tests and 12 integration checks on PostgreSQL 17. Lint, typecheck, guards and the explicit psql index inspection also passed; the test database preflight reported zero connections. The PR will additionally run the new baseline integration CI job.",
+          "note": "T-05 final local suite passed: 59 unit tests and 12 integration checks on PostgreSQL 17. Lint, typecheck, guards and the explicit psql index inspection also passed; the test database preflight reported zero connections. The PR will additionally run the new baseline integration CI job.",
+          "at": "2026-10-21T08:19:12.867662+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-05 final local suite passed: 59 unit tests and 12 integration checks on PostgreSQL 17. Lint, typecheck, guards and the explicit psql index inspection also passed; the test database preflight reported zero connections. The PR will additionally run the new baseline integration CI job."
     }
   ]
 }

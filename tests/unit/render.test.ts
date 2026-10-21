@@ -1,3 +1,6 @@
+import { readFileSync } from 'node:fs';
+import { BOOTSTRAP } from '../../src/core/migrations/bootstrap.js';
+import { MIGRATIONS } from '../../src/core/migrations/index.js';
 import { expect, it } from 'vitest';
 import { parseOutboxConfig } from '../../src/core/config.js';
 import { quoteIdent } from '../../src/core/identifiers.js';
@@ -23,4 +26,24 @@ it('UT-04 TC-028 escapes quotes and rejects unresolved tokens', () => {
     expect(() => render(sql, parseOutboxConfig({ db: {} }))).toThrow(
       expect.objectContaining({ code: 'OUTBOX_INTERNAL' }),
     );
+});
+
+// Expected SQL fixtures are copied from TRD 7.2/7.3, not generated from implementation.
+it('UT-04 TC-028 renders the normative migration and bootstrap snapshots', () => {
+  const migration = MIGRATIONS[0];
+  if (migration === undefined) throw new Error('Initial migration missing');
+  for (const [variant, schema, tablePrefix] of [
+    ['default', 'public', 'outbox_'],
+    ['custom', 'app_events', 'ob_'],
+  ] as const) {
+    const config = parseOutboxConfig({ db: {}, schema, tablePrefix });
+    for (const [name, template] of [
+      ['bootstrap', BOOTSTRAP],
+      ['initial', migration.template],
+    ] as const) {
+      expect(render(template, config)).toBe(
+        readFileSync(new URL(`../fixtures/${name}-${variant}.sql`, import.meta.url), 'utf8'),
+      );
+    }
+  }
 });
