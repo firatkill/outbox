@@ -1,6 +1,6 @@
 # Progress
 
-Local repository setup completed on 2026-10-21. M0 (T-01..T-03) and M1 (T-04..T-11) are complete. Owner authorized M2; T-12 is complete; T-13 is complete; T-14 is complete. Stop at the end of M2 for owner review.
+Local repository setup completed on 2026-10-21. M0 (T-01..T-03) and M1 (T-04..T-11) are complete. Owner authorized M2; T-12 is complete; T-13 is complete; T-14 is complete; T-15 is underway. Stop at the end of M2 for owner review.
 
 - Read AGENTS.md and all four specification documents from start to finish.
 - Verified the required Git author and committer identity; enabled the executable `.githooks/commit-msg` hook.
@@ -28,7 +28,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-12 | M2 | Relay options and backoff (pure) | done | 32b8e51 |
 | T-13 | M2 | Claim, complete, fail and lease SQL | done | eb65f3e |
 | T-14 | M2 | Relay engine: scheduler, loop, deliverer, flusher | done | 1a0b70f |
-| T-15 | M2 | Handler timeout and abort | todo | — |
+| T-15 | M2 | Handler timeout and abort | doing | — |
 | T-16 | M2 | Reclaim, fencing and crash recovery | todo | — |
 | T-17 | M2 | Lifecycle: start, stop, drain, signal | todo | — |
 | T-18 | M2 | Concurrency and resilience | todo | — |
@@ -92,6 +92,8 @@ A completion commit is recorded only after the task meets its acceptance criteri
 - T-13: all 12 statement tests pass for both drivers; full suite 160 unit / 70 PG17 integration pass with four existing T-14 relay todos. Static checks and [PR CI](https://github.com/firatkill/outbox/actions/runs/39586706280) pass; final documentation commit checks required before merge. Initial postgres-js checks failed during a local PostgreSQL restart; recovered retest passed unchanged. Underlying host cause remains unverified and is retained in the QA ledger. Future concurrency/chaos checks follow D-66.
 
 - T-14: engine implemented; 183 unit / 84 PG17 integration tests pass, including all former delay todos. Lint, types, guards, build and package checks pass. Owner approved the 12kB core limit (D-69); size gate passes. [PR CI](https://github.com/firatkill/outbox/actions/runs/39591920124) passes; final documentation checks required before merge.
+
+- T-15: INT-26 passes with both drivers; timeout reason, stored error, retry delay and slot reuse verified. Full suite 183 unit / 86 PG17 integration and static checks pass. PR CI pending.
 
 ## Open questions for the owner
 
