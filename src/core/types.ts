@@ -331,3 +331,13 @@ export interface Span {
   /** status 'ok' | 'error' */
   end(status: 'ok' | 'error'): void;
 }
+
+/** Consumer inbox bound to a caller-owned transaction type. */
+export interface Inbox<TTx> {
+  /** Apply effects at most once for this consumer/message pair. */
+  withInbox<T>(tx: TTx, consumer: string, messageId: string, fn: (tx: TTx) => Promise<T>): Promise<InboxResult<T>>;
+  /** Remove expired dedupe entries. */
+  purgeInbox(options: { olderThanMs: number; batchSize?: number }): Promise<{ deleted: number }>;
+  /** Install the consumer schema. */
+  migrate(options?: { dryRun?: boolean }): Promise<MigrateResult>;
+}

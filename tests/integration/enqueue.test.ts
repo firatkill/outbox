@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs';
+import { testClock } from '../../src/testing.js';
 import { mapMessageRow } from '../../src/core/row.js';
 import pg from 'pg';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
@@ -247,4 +249,73 @@ describe.each(ADAPTERS)('%s enqueue', (name) => {
       expect((await limited.enqueue(spy.executor, { topic: 'size', payload: 'x'.repeat(1022) })).deduped).toBe(false);
     });
   });
+});
+
+// Test-only copy of normative C1; production implementation remains T-13.
+const claim = readFileSync(new URL('../fixtures/claim-unordered.sql', import.meta.url), 'utf8');
+describe.each(ADAPTERS)('%s enqueue delays', (name) => {
+  const driver = createAdapter(name);
+  const schemas: Awaited<ReturnType<typeof createTestSchema>>[] = [];
+  afterAll(async () => {
+    await driver.close();
+    for (const schema of schemas) await schema.drop();
+  });
+  async function setup() {
+    const schema = await createTestSchema();
+    schemas.push(schema);
+    const outbox = createOutboxCore(driver.adapter, { schema: schema.schema });
+    await outbox.migrate();
+    return { outbox, clock: testClock(outbox) };
+  }
+  it('INT-15 TC-061 delays exactly 60 seconds and permits only the transaction-local eligible claim', async () => {
+    const { outbox, clock } = await setup();
+    await clock.install();
+    const message = await driver.adapter.transaction((tx) =>
+      outbox.enqueue(tx, { topic: 'delayed', payload: {}, delayMs: 60000 }),
+    );
+    expect(
+      await driver.adapter.query(
+        render(
+          'select (extract(epoch from (available_at - created_at)) * 1000)::float8 as delay from {{messages}} where id = $1::uuid',
+          outbox.config,
+        ),
+        [message.id],
+      ),
+    ).toEqual([{ delay: 60000 }]);
+    await driver.adapter.transaction(async (tx) => {
+      expect(await tx.query(render(claim, outbox.config), ['fixture', 1, 60000])).toEqual([]);
+      await clock.setLocal(tx, 59000);
+      expect(await tx.query(render(claim, outbox.config), ['fixture', 1, 60000])).toEqual([]);
+      await clock.setLocal(tx, 61000);
+      expect(
+        await driver.adapter.query(
+          render('select available_at > {{now}} as unready from {{messages}} where id = $1::uuid', outbox.config),
+          [message.id],
+        ),
+      ).toEqual([{ unready: true }]);
+      const rows = await tx.query(render(claim, outbox.config), ['fixture', 1, 60000]);
+      expect(rows).toHaveLength(1);
+      expect(rows[0]?.['id']).toBe(message.id);
+    });
+  });
+  it('INT-16 TC-062 stores the caller-supplied absolute availability to the millisecond', async () => {
+    const { outbox, clock } = await setup();
+    await clock.install();
+    const availableAt = new Date((await clock.now()).getTime() + 5000);
+    const result = await driver.adapter.transaction((tx) =>
+      outbox.enqueue(tx, { topic: 'absolute', payload: null, availableAt }),
+    );
+    expect(
+      await driver.adapter.query(
+        render(
+          'select (extract(epoch from available_at) * 1000)::float8 as available_at_ms from {{messages}} where id = $1::uuid',
+          outbox.config,
+        ),
+        [result.id],
+      ),
+    ).toEqual([{ available_at_ms: availableAt.getTime() }]);
+  });
+  // Explicit task-plan deferrals: relay implementation begins in T-14.
+  it.todo('INT-15 relay runOnce respects delay before and after clock advance (T-14)');
+  it.todo('INT-16 relay runOnce respects absolute availability (T-14)');
 });
