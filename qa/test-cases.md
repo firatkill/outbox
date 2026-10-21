@@ -2,7 +2,7 @@
 
 These cases are derived from PRD requirements, TRD sections and T-01..T-03 acceptance criteria before implementation. M0 is not complete. Only attempted checks appear in test-results.json.
 
-The owner-decisions file controls the support matrix (PRD D-54). T-02’s PostgreSQL 18 acceptance clause is therefore pending reconciliation; no PostgreSQL 18 result is claimed.
+The owner-decisions file controls the support matrix (PRD D-54). T-02’s PostgreSQL 18 acceptance clause has been reconciled to that decision; no PostgreSQL 18 result is claimed.
 
 | TC ID  | Task | PRD reference  | TRD test / acceptance reference | Title                                                            | Priority | Automatable |
 | ------ | ---- | -------------- | ------------------------------- | ---------------------------------------------------------------- | -------- | ----------- |
@@ -98,7 +98,7 @@ The owner-decisions file controls the support matrix (PRD D-54). T-02’s Postgr
 - Milestone: M0 Setup; task: T-02.
 - PRD: FR-92; TRD/test reference: T-02 acceptance; TRD 16.7.
 - Priority: High; automatable: yes (owner authentication/approval is a prerequisite where stated).
-- Preconditions: Docker is running; T-01 is complete. PostgreSQL 18 clauses require reconciliation to D-54.
+- Preconditions: Docker is running; T-01 is complete. Matrix clauses have been reconciled to D-54.
 - Steps: Check for competing runs; run pnpm db:up and docker compose ps; start the approved matrix services.
 - Expected result: PostgreSQL 17 and Redis are healthy; the matrix follows OWNER-DECISIONS.md and D-54.
 
@@ -236,3 +236,12 @@ The owner-decisions file controls the support matrix (PRD D-54). T-02’s Postgr
 - Preconditions: GitHub is reachable and T-03 configuration exists.
 - Steps: Verify current action major tags against their official releases; inspect config.json and the initial static workflow.
 - Expected result: Verified action majors are used; Changesets uses main/public, no automatic local commit, and the specified GitHub changelog.
+
+## TC-024: Harness wait and deferred helpers
+
+- Milestone: M0 Setup; task: T-02.
+- PRD: FR-91; TRD/test reference: UT-17; TRD 15.4.
+- Priority: High; automatable: yes.
+- Preconditions: T-02 helpers exist.
+- Steps: Use fake timers to exercise a satisfied condition, a default timeout, filtered events, subscription cleanup, and deferred resolution/rejection.
+- Expected result: Waits resolve only on the expected condition/event and time out at the default 3000 ms; event listeners are removed; deferred values and errors propagate.

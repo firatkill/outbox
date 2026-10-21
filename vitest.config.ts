@@ -13,6 +13,7 @@ export default defineConfig({
         test: {
           name: 'integration',
           include: ['tests/integration/**/*.test.ts'],
+          globalSetup: ['tests/global-setup.ts'],
           testTimeout: 30_000,
           hookTimeout: 30_000,
           pool: 'forks',

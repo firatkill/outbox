@@ -14,8 +14,8 @@ A completion commit is recorded only after the task meets its acceptance criteri
 
 | Task | Milestone | Description | Status | Completion commit |
 |---|---|---|---|---|
-| T-01 | M0 | Repository and tooling | doing | — |
-| T-02 | M0 | Local databases and test harness | todo | — |
+| T-01 | M0 | Repository and tooling | doing | 99f3421 (local acceptance; CI pending T-03) |
+| T-02 | M0 | Local databases and test harness | doing | — |
 | T-03 | M0 | CI static job, guards and Changesets | todo | — |
 | T-04 | M1 | Identifiers, config, errors and rendering | todo | — |
 | T-05 | M1 | Migration 0001 and runner | todo | — |
@@ -66,7 +66,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 - M0 test cases are in `qa/test-cases.md`; preflight results are in `qa/test-results.json`, using qa-test-case-design and qa-test-run-loop with repository overrides.
 - Docker is available. npm package lookup returned the expected E404, and authenticated ownership now verifies as firatkill. A-07 failed because tsup is no longer actively maintained; the owner approved tsdown (D-56).
 - npm metadata initially hit an existing root-owned user-cache entry. Read-only registry checks use a repository-local cache under `.git/npm-cache`; the shared cache was not changed.
-- T-01 tooling and package skeleton are implemented. No database services or CI workflows exist yet.
+- T-01 tooling and T-02 harness pass locally. PostgreSQL 14/16/17 and Redis are healthy; both drivers and two concurrent harness processes pass. CI follows in T-03.
 
 ## Open questions for the owner
 

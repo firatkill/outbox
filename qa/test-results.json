@@ -62,6 +62,292 @@
       "root_cause_group": null,
       "clickup_task": "docs/PROGRESS.md#open-questions-for-the-owner (AGENTS.md repository override: owner escalation; no ClickUp)",
       "retraction_reason": null
+    },
+    {
+      "tc_reference": "TC-003",
+      "ac_reference": "NFR-40",
+      "milestone": "M0 Setup",
+      "title": "Compatible pinned development tools",
+      "description": "M0 acceptance case from the specifications.",
+      "steps_to_reproduce": "Resolve exact versions; inspect TypeScript, lint, docs and Vitest compatibility; run the configured unit project.",
+      "expected_result": "Versions are pinned; TypeScript is supported by the tools; Vitest projects run.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-01 frozen install, lint, corrected typecheck, available full test suite, build, CLI version, 24 outputs and ESM/CJS load checks passed. Recorded from retained T-01 verification logs.",
+          "note": "T-01 frozen install, lint, corrected typecheck, available full test suite, build, CLI version, 24 outputs and ESM/CJS load checks passed. Recorded from retained T-01 verification logs.",
+          "at": "2026-10-21T07:42:05.633937+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-01 frozen install, lint, corrected typecheck, available full test suite, build, CLI version, 24 outputs and ESM/CJS load checks passed. Recorded from retained T-01 verification logs."
+    },
+    {
+      "tc_reference": "TC-004",
+      "ac_reference": "FR-01; NFR-21",
+      "milestone": "M0 Setup",
+      "title": "Reproducible install with no runtime dependencies",
+      "description": "M0 acceptance case from the specifications.",
+      "steps_to_reproduce": "Run pnpm install --frozen-lockfile; inspect dependencies and optional peer metadata.",
+      "expected_result": "Install succeeds without lockfile changes; runtime dependencies are empty; pg and postgres are optional peers.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-01 frozen install, lint, corrected typecheck, available full test suite, build, CLI version, 24 outputs and ESM/CJS load checks passed. Recorded from retained T-01 verification logs.",
+          "note": "T-01 frozen install, lint, corrected typecheck, available full test suite, build, CLI version, 24 outputs and ESM/CJS load checks passed. Recorded from retained T-01 verification logs.",
+          "at": "2026-10-21T07:42:05.634497+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-01 frozen install, lint, corrected typecheck, available full test suite, build, CLI version, 24 outputs and ESM/CJS load checks passed. Recorded from retained T-01 verification logs."
+    },
+    {
+      "tc_reference": "TC-005",
+      "ac_reference": "NFR-40",
+      "milestone": "M0 Setup",
+      "title": "Strict lint, formatting and type checking",
+      "description": "M0 acceptance case from the specifications.",
+      "steps_to_reproduce": "Run pnpm lint and pnpm typecheck; inspect strict flags and module-boundary rules.",
+      "expected_result": "Both commands pass; the required strict options and restrictions are enabled.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-01 frozen install, lint, corrected typecheck, available full test suite, build, CLI version, 24 outputs and ESM/CJS load checks passed. Recorded from retained T-01 verification logs.",
+          "note": "T-01 frozen install, lint, corrected typecheck, available full test suite, build, CLI version, 24 outputs and ESM/CJS load checks passed. Recorded from retained T-01 verification logs.",
+          "at": "2026-10-21T07:42:05.634662+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Backfilled from .git/verification/t01-typecheck.log: the initial T-01 typecheck rejected project-level passWithNoTests (TS2769). The earlier ledger append helper failed before saving this result.",
+          "note": "Backfilled from .git/verification/t01-typecheck.log: the initial T-01 typecheck rejected project-level passWithNoTests (TS2769). The earlier ledger append helper failed before saving this result.",
+          "at": "2026-10-21T07:42:31.685352+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Backfilled follow-up: moving the temporary flag to the integration script fixed typecheck; T-01 lint and typecheck passed. T-02 removes the flag entirely.",
+          "note": "Backfilled follow-up: moving the temporary flag to the integration script fixed typecheck; T-01 lint and typecheck passed. T-02 removes the flag entirely.",
+          "at": "2026-10-21T07:42:31.859553+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "Backfilled follow-up: moving the temporary flag to the integration script fixed typecheck; T-01 lint and typecheck passed. T-02 removes the flag entirely."
+    },
+    {
+      "tc_reference": "TC-006",
+      "ac_reference": "FR-05; FR-07",
+      "milestone": "M0 Setup",
+      "title": "Build-time version matches the package",
+      "description": "M0 acceptance case from the specifications.",
+      "steps_to_reproduce": "Run the unit smoke test; build; compare node dist/cli.js --version with package.json version.",
+      "expected_result": "VERSION and CLI version equal package.json version.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-01 frozen install, lint, corrected typecheck, available full test suite, build, CLI version, 24 outputs and ESM/CJS load checks passed. Recorded from retained T-01 verification logs.",
+          "note": "T-01 frozen install, lint, corrected typecheck, available full test suite, build, CLI version, 24 outputs and ESM/CJS load checks passed. Recorded from retained T-01 verification logs.",
+          "at": "2026-10-21T07:42:05.634820+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-01 frozen install, lint, corrected typecheck, available full test suite, build, CLI version, 24 outputs and ESM/CJS load checks passed. Recorded from retained T-01 verification logs."
+    },
+    {
+      "tc_reference": "TC-007",
+      "ac_reference": "FR-01; FR-04",
+      "milestone": "M0 Setup",
+      "title": "ESM, CJS and declarations exist for all entries",
+      "description": "M0 acceptance case from the specifications.",
+      "steps_to_reproduce": "Build; check .js, .cjs, .d.ts and .d.cts for all six entries and cli.js; require pg.cjs and import pg.js.",
+      "expected_result": "All expected files exist and both pg entry-loading commands exit zero.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-01 frozen install, lint, corrected typecheck, available full test suite, build, CLI version, 24 outputs and ESM/CJS load checks passed. Recorded from retained T-01 verification logs.",
+          "note": "T-01 frozen install, lint, corrected typecheck, available full test suite, build, CLI version, 24 outputs and ESM/CJS load checks passed. Recorded from retained T-01 verification logs.",
+          "at": "2026-10-21T07:42:05.635459+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-01 frozen install, lint, corrected typecheck, available full test suite, build, CLI version, 24 outputs and ESM/CJS load checks passed. Recorded from retained T-01 verification logs."
+    },
+    {
+      "tc_reference": "TC-009",
+      "ac_reference": "FR-91; FR-92",
+      "milestone": "M0 Setup",
+      "title": "Harness isolates schemas and cleans up its own data",
+      "description": "M0 acceptance case from the specifications.",
+      "steps_to_reproduce": "Run harness.test.ts for both drivers; write a table in one unique schema and inspect a second unique schema; invoke cleanup.",
+      "expected_result": "Data and tables do not leak between schemas; cleanup removes only the schemas created by the test.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Initial T-02 lint rejected the untyped catalog result; explicit result typing resolved unsafe-return but exposed a dot-notation correction, also fixed. Database tests had not yet run.",
+          "note": "Initial T-02 lint rejected the untyped catalog result; explicit result typing resolved unsafe-return but exposed a dot-notation correction, also fixed. Database tests had not yet run.",
+          "at": "2026-10-21T07:42:05.964507+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Backfilled second lint attempt: explicit catalog typing then required row.name rather than row[\"name\"]. The earlier append helper failed; targeted eslint tests and typecheck subsequently passed.",
+          "note": "Backfilled second lint attempt: explicit catalog typing then required row.name rather than row[\"name\"]. The earlier append helper failed; targeted eslint tests and typecheck subsequently passed.",
+          "at": "2026-10-21T07:42:31.921724+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Four INT-08 checks passed through both drivers on PostgreSQL 17. Two concurrent pnpm test:integration processes both exited 0; pre-run database activity was zero.",
+          "note": "Four INT-08 checks passed through both drivers on PostgreSQL 17. Two concurrent pnpm test:integration processes both exited 0; pre-run database activity was zero.",
+          "at": "2026-10-21T07:44:27.099656+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "Four INT-08 checks passed through both drivers on PostgreSQL 17. Two concurrent pnpm test:integration processes both exited 0; pre-run database activity was zero."
+    },
+    {
+      "tc_reference": "TC-024",
+      "ac_reference": "FR-91",
+      "milestone": "M0 Setup",
+      "title": "Harness wait and deferred helpers",
+      "description": "M0 acceptance case from the specifications.",
+      "steps_to_reproduce": "Use fake timers to exercise a satisfied condition, a default timeout, filtered events, subscription cleanup, and deferred resolution/rejection.",
+      "expected_result": "Waits resolve only on the expected condition/event and time out at the default 3000 ms; event listeners are removed; deferred values and errors propagate.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "All three UT-17 wait/deferred tests passed. Corrected the deferred test generic to undefined; strict lint and typecheck now pass.",
+          "note": "All three UT-17 wait/deferred tests passed. Corrected the deferred test generic to undefined; strict lint and typecheck now pass.",
+          "at": "2026-10-21T07:42:06.191621+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "All three UT-17 wait/deferred tests passed. Corrected the deferred test generic to undefined; strict lint and typecheck now pass."
+    },
+    {
+      "tc_reference": "TC-008",
+      "ac_reference": "FR-92",
+      "milestone": "M0 Setup",
+      "title": "Local database services become healthy",
+      "description": "M0 acceptance case from the specifications.",
+      "steps_to_reproduce": "Check for competing runs; run pnpm db:up and docker compose ps; start the approved matrix services.",
+      "expected_result": "PostgreSQL 17 and Redis are healthy; the matrix follows OWNER-DECISIONS.md and D-54.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Startup stalled in docker-credential-desktop. Repository-local Docker config required cliPluginsExtraDirs to discover compose. Retried without global Docker changes; service validation follows.",
+          "note": "Startup stalled in docker-credential-desktop. Repository-local Docker config required cliPluginsExtraDirs to discover compose. Retried without global Docker changes; service validation follows.",
+          "at": "2026-10-21T07:42:06.545455+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "PostgreSQL 14, 16 and 17 and Redis became healthy with the owner-approved compose matrix. Public pulls used a repository-local Docker config to bypass the stalled credential helper.",
+          "note": "PostgreSQL 14, 16 and 17 and Redis became healthy with the owner-approved compose matrix. Public pulls used a repository-local Docker config to bypass the stalled credential helper.",
+          "at": "2026-10-21T07:44:27.066753+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "PostgreSQL 14, 16 and 17 and Redis became healthy with the owner-approved compose matrix. Public pulls used a repository-local Docker config to bypass the stalled credential helper."
+    },
+    {
+      "tc_reference": "TC-010",
+      "ac_reference": "FR-92",
+      "milestone": "M0 Setup",
+      "title": "Two harness runs remain isolated",
+      "description": "M0 acceptance case from the specifications.",
+      "steps_to_reproduce": "Confirm the database is otherwise idle; start exactly two integration runs together as required by T-02; capture both exit codes.",
+      "expected_result": "Both runs pass without naming collisions or cross-run assertions.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Four INT-08 checks passed through both drivers on PostgreSQL 17. Two concurrent pnpm test:integration processes both exited 0; pre-run database activity was zero.",
+          "note": "Four INT-08 checks passed through both drivers on PostgreSQL 17. Two concurrent pnpm test:integration processes both exited 0; pre-run database activity was zero.",
+          "at": "2026-10-21T07:44:27.100112+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "Four INT-08 checks passed through both drivers on PostgreSQL 17. Two concurrent pnpm test:integration processes both exited 0; pre-run database activity was zero."
+    },
+    {
+      "tc_reference": "TC-011",
+      "ac_reference": "FR-92",
+      "milestone": "M0 Setup",
+      "title": "Database URL selects the intended server",
+      "description": "M0 acceptance case from the specifications.",
+      "steps_to_reproduce": "Run integration with TEST_DATABASE_URL pointing to each approved local matrix server; inspect reported server_version.",
+      "expected_result": "Each run uses the requested PostgreSQL server and passes.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Matrix preflight tried connecting to outbox_test before that database existed. The activity check must connect to postgres and filter datname; the harness is responsible for creating a missing test database.",
+          "note": "Matrix preflight tried connecting to outbox_test before that database existed. The activity check must connect to postgres and filter datname; the harness is responsible for creating a missing test database.",
+          "at": "2026-10-21T07:45:01.908536+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Four INT-08 checks passed on PostgreSQL 14 and 16 via TEST_DATABASE_URL overrides; each pre-run activity check returned zero. PostgreSQL 17 also passed. The final available suite passed: four unit tests and four integration checks.",
+          "note": "Four INT-08 checks passed on PostgreSQL 14 and 16 via TEST_DATABASE_URL overrides; each pre-run activity check returned zero. PostgreSQL 17 also passed. The final available suite passed: four unit tests and four integration checks.",
+          "at": "2026-10-21T07:46:02.075634+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "Four INT-08 checks passed on PostgreSQL 14 and 16 via TEST_DATABASE_URL overrides; each pre-run activity check returned zero. PostgreSQL 17 also passed. The final available suite passed: four unit tests and four integration checks."
     }
   ]
 }

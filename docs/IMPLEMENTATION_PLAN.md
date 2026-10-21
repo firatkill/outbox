@@ -51,7 +51,7 @@ Conventions for every task:
   2. `global-setup.ts` creates database `outbox_test` if missing (connect to `postgres` database with postgres.js), prints `server_version`.
   3. `createTestSchema()`, `waitFor`, `waitForEvent` (typed later), `deferred` per TRD §15.4.
   4. `harness.test.ts`: creates a schema, creates a table in it, asserts isolation from another schema, drops it.
-- Acceptance: `pnpm db:up && pnpm test:integration` passes; `docker compose ps` shows `postgres` and `redis` healthy; `pnpm db:up:all` additionally starts `postgres14`, `postgres16` and `postgres18` healthy, and `TEST_DATABASE_URL=postgres://postgres:postgres@localhost:54318/outbox_test pnpm test:integration` passes; running `pnpm test:integration & pnpm test:integration; wait` (two runs in parallel) passes, proving schema isolation.
+- Acceptance: `pnpm db:up && pnpm test:integration` passes; `docker compose ps` shows `postgres` and `redis` healthy; `pnpm db:up:all` additionally starts `postgres14` and `postgres16` healthy, and integration passes with `TEST_DATABASE_URL` pointing to ports 54314 and 54316 (owner matrix, D-54); running `pnpm test:integration & pnpm test:integration; wait` (two runs in parallel) passes, proving schema isolation.
 - Depends on: T-01. Covers: FR-92 (local part).
 
 ### T-03 CI static job, guards and Changesets
