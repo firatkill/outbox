@@ -3227,6 +3227,210 @@
       "retraction_reason": null,
       "automatable": true,
       "actual_result": "T-16 PR #16 CI 39593697735 static and PG17 integration checks pass."
+    },
+    {
+      "tc_reference": "TC-089",
+      "ac_reference": "FR-36",
+      "milestone": "M2 Relay and leases",
+      "title": "Graceful drain stops claims",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Start 20 deliveries taking 300ms; enqueue ten more after claimed; stop with 5000ms drain.",
+      "expected_result": "Drains 20, releases zero, leaves ten pending and no in-flight rows.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-17 targeted lifecycle INT-70..73 passed for both drivers: graceful/forced drain, late outcome discard, idempotence and external signals.",
+          "note": "T-17 targeted lifecycle INT-70..73 passed for both drivers: graceful/forced drain, late outcome discard, idempotence and external signals.",
+          "at": "2026-10-21T11:45:14.464242+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
+          "note": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
+          "at": "2026-10-21T11:48:37.024360+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues."
+    },
+    {
+      "tc_reference": "TC-090",
+      "ac_reference": "FR-35; FR-36",
+      "milestone": "M2 Relay and leases",
+      "title": "Forced shutdown releases attempts",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Start five abort-aware handlers; stop with 200ms drain timeout.",
+      "expected_result": "Returns within 1s, drained false/released five; handlers receive SHUTDOWN; attempts reset to zero.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-17 targeted lifecycle INT-70..73 passed for both drivers: graceful/forced drain, late outcome discard, idempotence and external signals.",
+          "note": "T-17 targeted lifecycle INT-70..73 passed for both drivers: graceful/forced drain, late outcome discard, idempotence and external signals.",
+          "at": "2026-10-21T11:45:14.464725+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
+          "note": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
+          "at": "2026-10-21T11:48:37.024375+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues."
+    },
+    {
+      "tc_reference": "TC-091",
+      "ac_reference": "FR-37",
+      "milestone": "M2 Relay and leases",
+      "title": "Single-use lifecycle and idempotent stop",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Start twice, stop twice, restart, and stop an idle relay.",
+      "expected_result": "Invalid starts reject; repeated stops share result; idle stop drains immediately.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-17 targeted lifecycle INT-70..73 passed for both drivers: graceful/forced drain, late outcome discard, idempotence and external signals.",
+          "note": "T-17 targeted lifecycle INT-70..73 passed for both drivers: graceful/forced drain, late outcome discard, idempotence and external signals.",
+          "at": "2026-10-21T11:45:14.465009+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "T-17 lint caught TypeScript retaining a stale stopping=false narrowing across await, plus a void-expression shorthand in the abort fixture. Runtime lifecycle tests pass; use a state accessor and explicit callback body.",
+          "note": "T-17 lint caught TypeScript retaining a stale stopping=false narrowing across await, plus a void-expression shorthand in the abort fixture. Runtime lifecycle tests pass; use a state accessor and explicit callback body.",
+          "at": "2026-10-21T11:46:23.897165+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
+          "note": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
+          "at": "2026-10-21T11:48:37.024380+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues."
+    },
+    {
+      "tc_reference": "TC-092",
+      "ac_reference": "FR-37",
+      "milestone": "M2 Relay and leases",
+      "title": "External signal stops relay",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Start with AbortController signal, abort and await stopped.",
+      "expected_result": "In-flight work drains and state becomes stopped.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-17 targeted lifecycle INT-70..73 passed for both drivers: graceful/forced drain, late outcome discard, idempotence and external signals.",
+          "note": "T-17 targeted lifecycle INT-70..73 passed for both drivers: graceful/forced drain, late outcome discard, idempotence and external signals.",
+          "at": "2026-10-21T11:45:14.465806+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
+          "note": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
+          "at": "2026-10-21T11:48:37.024384+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues."
+    },
+    {
+      "tc_reference": "TC-088",
+      "ac_reference": "FR-15; FR-36",
+      "milestone": "M2 Relay and leases",
+      "title": "Relay schema prerequisite",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Start a relay in an unmigrated isolated schema.",
+      "expected_result": "Rejects OUTBOX_NOT_MIGRATED with migration command; state becomes stopped.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "T-17 test fixture passed resolved config (including internal names/channel) into createOutboxCore, which correctly rejects unknown input options. Correct fixture to public schema/tablePrefix options.",
+          "note": "T-17 test fixture passed resolved config (including internal names/channel) into createOutboxCore, which correctly rejects unknown input options. Correct fixture to public schema/tablePrefix options.",
+          "at": "2026-10-21T11:45:14.496843+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "INT-06 now passes through relay.start for missing and additive-newer schemas with both drivers after public-input fixture correction.",
+          "note": "INT-06 now passes through relay.start for missing and additive-newer schemas with both drivers after public-input fixture correction.",
+          "at": "2026-10-21T11:46:23.814293+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
+          "note": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
+          "at": "2026-10-21T11:48:37.023777+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues."
+    },
+    {
+      "tc_reference": "TC-102",
+      "ac_reference": "FR-36; GU-01",
+      "milestone": "M2",
+      "title": "Bounded shutdown flush retries",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Fail the completion statement, stop without drain time, then advance database time beyond the retained lease and recover with a healthy relay.",
+      "expected_result": "Shutdown stops retrying after at most three retries one second apart; the unconfirmed message remains recoverable and completes at attempt two.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "T-17 test fixture passed resolved config (including internal names/channel) into createOutboxCore, which correctly rejects unknown input options. Correct fixture to public schema/tablePrefix options.",
+          "note": "T-17 test fixture passed resolved config (including internal names/channel) into createOutboxCore, which correctly rejects unknown input options. Correct fixture to public schema/tablePrefix options.",
+          "at": "2026-10-21T11:45:14.497761+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "INT-101 recovery retest and UT-09/UT-19 pass; exact final retry spacing and bounded attempts verified.",
+          "note": "INT-101 recovery retest and UT-09/UT-19 pass; exact final retry spacing and bounded attempts verified.",
+          "at": "2026-10-21T11:46:23.848864+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
+          "note": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues.",
+          "at": "2026-10-21T11:48:37.024387+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-17 final local validation passes: 184 unit / 103 PG17 integration tests; lint, typecheck, guards, build, publint, attw and all size limits (core 10.97kB/12kB). INT-24 remains green. Corrected callback/narrowing lint issues."
     }
   ]
 }
