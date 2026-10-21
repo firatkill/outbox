@@ -1,11 +1,11 @@
 # Progress
 
-Local repository setup completed on 2026-10-21. Implementation has not started.
+Local repository setup completed on 2026-10-21. M0 implementation is underway. T-01 local acceptance passed; CI is introduced in T-03.
 
 - Read AGENTS.md and all four specification documents from start to finish.
 - Verified the required Git author and committer identity; enabled the executable `.githooks/commit-msg` hook.
 - Initial specifications and existing authorship settings committed as `cda0acf`.
-- GitHub repository creation and the initial push await owner approval.
+- Owner approved GitHub creation and the initial push (PRD D-55). Public repository: https://github.com/firatkill/outbox; origin/main contains the setup commits.
 - At every milestone boundary, stop and report completed work and unverified acceptance criteria.
 
 ## Tasks
@@ -14,7 +14,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 
 | Task | Milestone | Description | Status | Completion commit |
 |---|---|---|---|---|
-| T-01 | M0 | Repository and tooling | todo | — |
+| T-01 | M0 | Repository and tooling | doing | — |
 | T-02 | M0 | Local databases and test harness | todo | — |
 | T-03 | M0 | CI static job, guards and Changesets | todo | — |
 | T-04 | M1 | Identifiers, config, errors and rendering | todo | — |
@@ -62,9 +62,12 @@ A completion commit is recorded only after the task meets its acceptance criteri
 ## Verification
 
 - Setup checks passed: required Git identity, hook syntax, executable hook, staged whitespace check, and first commit through the enabled hook.
-- Application tests, build, database checks and CI have not run: tooling is introduced in T-01..T-03.
-- QA bug standards have been read. Before M0 code, use qa-test-case-design; log task results with qa-test-run-loop and perform its ledger check, applying the repository overrides.
+- T-01 local install, lint, typecheck, smoke test, build and ESM/CJS artifact checks pass. Database harness and CI follow in T-02/T-03.
+- M0 test cases are in `qa/test-cases.md`; preflight results are in `qa/test-results.json`, using qa-test-case-design and qa-test-run-loop with repository overrides.
+- Docker is available. npm package lookup returned the expected E404, and authenticated ownership now verifies as firatkill. A-07 failed because tsup is no longer actively maintained; the owner approved tsdown (D-56).
+- npm metadata initially hit an existing root-owned user-cache entry. Read-only registry checks use a repository-local cache under `.git/npm-cache`; the shared cache was not changed.
+- T-01 tooling and package skeleton are implemented. No database services or CI workflows exist yet.
 
 ## Open questions for the owner
 
-- Approve creation of the public GitHub repository `firatkill/outbox`, adding it as `origin`, and pushing the local setup commits?
+None. The owner resolved A-01 and approved A-07’s fallback (D-56); T-01 implementation is underway.

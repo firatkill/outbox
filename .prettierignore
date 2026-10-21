@@ -1,0 +1,11 @@
+docs/
+AGENTS.md
+CHANGELOG.md
+pnpm-lock.yaml
+dist/
+coverage/
+site/api/
+site/.vitepress/dist/
+site/.vitepress/cache/
+bench/out/
+bench/results/
