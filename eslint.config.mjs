@@ -49,10 +49,7 @@ export default tseslint.config(
     files: ['src/adapters/**/*.ts'],
     rules: {
       'no-restricted-imports': restricted([
-        'pg',
-        'postgres',
-        'bullmq',
-        '**/publishers/**',
+        { group: ['pg', 'postgres', 'bullmq', '**/publishers/**'] },
         { regex: '^(?!\\.)', message: 'Adapters depend only on local core and adapter modules.' },
       ]),
     },
