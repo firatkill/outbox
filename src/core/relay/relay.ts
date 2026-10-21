@@ -2,7 +2,7 @@ import { OutboxError } from '../errors.js';
 import { createEmitter } from '../emitter.js';
 import { schemaVersion } from '../migrations/runner.js';
 import { claim } from '../sql/claim.js';
-import { reclaim } from '../sql/lease.js';
+import { createReclaimer } from './reclaim.js';
 import type {
   DriverAdapter,
   OutboxMessage,
@@ -30,6 +30,7 @@ export function createRelay<TDb, TTx>(
   const { relayId } = options;
   const emitter = createEmitter(relayId);
   const flusher = createFlusher(adapter, config, options, emitter);
+  const reclaimer = createReclaimer(adapter, config, options, emitter);
   const slot = createSignal(),
     wake = createSignal(),
     stopSignal = createSignal();
@@ -104,23 +105,6 @@ export function createRelay<TDb, TTx>(
       durationMs: performance.now() - claimedAt,
     });
   }
-  async function reclaimPass() {
-    for (;;) {
-      const rows = await reclaim(adapter, config, options.reclaimBatchSize);
-      if (rows.length) {
-        emitter.emit('reclaimed', {
-          relayId,
-          count: rows.length,
-          ids: rows.map((row) => row.id),
-          deadIds: rows.filter((row) => row.status === 'dead').map((row) => row.id),
-        });
-        for (const row of rows)
-          if (row.status === 'dead')
-            emitter.emit('dead', { relayId, message: row, error: new Error('OUTBOX_LEASE_EXPIRED') });
-      }
-      if (rows.length < options.reclaimBatchSize) return;
-    }
-  }
   const wrongState = () => new OutboxError('OUTBOX_RELAY_STATE', 'Relay is ' + state);
   async function runOnce(): Promise<RunOnceResult> {
     if (state !== 'idle') throw wrongState();
@@ -129,7 +113,7 @@ export function createRelay<TDb, TTx>(
       await schemaVersion(adapter, config);
       schemaChecked = true;
     }
-    await reclaimPass();
+    await reclaimer.pass();
     const started = performance.now();
     startDeliveries(await claimBatch(Math.min(options.batchSize, options.concurrency)), started);
     await Promise.all(active);
@@ -150,9 +134,13 @@ export function createRelay<TDb, TTx>(
     },
     on: emitter.on,
     off: emitter.off,
-    start() {
-      if (state !== 'idle') return Promise.reject(wrongState());
+    async start() {
+      if (state !== 'idle') throw wrongState();
+      state = 'starting';
+      await reclaimer.safely();
+      if (scheduler.stopping) return;
       state = 'running';
+      reclaimer.start();
       loop = runLoop({
         state: scheduler,
         poll: options.poll,
@@ -164,7 +152,6 @@ export function createRelay<TDb, TTx>(
         claim: claimBatch,
         deliver: startDeliveries,
       });
-      return Promise.resolve();
     },
     stop() {
       if (stopPromise) return stopPromise;
@@ -176,6 +163,7 @@ export function createRelay<TDb, TTx>(
       const started = performance.now();
       state = 'stopping';
       scheduler.stopping = true;
+      reclaimer.stop();
       stopSignal.emit();
       stopPromise = (async () => {
         await loop;
