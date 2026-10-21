@@ -1041,7 +1041,7 @@ Parameter passing: every parameter is sent as a string, number, boolean or null;
 export interface PgQueryResultLike { rows: Record<string, unknown>[] }
 export interface PgClientLike {
   query(text: string, params?: unknown[]): Promise<PgQueryResultLike>;
-  on(event: 'notification', listener: (msg: { channel: string; payload?: string }) => void): unknown;
+  on(event: 'notification', listener: (msg: { channel: string; payload?: string | undefined }) => void): unknown;
   on(event: 'error', listener: (err: Error) => void): unknown;
   removeAllListeners?(event?: string): unknown;
 }
