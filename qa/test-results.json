@@ -4954,6 +4954,12 @@
           "actual_result": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61.",
           "note": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61.",
           "at": "2026-10-21T16:27:33.296685+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge.",
+          "note": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge.",
+          "at": "2026-10-21T16:29:42.571426+00:00"
         }
       ],
       "regression_of": null,
@@ -4961,7 +4967,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61."
+      "actual_result": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge."
     },
     {
       "tc_reference": "TC-117",
@@ -4985,6 +4991,12 @@
           "actual_result": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61.",
           "note": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61.",
           "at": "2026-10-21T16:27:33.296773+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge.",
+          "note": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge.",
+          "at": "2026-10-21T16:29:42.571517+00:00"
         }
       ],
       "regression_of": null,
@@ -4992,7 +5004,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61."
+      "actual_result": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge."
     },
     {
       "tc_reference": "TC-120",
@@ -5016,6 +5028,12 @@
           "actual_result": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61.",
           "note": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61.",
           "at": "2026-10-21T16:27:33.296784+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge.",
+          "note": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge.",
+          "at": "2026-10-21T16:29:42.571528+00:00"
         }
       ],
       "regression_of": null,
@@ -5023,7 +5041,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61."
+      "actual_result": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge."
     },
     {
       "tc_reference": "TC-118",
@@ -5053,6 +5071,12 @@
           "actual_result": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61.",
           "note": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61.",
           "at": "2026-10-21T16:27:33.296778+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge.",
+          "note": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge.",
+          "at": "2026-10-21T16:29:42.571521+00:00"
         }
       ],
       "regression_of": null,
@@ -5060,7 +5084,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61."
+      "actual_result": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge."
     },
     {
       "tc_reference": "TC-119",
@@ -5102,6 +5126,12 @@
           "actual_result": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61.",
           "note": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61.",
           "at": "2026-10-21T16:27:33.296781+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge.",
+          "note": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge.",
+          "at": "2026-10-21T16:29:42.571525+00:00"
         }
       ],
       "regression_of": null,
@@ -5109,7 +5139,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-22 final verification: 186 unit and 151 PG17 integration checks passed (both drivers, including INT-22/INT-24). Lint, typecheck, guards, build, package and size pass; core 12.77kB/13kB. INT-41, INT-62, chaos and docs remain scheduled per D-66/D-61."
+      "actual_result": "T-22 implementation CI 39634998508 passed static and integration jobs; final documentation CI required before merge."
     }
   ]
 }
