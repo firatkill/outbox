@@ -23,7 +23,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-07 | M1 | Message validation, JSON and UUIDv7 | done | be11b48 |
 | T-08 | M1 | postgres.js adapter and createOutboxCore skeleton | done | a5955a3 |
 | T-09 | M1 | pg adapter | done | 595ea7d |
-| T-10 | M1 | enqueue | todo | — |
+| T-10 | M1 | enqueue | done | 818de4d |
 | T-11 | M1 | Test clock and delays | todo | — |
 | T-12 | M2 | Relay options and backoff (pure) | todo | — |
 | T-13 | M2 | Claim, complete, fail and lease SQL | todo | — |
@@ -82,6 +82,8 @@ A completion commit is recorded only after the task meets its acceptance criteri
 - T-08: real postgres.js adapter, public migration factories and row decoding pass (124 unit / 18 integration locally); build/package/declaration/size gates and [CI](https://github.com/firatkill/outbox/actions/runs/39573697097) pass. A-03 JSON casts corrected with owner D-64; LISTEN remains T-24.
 
 - T-09: 124 unit / 32 integration tests pass; both adapter createOutbox size checks, package/declaration checks and [CI](https://github.com/firatkill/outbox/actions/runs/39578249950) pass. Notification payload type corrected per owner D-65.
+
+- T-10: 124 unit / 50 integration tests pass on PG17; all 18 enqueue cases pass on PG14/16 with both drivers. Atomicity, dedupe races, least privilege and batching verified; [CI](https://github.com/firatkill/outbox/actions/runs/39579342226) and package/size gates pass.
 
 ## Open questions for the owner
 

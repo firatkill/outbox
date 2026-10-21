@@ -1320,6 +1320,12 @@
           "actual_result": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass.",
           "note": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass.",
           "at": "2026-10-21T09:36:09.754187+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "note": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "at": "2026-10-21T09:44:46.178533+00:00"
         }
       ],
       "regression_of": null,
@@ -1327,7 +1333,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass."
+      "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion."
     },
     {
       "tc_reference": "TC-067",
@@ -1375,6 +1381,12 @@
           "actual_result": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass.",
           "note": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass.",
           "at": "2026-10-21T09:36:09.754189+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "note": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "at": "2026-10-21T09:44:46.178535+00:00"
         }
       ],
       "regression_of": null,
@@ -1382,7 +1394,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass."
+      "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion."
     },
     {
       "tc_reference": "TC-041",
@@ -1652,6 +1664,12 @@
           "actual_result": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass.",
           "note": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass.",
           "at": "2026-10-21T09:36:09.754033+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "note": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "at": "2026-10-21T09:44:46.178531+00:00"
         }
       ],
       "regression_of": null,
@@ -1659,7 +1677,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass."
+      "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion."
     },
     {
       "tc_reference": "TC-048",
@@ -1714,6 +1732,12 @@
           "actual_result": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass.",
           "note": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass.",
           "at": "2026-10-21T09:36:09.754184+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "note": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "at": "2026-10-21T09:44:46.178529+00:00"
         }
       ],
       "regression_of": null,
@@ -1721,7 +1745,286 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Owner D-65 optional payload correction applied. Final T-09 lint, strict typecheck, guards, full unit/integration suite, build, package, driver-free declarations and restored pg createOutbox size check pass."
+      "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion."
+    },
+    {
+      "tc_reference": "TC-058",
+      "ac_reference": "FR-27",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Topic-map type safety",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Type-check correct and incorrect topic/payload pairs including a reasoned @ts-expect-error.",
+      "expected_result": "Valid input compiles; wrong topic/payload is rejected by TypeScript.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "T-10 preflight lint found type-test promise handling/type-alias style and an unnecessary assertion; corrected with no acceptance changes.",
+          "note": "T-10 preflight lint found type-test promise handling/type-alias style and an unnecessary assertion; corrected with no acceptance changes.",
+          "at": "2026-10-21T09:43:12.998933+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "note": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "at": "2026-10-21T09:44:46.178527+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion."
+    },
+    {
+      "tc_reference": "TC-052",
+      "ac_reference": "FR-20; FR-22; NFR-13",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Batch round trip and sequence order",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Spy on a 1000-message enqueue and attempt 1001; check input order against seq on supported PostgreSQL versions.",
+      "expected_result": "1000 uses one statement and preserves order; 1001 rejects before SQL.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "The batch assertion sorted the projected seq::text alias lexicographically, not the underlying bigint. Corrected the test query to order by m.seq per TRD A-05; production E1 is unchanged.",
+          "note": "The batch assertion sorted the projected seq::text alias lexicographically, not the underlying bigint. Corrected the test query to order by m.seq per TRD A-05; production E1 is unchanged.",
+          "at": "2026-10-21T09:43:13.024635+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "note": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "at": "2026-10-21T09:44:46.178511+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion."
+    },
+    {
+      "tc_reference": "TC-050",
+      "ac_reference": "FR-20; FR-21; FR-22; GU-01",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Atomic committed enqueue",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Insert a business row and enqueue all fields using the same transaction; commit and read both.",
+      "expected_result": "Both rows exist; fields/defaults/time/UUIDv7 and returned ID match the specification.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 initial targeted suite passed these cases for both drivers on PG17; only INT-12 failed due to the test sorting its text projection.",
+          "note": "T-10 initial targeted suite passed these cases for both drivers on PG17; only INT-12 failed due to the test sorting its text projection.",
+          "at": "2026-10-21T09:43:13.051443+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "note": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "at": "2026-10-21T09:44:46.178335+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion."
+    },
+    {
+      "tc_reference": "TC-051",
+      "ac_reference": "FR-20; FR-26; GU-01",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Rolled-back enqueue",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Listen on the channel, insert business row/enqueue and roll back; observe for 300 ms.",
+      "expected_result": "Neither row exists and no notification arrives.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 initial targeted suite passed these cases for both drivers on PG17; only INT-12 failed due to the test sorting its text projection.",
+          "note": "T-10 initial targeted suite passed these cases for both drivers on PG17; only INT-12 failed due to the test sorting its text projection.",
+          "at": "2026-10-21T09:43:13.051787+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "note": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "at": "2026-10-21T09:44:46.178508+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion."
+    },
+    {
+      "tc_reference": "TC-053",
+      "ac_reference": "FR-23",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Dedupe scope and input order",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Enqueue the same pair across transactions and twice within a batch; reuse its key on a different topic.",
+      "expected_result": "Repeated pairs return the existing ID/deduped true; different topics remain independent.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 initial targeted suite passed these cases for both drivers on PG17; only INT-12 failed due to the test sorting its text projection.",
+          "note": "T-10 initial targeted suite passed these cases for both drivers on PG17; only INT-12 failed due to the test sorting its text projection.",
+          "at": "2026-10-21T09:43:13.051977+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "note": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "at": "2026-10-21T09:44:46.178515+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion."
+    },
+    {
+      "tc_reference": "TC-054",
+      "ac_reference": "FR-23",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Concurrent dedupe commit and rollback",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Hold transaction T1 after enqueue; start conflicting T2, then release T1 by commit and separately by rollback.",
+      "expected_result": "T2 waits; commit returns existing ID, rollback allows insertion; exactly one row remains.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 initial targeted suite passed these cases for both drivers on PG17; only INT-12 failed due to the test sorting its text projection.",
+          "note": "T-10 initial targeted suite passed these cases for both drivers on PG17; only INT-12 failed due to the test sorting its text projection.",
+          "at": "2026-10-21T09:43:13.052418+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "note": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "at": "2026-10-21T09:44:46.178518+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion."
+    },
+    {
+      "tc_reference": "TC-055",
+      "ac_reference": "FR-25",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Invalid inputs send no SQL",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Run the invalid UT-05 input set with a spy transaction executor.",
+      "expected_result": "OUTBOX_INVALID_MESSAGE has index/field and statement count is zero.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 initial targeted suite passed these cases for both drivers on PG17; only INT-12 failed due to the test sorting its text projection.",
+          "note": "T-10 initial targeted suite passed these cases for both drivers on PG17; only INT-12 failed due to the test sorting its text projection.",
+          "at": "2026-10-21T09:43:13.052644+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "note": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "at": "2026-10-21T09:44:46.178520+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion."
+    },
+    {
+      "tc_reference": "TC-056",
+      "ac_reference": "FR-25",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Payload size boundary against database",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Configure 1024 bytes; enqueue 1025-byte and 1024-byte JSON payloads.",
+      "expected_result": "Oversize rejects with OUTBOX_PAYLOAD_TOO_LARGE; exact limit inserts.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 initial targeted suite passed these cases for both drivers on PG17; only INT-12 failed due to the test sorting its text projection.",
+          "note": "T-10 initial targeted suite passed these cases for both drivers on PG17; only INT-12 failed due to the test sorting its text projection.",
+          "at": "2026-10-21T09:43:13.052839+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "note": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "at": "2026-10-21T09:44:46.178523+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion."
+    },
+    {
+      "tc_reference": "TC-057",
+      "ac_reference": "FR-20",
+      "milestone": "M1 Schema, enqueue, migrations",
+      "title": "Producer least-privilege role",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Create a unique test role with schema usage, table insert/select and function execute only; enqueue and dedupe under set local role; clean up that role.",
+      "expected_result": "Insertion and E2 lookup succeed without an identity-sequence grant.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "T-10 initial targeted suite passed these cases for both drivers on PG17; only INT-12 failed due to the test sorting its text projection.",
+          "note": "T-10 initial targeted suite passed these cases for both drivers on PG17; only INT-12 failed due to the test sorting its text projection.",
+          "at": "2026-10-21T09:43:13.053036+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "note": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion.",
+          "at": "2026-10-21T09:44:46.178525+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-10 final validation passed: 124 unit and 50 PG17 integration tests; all 18 enqueue cases also pass on PG14 and PG16 for both drivers. Lint/typecheck/guards/build/package/size pass. INT-82 now includes actual enqueued-row decoding; INT-02 includes enqueue isolation. Batch test correction orders the bigint column, preserving the specified assertion."
     }
   ]
 }

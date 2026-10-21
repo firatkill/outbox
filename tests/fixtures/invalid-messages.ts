@@ -1,0 +1,48 @@
+const cycle: Record<string, unknown> = {};
+cycle['self'] = cycle;
+export const invalidMessages: [string, unknown][] = [
+  ['topic', ''],
+  ['topic', '-order'],
+  ['topic', 'a b'],
+  ['topic', 'a\n'],
+  ['topic', 'a'.repeat(201)],
+  ['topic', 1],
+  ['key', ''],
+  ['key', 'a'.repeat(201)],
+  ['key', 1],
+  ['dedupeKey', ''],
+  ['dedupeKey', 'a'.repeat(201)],
+  ['dedupeKey', null],
+  ['headers', null],
+  ['headers', []],
+  ['headers', new Date()],
+  ['headers', { '': 'value' }],
+  ['headers', { ['x'.repeat(101)]: 'value' }],
+  ['headers', { x: 1 }],
+  ['headers', { x: 'a'.repeat(2001) }],
+  ['headers', Object.fromEntries(Array.from({ length: 51 }, (_, i) => [String(i), 'v']))],
+  ['delayMs', -1],
+  ['delayMs', 0.5],
+  ['delayMs', 31_536_000_001],
+  ['delayMs', NaN],
+  ['delayMs', '1'],
+  ['availableAt', '2026-01-01'],
+  ['availableAt', new Date(NaN)],
+  ['availableAt', null],
+  ['maxAttempts', 0],
+  ['maxAttempts', 1001],
+  ['maxAttempts', 1.5],
+  ['maxAttempts', '1'],
+  ['payload', undefined],
+  ['payload', 1n],
+  ['payload', cycle],
+  [
+    'payload',
+    {
+      toJSON() {
+        throw new Error('cannot serialize');
+      },
+    },
+  ],
+  ['dedupe_key', 'typo'],
+];
