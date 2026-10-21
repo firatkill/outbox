@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { parseOutboxConfig } from '../../src/core/config.js';
-import { MIGRATIONS, migrationChecksum } from '../../src/core/migrations/index.js';
+import { MIGRATIONS, migrationChecksum, migrationSql } from '../../src/core/migrations/index.js';
 import { migrate, schemaVersion } from '../../src/core/migrations/runner.js';
 import { render } from '../../src/core/sql/render.js';
 import { ADAPTERS, createAdapter } from '../helpers/adapters.js';
@@ -150,6 +150,36 @@ describe.each(ADAPTERS)('%s migrations', () => {
     expect(
       await driver.adapter.query(render('select count(*)::int4 as count from {{migrations}}', config), []),
     ).toEqual([{ count: 1 }]);
+  });
+  it('INT-05 TC-036 produces the same catalog through generated SQL and runner', async () => {
+    const printed = await setup();
+    const executed = await setup();
+    await driver.adapter.query(migrationSql({ schema: printed.schema }), []);
+    await migrate(driver.adapter, executed);
+    const catalog = async (config: typeof printed) => {
+      const columns = await driver.adapter.query(
+        'select table_name::text as table_name, column_name::text as name, data_type::text as type, column_default::text as default, is_nullable::text as nullable, is_identity::text as identity from information_schema.columns where table_schema = $1::text order by table_name, ordinal_position',
+        [config.schema],
+      );
+      const constraints = await driver.adapter.query(
+        'select conname::text as name, pg_get_constraintdef(oid)::text as definition from pg_constraint where connamespace = $1::regnamespace order by conname',
+        [config.schema],
+      );
+      const indexes = await driver.adapter.query(
+        'select indexname::text as name, indexdef::text as definition from pg_indexes where schemaname = $1::text order by indexname',
+        [config.schema],
+      );
+      const versions = await driver.adapter.query(
+        render(
+          'select version::int4 as version, name::text as name, checksum::text as checksum from {{migrations}} order by version',
+          config,
+        ),
+        [],
+      );
+      // applied_at is execution bookkeeping; compare version identity/checksum, not wall-clock equality.
+      return JSON.stringify({ columns, constraints, indexes, versions }).replaceAll(config.schema, 'normalized_schema');
+    };
+    expect(await catalog(printed)).toBe(await catalog(executed));
   });
   it('INT-06 TC-034 rejects missing schemas and accepts additive newer versions', async () => {
     const config = await setup();
