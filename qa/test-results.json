@@ -2642,6 +2642,12 @@
           "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
           "note": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
           "at": "2026-10-21T11:00:43.738137+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "at": "2026-10-21T11:29:29.117917+00:00"
         }
       ],
       "regression_of": null,
@@ -2649,7 +2655,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass."
+      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
     },
     {
       "tc_reference": "TC-077",
@@ -2673,6 +2679,12 @@
           "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
           "note": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
           "at": "2026-10-21T11:00:43.738356+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "at": "2026-10-21T11:29:29.118196+00:00"
         }
       ],
       "regression_of": null,
@@ -2680,7 +2692,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass."
+      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
     },
     {
       "tc_reference": "TC-078",
@@ -2704,6 +2716,12 @@
           "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
           "note": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
           "at": "2026-10-21T11:00:43.738361+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "at": "2026-10-21T11:29:29.118206+00:00"
         }
       ],
       "regression_of": null,
@@ -2711,7 +2729,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass."
+      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
     },
     {
       "tc_reference": "TC-079",
@@ -2735,6 +2753,12 @@
           "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
           "note": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
           "at": "2026-10-21T11:00:43.738365+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "at": "2026-10-21T11:29:29.118218+00:00"
         }
       ],
       "regression_of": null,
@@ -2742,7 +2766,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass."
+      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
     },
     {
       "tc_reference": "TC-098",
@@ -2770,6 +2794,12 @@
         {
           "result": "pass",
           "note": "Corrected requirement trace to PRD FR-80 (typed events/listener isolation); prior unit and full-suite results remain valid."
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "at": "2026-10-21T11:29:29.118251+00:00"
         }
       ],
       "regression_of": null,
@@ -2777,7 +2807,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass."
+      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
     },
     {
       "tc_reference": "TC-080",
@@ -2801,6 +2831,12 @@
           "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
           "note": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
           "at": "2026-10-21T11:00:43.738367+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "at": "2026-10-21T11:29:29.118225+00:00"
         }
       ],
       "regression_of": null,
@@ -2808,7 +2844,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass."
+      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
     },
     {
       "tc_reference": "TC-081",
@@ -2832,6 +2868,12 @@
           "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
           "note": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
           "at": "2026-10-21T11:00:43.738370+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "at": "2026-10-21T11:29:29.118232+00:00"
         }
       ],
       "regression_of": null,
@@ -2839,7 +2881,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass."
+      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
     },
     {
       "tc_reference": "TC-082",
@@ -2863,6 +2905,12 @@
           "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
           "note": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
           "at": "2026-10-21T11:00:43.738373+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "at": "2026-10-21T11:29:29.118238+00:00"
         }
       ],
       "regression_of": null,
@@ -2870,7 +2918,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass."
+      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
     },
     {
       "tc_reference": "TC-083",
@@ -2894,6 +2942,12 @@
           "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
           "note": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
           "at": "2026-10-21T11:00:43.738376+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "at": "2026-10-21T11:29:29.118244+00:00"
         }
       ],
       "regression_of": null,
@@ -2901,7 +2955,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass."
+      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
     },
     {
       "tc_reference": "TC-099",
@@ -2919,6 +2973,12 @@
           "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
           "note": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
           "at": "2026-10-21T11:00:43.738804+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "at": "2026-10-21T11:29:29.118257+00:00"
         }
       ],
       "regression_of": null,
@@ -2926,7 +2986,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass."
+      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
     },
     {
       "tc_reference": "TC-100",
@@ -2944,6 +3004,12 @@
           "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
           "note": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass.",
           "at": "2026-10-21T11:00:43.739156+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "note": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124.",
+          "at": "2026-10-21T11:29:29.118264+00:00"
         }
       ],
       "regression_of": null,
@@ -2951,7 +3017,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-14 final full suite passes: 183 unit and 84 integration tests on PostgreSQL 17 with both drivers, no remaining todos. Lint/typecheck/guards/build/publint/attw pass. Core size is a separate pending gate, not a functional test pass."
+      "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
     }
   ]
 }
