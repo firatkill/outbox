@@ -20,7 +20,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-04 | M1 | Identifiers, config, errors and rendering | done | e07f5cd |
 | T-05 | M1 | Migration 0001 and runner | done | 16010ec |
 | T-06 | M1 | migrationSql and CLI migrate | done | 80c67b2 |
-| T-07 | M1 | Message validation, JSON and UUIDv7 | todo | — |
+| T-07 | M1 | Message validation, JSON and UUIDv7 | doing | — |
 | T-08 | M1 | postgres.js adapter and createOutboxCore skeleton | todo | — |
 | T-09 | M1 | pg adapter | todo | — |
 | T-10 | M1 | enqueue | todo | — |
