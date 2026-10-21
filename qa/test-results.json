@@ -3018,6 +3018,67 @@
       "retraction_reason": null,
       "automatable": true,
       "actual_result": "T-14 PR #14 static and PG17 integration CI passed, run 39591920124."
+    },
+    {
+      "tc_reference": "TC-084",
+      "ac_reference": "FR-35; FR-47; FR-48",
+      "milestone": "M2 Relay and leases",
+      "title": "Timeout abort and stored failure",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Run a 200ms timeout handler awaiting abort with 1200ms lease and deterministic 1000ms retry.",
+      "expected_result": "Abort reason and last_error are OUTBOX_HANDLER_TIMEOUT; pending with approximately 1000ms delay and failed event.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "INT-26 passes against PG17 with both drivers: timeout abort, stored retry delay/error, failed event and sole-slot reuse.",
+          "note": "INT-26 passes against PG17 with both drivers: timeout abort, stored retry delay/error, failed event and sole-slot reuse.",
+          "at": "2026-10-21T11:31:34.420022+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "T-15 typecheck rejected a generic query type argument and dot access on the structural adapter row. Runtime INT-26 passed; correct test typing to the adapter contract.",
+          "note": "T-15 typecheck rejected a generic query type argument and dot access on the structural adapter row. Runtime INT-26 passed; correct test typing to the adapter contract.",
+          "at": "2026-10-21T11:31:54.316680+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Corrected structural adapter test typing; lint, typecheck, guards pass. Full task suite: 183 unit tests (including UT-10) and 86 PG17 integration tests pass.",
+          "note": "Corrected structural adapter test typing; lint, typecheck, guards pass. Full task suite: 183 unit tests (including UT-10) and 86 PG17 integration tests pass.",
+          "at": "2026-10-21T11:32:34.614027+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "CI 39592756786: pg INT-26 observed 786ms remaining instead of >=850ms after runner delay between the fail update and SELECT. Capture available_at minus database time at the update itself; preserve the normative +/-150ms assertion.",
+          "note": "CI 39592756786: pg INT-26 observed 786ms remaining instead of >=850ms after runner delay between the fail update and SELECT. Capture available_at minus database time at the update itself; preserve the normative +/-150ms assertion.",
+          "at": "2026-10-21T11:35:02.511723+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Targeted INT-26 passes for both drivers after capturing retry delay in a schema-owned PostgreSQL trigger at the fail update. Same 850..1150ms assertion; no production change or tolerance increase.",
+          "note": "Targeted INT-26 passes for both drivers after capturing retry delay in a schema-owned PostgreSQL trigger at the fail update. Same 850..1150ms assertion; no production change or tolerance increase.",
+          "at": "2026-10-21T11:35:17.358700+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final local T-15 regression suite after CI timing correction: 183 unit / 86 PG17 integration tests pass; lint, typecheck and guards pass.",
+          "note": "Final local T-15 regression suite after CI timing correction: 183 unit / 86 PG17 integration tests pass; lint, typecheck and guards pass.",
+          "at": "2026-10-21T11:35:32.294422+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-15 CI run 39593104193 static and PG17 integration checks pass after database-side timing capture.",
+          "note": "T-15 CI run 39593104193 static and PG17 integration checks pass after database-side timing capture.",
+          "at": "2026-10-21T11:37:12.989500+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-15 CI run 39593104193 static and PG17 integration checks pass after database-side timing capture."
     }
   ]
 }
