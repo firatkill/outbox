@@ -34,7 +34,7 @@ export function createOutboxCore<TDb, TTx, Topics extends TopicMap = DefaultTopi
     if (result === undefined) throw new OutboxError('OUTBOX_INTERNAL', 'Missing enqueue result. Please report.');
     return result;
   }
-  return {
+  const outbox: Outbox<TTx, Topics> = {
     config: resolved,
     migrate: (options) => migrate(adapter, resolved, options),
     schemaVersion: () => schemaVersion(adapter, resolved),
@@ -48,4 +48,6 @@ export function createOutboxCore<TDb, TTx, Topics extends TopicMap = DefaultTopi
     listDead: notImplemented,
     stats: notImplemented,
   };
+  Object.defineProperty(outbox, Symbol.for('@firatkill/outbox/internal'), { value: { adapter, config: resolved } });
+  return outbox;
 }

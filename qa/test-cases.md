@@ -606,16 +606,16 @@ Designed before M1 implementation from PRD FR-02..FR-27, FR-86, NFR-04/13 and TR
 ## TC-059: Clock install and restoration
 
 - Milestone: M1 Schema, enqueue, migrations; task: T-11.
-- PRD: FR-17; FR-18; TRD/test reference: T-11 acceptance; TRD 11.3.
+- PRD: FR-17; FR-18; TRD/test reference: INT-92; TRD 11.3.
 - Priority: High; automatable: yes.
 - Preconditions: The task dependencies are complete; database cases use isolated test schemas and a quiet test database.
-- Steps: Install twice, set/advance/reset the offset, inspect now, uninstall and inspect pg_get_functiondef.
+- Steps: Install twice, set/advance/reset the offset, reject negative/non-finite offsets, inspect now, confirm schema isolation, uninstall and inspect pg_get_functiondef.
 - Expected result: Install is idempotent; offset affects outbox time; uninstall restores select now() and removes the test table.
 
 ## TC-060: Clock transaction isolation
 
 - Milestone: M1 Schema, enqueue, migrations; task: T-11.
-- PRD: FR-17; FR-18; TRD/test reference: T-11 acceptance; TRD 11.3.
+- PRD: FR-17; FR-18; TRD/test reference: INT-93; TRD 11.3.
 - Priority: High; automatable: yes.
 - Preconditions: The task dependencies are complete; database cases use isolated test schemas and a quiet test database.
 - Steps: Use two connections; setLocal in one transaction and compare readings with the other connection and after commit.
