@@ -1357,6 +1357,12 @@
           "actual_result": "Final T-08 checks passed: 124 unit, 18 PG17 integration tests; build, publint/attw and driver-free declarations; core 3.63 kB and restored postgres-js createOutbox measurement 3.18 kB, within unchanged limits. LISTEN remains T-24.",
           "note": "Final T-08 checks passed: 124 unit, 18 PG17 integration tests; build, publint/attw and driver-free declarations; core 3.63 kB and restored postgres-js createOutbox measurement 3.18 kB, within unchanged limits. LISTEN remains T-24.",
           "at": "2026-10-21T09:00:58.236260+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Correction to the preceding note: the final measured postgres-js createOutbox size was 3.21 kB, not 3.18 kB; core was 3.63 kB. Both pass their unchanged 12/10 kB limits. No new measurement run.",
+          "note": "Correction to the preceding note: the final measured postgres-js createOutbox size was 3.21 kB, not 3.18 kB; core was 3.63 kB. Both pass their unchanged 12/10 kB limits. No new measurement run.",
+          "at": "2026-10-21T09:01:31.952054+00:00"
         }
       ],
       "regression_of": null,
@@ -1364,7 +1370,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Final T-08 checks passed: 124 unit, 18 PG17 integration tests; build, publint/attw and driver-free declarations; core 3.63 kB and restored postgres-js createOutbox measurement 3.18 kB, within unchanged limits. LISTEN remains T-24."
+      "actual_result": "Correction to the preceding note: the final measured postgres-js createOutbox size was 3.21 kB, not 3.18 kB; core was 3.63 kB. Both pass their unchanged 12/10 kB limits. No new measurement run."
     },
     {
       "tc_reference": "TC-041",
