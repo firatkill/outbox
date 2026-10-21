@@ -2440,6 +2440,12 @@
           "actual_result": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66.",
           "note": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66.",
           "at": "2026-10-21T10:43:06.947150+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge.",
+          "note": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge.",
+          "at": "2026-10-21T10:46:25.552133+00:00"
         }
       ],
       "regression_of": null,
@@ -2447,7 +2453,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66."
+      "actual_result": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge."
     },
     {
       "tc_reference": "TC-073",
@@ -2477,6 +2483,12 @@
           "actual_result": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66.",
           "note": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66.",
           "at": "2026-10-21T10:43:06.951174+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge.",
+          "note": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge.",
+          "at": "2026-10-21T10:46:25.552374+00:00"
         }
       ],
       "regression_of": null,
@@ -2484,7 +2496,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66."
+      "actual_result": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge."
     },
     {
       "tc_reference": "TC-074",
@@ -2514,6 +2526,12 @@
           "actual_result": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66.",
           "note": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66.",
           "at": "2026-10-21T10:43:06.951181+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge.",
+          "note": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge.",
+          "at": "2026-10-21T10:46:25.552385+00:00"
         }
       ],
       "regression_of": null,
@@ -2521,7 +2539,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66."
+      "actual_result": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge."
     },
     {
       "tc_reference": "TC-075",
@@ -2551,6 +2569,12 @@
           "actual_result": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66.",
           "note": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66.",
           "at": "2026-10-21T10:43:06.951185+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge.",
+          "note": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge.",
+          "at": "2026-10-21T10:46:25.552392+00:00"
         }
       ],
       "regression_of": null,
@@ -2558,7 +2582,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-13 final full suite: 160 unit and 70 integration tests pass on PostgreSQL 17 with both drivers; four T-14 relay todos remain. Lint, typecheck and static guards pass. Concurrency/chaos gates not yet implemented remain deferred only as approved in D-66."
+      "actual_result": "T-13 PR #13 implementation head eb65f3e passes static and PostgreSQL integration CI run 39586706280. Final documentation checks required before merge."
     }
   ]
 }
