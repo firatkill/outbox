@@ -1,4 +1,4 @@
-import { mapMessageRow } from '../../src/core/row.js';
+import { dateFromEpoch, mapMessageRow } from '../../src/core/row.js';
 import { readFileSync } from 'node:fs';
 import { BOOTSTRAP } from '../../src/core/migrations/bootstrap.js';
 import { MIGRATIONS } from '../../src/core/migrations/index.js';
@@ -94,4 +94,11 @@ it.each(Object.keys(messageRow))('UT-04 TC-046 names wrong-type column %s', (col
 });
 it.each(['headers', 'payload'])('UT-04 TC-046 names malformed JSON column %s', (column) => {
   expect(() => mapMessageRow({ ...messageRow, [column]: '{invalid' })).toThrow(column);
+});
+
+it('UT-04 TC-046 converts database epoch milliseconds for the testing entry', () => {
+  expect(dateFromEpoch(1700000000000, 'now_ms')).toEqual(new Date(1700000000000));
+  for (const value of ['1700000000000', null, NaN, Infinity, 9e20]) {
+    expect(() => dateFromEpoch(value, 'now_ms')).toThrow('now_ms');
+  }
 });

@@ -56,3 +56,10 @@ export function mapMessageRow(row: Record<string, unknown>): OutboxMessage {
     lastError: nullableText('last_error'),
   };
 }
+
+/** Convert driver-neutral database epoch milliseconds without reading local time. */
+export function dateFromEpoch(value: unknown, column: string): Date {
+  if (typeof value !== 'number' || !Number.isFinite(value)) mismatch(column);
+  const date = new Date(value);
+  return Number.isFinite(date.getTime()) ? date : mismatch(column);
+}
