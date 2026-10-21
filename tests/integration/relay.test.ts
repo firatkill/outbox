@@ -79,6 +79,75 @@ describe.each(ADAPTERS)('%s relay', (name) => {
       ),
     ).toEqual([{ status: 'done', attempts: 1, completed: true, locked_by: null, locked_until: null }]);
   });
+  it('INT-26 TC-084 aborts timed-out handlers, persists retry errors, and frees the slot', async () => {
+    const { outbox, relay: make } = await setup([{ topic: 't', payload: null }]);
+    // Capture the delay at the database update, so runner scheduling cannot consume it before assertion.
+    const audit = `"${outbox.config.schema}"."timeout_audit"`;
+    const capture = `"${outbox.config.schema}"."capture_timeout"`;
+    await driver.adapter.query(`create table ${audit} (delay float8 not null)`, []);
+    await driver.adapter.query(
+      render(
+        `create function ${capture}() returns trigger language plpgsql as $$
+      begin
+        if old.status = 'in_flight' and new.status = 'pending' then
+          insert into ${audit} values (extract(epoch from (new.available_at - {{now}})) * 1000);
+        end if;
+        return new;
+      end $$`,
+        outbox.config,
+      ),
+      [],
+    );
+    await driver.adapter.query(
+      render(
+        `create trigger capture_timeout after update on {{messages}}
+      for each row execute function ${capture}()`,
+        outbox.config,
+      ),
+      [],
+    );
+    const reasons: unknown[] = [];
+    let calls = 0;
+    const relay = make({
+      concurrency: 1,
+      batchSize: 1,
+      handlerTimeoutMs: 200,
+      leaseMs: 1200,
+      retry: { baseDelayMs: 1000, jitter: 'none' },
+      handlers: {
+        t: async (_message, ctx) => {
+          calls++;
+          if (calls > 1) return;
+          await new Promise<void>((resolve) => {
+            ctx.signal.addEventListener(
+              'abort',
+              () => {
+                reasons.push(ctx.signal.reason as unknown);
+                resolve();
+              },
+              { once: true },
+            );
+          });
+        },
+      },
+    });
+    const failed = waitForEvent(relay, 'failed');
+    expect(await relay.runOnce()).toMatchObject({ claimed: 1, failed: 1, delivered: 0, dead: 0 });
+    expect(reasons).toEqual([expect.objectContaining({ code: 'OUTBOX_HANDLER_TIMEOUT' })]);
+    expect(await failed).toMatchObject({ willRetry: true, retryInMs: 1000 });
+    const [row] = await driver.adapter.query(
+      render(`select status, last_error, (select delay from ${audit}) as delay from {{messages}}`, outbox.config),
+      [],
+    );
+    expect(row?.['status']).toBe('pending');
+    expect(row?.['last_error']).toMatch(/^OUTBOX_HANDLER_TIMEOUT:/);
+    expect(row?.['delay']).toBeGreaterThanOrEqual(850);
+    expect(row?.['delay']).toBeLessThanOrEqual(1150);
+    // A separate ready message must use the sole slot released by the timeout.
+    await driver.adapter.transaction((tx) => outbox.enqueue(tx, { topic: 't', payload: null }));
+    expect(await relay.runOnce()).toMatchObject({ claimed: 1, delivered: 1, failed: 0 });
+    expect(calls).toBe(2);
+  });
   it('INT-27 TC-081 filters handler and publisher topics without touching other outboxes', async () => {
     const one = await setup(['a', 'b', 'c'].map((topic) => ({ topic, payload: null })));
     const other = await setup([{ topic: 'a', payload: null }]);
