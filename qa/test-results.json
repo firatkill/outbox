@@ -3951,6 +3951,12 @@
           "actual_result": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed.",
           "note": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed.",
           "at": "2026-10-21T13:09:41.929826+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
+          "note": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
+          "at": "2026-10-21T13:12:29.503564+00:00"
         }
       ],
       "regression_of": null,
@@ -3958,7 +3964,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed."
+      "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates."
     },
     {
       "tc_reference": "TC-104",
@@ -3982,6 +3988,12 @@
           "actual_result": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed.",
           "note": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed.",
           "at": "2026-10-21T13:09:41.929956+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
+          "note": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
+          "at": "2026-10-21T13:12:29.503692+00:00"
         }
       ],
       "regression_of": null,
@@ -3989,7 +4001,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed."
+      "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates."
     },
     {
       "tc_reference": "TC-105",
@@ -4013,6 +4025,12 @@
           "actual_result": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed.",
           "note": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed.",
           "at": "2026-10-21T13:09:41.929961+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
+          "note": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
+          "at": "2026-10-21T13:12:29.503696+00:00"
         }
       ],
       "regression_of": null,
@@ -4020,7 +4038,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed."
+      "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates."
     },
     {
       "tc_reference": "TC-106",
@@ -4044,6 +4062,12 @@
           "actual_result": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed.",
           "note": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed.",
           "at": "2026-10-21T13:09:41.929965+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
+          "note": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
+          "at": "2026-10-21T13:12:29.503700+00:00"
         }
       ],
       "regression_of": null,
@@ -4051,7 +4075,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed."
+      "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates."
     },
     {
       "tc_reference": "TC-107",
@@ -4075,6 +4099,12 @@
           "actual_result": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed.",
           "note": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed.",
           "at": "2026-10-21T13:09:41.929968+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
+          "note": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates.",
+          "at": "2026-10-21T13:12:29.503703+00:00"
         }
       ],
       "regression_of": null,
@@ -4082,7 +4112,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-19 full suite: 184 unit and 123 integration checks passed; lint, typecheck and guards passed."
+      "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates."
     }
   ]
 }
