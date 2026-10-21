@@ -6,7 +6,7 @@ References: [PRD.md](./PRD.md) (FR, NFR, GU, decisions), [TRD.md](./TRD.md) (sec
 
 Conventions for every task:
 
-- Work on a branch `t-NN-short-name`; open a PR titled `T-NN: <goal>`; CI must be green before merge.
+- Work on a branch `t-NN-short-name`; open a PR titled `T-NN: <goal>`; CI must be green before merge. During M0 bootstrap, T-01/T-02 remain stacked drafts until T-03 validates the combined tree (PRD D-58).
 - "Acceptance" commands must pass locally (with `pnpm db:up` running) and in CI. A task is not done until the tests it names exist and pass (AGENTS.md "Definition of done").
 - Every behaviour change adds or updates an integration test in the same PR. Every change to the public API or observable behaviour adds a changeset (from T-03 on).
 - If an assumption from TRD §22 fails, apply its fallback in that task and add a row to PRD §14.

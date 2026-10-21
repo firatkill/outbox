@@ -348,6 +348,281 @@
       "retraction_reason": null,
       "automatable": true,
       "actual_result": "Four INT-08 checks passed on PostgreSQL 14 and 16 via TEST_DATABASE_URL overrides; each pre-run activity check returned zero. PostgreSQL 17 also passed. The final available suite passed: four unit tests and four integration checks."
+    },
+    {
+      "tc_reference": "TC-012",
+      "ac_reference": "NFR-21",
+      "milestone": "M0 Setup",
+      "title": "G-1 accepts valid input and rejects a violation",
+      "description": "M0 acceptance case from the specifications.",
+      "steps_to_reproduce": "Run the guard fixtures with a package with empty dependencies; repeat with a package with a runtime dependency.",
+      "expected_result": "Valid input passes; violation fails with G-1, file, line and a diagnostic.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed.",
+          "note": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed.",
+          "at": "2026-10-21T07:50:11.621955+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed."
+    },
+    {
+      "tc_reference": "TC-013",
+      "ac_reference": "NFR-03",
+      "milestone": "M0 Setup",
+      "title": "G-2 accepts valid input and rejects a violation",
+      "description": "M0 acceptance case from the specifications.",
+      "steps_to_reproduce": "Run the guard fixtures with relay code using autocommit query; repeat with relay code calling .transaction(.",
+      "expected_result": "Valid input passes; violation fails with G-2, file, line and a diagnostic.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed.",
+          "note": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed.",
+          "at": "2026-10-21T07:50:11.622168+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed."
+    },
+    {
+      "tc_reference": "TC-014",
+      "ac_reference": "NFR-05",
+      "milestone": "M0 Setup",
+      "title": "G-3 accepts valid input and rejects a violation",
+      "description": "M0 acceptance case from the specifications.",
+      "steps_to_reproduce": "Run the guard fixtures with Date.now in uuid.ts and new Date in row.ts; repeat with Date.now/new Date in non-allowlisted core or adapter files, including the wrong operation in each allowlisted file.",
+      "expected_result": "Valid input passes; violation fails with G-3, file, line and a diagnostic.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed.",
+          "note": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed.",
+          "at": "2026-10-21T07:50:11.622248+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed."
+    },
+    {
+      "tc_reference": "TC-015",
+      "ac_reference": "FR-04",
+      "milestone": "M0 Setup",
+      "title": "G-4 accepts valid input and rejects a violation",
+      "description": "M0 acceptance case from the specifications.",
+      "steps_to_reproduce": "Run the guard fixtures with dynamic driver import in cli.ts; repeat with static driver import in src or dynamic driver import outside cli.ts.",
+      "expected_result": "Valid input passes; violation fails with G-4, file, line and a diagnostic.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed.",
+          "note": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed.",
+          "at": "2026-10-21T07:50:11.622325+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed."
+    },
+    {
+      "tc_reference": "TC-016",
+      "ac_reference": "NFR-04",
+      "milestone": "M0 Setup",
+      "title": "G-5 accepts valid input and rejects a violation",
+      "description": "M0 acceptance case from the specifications.",
+      "steps_to_reproduce": "Run the guard fixtures with SQL using {{tokens}}; repeat with SQL or numbered migration containing ${.",
+      "expected_result": "Valid input passes; violation fails with G-5, file, line and a diagnostic.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed.",
+          "note": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed.",
+          "at": "2026-10-21T07:50:11.622427+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed."
+    },
+    {
+      "tc_reference": "TC-017",
+      "ac_reference": "FR-84",
+      "milestone": "M0 Setup",
+      "title": "G-6 accepts valid input and rejects a violation",
+      "description": "M0 acceptance case from the specifications.",
+      "steps_to_reproduce": "Run the guard fixtures with console in cli.ts or emitter.ts; repeat with console elsewhere in src.",
+      "expected_result": "Valid input passes; violation fails with G-6, file, line and a diagnostic.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed.",
+          "note": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed.",
+          "at": "2026-10-21T07:50:11.622506+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed."
+    },
+    {
+      "tc_reference": "TC-018",
+      "ac_reference": "NFR-21",
+      "milestone": "M0 Setup",
+      "title": "G-7 accepts valid input and rejects a violation",
+      "description": "M0 acceptance case from the specifications.",
+      "steps_to_reproduce": "Run the guard fixtures with publisher imports from the four allowed modules; repeat with publisher imports from any other module.",
+      "expected_result": "Valid input passes; violation fails with G-7, file, line and a diagnostic.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed.",
+          "note": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed.",
+          "at": "2026-10-21T07:50:11.622586+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed."
+    },
+    {
+      "tc_reference": "TC-019",
+      "ac_reference": "FR-91",
+      "milestone": "M0 Setup",
+      "title": "G-8 accepts valid input and rejects a violation",
+      "description": "M0 acceptance case from the specifications.",
+      "steps_to_reproduce": "Run the guard fixtures with ordinary tests; repeat with a focused .only( test.",
+      "expected_result": "Valid input passes; violation fails with G-8, file, line and a diagnostic.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed.",
+          "note": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed.",
+          "at": "2026-10-21T07:50:11.622663+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed."
+    },
+    {
+      "tc_reference": "TC-020",
+      "ac_reference": "FR-96",
+      "milestone": "M0 Setup",
+      "title": "Changeset policy handles source, exempt and local changes",
+      "description": "M0 acceptance case from the specifications.",
+      "steps_to_reproduce": "Exercise source changes with and without a changeset; docs-only changes; no-changeset label; local execution without GITHUB_BASE_REF.",
+      "expected_result": "Unexempted source changes without a changeset fail; the other specified cases pass.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed.",
+          "note": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed.",
+          "at": "2026-10-21T07:50:11.622745+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed."
+    },
+    {
+      "tc_reference": "TC-021",
+      "ac_reference": "NFR-03; NFR-05",
+      "milestone": "M0 Setup",
+      "title": "Live guard command reports a planted violation",
+      "description": "M0 acceptance case from the specifications.",
+      "steps_to_reproduce": "Run pnpm check:guards on the valid tree; create and stage a temporary src/core/x.ts static pg import; rerun; remove only the temporary fixture.",
+      "expected_result": "Clean tree passes; planted violation exits one with G-4; original tree is restored.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed.",
+          "note": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed.",
+          "at": "2026-10-21T07:50:11.622827+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "UT-16: all 22 guard tests passed, including positive/negative fixtures, exact clock and import allowlists, and changeset exemptions. Clean guard command passed. A temporary staged static pg import was rejected by the live command with G-4 and then removed."
+    },
+    {
+      "tc_reference": "TC-023",
+      "ac_reference": "FR-96",
+      "milestone": "M0 Setup",
+      "title": "Action pins and Changesets configuration match the specification",
+      "description": "M0 acceptance case from the specifications.",
+      "steps_to_reproduce": "Verify current action major tags against their official releases; inspect config.json and the initial static workflow.",
+      "expected_result": "Verified action majors are used; Changesets uses main/public, no automatic local commit, and the specified GitHub changelog.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Verified official latest releases via GitHub API: checkout v7.0.1, setup-node v7.1.0, pnpm/action-setup v6.1.0. CI pins the major tags as specified. Changesets config matches TRD 19.1 and uses the installed CLI default README.",
+          "note": "Verified official latest releases via GitHub API: checkout v7.0.1, setup-node v7.1.0, pnpm/action-setup v6.1.0. CI pins the major tags as specified. Changesets config matches TRD 19.1 and uses the installed CLI default README.",
+          "at": "2026-10-21T07:50:11.649621+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "Verified official latest releases via GitHub API: checkout v7.0.1, setup-node v7.1.0, pnpm/action-setup v6.1.0. CI pins the major tags as specified. Changesets config matches TRD 19.1 and uses the installed CLI default README."
     }
   ]
 }

@@ -15,8 +15,8 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | Task | Milestone | Description | Status | Completion commit |
 |---|---|---|---|---|
 | T-01 | M0 | Repository and tooling | doing | 99f3421 (local acceptance; CI pending T-03) |
-| T-02 | M0 | Local databases and test harness | doing | — |
-| T-03 | M0 | CI static job, guards and Changesets | todo | — |
+| T-02 | M0 | Local databases and test harness | doing | d1a70eb (local acceptance; CI pending T-03) |
+| T-03 | M0 | CI static job, guards and Changesets | doing | — |
 | T-04 | M1 | Identifiers, config, errors and rendering | todo | — |
 | T-05 | M1 | Migration 0001 and runner | todo | — |
 | T-06 | M1 | migrationSql and CLI migrate | todo | — |
@@ -70,4 +70,4 @@ A completion commit is recorded only after the task meets its acceptance criteri
 
 ## Open questions for the owner
 
-None. The owner resolved A-01 and approved A-07’s fallback (D-56); T-01 implementation is underway.
+None. The owner resolved A-01 and approved A-07’s fallback (D-56); T-01/T-02 local acceptance is complete; T-03 CI validation is underway.
