@@ -18,7 +18,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-02 | M0 | Local databases and test harness | done | d1a70eb |
 | T-03 | M0 | CI static job, guards and Changesets | done | 1f50dd1 |
 | T-04 | M1 | Identifiers, config, errors and rendering | done | e07f5cd |
-| T-05 | M1 | Migration 0001 and runner | todo | — |
+| T-05 | M1 | Migration 0001 and runner | doing | — |
 | T-06 | M1 | migrationSql and CLI migrate | todo | — |
 | T-07 | M1 | Message validation, JSON and UUIDv7 | todo | — |
 | T-08 | M1 | postgres.js adapter and createOutboxCore skeleton | todo | — |
@@ -75,4 +75,6 @@ A completion commit is recorded only after the task meets its acceptance criteri
 
 ## Open questions for the owner
 
-None. The owner resolved A-01 and approved A-07’s fallback (D-56); M0 local and static CI acceptance is complete.
+- Pending: approve deferring only docs:check/docs:build until their tooling is implemented in T-34, or move that tooling ahead of the remaining tasks. AGENTS.md:147 otherwise requires those unavailable commands for current documentation/API changes.
+
+Previous decisions resolved: The owner resolved A-01 and approved A-07’s fallback (D-56); M0 local and static CI acceptance is complete.

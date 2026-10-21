@@ -2447,6 +2447,8 @@ Test-writing rules (also in AGENTS.md):
 | UT-16 | `guards.test.ts` | T-03: one passing and one failing fixture for every G-1..G-8 rule; changeset policy cases from §19.1 |
 | UT-17 | `wait.test.ts` | T-02: condition and event waits default to 3 seconds; filter events and unsubscribe after resolution/timeout; deferred resolves/rejects |
 
+| UT-18 | `migrations.test.ts` | T-05: known SHA-256 vector; CRLF normalized to LF before template hashing |
+
 ### 15.3 Integration tests
 
 Conventions for this table: "both" = runs for postgres.js and pg. `tc` = the test clock from `@firatkill/outbox/testing`, installed in `beforeAll`. "Relay(x)" = `outbox.createRelay` with options `x` and, unless stated, `listen: false`, `poll: { minIntervalMs: 10, maxIntervalMs: 50 }`, `reclaimIntervalMs: 500`, `retry.jitter: 'none'`.
@@ -2456,6 +2458,7 @@ Conventions for this table: "both" = runs for postgres.js and pg. `tc` = the tes
 | ID | Adapters | Setup and steps | Assertions |
 |---|---|---|---|
 | INT-01 | both | Empty schema; `migrate()`; `migrate()` again | First returns `applied: [{1,'initial'}]`, second `applied: []`; tables, function and the seven named indexes exist (`pg_indexes` names: the six `outbox_messages_*` indexes of §7.3 plus `outbox_inbox_processed_idx`; primary keys not counted); `outbox_schema_migrations` has one row with the checksum of `MIGRATIONS[0]`; `schemaVersion()` = `{ current: 1, required: 1 }` |
+| INT-01b | both | Pre-create a conflicting messages table in an isolated schema, then migrate | OUTBOX_MIGRATION_FAILED carries version 1 and the original PostgreSQL cause; function DDL is rolled back and no version row is inserted; the pre-existing table remains |
 | INT-02 | both | Two outboxes in one database: defaults in schema A and `tablePrefix: 'ob_'` in schema B; migrate both; enqueue one message to each; run a relay on A | B's message stays `pending`; channels differ; no object of B is touched by A's statements |
 | INT-03 | one adapter (runner logic is driver-independent) | Migrate; `update ... set checksum = 'x'`; migrate | Throws `OUTBOX_MIGRATION_CHECKSUM` with version 1; nothing changed |
 | INT-04 | both | Five `migrate()` calls with `Promise.all` on separate connections | All resolve; exactly one result lists version 1 as applied; one version row |
@@ -2599,11 +2602,12 @@ export default defineConfig({
   define: { __OUTBOX_VERSION__: JSON.stringify(version) },   // same as tsdown (§4.2)
   test: {
     projects: [
-      { extends: true, test: { name: 'unit', include: ['tests/unit/**/*.test.ts'], testTimeout: 10_000 } },
+      { extends: true, test: { name: 'unit', sequence: { groupOrder: 0 }, include: ['tests/unit/**/*.test.ts'], testTimeout: 10_000 } },
       {
         extends: true,
         test: {
           name: 'integration',
+          sequence: { groupOrder: 1 },
           include: ['tests/integration/**/*.test.ts'],
           globalSetup: ['tests/global-setup.ts'],
           testTimeout: 30_000,
