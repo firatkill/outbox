@@ -315,7 +315,27 @@ describe.each(ADAPTERS)('%s enqueue delays', (name) => {
       ),
     ).toEqual([{ available_at_ms: availableAt.getTime() }]);
   });
-  // Explicit task-plan deferrals: relay implementation begins in T-14.
-  it.todo('INT-15 relay runOnce respects delay before and after clock advance (T-14)');
-  it.todo('INT-16 relay runOnce respects absolute availability (T-14)');
+  it('INT-15 TC-083 relay runOnce respects relative delay', async () => {
+    const { outbox, clock } = await setup();
+    await clock.install();
+    await driver.adapter.transaction((tx) => outbox.enqueue(tx, { topic: 'delayed', payload: null, delayMs: 60000 }));
+    const relay = outbox.createRelay({ publisher: () => Promise.resolve(), listen: false });
+    expect((await relay.runOnce()).claimed).toBe(0);
+    await clock.advance(59000);
+    expect((await relay.runOnce()).claimed).toBe(0);
+    await clock.advance(2000);
+    expect(await relay.runOnce()).toMatchObject({ claimed: 1, delivered: 1 });
+    await relay.stop();
+  });
+  it('INT-16 TC-083 relay runOnce respects absolute availability', async () => {
+    const { outbox, clock } = await setup();
+    await clock.install();
+    const availableAt = new Date((await clock.now()).getTime() + 5000);
+    await driver.adapter.transaction((tx) => outbox.enqueue(tx, { topic: 'absolute', payload: null, availableAt }));
+    const relay = outbox.createRelay({ publisher: () => Promise.resolve(), listen: false });
+    expect((await relay.runOnce()).claimed).toBe(0);
+    await clock.advance(6000);
+    expect(await relay.runOnce()).toMatchObject({ claimed: 1, delivered: 1 });
+    await relay.stop();
+  });
 });

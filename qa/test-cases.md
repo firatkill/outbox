@@ -990,3 +990,30 @@ Designed from PRD 6.4/6.5 and TRD 5.4, 9.2–9.6, 12.3 and 15 before M2 code. Bo
 - Preconditions: Unit harness, or isolated migrated PostgreSQL schema with both drivers and test clock where time advances are specified.
 - Steps: Create outbox on pool A and relay on named pool B; observe backend statements.
 - Expected result: Relay statements use B.
+
+## TC-098: Synchronous listener isolation and subscription cleanup
+
+- Milestone: M2 Relay and leases; task: T-14.
+- PRD: FR-80; TRD/test reference: UT-14 (event subscriptions only); TRD 5.5. Console fallback remains T-27.
+- Priority: High; automatable: yes.
+- Preconditions: Relay emitter and unit harness.
+- Steps: Attach multiple listeners, throw from one, observe the listener-phase error, then unsubscribe and remove listeners; throw from the error listener.
+- Expected result: Other listeners still run synchronously; on returns an unsubscribe function; off removes the listener; error-listener exceptions do not recurse.
+
+## TC-099: Capacity-bound delivery and released claim locks
+
+- Milestone: M2 Relay and leases; task: T-14.
+- PRD: FR-31; FR-34; NFR-03; TRD/test reference: INT-98; TRD 9.5.1–9.5.3.
+- Priority: High; automatable: yes.
+- Preconditions: Isolated schema, five ready messages, two relay slots, gated handlers.
+- Steps: Start relay; wait for two handlers; inspect pending/in-flight counts; have handlers acquire their own row locks with NOWAIT; release their gate and await all deliveries.
+- Expected result: Only two messages are in flight while blocked, maximum handler concurrency is two, no claim lock remains during delivery, and starts follow sequence order within each batch.
+
+## TC-100: runOnce reports confirmed failure and dead counts
+
+- Milestone: M2 Relay and leases; task: T-14.
+- PRD: FR-32; FR-39; FR-47; FR-48; TRD/test reference: INT-99; TRD 9.3.2/9.6.3.
+- Priority: High; automatable: yes.
+- Preconditions: Isolated schema with retryable, terminal and exhausted messages.
+- Steps: runOnce with a handler that throws ordinary or NonRetryableError as appropriate; inspect returned counts and database statuses.
+- Expected result: Three claims, three failures, two dead, zero deliveries; only the non-exhausted ordinary failure remains pending.

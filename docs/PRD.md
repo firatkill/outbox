@@ -58,7 +58,7 @@ Fırat builds queue-driven systems with PostgreSQL, BullMQ and Azure queues at w
 | G-1 | Give library users an outbox they can adopt in 15 minutes with either PostgreSQL driver | The README quick start (15 lines) runs unchanged against a fresh database after `npx outbox migrate`; docs quick start pages for postgres.js and pg (FR-100) |
 | G-2 | State delivery guarantees precisely and prove them | Guarantees GU-01..GU-09 each map to at least one INT or CHAOS test (TRD §12.3); CHAOS-01 and CHAOS-02 pass in CI on every push to `main` |
 | G-3 | Show distributed-systems judgement to a backend reviewer in a 15-minute read | The docs pages "Guarantees and failure modes" and "Ordering" plus `src/core/sql/*.ts` explain claim, lease, fencing, backoff, ordering and the crash-point table with no gaps |
-| G-4 | Stay small and dependency-free | Zero runtime `dependencies`; core entry ≤ 10 kB min+brotli (NFR-20) |
+| G-4 | Stay small and dependency-free | Zero runtime `dependencies`; core entry ≤ 12 kB min+brotli (NFR-20) |
 | G-5 | Be reproducible by anyone | `pnpm install && pnpm db:up && pnpm test` passes on a clean machine with Docker and Node 22+ |
 | G-6 | Cost nothing to host | npm package plus a static docs site on Vercel Hobby; no servers, no paid services (NFR-50) |
 
@@ -310,7 +310,7 @@ Not guaranteed, stated explicitly: exactly-once delivery; ordering without order
 
 | ID | Pri | Requirement |
 |---|---|---|
-| NFR-20 | Must | size-limit (min + brotli): core entry ≤ 10 kB; `postgres-js` and `pg` entries with `createOutbox` ≤ 12 kB each; `webhook` ≤ 3 kB; `bullmq` ≤ 2 kB; `testing` ≤ 2 kB. |
+| NFR-20 | Must | size-limit (min + brotli): core entry ≤ 12 kB; `postgres-js` and `pg` entries with `createOutbox` ≤ 12 kB each; `webhook` ≤ 3 kB; `bullmq` ≤ 2 kB; `testing` ≤ 2 kB. |
 | NFR-21 | Must | Zero runtime dependencies. Only Node built-ins (`node:crypto`, `node:os`) and the user's driver are imported. |
 | NFR-22 | Must | `publint` reports no errors or warnings; `attw --pack --profile node16` reports no problems for any entry point. |
 | NFR-23 | Must | The published tarball contains only `dist/`, `README.md`, `LICENSE`, `CHANGELOG.md`, `package.json` (checked with `npm pack --dry-run` in CI). |
@@ -487,3 +487,7 @@ Decisions from the brief are fixed. Decisions marked "made in docs" were made wh
 
 | D-66 | Staged concurrency gates: INT-24 from T-16, INT-22 from T-18, INT-41 from T-23, INT-62 from T-26, both chaos modes from T-30. Earlier tasks run all available checks and explicitly retain future verification limits. INT-82 claim mapping is T-18, listDead T-20 and stats T-21. | Owner approval in conversation (2026-10-21): Approve both | Preserves ordered implementation without claiming unimplemented guarantees verified. |
 | D-67 | Finite integer relay counts and millisecond options within existing ranges; retry.factor accepts any finite number 1..10. Invalid values aggregate as OUTBOX_CONFIG issues. | Owner approval in conversation (2026-10-21): Approve both | Resolves fractional option ambiguity without changing defaults or limits. |
+
+| D-68 | Internal relay scheduling uses prevMs=0 for the first empty claim after nonempty work or a wake; queued runOnce calls serialize; claimed deliveries are registered before emitting claimed so synchronous stop listeners cannot miss them. | Implementation clarification during T-14 (2026-10-21) | Preserves the specified polling sequence, per-relay concurrency bound and drain accounting without changing any default or guarantee. |
+
+| D-69 | Raise only the core min+Brotli size budget to 12 kB; retain all other limits and the measurement method. | Owner approval in conversation: i approve. continue | T-14 core measured 10494 bytes against 10000; the approved limit preserves implemented behavior. Later features remain subject to the limits. |

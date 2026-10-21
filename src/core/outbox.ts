@@ -1,3 +1,4 @@
+import { createRelay } from './relay/relay.js';
 import { enqueueValidated } from './sql/enqueue.js';
 import { validateMessages } from './validate.js';
 import type { MessageInput, EnqueueResult } from './types.js';
@@ -39,7 +40,7 @@ export function createOutboxCore<TDb, TTx, Topics extends TopicMap = DefaultTopi
     migrate: (options) => migrate(adapter, resolved, options),
     schemaVersion: () => schemaVersion(adapter, resolved),
     enqueue,
-    createRelay: notImplemented,
+    createRelay: (options) => createRelay(adapter, resolved, options),
     withInbox: notImplemented,
     purgeInbox: notImplemented,
     retryDead: notImplemented,
