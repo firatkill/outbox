@@ -1161,3 +1161,13 @@ Designed from PRD 6.4/6.5 and TRD 5.4, 9.2–9.6, 12.3 and 15 before M2 code. Bo
 - Preconditions: Isolated migrated PostgreSQL schema, both drivers; test clock installed.
 - Steps: Migrate then invoke CLI stats with JSON and text output.
 - Expected result: Valid JSON with terminal statistics and readable text output.
+
+## TC-114: Admin validation and driver errors
+
+- Milestone: M3; task: T-20.
+- PRD: FR-49..FR-52; D-71; TRD/test reference: UT-20; INT-102; TRD 5.3/5.9.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Pure parser and migrated isolated schema, both drivers.
+- Steps: Exercise defaults, every numeric boundary, invalid IDs, strings, booleans and unknown options; spy on SQL and inject a driver failure.
+- Expected result: Approved codes and all option issues are returned before SQL; driver failures retain cause and statement.

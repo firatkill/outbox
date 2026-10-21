@@ -1483,6 +1483,30 @@
           "actual_result": "Owner approved D-69: only core limit raised to 12kB. Size gate now passes: core 10.49kB, postgres-js 10.15kB, pg 10.20kB, testing 1.15kB; other limits unchanged.",
           "note": "Owner approved D-69: only core limit raised to 12kB. Size gate now passes: core 10.49kB, postgres-js 10.15kB, pg 10.20kB, testing 1.15kB; other limits unchanged.",
           "at": "2026-10-21T11:25:46.674798+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "T-20 size gate: core 12245 bytes exceeds approved 12000 by 245; postgres-js 11890 and pg 11940 remain within limits. No limits changed.",
+          "note": "T-20 size gate: core 12245 bytes exceeds approved 12000 by 245; postgres-js 11890 and pg 11940 remain within limits. No limits changed.",
+          "at": "2026-10-21T14:58:49.291829+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "After consolidating numeric option validation, core is 12231 bytes (231 over); adapter entries remain below 12000. Requested owner approval in M3-GATE-PROPOSAL.md; budgets unchanged.",
+          "note": "After consolidating numeric option validation, core is 12231 bytes (231 over); adapter entries remain below 12000. Requested owner approval in M3-GATE-PROPOSAL.md; budgets unchanged.",
+          "at": "2026-10-21T15:01:10.819697+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "D-72 size ceilings applied: all unchanged entry-point measurements pass their approved limits. Lint, typecheck and guards pass.",
+          "note": "D-72 size ceilings applied: all unchanged entry-point measurements pass their approved limits. Lint, typecheck and guards pass.",
+          "at": "2026-10-21T15:48:40.870906+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "note": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "at": "2026-10-21T15:52:28.434590+00:00"
         }
       ],
       "regression_of": null,
@@ -1490,7 +1514,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Owner approved D-69: only core limit raised to 12kB. Size gate now passes: core 10.49kB, postgres-js 10.15kB, pg 10.20kB, testing 1.15kB; other limits unchanged."
+      "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge."
     },
     {
       "tc_reference": "TC-041",
@@ -3920,14 +3944,38 @@
           "actual_result": "T-18 PR #18 implementation CI 39596449111 static and PG17 integration checks pass. M2 report and quality review completed; final report-commit checks required before merge.",
           "note": "T-18 PR #18 implementation CI 39596449111 static and PG17 integration checks pass. M2 report and quality review completed; final report-commit checks required before merge.",
           "at": "2026-10-21T12:05:25.026503+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Full run: all assertions passed, but backend termination interrupted postgres.js internal fetchArrayTypes catalog query and emitted an unhandled 57P01 rejection. Existing fault case remains unresolved pending diagnosis.",
+          "note": "Full run: all assertions passed, but backend termination interrupted postgres.js internal fetchArrayTypes catalog query and emitted an unhandled 57P01 rejection. Existing fault case remains unresolved pending diagnosis.",
+          "at": "2026-10-21T14:58:49.265835+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Owner D-72 applied only to fault worker fetch_types:false. INT-29 passed for both drivers, retaining all ten termination rounds and recovery assertions; no unhandled rejections.",
+          "note": "Owner D-72 applied only to fault worker fetch_types:false. INT-29 passed for both drivers, retaining all ten termination rounds and recovery assertions; no unhandled rejections.",
+          "at": "2026-10-21T15:48:28.713095+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
+          "note": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
+          "at": "2026-10-21T15:49:45.414149+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "note": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "at": "2026-10-21T15:52:28.434886+00:00"
         }
       ],
-      "regression_of": null,
-      "root_cause_group": "postgres-js-terminated-test-pool-cleanup",
+      "regression_of": "M2 passing INT-29 runs recorded before T-20",
+      "root_cause_group": "postgres-js-internal-type-discovery-rejection",
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-18 PR #18 implementation CI 39596449111 static and PG17 integration checks pass. M2 report and quality review completed; final report-commit checks required before merge."
+      "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge."
     },
     {
       "tc_reference": "TC-103",
@@ -4113,6 +4161,287 @@
       "retraction_reason": null,
       "automatable": true,
       "actual_result": "T-19 PR CI 39605620125 passed static and integration jobs, including build/package/size gates."
+    },
+    {
+      "tc_reference": "TC-114",
+      "ac_reference": "FR-49..FR-52; D-71",
+      "milestone": "M3",
+      "title": "Admin validation and driver errors",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Exercise defaults, every numeric boundary, invalid IDs, strings, booleans and unknown options; spy on SQL and inject a driver failure.",
+      "expected_result": "Approved codes and all option issues are returned before SQL; driver failures retain cause and statement.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Initial static validation found unknown[] query parameters incompatible with SqlParam; narrowed parsed options and statement parameters before runtime tests.",
+          "note": "Initial static validation found unknown[] query parameters incompatible with SqlParam; narrowed parsed options and statement parameters before runtime tests.",
+          "at": "2026-10-21T14:55:07.671791+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Targeted admin tests passed for both drivers; UT-20 parser cases and typecheck passed.",
+          "note": "Targeted admin tests passed for both drivers; UT-20 parser cases and typecheck passed.",
+          "at": "2026-10-21T14:55:39.058958+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Lint found an unnecessary assertion and typed-property bracket notation after narrowing options; applied semantics-preserving lint fixes.",
+          "note": "Lint found an unnecessary assertion and typed-property bracket notation after narrowing options; applied semantics-preserving lint fixes.",
+          "at": "2026-10-21T14:57:44.225390+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "All T-20 cases passed in the full run (186 unit / 133 integration assertions); overall integration command failed due to an unhandled postgres.js catalog-query rejection in the existing INT-29 fault test.",
+          "note": "All T-20 cases passed in the full run (186 unit / 133 integration assertions); overall integration command failed due to an unhandled postgres.js catalog-query rejection in the existing INT-29 fault test.",
+          "at": "2026-10-21T14:58:49.238886+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-20 targeted suite: all ten integration checks pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers; both parser unit cases pass. Lint, types, guards, build, package checks and whitespace check pass. Full-suite and size gate issues are tracked separately in TC-094/TC-067 and M3-GATE-PROPOSAL.md.",
+          "note": "Final T-20 targeted suite: all ten integration checks pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers; both parser unit cases pass. Lint, types, guards, build, package checks and whitespace check pass. Full-suite and size gate issues are tracked separately in TC-094/TC-067 and M3-GATE-PROPOSAL.md.",
+          "at": "2026-10-21T15:02:29.114277+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
+          "note": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
+          "at": "2026-10-21T15:49:45.415339+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "note": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "at": "2026-10-21T15:52:28.434909+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge."
+    },
+    {
+      "tc_reference": "TC-108",
+      "ac_reference": "FR-49",
+      "milestone": "M3",
+      "title": "Retry dead filters",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Retry dead messages by topic, IDs, key and limit, then deliver.",
+      "expected_result": "Correct IDs become pending with zero attempts, cleared dead timestamp and retained error.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Targeted admin tests passed for both drivers; UT-20 parser cases and typecheck passed.",
+          "note": "Targeted admin tests passed for both drivers; UT-20 parser cases and typecheck passed.",
+          "at": "2026-10-21T14:55:39.058242+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "All T-20 cases passed in the full run (186 unit / 133 integration assertions); overall integration command failed due to an unhandled postgres.js catalog-query rejection in the existing INT-29 fault test.",
+          "note": "All T-20 cases passed in the full run (186 unit / 133 integration assertions); overall integration command failed due to an unhandled postgres.js catalog-query rejection in the existing INT-29 fault test.",
+          "at": "2026-10-21T14:58:49.238722+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-20 targeted suite: all ten integration checks pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers; both parser unit cases pass. Lint, types, guards, build, package checks and whitespace check pass. Full-suite and size gate issues are tracked separately in TC-094/TC-067 and M3-GATE-PROPOSAL.md.",
+          "note": "Final T-20 targeted suite: all ten integration checks pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers; both parser unit cases pass. Lint, types, guards, build, package checks and whitespace check pass. Full-suite and size gate issues are tracked separately in TC-094/TC-067 and M3-GATE-PROPOSAL.md.",
+          "at": "2026-10-21T15:02:29.114035+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
+          "note": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
+          "at": "2026-10-21T15:49:45.415319+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "note": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "at": "2026-10-21T15:52:28.434893+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge."
+    },
+    {
+      "tc_reference": "TC-110",
+      "ac_reference": "FR-50",
+      "milestone": "M3",
+      "title": "Skip status validation",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Skip pending, dead, in-flight, done, absent and malformed IDs.",
+      "expected_result": "Pending/dead skipped with previous status; other statuses reject; absent/malformed not found.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Targeted admin tests passed for both drivers; UT-20 parser cases and typecheck passed.",
+          "note": "Targeted admin tests passed for both drivers; UT-20 parser cases and typecheck passed.",
+          "at": "2026-10-21T14:55:39.058944+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "All T-20 cases passed in the full run (186 unit / 133 integration assertions); overall integration command failed due to an unhandled postgres.js catalog-query rejection in the existing INT-29 fault test.",
+          "note": "All T-20 cases passed in the full run (186 unit / 133 integration assertions); overall integration command failed due to an unhandled postgres.js catalog-query rejection in the existing INT-29 fault test.",
+          "at": "2026-10-21T14:58:49.238878+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-20 targeted suite: all ten integration checks pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers; both parser unit cases pass. Lint, types, guards, build, package checks and whitespace check pass. Full-suite and size gate issues are tracked separately in TC-094/TC-067 and M3-GATE-PROPOSAL.md.",
+          "note": "Final T-20 targeted suite: all ten integration checks pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers; both parser unit cases pass. Lint, types, guards, build, package checks and whitespace check pass. Full-suite and size gate issues are tracked separately in TC-094/TC-067 and M3-GATE-PROPOSAL.md.",
+          "at": "2026-10-21T15:02:29.114268+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
+          "note": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
+          "at": "2026-10-21T15:49:45.415331+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "note": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "at": "2026-10-21T15:52:28.434902+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge."
+    },
+    {
+      "tc_reference": "TC-109",
+      "ac_reference": "FR-51",
+      "milestone": "M3",
+      "title": "Batched retention and dedupe window",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Purge 1050 old done rows in batches of 100, then include old dead rows.",
+      "expected_result": "Eleven done delete statements; recent and pending survive; deleted dedupe key reusable.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Fixture expected status: inserted instead of the specified EnqueueResult.deduped field; purge counts and batch assertions passed.",
+          "note": "Fixture expected status: inserted instead of the specified EnqueueResult.deduped field; purge counts and batch assertions passed.",
+          "at": "2026-10-21T14:55:39.092382+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Repeated targeted run used unchanged fixtures because the edit script failed before writing. Same assertion/identity errors; no production failure.",
+          "note": "Repeated targeted run used unchanged fixtures because the edit script failed before writing. Same assertion/identity errors; no production failure.",
+          "at": "2026-10-21T14:56:19.160967+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Corrected fixtures pass both drivers: 1050-row purge in eleven batches, dedupe reuse, newest-first full mapping and exact sequence above 2^53.",
+          "note": "Corrected fixtures pass both drivers: 1050-row purge in eleven batches, dedupe reuse, newest-first full mapping and exact sequence above 2^53.",
+          "at": "2026-10-21T14:57:11.116995+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "All T-20 cases passed in the full run (186 unit / 133 integration assertions); overall integration command failed due to an unhandled postgres.js catalog-query rejection in the existing INT-29 fault test.",
+          "note": "All T-20 cases passed in the full run (186 unit / 133 integration assertions); overall integration command failed due to an unhandled postgres.js catalog-query rejection in the existing INT-29 fault test.",
+          "at": "2026-10-21T14:58:49.238872+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-20 targeted suite: all ten integration checks pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers; both parser unit cases pass. Lint, types, guards, build, package checks and whitespace check pass. Full-suite and size gate issues are tracked separately in TC-094/TC-067 and M3-GATE-PROPOSAL.md.",
+          "note": "Final T-20 targeted suite: all ten integration checks pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers; both parser unit cases pass. Lint, types, guards, build, package checks and whitespace check pass. Full-suite and size gate issues are tracked separately in TC-094/TC-067 and M3-GATE-PROPOSAL.md.",
+          "at": "2026-10-21T15:02:29.114260+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
+          "note": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
+          "at": "2026-10-21T15:49:45.415327+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "note": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "at": "2026-10-21T15:52:28.434898+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge."
+    },
+    {
+      "tc_reference": "TC-111",
+      "ac_reference": "FR-52",
+      "milestone": "M3",
+      "title": "Dead listing and driver mapping",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "List dead messages with topic and limit including a sequence above 2^53.",
+      "expected_result": "Newest first; full neutral message shape with string sequence and decoded JSON/dates.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "Fixture attempted UPDATE of generated-always identity seq; seed its owned sequence before enqueue instead.",
+          "note": "Fixture attempted UPDATE of generated-always identity seq; seed its owned sequence before enqueue instead.",
+          "at": "2026-10-21T14:55:39.127913+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Repeated targeted run used unchanged fixtures because the edit script failed before writing. Same assertion/identity errors; no production failure.",
+          "note": "Repeated targeted run used unchanged fixtures because the edit script failed before writing. Same assertion/identity errors; no production failure.",
+          "at": "2026-10-21T14:56:19.164046+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Corrected fixtures pass both drivers: 1050-row purge in eleven batches, dedupe reuse, newest-first full mapping and exact sequence above 2^53.",
+          "note": "Corrected fixtures pass both drivers: 1050-row purge in eleven batches, dedupe reuse, newest-first full mapping and exact sequence above 2^53.",
+          "at": "2026-10-21T14:57:11.117530+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "All T-20 cases passed in the full run (186 unit / 133 integration assertions); overall integration command failed due to an unhandled postgres.js catalog-query rejection in the existing INT-29 fault test.",
+          "note": "All T-20 cases passed in the full run (186 unit / 133 integration assertions); overall integration command failed due to an unhandled postgres.js catalog-query rejection in the existing INT-29 fault test.",
+          "at": "2026-10-21T14:58:49.238882+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-20 targeted suite: all ten integration checks pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers; both parser unit cases pass. Lint, types, guards, build, package checks and whitespace check pass. Full-suite and size gate issues are tracked separately in TC-094/TC-067 and M3-GATE-PROPOSAL.md.",
+          "note": "Final T-20 targeted suite: all ten integration checks pass on PostgreSQL 14.24, 16.15 and 17.11 with both drivers; both parser unit cases pass. Lint, types, guards, build, package checks and whitespace check pass. Full-suite and size gate issues are tracked separately in TC-094/TC-067 and M3-GATE-PROPOSAL.md.",
+          "at": "2026-10-21T15:02:29.114273+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
+          "note": "T-20 final full suite passed: 186 unit and 133 integration tests on PG17, no unhandled errors. D-72 applied; all static and size checks pass.",
+          "at": "2026-10-21T15:49:45.415335+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "note": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge.",
+          "at": "2026-10-21T15:52:28.434905+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-20 PR CI 39629253196 passed static/package/size and PostgreSQL integration jobs; final documentation commit checks are enforced before merge."
     }
   ]
 }

@@ -12,13 +12,14 @@ export type AdapterName = (typeof ADAPTERS)[number];
 // Tests share a transaction executor shape while exercising the actual adapter wrappers.
 export function createAdapter(
   name: AdapterName = 'postgres-js',
-  options: { max?: number; applicationName?: string; prepare?: boolean } = {},
+  options: { max?: number; applicationName?: string; prepare?: boolean; fetchTypes?: boolean } = {},
 ) {
   const db =
     name === 'postgres-js'
       ? postgres(TEST_DATABASE_URL, {
           max: options.max ?? 5,
           prepare: options.prepare ?? true,
+          fetch_types: options.fetchTypes ?? true,
           connection: { application_name: options.applicationName ?? 'outbox-tests' },
           onnotice: () => undefined,
         })

@@ -9,3 +9,5 @@ Proposed behavior for T-20/T-21:
 - Preserve the explicit ID rules: invalid `retryDead.ids` (including array length outside 1..1000) rejects with `OUTBOX_INVALID_MESSAGE`; malformed `skip(id)` rejects with `OUTBOX_NOT_FOUND` without SQL.
 
 Approval is required by AGENTS.md owner checkpoint 2 because these are observable behaviors left unspecified. On approval, record the decision in PRD §14, update TRD §5.3/§5.9, and add unit and integration validation cases.
+
+Approved by the owner in conversation on 2026-10-21; recorded as PRD D-71.
