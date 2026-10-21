@@ -11,6 +11,7 @@ const invalid: [string, unknown][] = [
   ['topic', ''],
   ['topic', '-order'],
   ['topic', 'a b'],
+  ['topic', 'a\n'],
   ['topic', 'a'.repeat(201)],
   ['topic', 1],
   ['key', ''],

@@ -13,9 +13,13 @@ export function encodeJson(value: unknown, maxBytes: number): { json: string; by
   }
   const bytes = new TextEncoder().encode(json).byteLength;
   if (bytes > maxBytes) {
-    throw new OutboxError('OUTBOX_PAYLOAD_TOO_LARGE', 'Payload exceeds the byte limit', {
-      details: { size: bytes, limit: maxBytes },
-    });
+    throw new OutboxError(
+      'OUTBOX_PAYLOAD_TOO_LARGE',
+      `Payload is ${String(bytes)} bytes; limit is ${String(maxBytes)} bytes`,
+      {
+        details: { size: bytes, limit: maxBytes },
+      },
+    );
   }
   return { json, bytes };
 }
