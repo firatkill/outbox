@@ -1,6 +1,6 @@
 # Progress
 
-Local repository setup completed on 2026-10-21. M0 (T-01..T-03), M1 (T-04..T-11), M2 (T-12..T-18) and M3 (T-19..T-21) are complete. Owner approved continuing into M4; T-22 and T-23 are complete. T-24 awaits the owner decision below.
+Local repository setup completed on 2026-10-21. M0 (T-01..T-03), M1 (T-04..T-11), M2 (T-12..T-18) and M3 (T-19..T-21) are complete. Owner approved continuing into M4; T-22 and T-23 are complete. T-24 is in progress under owner-approved D-73.
 
 - Read AGENTS.md and all four specification documents from start to finish.
 - Verified the required Git author and committer identity; enabled the executable `.githooks/commit-msg` hook.
@@ -37,7 +37,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-21 | M3 | stats and CLI stats | done | 5f96956 |
 | T-22 | M4 | Ordering-mode claim | done | 3bcaf44 |
 | T-23 | M4 | Ordering under concurrency | done | 1ffbea3 |
-| T-24 | M4 | NOTIFY and LISTEN in adapters | todo | — |
+| T-24 | M4 | NOTIFY and LISTEN in adapters | doing | — |
 | T-25 | M4 | Wake-up scheduling and latency | todo | — |
 | T-26 | M5 | Inbox | todo | — |
 | T-27 | M5 | Events, tracer and console fallback | todo | — |
@@ -115,7 +115,9 @@ A completion commit is recorded only after the task meets its acceptance criteri
 
 ## Open questions for the owner
 
-Pending: T-24 requires relay reconnect/wake acceptance before the T-25 LISTEN wiring task. Proposed moving connection/start/close/wake wiring into T-24, retaining latency and polling/backoff verification in T-25. Owner checkpoint 2 question sent; no dependent work proceeds without an answer.
+None. Owner approved the [postgres.js reconnect cleanup workaround](M4-LISTEN-PROPOSAL.md), recorded as D-74; implementation and verification are in progress.
+
+Owner approved moving relay LISTEN/wake wiring into T-24; D-73 records the decision.
 
 Owner approved [M3 gate corrections](M3-GATE-PROPOSAL.md), recorded as D-72; verification passes.
 

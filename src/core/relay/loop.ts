@@ -45,6 +45,7 @@ export async function runLoop(args: {
 }): Promise<void> {
   const { state } = args;
   let errorBackoff = 1000;
+  const woke = () => state.wakePending;
   const stopping = () => state.stopping;
   for (;;) {
     const decision = decide(state);
@@ -62,7 +63,9 @@ export async function runLoop(args: {
     try {
       const rows = await args.claim(size);
       errorBackoff = 1000;
-      state.intervalMs = nextInterval(previousEmpty ? state.intervalMs : 0, size, rows.length, args.poll);
+      state.intervalMs = woke()
+        ? args.poll.minIntervalMs
+        : nextInterval(previousEmpty ? state.intervalMs : 0, size, rows.length, args.poll);
       state.last = { requested: size, claimed: rows.length };
       args.deliver(rows, started);
     } catch (error) {

@@ -5189,6 +5189,184 @@
       "retraction_reason": null,
       "automatable": true,
       "actual_result": "T-23 implementation CI 39635909129 passed static and integration; earlier duplicate run was cancelled when the no-changeset label triggered its replacement. Final documentation CI required before merge."
+    },
+    {
+      "tc_reference": "TC-122",
+      "ac_reference": "FR-26; FR-60..FR-63; GU-08",
+      "milestone": "M4",
+      "title": "Transactional enqueue notification",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Listener connection; enqueue in a transaction and wait 200 ms before commit; then an outbox with `notify: false`",
+      "expected_result": "Notification arrives after commit, not before; one notification for a 10-message batch; none with `notify: false` and the statement text contains no `pg_notify` call path (spy shows `$2` = null)",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Initial T-24 targeted PG17 run: notification commit timing/suppression, separate pools, failed opening recovery and stop-during-opening passed with both drivers.",
+          "note": "Initial T-24 targeted PG17 run: notification commit timing/suppression, separate pools, failed opening recovery and stop-during-opening passed with both drivers.",
+          "at": "2026-10-21T19:17:52.065527+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Independent T-24 retest passes all nine selected checks: UT-21 retry cap/cancellation, INT-19, INT-54 and INT-104 with both drivers. Lint, typecheck and guards pass. INT-52 postgres.js cleanup remains pending owner decision.",
+          "note": "Independent T-24 retest passes all nine selected checks: UT-21 retry cap/cancellation, INT-19, INT-54 and INT-104 with both drivers. Lint, typecheck and guards pass. INT-52 postgres.js cleanup remains pending owner decision.",
+          "at": "2026-10-21T19:21:02.461411+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass.",
+          "note": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass.",
+          "at": "2026-10-21T19:27:33.265167+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass."
+    },
+    {
+      "tc_reference": "TC-124",
+      "ac_reference": "FR-26; FR-60..FR-63; GU-08",
+      "milestone": "M4",
+      "title": "Separate listen pool",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Relay with `db` = pool A and `listen: { db: pool B }`",
+      "expected_result": "Listen backend belongs to pool B (`application_name`), statements to pool A; wake-up works",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Initial T-24 targeted PG17 run: notification commit timing/suppression, separate pools, failed opening recovery and stop-during-opening passed with both drivers.",
+          "note": "Initial T-24 targeted PG17 run: notification commit timing/suppression, separate pools, failed opening recovery and stop-during-opening passed with both drivers.",
+          "at": "2026-10-21T19:17:52.066011+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Independent T-24 retest passes all nine selected checks: UT-21 retry cap/cancellation, INT-19, INT-54 and INT-104 with both drivers. Lint, typecheck and guards pass. INT-52 postgres.js cleanup remains pending owner decision.",
+          "note": "Independent T-24 retest passes all nine selected checks: UT-21 retry cap/cancellation, INT-19, INT-54 and INT-104 with both drivers. Lint, typecheck and guards pass. INT-52 postgres.js cleanup remains pending owner decision.",
+          "at": "2026-10-21T19:21:02.461589+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass.",
+          "note": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass.",
+          "at": "2026-10-21T19:27:33.265723+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass."
+    },
+    {
+      "tc_reference": "TC-128",
+      "ac_reference": "FR-61..FR-63",
+      "milestone": "M4",
+      "title": "Listener opening failure and shutdown race",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Fail the first listener opening, enqueue without notifications, and observe retry; separately stop during a pending opening and release it.",
+      "expected_result": "Polling remains running; error phase listen; retry wakes delivery; shutdown closes the late-opened handle exactly once.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Initial T-24 targeted PG17 run: notification commit timing/suppression, separate pools, failed opening recovery and stop-during-opening passed with both drivers.",
+          "note": "Initial T-24 targeted PG17 run: notification commit timing/suppression, separate pools, failed opening recovery and stop-during-opening passed with both drivers.",
+          "at": "2026-10-21T19:17:52.066356+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Static verification found closure-flow lint false positives, void callback style and unbound method references in new listener code/tests; correcting before retest.",
+          "note": "Static verification found closure-flow lint false positives, void callback style and unbound method references in new listener code/tests; correcting before retest.",
+          "at": "2026-10-21T19:17:52.117885+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Static retest: one remaining closure-flow lint false positive on callback-updated reported flag; use an accessor so asynchronous mutation is represented.",
+          "note": "Static retest: one remaining closure-flow lint false positive on callback-updated reported flag; use an accessor so asynchronous mutation is represented.",
+          "at": "2026-10-21T19:18:40.796229+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Independent T-24 retest passes all nine selected checks: UT-21 retry cap/cancellation, INT-19, INT-54 and INT-104 with both drivers. Lint, typecheck and guards pass. INT-52 postgres.js cleanup remains pending owner decision.",
+          "note": "Independent T-24 retest passes all nine selected checks: UT-21 retry cap/cancellation, INT-19, INT-54 and INT-104 with both drivers. Lint, typecheck and guards pass. INT-52 postgres.js cleanup remains pending owner decision.",
+          "at": "2026-10-21T19:21:02.461595+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Unit suite passed 187 tests and package checks passed, but final core size was 13005 bytes against 13000. Removing redundant retry state without changing limits or behavior.",
+          "note": "Unit suite passed 187 tests and package checks passed, but final core size was 13005 bytes against 13000. Removing redundant retry state without changing limits or behavior.",
+          "at": "2026-10-21T19:22:41.322709+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Approved D-74 workaround implemented. Seven affected checks pass: both-driver reconnect/deadline/closed-callback behavior and opening/shutdown races, plus retry-cap unit test. Static checks pass. Redundant retry state removed; existing core size limit now passes.",
+          "note": "Approved D-74 workaround implemented. Seven affected checks pass: both-driver reconnect/deadline/closed-callback behavior and opening/shutdown races, plus retry-cap unit test. Static checks pass. Redundant retry state removed; existing core size limit now passes.",
+          "at": "2026-10-21T19:24:41.315967+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass.",
+          "note": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass.",
+          "at": "2026-10-21T19:27:33.265733+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass."
+    },
+    {
+      "tc_reference": "TC-123",
+      "ac_reference": "FR-26; FR-60..FR-63; GU-08",
+      "milestone": "M4",
+      "title": "Listener reconnect recovery",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Listening relay; find its listen backend (`pg_stat_activity.query ilike 'listen%'`), `pg_terminate_backend`; then enqueue",
+      "expected_result": "`error` phase `listen` emitted (pg) or reconnect observed (postgres.js `onListen`); message delivered within 2 s; relay still running",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "fail",
+          "actual_result": "postgres.js reconnect and delivery succeeded, but stop left its LISTEN subscription active; pg passed. Investigating driver unlisten handle after reconnect.",
+          "note": "postgres.js reconnect and delivery succeeded, but stop left its LISTEN subscription active; pg passed. Investigating driver unlisten handle after reconnect.",
+          "at": "2026-10-21T19:17:52.092289+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Driver-only reproduction confirms postgres.js 3.4.9 invokes notification callback after reconnect and awaited original unlisten. Latest registry version is 3.4.9. Proposal awaits owner approval under A-03/checkpoint 2; recovery assertions passed.",
+          "note": "Driver-only reproduction confirms postgres.js 3.4.9 invokes notification callback after reconnect and awaited original unlisten. Latest registry version is 3.4.9. Proposal awaits owner approval under A-03/checkpoint 2; recovery assertions passed.",
+          "at": "2026-10-21T19:21:02.495186+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Approved D-74 workaround implemented. Seven affected checks pass: both-driver reconnect/deadline/closed-callback behavior and opening/shutdown races, plus retry-cap unit test. Static checks pass. Redundant retry state removed; existing core size limit now passes.",
+          "note": "Approved D-74 workaround implemented. Seven affected checks pass: both-driver reconnect/deadline/closed-callback behavior and opening/shutdown races, plus retry-cap unit test. Static checks pass. Redundant retry state removed; existing core size limit now passes.",
+          "at": "2026-10-21T19:24:41.315762+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass.",
+          "note": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass.",
+          "at": "2026-10-21T19:27:33.265709+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-24 standard full suite passed 187 unit and 163 PG17 integration tests, including INT-22/24/41. Build, package and unchanged size limits pass (core 13kB rounded, postgres-js 12.70kB, pg 12.95kB). D-74 limits postgres.js server-unsubscribe claims; callback suppression and fault deadlines pass."
     }
   ]
 }
