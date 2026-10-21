@@ -3065,6 +3065,12 @@
           "actual_result": "Final local T-15 regression suite after CI timing correction: 183 unit / 86 PG17 integration tests pass; lint, typecheck and guards pass.",
           "note": "Final local T-15 regression suite after CI timing correction: 183 unit / 86 PG17 integration tests pass; lint, typecheck and guards pass.",
           "at": "2026-10-21T11:35:32.294422+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-15 CI run 39593104193 static and PG17 integration checks pass after database-side timing capture.",
+          "note": "T-15 CI run 39593104193 static and PG17 integration checks pass after database-side timing capture.",
+          "at": "2026-10-21T11:37:12.989500+00:00"
         }
       ],
       "regression_of": null,
@@ -3072,7 +3078,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Final local T-15 regression suite after CI timing correction: 183 unit / 86 PG17 integration tests pass; lint, typecheck and guards pass."
+      "actual_result": "T-15 CI run 39593104193 static and PG17 integration checks pass after database-side timing capture."
     }
   ]
 }
