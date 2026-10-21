@@ -81,6 +81,31 @@ describe.each(ADAPTERS)('%s relay', (name) => {
   });
   it('INT-26 TC-084 aborts timed-out handlers, persists retry errors, and frees the slot', async () => {
     const { outbox, relay: make } = await setup([{ topic: 't', payload: null }]);
+    // Capture the delay at the database update, so runner scheduling cannot consume it before assertion.
+    const audit = `"${outbox.config.schema}"."timeout_audit"`;
+    const capture = `"${outbox.config.schema}"."capture_timeout"`;
+    await driver.adapter.query(`create table ${audit} (delay float8 not null)`, []);
+    await driver.adapter.query(
+      render(
+        `create function ${capture}() returns trigger language plpgsql as $$
+      begin
+        if old.status = 'in_flight' and new.status = 'pending' then
+          insert into ${audit} values (extract(epoch from (new.available_at - {{now}})) * 1000);
+        end if;
+        return new;
+      end $$`,
+        outbox.config,
+      ),
+      [],
+    );
+    await driver.adapter.query(
+      render(
+        `create trigger capture_timeout after update on {{messages}}
+      for each row execute function ${capture}()`,
+        outbox.config,
+      ),
+      [],
+    );
     const reasons: unknown[] = [];
     let calls = 0;
     const relay = make({
@@ -111,11 +136,7 @@ describe.each(ADAPTERS)('%s relay', (name) => {
     expect(reasons).toEqual([expect.objectContaining({ code: 'OUTBOX_HANDLER_TIMEOUT' })]);
     expect(await failed).toMatchObject({ willRetry: true, retryInMs: 1000 });
     const [row] = await driver.adapter.query(
-      render(
-        `select status, (extract(epoch from (available_at - {{now}})) * 1000)::float8 as delay,
-        last_error from {{messages}}`,
-        outbox.config,
-      ),
+      render(`select status, last_error, (select delay from ${audit}) as delay from {{messages}}`, outbox.config),
       [],
     );
     expect(row?.['status']).toBe('pending');
