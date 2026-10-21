@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { parseArgs } from 'node:util';
+import { createPostgresJsAdapter } from './adapters/postgres-js.js';
 import { CLI_HELP, CLI_OPTIONS, redactPassword, resolveCliArgs } from './core/cli-args.js';
 import type { CliArgs } from './core/cli-args.js';
 import { parseOutboxConfig } from './core/config.js';
@@ -43,29 +44,12 @@ async function execute<TDb, TTx>(args: CliArgs, adapter: DriverAdapter<TDb, TTx>
   return 0;
 }
 
-// Minimal CLI-only bindings until T-08/T-09 provide the public adapters.
+// Driver loading stays confined to the CLI.
 async function postgresJs(args: CliArgs): Promise<number> {
   const { default: postgres } = await import('postgres');
   const db = postgres(args.url ?? '', { max: 1, onnotice: () => undefined });
-  interface Tx {
-    unsafe: typeof db.unsafe;
-  }
-  const wrap = (tx: Pick<Tx, 'unsafe'>): SqlExecutor => ({
-    query: async (text, params) => Array.from(await tx.unsafe<Record<string, unknown>[]>(text, [...params])),
-  });
-  const bind = (sql: typeof db): DriverAdapter<typeof db, Tx> => ({
-    name: 'postgres-js',
-    db: sql,
-    query: (text, params) => wrap(sql).query(text, params),
-    forTransaction: wrap,
-    transaction: async (fn) => {
-      const result = await sql.begin(async (tx) => ({ value: await fn(wrap(tx)) }));
-      return result.value;
-    },
-    withDb: bind,
-  });
   try {
-    return await execute(args, bind(db));
+    return await execute(args, createPostgresJsAdapter(db));
   } finally {
     await db.end();
   }

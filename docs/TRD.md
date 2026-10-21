@@ -1033,7 +1033,7 @@ export interface PostgresJsTx {
 | `listen(channel, onNotify, onReconnect, onError)` | `sql.listen(channel, () => onNotify(), () => { if (!first) onReconnect(); first = false; })`; a rejection of the `listen` promise goes to `onError`; close calls `unlisten()`. postgres.js keeps a dedicated listen connection and reconnects itself; `onListen` fires on every (re)connect (A-03). |
 | `name` | `'postgres-js'` |
 
-Parameter passing: every parameter is sent as a string, number, boolean or null; JSON inputs are always `JSON.stringify` strings cast in SQL (`$1::jsonb`). Neither driver tells the server a parameter type for these values (postgres.js `unsafe` and pg both send them untyped), so every parameter in library SQL carries an explicit cast (`$1::text`, `$2::int4`, `$3::int8`, `$4::jsonb`); see §9. `sql.unsafe(text, params)` does not use prepared statements by default and uses the simple query protocol when `params` is empty (A-03), which is what the migration runner relies on for multi-statement templates. Users behind a transaction-mode pooler must still create the client with `prepare: false` for their own tagged-template queries (docs "Operations").
+Parameter passing: every parameter is sent as a string, number, boolean or null; JSON inputs are always `JSON.stringify` strings cast in SQL (`$1::text::jsonb`). postgres.js describes parameters and serializes according to the inferred type: a direct jsonb cast double-encodes an already serialized JSON string. JSON parameters therefore cast through text first (owner D-64). Every parameter in library SQL carries an explicit cast (`$1::text`, `$2::int4`, `$3::int8`, `$4::text::jsonb`); see §9. `sql.unsafe(text, params)` does not use prepared statements by default and uses the simple query protocol when `params` is empty (A-03), which is what the migration runner relies on for multi-statement templates. Users behind a transaction-mode pooler must still create the client with `prepare: false` for their own tagged-template queries (docs "Operations").
 
 ### 6.3 pg adapter (`src/adapters/pg.ts`)
 
@@ -1472,7 +1472,7 @@ E1 (one statement for 1..1000 messages):
 -- $2 text   notify channel, or null when notify is disabled
 with input as (
   select e.ord, e.value as v
-  from jsonb_array_elements($1::jsonb) with ordinality as e(value, ord)
+  from jsonb_array_elements($1::text::jsonb) with ordinality as e(value, ord)
 ),
 ins as (
   insert into "public"."outbox_messages"
@@ -1508,7 +1508,7 @@ E2 (only when a dedupe hit happened):
 ```sql
 -- $1 jsonb  [{ "ord": 0, "topic": "...", "dedupe_key": "..." }]
 select x.ord::int4 as ord, m.id::text as id
-from jsonb_to_recordset($1::jsonb) as x(ord int4, topic text, dedupe_key text)
+from jsonb_to_recordset($1::text::jsonb) as x(ord int4, topic text, dedupe_key text)
 join "public"."outbox_messages" m
   on m.topic = x.topic and m.dedupe_key = x.dedupe_key;
 ```
@@ -1566,7 +1566,7 @@ returning
 C1T adds, after the `available_at` predicate:
 
 ```sql
-    and m.topic = any (array(select jsonb_array_elements_text($4::jsonb)))   -- $4 jsonb topics
+    and m.topic = any (array(select jsonb_array_elements_text($4::text::jsonb)))   -- $4 jsonb topics
 ```
 
 Why this is safe with many relays:
@@ -1587,7 +1587,7 @@ set status       = 'done',
     completed_at = "public"."outbox_now"(),
     locked_by    = null,
     locked_until = null
-from jsonb_to_recordset($2::jsonb) as x(id uuid, attempt int4)
+from jsonb_to_recordset($2::text::jsonb) as x(id uuid, attempt int4)
 where m.id = x.id
   and m.status = 'in_flight'
   and m.locked_by = $1::text
@@ -1615,7 +1615,7 @@ set status = case when x.terminal or m.attempts >= m.max_attempts then 'dead' el
     last_error   = x.error,
     locked_by    = null,
     locked_until = null
-from jsonb_to_recordset($2::jsonb) as x(id uuid, attempt int4, delay_ms int8, error text, terminal boolean)
+from jsonb_to_recordset($2::text::jsonb) as x(id uuid, attempt int4, delay_ms int8, error text, terminal boolean)
 where m.id = x.id
   and m.status = 'in_flight'
   and m.locked_by = $1::text
@@ -1844,7 +1844,7 @@ set status       = 'pending',
     available_at = "public"."outbox_now"(),
     locked_by    = null,
     locked_until = null
-from jsonb_to_recordset($2::jsonb) as x(id uuid, attempt int4)
+from jsonb_to_recordset($2::text::jsonb) as x(id uuid, attempt int4)
 where m.id = x.id
   and m.status = 'in_flight'
   and m.locked_by = $1::text
@@ -1884,7 +1884,7 @@ with picked as materialized (
   select m.id
   from "public"."outbox_messages" m
   where m.status = 'dead'
-    and ($1::jsonb is null or m.id in (select (jsonb_array_elements_text($1::jsonb))::uuid))
+    and ($1::text::jsonb is null or m.id in (select (jsonb_array_elements_text($1::text::jsonb))::uuid))
     and ($2::text is null or m.topic = $2::text)
     and ($3::text is null or m.key = $3::text)
   order by m.dead_at, m.seq
@@ -3586,7 +3586,7 @@ Each assumption has an owner task. If verification fails, apply the stated fallb
 |---|---|---|---|---|
 | A-01 | The npm scope `@firatkill` belongs to the owner's npm account and `@firatkill/outbox` is free (GitHub user is `firatkill`) | `npm whoami` (logged in as owner) prints `firatkill`; `npm view @firatkill/outbox` returns 404; `npm access list packages @firatkill` works | Use `@firatkill/outbox` (or an org scope the owner creates); global rename in one commit; PRD §14 row | T-01 |
 | A-02 | npm trusted publishing (OIDC from GitHub Actions) requires npm CLI ≥ 11.5.1 and can be configured only for a package that already exists, so the first publish uses a short-lived granular token (§16.4, PRD D-44); provenance is generated for public packages from public repositories when `id-token: write` is granted and `repository.url` matches | npm docs "Trusted publishers" and "Generating provenance statements" on the implementation date; after 0.1.0, configure npmjs.com → package → Settings → Trusted publisher (GitHub Actions, `firatkill/outbox`, `publish.yml`, environment `npm`) | If npm allows configuring a trusted publisher before the first publish, skip the token. If trusted publishing is unavailable, keep a granular token in `NPM_TOKEN` (rotated before expiry) and keep `--provenance` | T-38, T-39 |
-| A-03 | postgres.js 3.4+: `unsafe(text, params)` sends string parameters that cast with `$n::jsonb`; `unsafe(text, [])` (empty params) uses the simple query protocol and runs multiple statements (if not, call `.simple()` on the returned query); `listen(channel, fn, onlisten)` quotes the channel, reconnects, and calls `onlisten` after each reconnect; returned rows are array-like | INT-10/12/50/52 with postgres.js; read `postgres` README sections "unsafe" and "listen" | Quote the channel ourselves; wrap multi-statement migrations in a loop over statements split by a `-- statement` marker; implement reconnect detection with a periodic `select 1` on the listen connection | T-08, T-24 |
+| A-03 | postgres.js 3.4+: direct `$n::jsonb` casts double-encode pre-serialized JSON (verified T-08 with 3.4.9); use `$n::text::jsonb` (owner D-64), verified with both drivers; `unsafe(text, [])` (empty params) uses the simple query protocol and runs multiple statements (if not, call `.simple()` on the returned query); `listen(channel, fn, onlisten)` quotes the channel, reconnects, and calls `onlisten` after each reconnect; returned rows are array-like | INT-10/12/50/52 with postgres.js; read `postgres` README sections "unsafe" and "listen" | Quote the channel ourselves; wrap multi-statement migrations in a loop over statements split by a `-- statement` marker; implement reconnect detection with a periodic `select 1` on the listen connection | T-08, T-24 |
 | A-04 | node-postgres 8.11+: parameter-free `client.query(text)` runs multiple statements; `notification` and `error` events behave as described; type parsers do not alter `::text` / `float8` / `int4` results | INT-01, INT-52, INT-82 with pg | Split migrations as in A-03; set per-query `types` to identity parsers | T-09, T-24 |
 | A-05 | `insert ... select ... order by ord` assigns identity values in `ord` order | INT-12 on PostgreSQL 14, 16, 17, 18 | Assign `seq` explicitly: `nextval(pg_get_serial_sequence(...))` in the ordered subquery, or insert row by row inside E1 with `unnest ... with ordinality` and a lateral `nextval` | T-10 |
 | A-06 | BullMQ 5: custom `jobId` must not be an integer string and must not contain `:`; `add` with an existing job id returns the existing job without error while it is retained; `attempts` and `backoff` are job options and `Worker` has no `attempts` option | BullMQ docs "Job Ids" and "Retrying failing jobs"; INT-85 | Adjust the id prefix format (still deterministic from the message id); update docs | T-28 |
