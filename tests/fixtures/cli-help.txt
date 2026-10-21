@@ -1,0 +1,23 @@
+Usage: outbox <command> [options]
+
+Commands:
+  migrate            Apply pending migrations
+  stats              Print queue statistics
+
+Options (all commands):
+  --url <url>        Connection string (default: $DATABASE_URL)
+  --schema <name>    Schema (default: public)
+  --prefix <prefix>  Table prefix (default: outbox_)
+  --driver <name>    postgres-js | pg (default: first installed of postgres, pg)
+  -h, --help
+  -v, --version
+
+migrate options:
+  --dry-run          Print the SQL that would run; change nothing
+  --status           Print applied and pending versions
+  --check            With --status: exit 3 when migrations are pending
+  --print            Print migrationSql() and exit (no connection)
+  --from <n>         With --print: start after version n (default 0)
+
+stats options:
+  --json             Machine-readable output

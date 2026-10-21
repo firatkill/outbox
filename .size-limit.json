@@ -1,0 +1,42 @@
+[
+  {
+    "name": "core",
+    "path": "dist/index.js",
+    "import": "*",
+    "limit": "10 kB",
+    "ignore": ["node:crypto", "node:os"]
+  },
+  {
+    "name": "postgres-js current exports (createOutbox pending T-08)",
+    "path": "dist/postgres-js.js",
+    "import": "*",
+    "limit": "12 kB",
+    "ignore": ["node:crypto", "node:os", "postgres"]
+  },
+  {
+    "name": "pg current exports (createOutbox pending T-09)",
+    "path": "dist/pg.js",
+    "import": "*",
+    "limit": "12 kB",
+    "ignore": ["node:crypto", "node:os", "pg"]
+  },
+  {
+    "name": "webhook",
+    "path": "dist/webhook.js",
+    "import": "*",
+    "limit": "3 kB",
+    "ignore": ["node:crypto"]
+  },
+  {
+    "name": "bullmq",
+    "path": "dist/bullmq.js",
+    "import": "*",
+    "limit": "2 kB"
+  },
+  {
+    "name": "testing",
+    "path": "dist/testing.js",
+    "import": "*",
+    "limit": "2 kB"
+  }
+]
