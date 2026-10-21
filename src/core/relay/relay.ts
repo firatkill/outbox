@@ -2,6 +2,7 @@ import { OutboxError } from '../errors.js';
 import { createEmitter } from '../emitter.js';
 import { schemaVersion } from '../migrations/runner.js';
 import { claim } from '../sql/claim.js';
+import { release } from '../sql/lease.js';
 import { createReclaimer } from './reclaim.js';
 import type {
   DriverAdapter,
@@ -18,7 +19,7 @@ import { createFlusher } from './flush.js';
 import { createSignal, runLoop } from './loop.js';
 import type { SchedulerState } from './scheduler.js';
 
-/** Construct the unordered relay engine. Full lifecycle is completed in T-17. */
+/** Construct the unordered relay engine with single-use lifecycle and fenced shutdown. */
 export function createRelay<TDb, TTx>(
   original: DriverAdapter<TDb, TTx>,
   config: ResolvedOutboxConfig,
@@ -45,10 +46,11 @@ export function createRelay<TDb, TTx>(
   };
   let state: Relay['state'] = 'idle';
   let loop: Promise<void> | undefined;
+  let starting: Promise<void> | undefined;
   let stopPromise: Promise<StopResult> | undefined;
   let schemaChecked = false;
   let onceQueue: Promise<unknown> = Promise.resolve();
-  const active = new Set<Promise<void>>();
+  const active = new Map<Promise<void>, { message: OutboxMessage; controller: AbortController; forced: boolean }>();
   const counts: RunOnceResult = { claimed: 0, delivered: 0, failed: 0, dead: 0, leaseLost: 0, reclaimed: 0 };
   emitter.on('claimed', (event) => {
     counts.claimed += event.count;
@@ -85,8 +87,10 @@ export function createRelay<TDb, TTx>(
       const target: Publisher | undefined = options.publisher ?? options.handlers[message.topic];
       if (!target) throw new OutboxError('OUTBOX_INTERNAL', 'Claimed topic has no target. Please report.');
       scheduler.active++;
-      const pending = deliver(message, target, new AbortController(), options, claimedAt)
+      const delivery = { message, controller: new AbortController(), forced: false };
+      const pending = deliver(message, target, delivery.controller, options, claimedAt)
         .then((outcome) => {
+          if (delivery.forced) return;
           if (outcome.kind === 'done') flusher.complete(outcome);
           else flusher.fail(outcome);
         })
@@ -95,7 +99,7 @@ export function createRelay<TDb, TTx>(
           active.delete(pending);
           slot.emit();
         });
-      active.add(pending);
+      active.set(pending, delivery);
     }
     // Register every claimed delivery before listeners can synchronously request stop.
     emitter.emit('claimed', {
@@ -116,7 +120,7 @@ export function createRelay<TDb, TTx>(
     await reclaimer.pass();
     const started = performance.now();
     startDeliveries(await claimBatch(Math.min(options.batchSize, options.concurrency)), started);
-    await Promise.all(active);
+    await Promise.all(active.keys());
     await flusher.drain();
     return {
       claimed: counts.claimed - previous.claimed,
@@ -127,6 +131,76 @@ export function createRelay<TDb, TTx>(
       reclaimed: counts.reclaimed - previous.reclaimed,
     };
   }
+  const stopping = () => scheduler.stopping;
+  const onAbort = () => {
+    void stop();
+  };
+  function stop(overrides: { drainTimeoutMs?: number } = {}): Promise<StopResult> {
+    if (stopPromise) return stopPromise;
+    if (state === 'idle' || state === 'stopped') {
+      state = 'stopped';
+      stopPromise = Promise.resolve({ drained: true, released: 0, durationMs: 0 });
+      return stopPromise;
+    }
+    const started = performance.now();
+    state = 'stopping';
+    scheduler.stopping = true;
+    stopSignal.emit();
+    reclaimer.stop();
+    options.signal?.removeEventListener('abort', onAbort);
+    stopPromise = (async () => {
+      let timer: ReturnType<typeof setTimeout> | undefined;
+      const timeout = new Promise<false>((resolve) => {
+        timer = setTimeout(() => {
+          resolve(false);
+        }, overrides.drainTimeoutMs ?? options.drainTimeoutMs);
+      });
+      const drain = (async () => {
+        await starting?.catch(() => undefined);
+        await loop;
+        await Promise.all(active.keys());
+        await flusher.drain();
+        return true;
+      })();
+      const drained = await Promise.race([drain, timeout]);
+      clearTimeout(timer);
+      // A claim already in progress must register its deliveries before we fence their release.
+      await starting?.catch(() => undefined);
+      await loop;
+      const remaining = [...active.values()];
+      for (const delivery of remaining) {
+        delivery.forced = true;
+        delivery.controller.abort(new OutboxError('OUTBOX_SHUTDOWN', 'Relay stopped before delivery finished'));
+      }
+      let released = 0;
+      if (remaining.length) {
+        try {
+          released = (
+            await release(
+              adapter,
+              config,
+              relayId,
+              remaining.map(({ message }) => ({ id: message.id, attempt: message.attempts })),
+            )
+          ).length;
+        } catch (error) {
+          emitter.emit('error', {
+            relayId,
+            phase: 'release',
+            error: new OutboxError('OUTBOX_DRIVER', 'Failed release statement', {
+              cause: error,
+              details: { statement: 'release' },
+            }),
+          });
+        }
+      }
+      await Promise.all(active.keys());
+      await flusher.finish();
+      state = 'stopped';
+      return { drained, released, durationMs: performance.now() - started };
+    })();
+    return stopPromise;
+  }
   return {
     id: relayId,
     get state() {
@@ -134,46 +208,39 @@ export function createRelay<TDb, TTx>(
     },
     on: emitter.on,
     off: emitter.off,
-    async start() {
-      if (state !== 'idle') throw wrongState();
+    start() {
+      if (state !== 'idle') return Promise.reject(wrongState());
       state = 'starting';
-      await reclaimer.safely();
-      if (scheduler.stopping) return;
-      state = 'running';
-      reclaimer.start();
-      loop = runLoop({
-        state: scheduler,
-        poll: options.poll,
-        relayId,
-        emitter,
-        slot,
-        wake,
-        stop: stopSignal,
-        claim: claimBatch,
-        deliver: startDeliveries,
-      });
-    },
-    stop() {
-      if (stopPromise) return stopPromise;
-      if (state === 'idle') {
-        state = 'stopped';
-        stopPromise = Promise.resolve({ drained: true, released: 0, durationMs: 0 });
-        return stopPromise;
-      }
-      const started = performance.now();
-      state = 'stopping';
-      scheduler.stopping = true;
-      reclaimer.stop();
-      stopSignal.emit();
-      stopPromise = (async () => {
-        await loop;
-        await Promise.all(active);
-        await flusher.drain();
-        state = 'stopped';
-        return { drained: true, released: 0, durationMs: performance.now() - started };
+      starting = (async () => {
+        try {
+          await schemaVersion(adapter, config);
+          schemaChecked = true;
+        } catch (error) {
+          state = 'stopped';
+          throw error;
+        }
+        if (stopping()) return;
+        await reclaimer.safely();
+        if (stopping()) return;
+        reclaimer.start();
+        state = 'running';
+        loop = runLoop({
+          state: scheduler,
+          poll: options.poll,
+          relayId,
+          emitter,
+          slot,
+          wake,
+          stop: stopSignal,
+          claim: claimBatch,
+          deliver: startDeliveries,
+        });
+        options.signal?.addEventListener('abort', onAbort, { once: true });
+        if (options.signal?.aborted) onAbort();
       })();
-      return stopPromise;
+      return starting;
     },
+    stop,
     runOnce() {
       // Serialize batch calls to preserve the per-relay concurrency limit.
       const next = onceQueue.then(runOnce);

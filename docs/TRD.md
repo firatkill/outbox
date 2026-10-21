@@ -2454,6 +2454,7 @@ Test-writing rules (also in AGENTS.md):
 | UT-17 | `wait.test.ts` | T-02: condition and event waits default to 3 seconds; filter events and unsubscribe after resolution/timeout; deferred resolves/rejects |
 
 | UT-18 | `migrations.test.ts` | T-05: known SHA-256 vector; CRLF normalized to LF before template hashing |
+| UT-19 | `flush.test.ts` | Persistent completion error; final drain attempts once then retries at most three times at 1000ms intervals, leaves no timer, emits no false delivered event |
 
 Concurrency gates apply from their scheduled implementation onward (owner decision D-66): INT-24 in T-16, INT-22 in T-18, INT-41 in T-23, INT-62 in T-26, and both chaos modes in T-30. Earlier task reports must explicitly state which later gates remain unverified. INT-82 claim mapping is completed in T-18, listDead in T-20, and stats in T-21.
 
@@ -2612,6 +2613,8 @@ INT-21 also runs directly against claim SQL before the relay exists.
 | INT-99 | both | runOnce on ordinary retry, NonRetryableError and exhausted messages | Confirmed counts claimed 3 / failed 3 / dead 2 / delivered 0 and matching database statuses |
 
 | INT-100 | both | Start with five unexpired ghost leases, reclaimBatchSize two, one exhausted message; advance test clock past expiry | Periodic reclaim loops through full batches, reports each id once and exhausted deadIds, delivers four and emits one dead event |
+
+| INT-101 | both | Inject complete-statement failures, stop with zero drain timeout, then advance past the lease and recover with another relay | Shutdown bounds final retries to three, retains unconfirmed lease, and recovery delivers attempt two |
 
 ### 15.4 Test harness
 

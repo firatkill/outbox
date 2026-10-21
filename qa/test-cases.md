@@ -1026,3 +1026,12 @@ Designed from PRD 6.4/6.5 and TRD 5.4, 9.2–9.6, 12.3 and 15 before M2 code. Bo
 - Automatable: yes.
 - Steps: Claim five ghost leases, one exhausted, then start a relay with reclaimBatchSize two. Advance database time past expiry and await recovery events.
 - Expected result: Periodic reclamation visits all five once in batches of at most two; four are delivered with attempt two and one is dead with matching deadIds and dead event.
+
+## TC-102: Bounded shutdown flush retries
+
+- Milestone: M2; task: T-17.
+- PRD: FR-36; GU-01; TRD/test reference: INT-101; UT-19; TRD 9.6.3 step 5.
+- Priority: High.
+- Automatable: yes.
+- Steps: Fail the completion statement, stop without drain time, then advance database time beyond the retained lease and recover with a healthy relay.
+- Expected result: Shutdown stops retrying after at most three retries one second apart; the unconfirmed message remains recoverable and completes at attempt two.

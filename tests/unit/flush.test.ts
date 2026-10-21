@@ -150,3 +150,24 @@ describe('UT-09 TC-077/078 flusher; TRD 9.5.4', () => {
     ]);
   });
 });
+
+it('UT-19 TC-102 bounds final flush retries to three one-second retries', async () => {
+  vi.useFakeTimers({ toFake: ['setTimeout', 'clearTimeout', 'performance'] });
+  const query = vi.fn<SqlExecutor['query']>().mockRejectedValue(new Error('offline'));
+  const { flusher, events } = setup(query);
+  flusher.complete(done(1));
+  await vi.advanceTimersByTimeAsync(0);
+  expect(query).toHaveBeenCalledTimes(1);
+  const finish = flusher.finish();
+  await vi.advanceTimersByTimeAsync(0);
+  expect(query).toHaveBeenCalledTimes(2);
+  for (let attempt = 3; attempt <= 5; attempt++) {
+    await vi.advanceTimersByTimeAsync(999);
+    expect(query).toHaveBeenCalledTimes(attempt - 1);
+    await vi.advanceTimersByTimeAsync(1);
+    expect(query).toHaveBeenCalledTimes(attempt);
+  }
+  await finish;
+  expect(vi.getTimerCount()).toBe(0);
+  expect(events.filter((event) => event.name === 'delivered')).toEqual([]);
+});

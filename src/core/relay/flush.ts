@@ -3,6 +3,7 @@ import { formatLastError, OutboxError } from '../errors.js';
 import type { RelayEmitter } from '../emitter.js';
 import type { ResolvedOutboxConfig, SqlExecutor } from '../types.js';
 import type { DeliveryOutcome } from './deliver.js';
+import { createSignal, waitForSignals } from './loop.js';
 
 type Completed = Extract<DeliveryOutcome, { kind: 'done' }>;
 type Failed = Extract<DeliveryOutcome, { kind: 'failed' }>;
@@ -17,6 +18,9 @@ export function createFlusher(
   let fails: Failed[] = [];
   let running: Promise<void> | undefined;
   let errorDelay = 1000;
+  let shutdownRetries: number | undefined;
+  let abandoned = false;
+  const changed = createSignal();
   const { relayId } = options;
   function live<T extends DeliveryOutcome>(items: T[]): T[] {
     return items.filter((item) => performance.now() < item.claimedAtMonotonic + options.leaseMs);
@@ -30,11 +34,19 @@ export function createFlusher(
         details: { statement },
       }),
     });
-    await new Promise((resolve) => setTimeout(resolve, errorDelay));
+    if (shutdownRetries === 0) {
+      abandoned = true;
+      completes = [];
+      fails = [];
+      return;
+    }
+    const delay = shutdownRetries === undefined ? errorDelay : 1000;
+    if (shutdownRetries !== undefined) shutdownRetries--;
+    await waitForSignals([changed], delay);
     errorDelay = Math.min(30000, errorDelay * 2);
   }
   async function flushLoop(): Promise<void> {
-    while (completes.length || fails.length) {
+    while (!abandoned && (completes.length || fails.length)) {
       const expired = [...completes, ...fails].filter(
         (item) => performance.now() >= item.claimedAtMonotonic + options.leaseMs,
       );
@@ -128,7 +140,7 @@ export function createFlusher(
     if (running) return;
     running = flushLoop().finally(() => {
       running = undefined;
-      if (completes.length || fails.length) kick();
+      if (!abandoned && (completes.length || fails.length)) kick();
     });
   }
   return {
@@ -139,6 +151,11 @@ export function createFlusher(
     fail(item: Failed) {
       fails.push(item);
       kick();
+    },
+    async finish() {
+      shutdownRetries = 3;
+      changed.emit();
+      while (running) await running;
     },
     async drain() {
       while (running) await running;
