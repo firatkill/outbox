@@ -21,7 +21,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-05 | M1 | Migration 0001 and runner | done | 16010ec |
 | T-06 | M1 | migrationSql and CLI migrate | done | 80c67b2 |
 | T-07 | M1 | Message validation, JSON and UUIDv7 | done | be11b48 |
-| T-08 | M1 | postgres.js adapter and createOutboxCore skeleton | todo | — |
+| T-08 | M1 | postgres.js adapter and createOutboxCore skeleton | doing | — |
 | T-09 | M1 | pg adapter | todo | — |
 | T-10 | M1 | enqueue | todo | — |
 | T-11 | M1 | Test clock and delays | todo | — |
@@ -81,6 +81,8 @@ A completion commit is recorded only after the task meets its acceptance criteri
 
 ## Open questions for the owner
 
-None. Docs gates are deferred until T-34 (D-61). Staged adapter size measurements are approved only until T-08/T-09, with unchanged limits and restoration required in those tasks (D-63).
+None. Owner approved the A-03 text-first JSON cast correction (D-64); implementation and verification are in progress.
+
+Docs gates are deferred until T-34 (D-61). Staged adapter size measurements are approved only until T-08/T-09, with unchanged limits and restoration required in those tasks (D-63).
 
 Previous decisions resolved: The owner resolved A-01 and approved A-07’s fallback (D-56); M0 local and static CI acceptance is complete.
