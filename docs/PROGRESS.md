@@ -1,6 +1,6 @@
 # Progress
 
-Local repository setup completed on 2026-10-21. M0 implementation is underway. T-01 local acceptance passed; CI is introduced in T-03.
+Local repository setup completed on 2026-10-21. M0 (T-01..T-03) acceptance is complete. Stopped at the milestone boundary; T-04 has not started.
 
 - Read AGENTS.md and all four specification documents from start to finish.
 - Verified the required Git author and committer identity; enabled the executable `.githooks/commit-msg` hook.
@@ -14,9 +14,9 @@ A completion commit is recorded only after the task meets its acceptance criteri
 
 | Task | Milestone | Description | Status | Completion commit |
 |---|---|---|---|---|
-| T-01 | M0 | Repository and tooling | doing | 99f3421 (local acceptance; CI pending T-03) |
-| T-02 | M0 | Local databases and test harness | doing | — |
-| T-03 | M0 | CI static job, guards and Changesets | todo | — |
+| T-01 | M0 | Repository and tooling | done | 99f3421 |
+| T-02 | M0 | Local databases and test harness | done | d1a70eb |
+| T-03 | M0 | CI static job, guards and Changesets | done | 1f50dd1 |
 | T-04 | M1 | Identifiers, config, errors and rendering | todo | — |
 | T-05 | M1 | Migration 0001 and runner | todo | — |
 | T-06 | M1 | migrationSql and CLI migrate | todo | — |
@@ -62,12 +62,15 @@ A completion commit is recorded only after the task meets its acceptance criteri
 ## Verification
 
 - Setup checks passed: required Git identity, hook syntax, executable hook, staged whitespace check, and first commit through the enabled hook.
-- T-01 local install, lint, typecheck, smoke test, build and ESM/CJS artifact checks pass. Database harness and CI follow in T-02/T-03.
+- T-01 local install, lint, typecheck, smoke test, build and ESM/CJS artifact checks pass. Database harness and static CI are now verified.
 - M0 test cases are in `qa/test-cases.md`; preflight results are in `qa/test-results.json`, using qa-test-case-design and qa-test-run-loop with repository overrides.
 - Docker is available. npm package lookup returned the expected E404, and authenticated ownership now verifies as firatkill. A-07 failed because tsup is no longer actively maintained; the owner approved tsdown (D-56).
 - npm metadata initially hit an existing root-owned user-cache entry. Read-only registry checks use a repository-local cache under `.git/npm-cache`; the shared cache was not changed.
-- T-01 tooling and T-02 harness pass locally. PostgreSQL 14/16/17 and Redis are healthy; both drivers and two concurrent harness processes pass. CI follows in T-03.
+- T-01 tooling and T-02 harness pass locally. PostgreSQL 14/16/17 and Redis are healthy; both drivers and two concurrent harness processes pass. The T-03 static CI job passes.
+
+- T-03: 26 unit tests and 4 PostgreSQL integration checks pass locally. The expected missing-changeset failure and label-triggered green rerun are verified in [CI](https://github.com/firatkill/outbox/actions/runs/39565227105).
+- Milestone evidence and verification limits: [M0 report](../qa/m0-report.md) and [QA review](../qa/m0-review.md). Package quality, documentation, chaos and the full runtime CI matrix belong to later tasks and are not verified here.
 
 ## Open questions for the owner
 
-None. The owner resolved A-01 and approved A-07’s fallback (D-56); T-01 implementation is underway.
+None. The owner resolved A-01 and approved A-07’s fallback (D-56); M0 local and static CI acceptance is complete.
