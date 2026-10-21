@@ -27,6 +27,31 @@ export function createPostgresJsAdapter(db: PostgresJsSql): DriverAdapter<Postgr
     query: (text, params) => wrap(db).query(text, params),
     forTransaction: wrap,
     transaction: (fn) => db.begin((tx) => fn(wrap(tx))),
+    listen: async (channel, onNotify, onReconnect, onError) => {
+      let first = true,
+        closed = false;
+      try {
+        const handle = await db.listen(
+          channel,
+          () => {
+            if (!closed) onNotify();
+          },
+          () => {
+            if (!first && !closed) onReconnect();
+            first = false;
+          },
+        );
+        return {
+          close: () => {
+            closed = true;
+            return handle.unlisten();
+          },
+        };
+      } catch (error) {
+        onError(error);
+        throw error;
+      }
+    },
     withDb: createPostgresJsAdapter,
   };
 }

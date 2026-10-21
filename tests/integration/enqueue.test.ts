@@ -139,6 +139,43 @@ describe.each(ADAPTERS)('%s enqueue', (name) => {
       await listener.end();
     }
   });
+  it('INT-19 TC-122 notifies once after commit and suppresses notify:false', async () => {
+    const listen = driver.adapter.listen?.bind(driver.adapter);
+    if (!listen) throw new Error('missing listener');
+    let notifications = 0;
+    const handle = await listen(
+      outbox.config.channel,
+      () => {
+        notifications++;
+      },
+      () => undefined,
+      () => undefined,
+    );
+    try {
+      await driver.adapter.transaction(async (tx) => {
+        await outbox.enqueue(
+          tx,
+          Array.from({ length: 10 }, () => ({ topic: 'notify', payload: null })),
+        );
+        // INT-19 explicitly holds the transaction open for a 200ms negative observation window.
+        await new Promise((resolve) => setTimeout(resolve, 200));
+        expect(notifications).toBe(0);
+      });
+      await waitFor(() => notifications === 1);
+      const silent = createOutboxCore(driver.adapter, { schema: owned.schema, notify: false });
+      await driver.adapter.transaction(async (tx) => {
+        const spy = createSpyExecutor(tx);
+        await silent.enqueue(spy.executor, { topic: 'silent', payload: null });
+        expect(spy.statements).toHaveLength(1);
+        expect(spy.statements[0]?.params[1]).toBeNull();
+      });
+      // Observe absence of notifications after a committed notify:false transaction.
+      await new Promise((resolve) => setTimeout(resolve, 200));
+      expect(notifications).toBe(1);
+    } finally {
+      await handle.close();
+    }
+  });
   it('INT-12 TC-052 sends one statement for 1000 messages and preserves sequence order', async () => {
     await driver.adapter.transaction(async (tx) => {
       const spy = createSpyExecutor(tx);
