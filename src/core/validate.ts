@@ -37,7 +37,7 @@ export function validateMessages(input: unknown, config: ResolvedOutboxConfig): 
       if (!fields.has(field)) invalid(index, field, 'Unknown property');
     }
     const { topic, key, dedupeKey, delayMs, availableAt, maxAttempts } = message;
-    if (typeof topic !== 'string' || !/^[A-Za-z0-9][A-Za-z0-9._:/-]{0,199}$/.test(topic))
+    if (typeof topic !== 'string' || !/^[A-Za-z0-9][A-Za-z0-9._:/-]{0,199}$/.test(topic) || topic.endsWith('\n'))
       invalid(index, 'topic', 'Invalid topic');
     if (key !== undefined && key !== null && !stringLength(key, 1, 200))
       invalid(index, 'key', 'Expected 1..200 characters');
