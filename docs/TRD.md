@@ -2771,11 +2771,11 @@ jobs:
     env:
       PR_LABELS: ${{ join(github.event.pull_request.labels.*.name, ',') }}   # read by the changeset rule (§19.1); empty on push
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0   # the changeset rule diffs against origin/main (§19.1)
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v5
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: pnpm
@@ -2837,9 +2837,9 @@ jobs:
       TEST_DATABASE_URL: postgres://postgres:postgres@localhost:5432/outbox_test
       REDIS_URL: redis://localhost:6379
     steps:
-      - uses: actions/checkout@v5
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v5
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node }}
           cache: pnpm
@@ -2882,9 +2882,9 @@ jobs:
     env:
       DATABASE_URL: postgres://postgres:postgres@localhost:5432/outbox_test
     steps:
-      - uses: actions/checkout@v5
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v5
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: pnpm
@@ -2906,7 +2906,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - name: EX-01
         run: |
           docker compose -f examples/orders/compose.yml up -d --build --wait
@@ -2957,9 +2957,9 @@ jobs:
     env:
       DATABASE_URL: postgres://postgres:postgres@localhost:5432/outbox_bench
     steps:
-      - uses: actions/checkout@v5
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v5
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: pnpm
@@ -3004,9 +3004,9 @@ jobs:
   version:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v5
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v5
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: pnpm
@@ -3043,11 +3043,11 @@ jobs:
     environment: npm
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           ref: ${{ github.event.release.tag_name }}
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v5
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
           registry-url: https://registry.npmjs.org
@@ -3585,7 +3585,7 @@ Each assumption has an owner task. If verification fails, apply the stated fallb
 | A-07 | tsup 8 is maintained enough to use, and `splitting: true` works for CJS output | `pnpm view tsup time` (last release date); run `pnpm build && pnpm check:package`; `require('@firatkill/outbox/pg')` in a CJS smoke script | `splitting: false` for CJS; if tsup is unmaintained or broken, switch to tsdown with the same entry map and output names (PRD §14 row) | T-01, T-33 |
 | A-08 | `@size-limit/preset-small-lib` measures min + brotli and honours `ignore` for `node:*` built-ins | `pnpm size` output lists the six entries with sizes | Use `@size-limit/esbuild` with `"platform": "node"` via a `modifyEsbuildConfig` hook | T-33 |
 | A-09 | VitePress 1.x is the current stable line (or 2.x is stable); `vitepress-plugin-mermaid` supports it; `typedoc-vitepress-theme` and `typedoc-plugin-markdown` match the installed TypeDoc major | `pnpm view vitepress dist-tags`; plugin READMEs; `pnpm docs:build` | Render Mermaid with a small custom markdown-it plugin that emits `<pre class="mermaid">` and loads `mermaid` on the client; generate TypeDoc markdown without the VitePress theme and write the sidebar by hand | T-34 |
-| A-10 | Action majors: `actions/checkout@v5`, `actions/setup-node@v5`, `pnpm/action-setup@v4`, `actions/upload-artifact@v4`, `changesets/action@v1` | Each action's releases page on the implementation date | Use the current major of each; keep inputs the same | T-03, T-32, T-34, T-38 |
+| A-10 | Action majors: `actions/checkout@v7`, `actions/setup-node@v7`, `pnpm/action-setup@v6`, `actions/upload-artifact@v4`, `changesets/action@v1` | Each action's releases page on the implementation date | Use the current major of each; keep inputs the same | T-03, T-32, T-34, T-38 |
 | A-11 | GitHub-hosted `ubuntu-24.04` runners for public repositories have 4 vCPUs and 16 GB RAM; `GITHUB_TOKEN` can open PRs once the repository setting is enabled | GitHub docs "GitHub-hosted runners" (reference table); run `bench.yml` once | Record the actual spec from the JSON; push results to a branch and open the PR manually | T-31 |
 | A-12 | Node 20 is past end of life (since April 2026) but `actions/setup-node` still installs it; `postgres:14` images stay available after PostgreSQL 14's end of life (November 2026); `postgres:18` is a released stable image; whether PostgreSQL 19 is released on the implementation date | Run the matrix; `docker pull postgres:18`; postgresql.org versioning page | Node 20 or PostgreSQL 14 cell unavailable: keep the last green run as evidence, remove the best-effort cell and log it in PRD §14 (§19.3). PostgreSQL 19 released: it is a Could for the matrix after 0.1.0 (PRD D-42), not added before release | T-32 |
 | A-13 | `postgres:14`, `postgres:16`, `postgres:17`, `postgres:18` service containers support `alter system` + `docker restart` to raise `max_connections` | CI step in §16.1 | Lower `maxWorkers` for integration to 2 and pool sizes in tests | T-32 |
