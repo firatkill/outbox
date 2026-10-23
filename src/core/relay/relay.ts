@@ -1,3 +1,4 @@
+import { startTrace } from './tracing.js';
 import { OutboxError } from '../errors.js';
 import { createEmitter } from '../emitter.js';
 import { schemaVersion } from '../migrations/runner.js';
@@ -90,14 +91,27 @@ export function createRelay<TDb, TTx>(
   const topics =
     options.handlers === undefined ? ('topics' in options ? options.topics : undefined) : Object.keys(options.handlers);
   const selectedClaim = claimSql(options.ordering, topics !== undefined);
-  function claimBatch(limit: number) {
-    return claim(adapter, config, {
-      relayId,
-      limit,
-      leaseMs: options.leaseMs,
-      sql: selectedClaim,
-      ...(topics === undefined ? {} : { topics }),
+  async function claimBatch(limit: number) {
+    const span = startTrace(options.tracer, emitter, relayId, 'outbox claim', {
+      'outbox.relay_id': relayId,
+      'outbox.requested': limit,
     });
+    try {
+      const rows = await claim(adapter, config, {
+        relayId,
+        limit,
+        leaseMs: options.leaseMs,
+        sql: selectedClaim,
+        ...(topics === undefined ? {} : { topics }),
+      });
+      span.set('outbox.claimed', rows.length);
+      return rows;
+    } catch (error) {
+      span.error(error);
+      throw error;
+    } finally {
+      span.end();
+    }
   }
   function startDeliveries(rows: OutboxMessage[], claimedAt: number) {
     if (!rows.length) return;
@@ -107,8 +121,18 @@ export function createRelay<TDb, TTx>(
       if (!target) throw new OutboxError('OUTBOX_INTERNAL', 'Claimed topic has no target. Please report.');
       scheduler.active++;
       const delivery = { message, controller: new AbortController(), forced: false };
+      const span = startTrace(options.tracer, emitter, relayId, 'outbox deliver', {
+        'messaging.system': 'outbox',
+        'messaging.operation.type': 'process',
+        'messaging.destination.name': message.topic,
+        'messaging.message.id': message.id,
+        'outbox.attempt': message.attempts,
+        ...(message.key === null ? {} : { 'outbox.key': message.key }),
+      });
       const pending = deliver(message, target, delivery.controller, options, claimedAt)
         .then((outcome) => {
+          if (outcome.kind === 'failed') span.error(outcome.error);
+          span.end();
           if (delivery.forced) return;
           if (outcome.kind === 'done') flusher.complete(outcome);
           else flusher.fail(outcome);

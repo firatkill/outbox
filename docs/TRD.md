@@ -2460,6 +2460,7 @@ Test-writing rules (also in AGENTS.md):
 | UT-17 | `wait.test.ts` | T-02: condition and event waits default to 3 seconds; filter events and unsubscribe after resolution/timeout; deferred resolves/rejects |
 
 | UT-18 | `migrations.test.ts` | T-05: known SHA-256 vector; CRLF normalized to LF before template hashing |
+| UT-23 | `tracing.test.ts` | Throwing tracer startSpan/setAttribute/recordException/end are isolated and reported as error phase listener (§14.2) |
 | UT-22 | `inbox.test.ts` | Inbox consumer/messageId boundaries and invalid types rejected before SQL; callback receives original transaction; result and errors preserved (§5.6/9.8) |
 | UT-21 | `listen.test.ts` | Failed listen openings retry at 1/2/4/8/16/30 seconds, cap at 30 seconds, and stop cancels the pending retry (9.6.3/10.3) |
 | UT-20 | `admin-options.test.ts` | D-71 defaults and boundaries; integer counts and retention; topic/key, boolean, UUID and unknown-option validation |
@@ -2623,6 +2624,7 @@ INT-21 also runs directly against claim SQL before the relay exists.
 
 | INT-100 | both | Start with five unexpired ghost leases, reclaimBatchSize two, one exhausted message; advance test clock past expiry | Periodic reclaim loops through full batches, reports each id once and exhausted deadIds, delivers four and emits one dead event |
 
+| INT-106 | both | Tracer methods throw while one delivery retries | listener-phase errors reported; all delivery and flush outcomes complete (§14.2) |
 | INT-105 | both | Invalid inbox identifiers before SQL; concurrent duplicate waits while first transaction rolls back | OUTBOX_INVALID_MESSAGE with no query; waiting transaction processes, one effect (§5.6/9.8) |
 | INT-104 | both | First listen opening fails; retry succeeds with notifications disabled. Stop while listen opening is pending. | Polling remains running, error phase listen, retry wakes, late-opened handle closes once; TRD 9.6.3 |
 | INT-103 | both | stats before migration; invalid boolean; non-schema driver failure | OUTBOX_NOT_MIGRATED with migration guidance; OUTBOX_CONFIG before SQL; OUTBOX_DRIVER retains cause |

@@ -1,7 +1,8 @@
+import { startTrace } from './tracing.js';
 import { complete, fail } from '../sql/outcome.js';
 import { formatLastError, OutboxError } from '../errors.js';
 import type { RelayEmitter } from '../emitter.js';
-import type { ResolvedOutboxConfig, SqlExecutor } from '../types.js';
+import type { ResolvedOutboxConfig, SqlExecutor, Tracer } from '../types.js';
 import type { DeliveryOutcome } from './deliver.js';
 import { createSignal, waitForSignals } from './loop.js';
 
@@ -11,7 +12,7 @@ type Failed = Extract<DeliveryOutcome, { kind: 'failed' }>;
 export function createFlusher(
   executor: SqlExecutor,
   config: ResolvedOutboxConfig,
-  options: { relayId: string; leaseMs: number },
+  options: { relayId: string; leaseMs: number; tracer?: Tracer },
   emitter: RelayEmitter,
 ) {
   let completes: Completed[] = [];
@@ -63,76 +64,93 @@ export function createFlusher(
       const failed = live(fails);
       completes = [];
       fails = [];
-      if (done.length) {
-        try {
-          const ids = new Set(
-            await complete(
+      const span = startTrace(options.tracer, emitter, relayId, 'outbox flush', {
+        'outbox.completed': 0,
+        'outbox.failed': 0,
+        'outbox.lease_lost': 0,
+      });
+      let lost = 0;
+      try {
+        if (done.length) {
+          try {
+            const ids = new Set(
+              await complete(
+                executor,
+                config,
+                relayId,
+                done.map((item) => ({ id: item.message.id, attempt: item.message.attempts })),
+              ),
+            );
+            errorDelay = 1000;
+            span.set('outbox.completed', ids.size);
+            lost += done.length - ids.size;
+            for (const item of done) {
+              if (ids.has(item.message.id))
+                emitter.emit('delivered', { relayId, message: item.message, durationMs: item.durationMs });
+              else
+                emitter.emit('leaseLost', {
+                  relayId,
+                  id: item.message.id,
+                  attempt: item.message.attempts,
+                  outcome: 'done',
+                });
+            }
+          } catch (error) {
+            span.error(error);
+            completes = [...done, ...completes];
+            // The failed batch has not been sent; retain it for the next cycle.
+            fails = [...failed, ...fails];
+            await retry(error, 'complete');
+            continue;
+          }
+        }
+        if (failed.length) {
+          try {
+            const rows = await fail(
               executor,
               config,
               relayId,
-              done.map((item) => ({ id: item.message.id, attempt: item.message.attempts })),
-            ),
-          );
-          errorDelay = 1000;
-          for (const item of done) {
-            if (ids.has(item.message.id))
-              emitter.emit('delivered', { relayId, message: item.message, durationMs: item.durationMs });
-            else
-              emitter.emit('leaseLost', {
-                relayId,
+              failed.map((item) => ({
                 id: item.message.id,
                 attempt: item.message.attempts,
-                outcome: 'done',
-              });
-          }
-        } catch (error) {
-          completes = [...done, ...completes];
-          // The failed batch has not been sent; retain it for the next cycle.
-          fails = [...failed, ...fails];
-          await retry(error, 'complete');
-          continue;
-        }
-      }
-      if (failed.length) {
-        try {
-          const rows = await fail(
-            executor,
-            config,
-            relayId,
-            failed.map((item) => ({
-              id: item.message.id,
-              attempt: item.message.attempts,
-              delayMs: item.delayMs,
-              error: formatLastError(item.error),
-              terminal: item.terminal,
-            })),
-          );
-          errorDelay = 1000;
-          const byId = new Map(rows.map((row) => [row.id, row]));
-          for (const item of failed) {
-            const row = byId.get(item.message.id);
-            if (!row) {
-              emitter.emit('leaseLost', {
+                delayMs: item.delayMs,
+                error: formatLastError(item.error),
+                terminal: item.terminal,
+              })),
+            );
+            errorDelay = 1000;
+            span.set('outbox.failed', rows.length);
+            lost += failed.length - rows.length;
+            const byId = new Map(rows.map((row) => [row.id, row]));
+            for (const item of failed) {
+              const row = byId.get(item.message.id);
+              if (!row) {
+                emitter.emit('leaseLost', {
+                  relayId,
+                  id: item.message.id,
+                  attempt: item.message.attempts,
+                  outcome: 'failed',
+                });
+                continue;
+              }
+              emitter.emit('failed', {
                 relayId,
-                id: item.message.id,
-                attempt: item.message.attempts,
-                outcome: 'failed',
+                message: item.message,
+                error: item.error,
+                willRetry: row.status === 'pending',
+                retryInMs: row.status === 'pending' ? item.delayMs : null,
               });
-              continue;
+              if (row.status === 'dead') emitter.emit('dead', { relayId, message: item.message, error: item.error });
             }
-            emitter.emit('failed', {
-              relayId,
-              message: item.message,
-              error: item.error,
-              willRetry: row.status === 'pending',
-              retryInMs: row.status === 'pending' ? item.delayMs : null,
-            });
-            if (row.status === 'dead') emitter.emit('dead', { relayId, message: item.message, error: item.error });
+          } catch (error) {
+            span.error(error);
+            fails = [...failed, ...fails];
+            await retry(error, 'fail');
           }
-        } catch (error) {
-          fails = [...failed, ...fails];
-          await retry(error, 'fail');
         }
+      } finally {
+        span.set('outbox.lease_lost', lost);
+        span.end();
       }
     }
   }
