@@ -1,4 +1,5 @@
-import { afterAll, describe, expect, it } from 'vitest';
+import { recordingTracer } from '../helpers/tracing.js';
+import { afterAll, describe, expect, it, vi } from 'vitest';
 import { createOutboxCore } from '../../src/core/outbox.js';
 import { render } from '../../src/core/sql/render.js';
 import { testClock } from '../../src/testing.js';
@@ -204,4 +205,175 @@ describe.each(ADAPTERS)('%s relay lifecycle', (name) => {
     expect(await recovery.runOnce()).toMatchObject({ reclaimed: 1, delivered: 1 });
     expect((await inspect())[0]).toMatchObject({ status: 'done', attempts: 2 });
   });
+  it('INT-74 TC-135 records spans and isolates delivered listeners across retries', async () => {
+    const { outbox, relay: make, inspect } = await setup();
+    const clock = testClock(outbox);
+    await clock.install();
+    const messages = await driver.adapter.transaction((tx) =>
+      outbox.enqueue(tx, [
+        { topic: 't', key: 'key', payload: 1, headers: { traceparent: 'trace-fixture' } },
+        { topic: 't', payload: 2 },
+        { topic: 't', payload: 3 },
+      ]),
+    );
+    const { tracer, spans } = recordingTracer();
+    const failure = new Error('retry once');
+    const headers: unknown[] = [];
+    const relay = make({
+      tracer,
+      retry: { baseDelayMs: 100, jitter: 'none' },
+      publisher: (message) => {
+        headers.push(message.headers);
+        return message.id === messages[0]?.id && message.attempts === 1 ? Promise.reject(failure) : Promise.resolve();
+      },
+    });
+    const events: Record<string, unknown[]> = {};
+    for (const event of ['claimed', 'delivered', 'failed', 'dead', 'reclaimed', 'leaseLost', 'error'] as const)
+      relay.on(event, (payload) => {
+        (events[event] ??= []).push(payload);
+      });
+    relay.on('delivered', () => {
+      throw new Error('delivered listener');
+    });
+    expect(await relay.runOnce()).toMatchObject({ claimed: 3, delivered: 2, failed: 1 });
+    await clock.advance(101);
+    expect(await relay.runOnce()).toMatchObject({ claimed: 1, delivered: 1 });
+    expect((await inspect()).every((row) => row['status'] === 'done')).toBe(true);
+    expect(events['delivered']).toHaveLength(3);
+    expect(events['failed']).toHaveLength(1);
+    expect(events['error']).toHaveLength(3);
+    expect(events['error']?.every((event) => (event as { phase: string }).phase === 'listener')).toBe(true);
+    expect(
+      headers.filter((value) => (value as Record<string, string>)['traceparent'] === 'trace-fixture'),
+    ).toHaveLength(2);
+    const claims = spans.filter((span) => span.name === 'outbox claim');
+    expect(claims).toHaveLength(2);
+    expect(claims.map((span) => span.attributes)).toEqual([
+      { 'outbox.relay_id': relay.id, 'outbox.requested': 10, 'outbox.claimed': 3 },
+      { 'outbox.relay_id': relay.id, 'outbox.requested': 10, 'outbox.claimed': 1 },
+    ]);
+    const deliveries = spans.filter((span) => span.name === 'outbox deliver');
+    expect(deliveries).toHaveLength(4);
+    for (const span of deliveries) {
+      expect(span.attributes).toMatchObject({
+        'messaging.system': 'outbox',
+        'messaging.operation.type': 'process',
+        'messaging.destination.name': 't',
+        'messaging.message.id': expect.any(String) as unknown,
+        'outbox.attempt': expect.any(Number) as unknown,
+      });
+      if (span.attributes['messaging.message.id'] === messages[0]?.id)
+        expect(span.attributes['outbox.key']).toBe('key');
+      else expect(span.attributes).not.toHaveProperty('outbox.key');
+    }
+    expect(deliveries.filter((span) => span.status === 'error')).toEqual([
+      expect.objectContaining({
+        exceptions: [failure],
+        attributes: expect.objectContaining({ 'outbox.attempt': 1 }) as unknown,
+      }),
+    ]);
+    const flushes = spans.filter((span) => span.name === 'outbox flush');
+    expect(flushes.length).toBeGreaterThan(0);
+    for (const [key, expected] of [
+      ['outbox.completed', 3],
+      ['outbox.failed', 1],
+      ['outbox.lease_lost', 0],
+    ] as const)
+      expect(flushes.reduce((sum, span) => sum + Number(span.attributes[key]), 0)).toBe(expected);
+    expect(spans.every((span) => span.status !== undefined)).toBe(true);
+    expect([...claims, ...flushes].every((span) => span.status === 'ok' && span.exceptions.length === 0)).toBe(true);
+  });
+  it('INT-106 TC-144 delivers and retries while tracer callbacks throw', async () => {
+    const { outbox, relay: make, inspect } = await setup(1);
+    const clock = testClock(outbox);
+    await clock.install();
+    const tracerError = new Error('tracer unavailable');
+    const fail = () => {
+      throw tracerError;
+    };
+    const relay = make({
+      tracer: {
+        startSpan(name) {
+          if (name === 'outbox claim') throw tracerError;
+          return { setAttribute: fail, recordException: fail, end: fail };
+        },
+      },
+      retry: { baseDelayMs: 100, jitter: 'none' },
+      publisher: (message) => (message.attempts === 1 ? Promise.reject(new Error('retry')) : Promise.resolve()),
+    });
+    const errors = vi.fn();
+    relay.on('error', errors);
+    expect(await relay.runOnce()).toMatchObject({ failed: 1 });
+    await clock.advance(101);
+    expect(await relay.runOnce()).toMatchObject({ delivered: 1 });
+    expect((await inspect())[0]).toMatchObject({ status: 'done' });
+    expect(errors.mock.calls.length).toBeGreaterThan(0);
+    for (const [event] of errors.mock.calls) expect(event).toMatchObject({ phase: 'listener', error: tracerError });
+  });
+  if (name === 'pg')
+    it('INT-75 TC-136 rate limits console errors during three seconds of connection loss', async () => {
+      const owned = await createTestSchema();
+      const app = owned.schema + '_fallback';
+      const worker = createAdapter(name, { applicationName: app });
+      let claimFailures = 0;
+      const outbox = createOutboxCore(
+        {
+          ...worker.adapter,
+          async query(text, params) {
+            try {
+              return await worker.adapter.query(text, params);
+            } catch (error) {
+              if (/set status\s*=\s*'in_flight'/.test(text)) claimFailures++;
+              throw error;
+            }
+          },
+        },
+        { schema: owned.schema },
+      );
+      const relay = outbox.createRelay({ listen: false, publisher: () => Promise.resolve() });
+      const logged = vi.spyOn(console, 'error').mockImplementation(() => undefined);
+      let timer: ReturnType<typeof setInterval> | undefined;
+      let ending: ReturnType<typeof setTimeout> | undefined;
+      const kills: Promise<unknown>[] = [];
+      try {
+        await outbox.migrate();
+        // Hold a test-owned UPDATE across each termination tick so the fault reaches active SQL.
+        await owned.admin`create function ${owned.admin(owned.schema)}.fault_window() returns trigger language plpgsql as
+        'begin perform pg_sleep(0.3); return null; end'`;
+        await owned.admin`create trigger fault_window before update on ${owned.admin(owned.schema)}.outbox_messages
+        for each statement execute function ${owned.admin(owned.schema)}.fault_window()`;
+        await relay.start();
+        // INT-75 requires a real three-second connection-loss window, not a delivery/time wait.
+        await new Promise<void>((resolve) => {
+          timer = setInterval(() => {
+            kills.push(
+              Promise.resolve(owned.admin`select pg_terminate_backend(pid) from pg_stat_activity
+            where datname = current_database() and application_name = ${app}`),
+            );
+          }, 100);
+          ending = setTimeout(resolve, 3000);
+        });
+        clearInterval(timer);
+        await Promise.all(kills);
+        await owned.admin`drop trigger fault_window on ${owned.admin(owned.schema)}.outbox_messages`;
+        await relay.stop();
+        expect(claimFailures).toBeGreaterThanOrEqual(2);
+        const lines = logged.mock.calls
+          .map(([line]) => String(line))
+          .filter((line) => line.startsWith('[outbox] ' + relay.id));
+        expect(lines.filter((line) => line.includes(' claim: '))).toEqual([
+          '[outbox] ' + relay.id + ' claim: OUTBOX_DRIVER: Failed claim statement',
+        ]);
+        const phases = lines.map((line) => line.split(' ')[2]);
+        expect(new Set(phases).size).toBe(phases.length);
+      } finally {
+        clearInterval(timer);
+        clearTimeout(ending);
+        await Promise.allSettled(kills);
+        await relay.stop();
+        await worker.close();
+        await owned.drop();
+        logged.mockRestore();
+      }
+    });
 });
