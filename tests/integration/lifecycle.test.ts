@@ -54,6 +54,7 @@ describe.each(ADAPTERS)('%s relay lifecycle', (name) => {
   it('INT-70 TC-089 drains claimed work without claiming newly enqueued messages', async () => {
     const { outbox, relay: make, inspect } = await setup(20);
     const durations: number[] = [];
+    const stopRequested = deferred<undefined>();
     const relay = make({
       concurrency: 20,
       batchSize: 20,
@@ -62,6 +63,8 @@ describe.each(ADAPTERS)('%s relay lifecycle', (name) => {
         // The specified 300ms handler workload is real work duration, not a relay/clock wait.
         await new Promise((resolve) => setTimeout(resolve, 300));
         durations.push(performance.now() - start);
+        // Keep the first batch in flight until stop: enqueue latency must not race the 300 ms workload.
+        await stopRequested.promise;
       },
     });
     const claimed = waitForEvent(relay, 'claimed');
@@ -73,7 +76,9 @@ describe.each(ADAPTERS)('%s relay lifecycle', (name) => {
         Array.from({ length: 10 }, () => ({ topic: 't', payload: null })),
       ),
     );
-    expect(await relay.stop({ drainTimeoutMs: 5000 })).toMatchObject({ drained: true, released: 0 });
+    const stopping = relay.stop({ drainTimeoutMs: 5000 });
+    stopRequested.resolve(undefined);
+    expect(await stopping).toMatchObject({ drained: true, released: 0 });
     const rows = await inspect();
     expect(rows.filter((row) => row['status'] === 'done')).toHaveLength(20);
     expect(rows.filter((row) => row['status'] === 'pending')).toHaveLength(10);
