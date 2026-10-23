@@ -425,9 +425,9 @@ What `pnpm typecheck` covers and why (normative): the root config deliberately e
 
 ```json
 [
-  { "name": "core", "path": "dist/index.js", "import": "*", "limit": "13 kB", "ignore": ["node:crypto", "node:os"] },
-  { "name": "postgres-js createOutbox", "path": "dist/postgres-js.js", "import": "{ createOutbox }", "limit": "13 kB", "ignore": ["node:crypto", "node:os", "postgres"] },
-  { "name": "pg createOutbox", "path": "dist/pg.js", "import": "{ createOutbox }", "limit": "13 kB", "ignore": ["node:crypto", "node:os", "pg"] },
+  { "name": "core", "path": "dist/index.js", "import": "*", "limit": "14 kB", "ignore": ["node:crypto", "node:os"] },
+  { "name": "postgres-js createOutbox", "path": "dist/postgres-js.js", "import": "{ createOutbox }", "limit": "14 kB", "ignore": ["node:crypto", "node:os", "postgres"] },
+  { "name": "pg createOutbox", "path": "dist/pg.js", "import": "{ createOutbox }", "limit": "14 kB", "ignore": ["node:crypto", "node:os", "pg"] },
   { "name": "webhook", "path": "dist/webhook.js", "import": "*", "limit": "3 kB", "ignore": ["node:crypto"] },
   { "name": "bullmq", "path": "dist/bullmq.js", "import": "*", "limit": "2 kB" },
   { "name": "testing", "path": "dist/testing.js", "import": "*", "limit": "2 kB" }
@@ -2460,6 +2460,7 @@ Test-writing rules (also in AGENTS.md):
 | UT-17 | `wait.test.ts` | T-02: condition and event waits default to 3 seconds; filter events and unsubscribe after resolution/timeout; deferred resolves/rejects |
 
 | UT-18 | `migrations.test.ts` | T-05: known SHA-256 vector; CRLF normalized to LF before template hashing |
+| UT-22 | `inbox.test.ts` | Inbox consumer/messageId boundaries and invalid types rejected before SQL; callback receives original transaction; result and errors preserved (§5.6/9.8) |
 | UT-21 | `listen.test.ts` | Failed listen openings retry at 1/2/4/8/16/30 seconds, cap at 30 seconds, and stop cancels the pending retry (9.6.3/10.3) |
 | UT-20 | `admin-options.test.ts` | D-71 defaults and boundaries; integer counts and retention; topic/key, boolean, UUID and unknown-option validation |
 | UT-19 | `flush.test.ts` | Persistent completion error; final drain attempts once then retries at most three times at 1000ms intervals, leaves no timer, emits no false delivered event |
@@ -2515,7 +2516,7 @@ Conventions for this table: "both" = runs for postgres.js and pg. `tc` = the tes
 | INT-26 | both | Relay(`handlerTimeoutMs: 200`, `leaseMs: 1200`, `retry: { baseDelayMs: 1000, jitter: 'none' }`), handler awaits `ctx.signal` abort and records the reason | Reason code `OUTBOX_HANDLER_TIMEOUT`; row `pending`, `available_at - now` ≈ 1000 ms (±150), `last_error` starts with `OUTBOX_HANDLER_TIMEOUT`; `failed { willRetry: true }` emitted |
 | INT-27 | both | Messages on topics `a`, `b`, `c`. Relay 1 handlers `{ a }`; `runOnce` ×2. Relay 2 publisher mode `topics: ['b']`; `runOnce` | Relay 1 claims only `a`; relay 2 only `b`; `c` remains `pending` |
 | INT-28 | both | 25 messages; `runOnce()` with `batchSize: 10, concurrency: 10` three times; `runOnce()` after `start()` | Results `claimed` 10, 10, 5 with matching `delivered`; calling `runOnce()` on a started relay throws `OUTBOX_RELAY_STATE` |
-| INT-29 | both | 2,000 messages; postgres.js fault worker uses `fetch_types: false` (D-72); Relay running (`leaseMs: 5000`, `handlerTimeoutMs: 4000`, `reclaimIntervalMs: 500`, so an uncertain claim can expire within the 30 s recovery window); every 200 ms for 2 s terminate the relay's backend connections (`pg_terminate_backend` on `application_name` set for the relay pool) | `error` events with phases `claim`/`flush` occur; the relay keeps running; all 2,000 eventually `done` (timeout 30 s, comment: reconnect backoff) |
+| INT-29 | both | 2,000 messages; postgres.js fault worker uses `fetch_types: false` (D-72); Relay running (`leaseMs: 5000`, `handlerTimeoutMs: 4000`, `reclaimIntervalMs: 500`, so an uncertain claim can expire within the 30 s recovery window); during this fault window a schema-owned UPDATE statement trigger performs 300 ms of work so termination reaches active queries (remove it before recovery); every 200 ms for 2 s terminate the relay's backend connections (`pg_terminate_backend` on `application_name` set for the relay pool) | `error` events with phases `claim`/`flush` occur; the relay keeps running; all 2,000 eventually `done` (timeout 30 s, comment: reconnect backoff) |
 
 #### Retries, dead letters and admin (`retries.test.ts`, `admin.test.ts`)
 
@@ -2622,6 +2623,7 @@ INT-21 also runs directly against claim SQL before the relay exists.
 
 | INT-100 | both | Start with five unexpired ghost leases, reclaimBatchSize two, one exhausted message; advance test clock past expiry | Periodic reclaim loops through full batches, reports each id once and exhausted deadIds, delivers four and emits one dead event |
 
+| INT-105 | both | Invalid inbox identifiers before SQL; concurrent duplicate waits while first transaction rolls back | OUTBOX_INVALID_MESSAGE with no query; waiting transaction processes, one effect (§5.6/9.8) |
 | INT-104 | both | First listen opening fails; retry succeeds with notifications disabled. Stop while listen opening is pending. | Polling remains running, error phase listen, retry wakes, late-opened handle closes once; TRD 9.6.3 |
 | INT-103 | both | stats before migration; invalid boolean; non-schema driver failure | OUTBOX_NOT_MIGRATED with migration guidance; OUTBOX_CONFIG before SQL; OUTBOX_DRIVER retains cause |
 | INT-102 | both | Invalid admin options and IDs; query spy; injected driver error | D-71 codes before SQL; OUTBOX_DRIVER preserves cause and statement |

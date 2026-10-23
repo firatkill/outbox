@@ -51,6 +51,12 @@ describe.each(ADAPTERS)('%s concurrency and resilience', (name) => {
             Array.from({ length: 1000 }, () => ({ topic: 't', payload: null })),
           ),
         );
+      // Keep UPDATE statements active across the 200 ms fault cadence: killing an idle pg
+      // socket is handled by the pool and does not exercise claim/flush recovery.
+      await owned.admin`create function ${owned.admin(owned.schema)}.fault_window() returns trigger language plpgsql as
+        'begin perform pg_sleep(0.3); return null; end'`;
+      await owned.admin`create trigger fault_window before update on ${owned.admin(owned.schema)}.outbox_messages
+        for each statement execute function ${owned.admin(owned.schema)}.fault_window()`;
       await relay.start();
       let ticks = 0;
       const ended = deferred<undefined>();
@@ -65,6 +71,7 @@ describe.each(ADAPTERS)('%s concurrency and resilience', (name) => {
         }
       }, 200);
       await ended.promise;
+      await owned.admin`drop trigger fault_window on ${owned.admin(owned.schema)}.outbox_messages`;
       // Reconnect backoff after two seconds of deliberate connection loss.
       await waitFor(
         async () =>
