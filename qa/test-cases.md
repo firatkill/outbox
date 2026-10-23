@@ -1427,7 +1427,7 @@ Designed from the normative ordering and LISTEN requirements before M4 implement
 ## TC-136: Rate-limited error fallback
 
 - Milestone: M5; task: T-27.
-- PRD: FR-83; TRD/test reference: INT-75; TRD §5.6/9.8/13/14/15 as applicable.
+- PRD: FR-84; TRD/test reference: INT-75; TRD §5.6/9.8/13/14/15 as applicable.
 - Priority: High.
 - Automatable: yes.
 - Preconditions: Task prerequisites complete; isolated PostgreSQL schema for integration; Redis for INT-85 and local HTTP server for INT-86/87.
@@ -1477,7 +1477,7 @@ Designed from the normative ordering and LISTEN requirements before M4 implement
 ## TC-141: Emitter unsubscribe and fallback isolation
 
 - Milestone: M5; task: T-27.
-- PRD: FR-80; FR-83; TRD/test reference: UT-14; TRD §5.6/9.8/13/14/15 as applicable.
+- PRD: FR-80; FR-84; TRD/test reference: UT-14; TRD §5.6/9.8/13/14/15 as applicable.
 - Priority: High.
 - Automatable: yes.
 - Preconditions: Task prerequisites complete; isolated PostgreSQL schema for integration; Redis for INT-85 and local HTTP server for INT-86/87.

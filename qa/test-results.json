@@ -250,6 +250,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605650+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707731+00:00"
         }
       ],
       "regression_of": null,
@@ -257,7 +263,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-007",
@@ -324,6 +330,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605807+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707883+00:00"
         }
       ],
       "regression_of": null,
@@ -331,7 +343,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-024",
@@ -361,6 +373,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605832+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707903+00:00"
         }
       ],
       "regression_of": null,
@@ -368,7 +386,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-008",
@@ -485,6 +503,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605811+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707887+00:00"
         }
       ],
       "regression_of": null,
@@ -492,7 +516,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-013",
@@ -522,6 +546,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605814+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707889+00:00"
         }
       ],
       "regression_of": null,
@@ -529,7 +559,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-014",
@@ -559,6 +589,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605816+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707891+00:00"
         }
       ],
       "regression_of": null,
@@ -566,7 +602,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-015",
@@ -596,6 +632,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605818+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707893+00:00"
         }
       ],
       "regression_of": null,
@@ -603,7 +645,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-016",
@@ -633,6 +675,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605820+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707895+00:00"
         }
       ],
       "regression_of": null,
@@ -640,7 +688,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-017",
@@ -670,6 +718,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605822+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707897+00:00"
         }
       ],
       "regression_of": null,
@@ -677,7 +731,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-018",
@@ -707,6 +761,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605824+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707899+00:00"
         }
       ],
       "regression_of": null,
@@ -714,7 +774,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-019",
@@ -744,6 +804,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605826+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707900+00:00"
         }
       ],
       "regression_of": null,
@@ -751,7 +817,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-020",
@@ -781,6 +847,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605830+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707902+00:00"
         }
       ],
       "regression_of": null,
@@ -788,7 +860,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-021",
@@ -899,6 +971,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605834+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707905+00:00"
         }
       ],
       "regression_of": null,
@@ -906,7 +984,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-026",
@@ -942,6 +1020,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605836+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707907+00:00"
         }
       ],
       "regression_of": null,
@@ -949,7 +1033,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-027",
@@ -985,6 +1069,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605838+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707909+00:00"
         }
       ],
       "regression_of": null,
@@ -992,7 +1082,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-028",
@@ -1040,6 +1130,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605840+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707911+00:00"
         }
       ],
       "regression_of": null,
@@ -1047,7 +1143,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-029",
@@ -1083,6 +1179,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605842+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707913+00:00"
         }
       ],
       "regression_of": null,
@@ -1090,7 +1192,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-030",
@@ -1126,6 +1228,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605844+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707915+00:00"
         }
       ],
       "regression_of": null,
@@ -1133,7 +1241,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-063",
@@ -1163,6 +1271,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605919+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707980+00:00"
         }
       ],
       "regression_of": null,
@@ -1170,7 +1284,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-031",
@@ -1218,6 +1332,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605847+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707917+00:00"
         }
       ],
       "regression_of": null,
@@ -1225,7 +1345,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-032",
@@ -1261,6 +1381,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605849+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707919+00:00"
         }
       ],
       "regression_of": null,
@@ -1268,7 +1394,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-033",
@@ -1304,6 +1430,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605851+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707921+00:00"
         }
       ],
       "regression_of": null,
@@ -1311,7 +1443,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-034",
@@ -1347,6 +1479,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605853+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707923+00:00"
         }
       ],
       "regression_of": null,
@@ -1354,7 +1492,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-035",
@@ -1390,6 +1528,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605856+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707925+00:00"
         }
       ],
       "regression_of": null,
@@ -1397,7 +1541,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-064",
@@ -1433,6 +1577,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605922+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707982+00:00"
         }
       ],
       "regression_of": null,
@@ -1440,7 +1590,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-065",
@@ -1476,6 +1626,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605924+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707984+00:00"
         }
       ],
       "regression_of": null,
@@ -1483,7 +1639,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-036",
@@ -1519,6 +1675,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605860+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707927+00:00"
         }
       ],
       "regression_of": null,
@@ -1526,7 +1688,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-037",
@@ -1562,6 +1724,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605863+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707930+00:00"
         }
       ],
       "regression_of": null,
@@ -1569,7 +1737,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-038",
@@ -1605,6 +1773,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605865+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707932+00:00"
         }
       ],
       "regression_of": null,
@@ -1612,7 +1786,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-039",
@@ -1648,6 +1822,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605868+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707934+00:00"
         }
       ],
       "regression_of": null,
@@ -1655,7 +1835,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-040",
@@ -1691,6 +1871,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605870+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707936+00:00"
         }
       ],
       "regression_of": null,
@@ -1698,7 +1884,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-066",
@@ -2149,6 +2335,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605873+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707939+00:00"
         }
       ],
       "regression_of": null,
@@ -2156,7 +2348,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-047",
@@ -2204,6 +2396,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605876+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707941+00:00"
         }
       ],
       "regression_of": null,
@@ -2211,7 +2409,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-048",
@@ -2247,6 +2445,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605878+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707944+00:00"
         }
       ],
       "regression_of": null,
@@ -2254,7 +2458,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-049",
@@ -2296,6 +2500,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605881+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707946+00:00"
         }
       ],
       "regression_of": null,
@@ -2303,7 +2513,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-058",
@@ -2370,6 +2580,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605889+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707953+00:00"
         }
       ],
       "regression_of": null,
@@ -2377,7 +2593,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-050",
@@ -2413,6 +2629,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605884+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707948+00:00"
         }
       ],
       "regression_of": null,
@@ -2420,7 +2642,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-051",
@@ -2456,6 +2678,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605887+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707951+00:00"
         }
       ],
       "regression_of": null,
@@ -2463,7 +2691,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-053",
@@ -2499,6 +2727,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605892+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707956+00:00"
         }
       ],
       "regression_of": null,
@@ -2506,7 +2740,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-054",
@@ -2542,6 +2776,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605895+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707958+00:00"
         }
       ],
       "regression_of": null,
@@ -2549,7 +2789,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-055",
@@ -2585,6 +2825,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605898+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707961+00:00"
         }
       ],
       "regression_of": null,
@@ -2592,7 +2838,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-056",
@@ -2628,6 +2874,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605901+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707965+00:00"
         }
       ],
       "regression_of": null,
@@ -2635,7 +2887,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-057",
@@ -2671,6 +2923,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605905+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707968+00:00"
         }
       ],
       "regression_of": null,
@@ -2678,7 +2936,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-059",
@@ -2726,6 +2984,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605908+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707970+00:00"
         }
       ],
       "regression_of": null,
@@ -2733,7 +2997,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-060",
@@ -2769,6 +3033,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605911+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707973+00:00"
         }
       ],
       "regression_of": null,
@@ -2776,7 +3046,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-061",
@@ -2812,6 +3082,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605914+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707976+00:00"
         }
       ],
       "regression_of": null,
@@ -2819,7 +3095,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-062",
@@ -2855,6 +3131,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605917+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707979+00:00"
         }
       ],
       "regression_of": null,
@@ -2862,7 +3144,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-068",
@@ -2922,6 +3204,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605927+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707987+00:00"
         }
       ],
       "regression_of": null,
@@ -2929,7 +3217,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-069",
@@ -2989,6 +3277,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605930+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707990+00:00"
         }
       ],
       "regression_of": null,
@@ -2996,7 +3290,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-070",
@@ -3050,6 +3344,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605933+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707992+00:00"
         }
       ],
       "regression_of": null,
@@ -3057,7 +3357,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-071",
@@ -3111,6 +3411,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605936+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707995+00:00"
         }
       ],
       "regression_of": null,
@@ -3118,7 +3424,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-072",
@@ -3172,6 +3478,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605939+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.707998+00:00"
         }
       ],
       "regression_of": null,
@@ -3179,7 +3491,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-073",
@@ -3233,6 +3545,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605942+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708001+00:00"
         }
       ],
       "regression_of": null,
@@ -3240,7 +3558,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-074",
@@ -3294,6 +3612,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605945+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708003+00:00"
         }
       ],
       "regression_of": null,
@@ -3301,7 +3625,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-075",
@@ -3355,6 +3679,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605949+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708006+00:00"
         }
       ],
       "regression_of": null,
@@ -3362,7 +3692,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-076",
@@ -3410,6 +3740,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605952+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708009+00:00"
         }
       ],
       "regression_of": null,
@@ -3417,7 +3753,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-077",
@@ -3465,6 +3801,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605955+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708011+00:00"
         }
       ],
       "regression_of": null,
@@ -3472,7 +3814,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-078",
@@ -3563,6 +3905,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605958+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708014+00:00"
         }
       ],
       "regression_of": null,
@@ -3570,7 +3918,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-098",
@@ -3622,6 +3970,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606021+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708071+00:00"
         }
       ],
       "regression_of": null,
@@ -3629,7 +3983,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-080",
@@ -3677,6 +4031,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605962+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708017+00:00"
         }
       ],
       "regression_of": null,
@@ -3684,7 +4044,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-081",
@@ -3732,6 +4092,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605965+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708020+00:00"
         }
       ],
       "regression_of": null,
@@ -3739,7 +4105,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-082",
@@ -3787,6 +4153,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605968+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708023+00:00"
         }
       ],
       "regression_of": null,
@@ -3794,7 +4166,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-083",
@@ -3878,6 +4250,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605971+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708026+00:00"
         }
       ],
       "regression_of": "Passing targeted or full acceptance before T-21 full run",
@@ -3885,7 +4263,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-099",
@@ -3927,6 +4305,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606024+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708074+00:00"
         }
       ],
       "regression_of": null,
@@ -3934,7 +4318,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-100",
@@ -3976,6 +4360,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606027+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708077+00:00"
         }
       ],
       "regression_of": null,
@@ -3983,7 +4373,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-084",
@@ -4055,6 +4445,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605975+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708029+00:00"
         }
       ],
       "regression_of": null,
@@ -4062,7 +4458,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-085",
@@ -4122,6 +4518,24 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605978+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Local full run after INT-29 fixture correction: INT-23/100 exceeded 3 s, pg INT-41 exceeded 60 s, both INT-29 exceeded 30 s; 178/183 integration tests passed. leases.test.ts cleanup also reported postgres.js CONNECTION_DESTROYED during type discovery. Host load observed near 60; cause not established, deadlines unchanged. Targeted isolation next.",
+          "note": "Local full run after INT-29 fixture correction: INT-23/100 exceeded 3 s, pg INT-41 exceeded 60 s, both INT-29 exceeded 30 s; 178/183 integration tests passed. leases.test.ts cleanup also reported postgres.js CONNECTION_DESTROYED during type discovery. Host load observed near 60; cause not established, deadlines unchanged. Targeted isolation next.",
+          "at": "2026-10-23T09:29:37.043335+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Unchanged isolated INT-23/100 retest: three tests pass across the applicable drivers, no unhandled rejection. Deadlines unchanged.",
+          "note": "Unchanged isolated INT-23/100 retest: three tests pass across the applicable drivers, no unhandled rejection. Deadlines unchanged.",
+          "at": "2026-10-23T09:30:18.721526+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708032+00:00"
         }
       ],
       "regression_of": null,
@@ -4129,7 +4543,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-086",
@@ -4177,6 +4591,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605982+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708035+00:00"
         }
       ],
       "regression_of": null,
@@ -4184,7 +4604,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-087",
@@ -4268,6 +4688,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605985+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708038+00:00"
         }
       ],
       "regression_of": "Passing targeted or full acceptance before T-21 full run",
@@ -4275,7 +4701,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-101",
@@ -4359,6 +4785,24 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606031+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Local full run after INT-29 fixture correction: INT-23/100 exceeded 3 s, pg INT-41 exceeded 60 s, both INT-29 exceeded 30 s; 178/183 integration tests passed. leases.test.ts cleanup also reported postgres.js CONNECTION_DESTROYED during type discovery. Host load observed near 60; cause not established, deadlines unchanged. Targeted isolation next.",
+          "note": "Local full run after INT-29 fixture correction: INT-23/100 exceeded 3 s, pg INT-41 exceeded 60 s, both INT-29 exceeded 30 s; 178/183 integration tests passed. leases.test.ts cleanup also reported postgres.js CONNECTION_DESTROYED during type discovery. Host load observed near 60; cause not established, deadlines unchanged. Targeted isolation next.",
+          "at": "2026-10-23T09:29:37.045138+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Unchanged isolated INT-23/100 retest: three tests pass across the applicable drivers, no unhandled rejection. Deadlines unchanged.",
+          "note": "Unchanged isolated INT-23/100 retest: three tests pass across the applicable drivers, no unhandled rejection. Deadlines unchanged.",
+          "at": "2026-10-23T09:30:18.723180+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708080+00:00"
         }
       ],
       "regression_of": "Passing targeted or full acceptance before T-21 full run",
@@ -4366,7 +4810,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-089",
@@ -4426,6 +4870,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605988+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708041+00:00"
         }
       ],
       "regression_of": null,
@@ -4433,7 +4883,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-090",
@@ -4481,6 +4931,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605992+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708044+00:00"
         }
       ],
       "regression_of": null,
@@ -4488,7 +4944,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-091",
@@ -4542,6 +4998,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605996+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708048+00:00"
         }
       ],
       "regression_of": null,
@@ -4549,7 +5011,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-092",
@@ -4597,6 +5059,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.605999+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708051+00:00"
         }
       ],
       "regression_of": null,
@@ -4604,7 +5072,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-088",
@@ -4707,6 +5175,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606034+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708083+00:00"
         }
       ],
       "regression_of": null,
@@ -4714,7 +5188,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-093",
@@ -4804,6 +5278,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606003+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708054+00:00"
         }
       ],
       "regression_of": "Passing targeted or full acceptance before T-21 full run",
@@ -4811,7 +5291,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-097",
@@ -4865,6 +5345,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606018+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708068+00:00"
         }
       ],
       "regression_of": null,
@@ -4872,7 +5358,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-095",
@@ -4932,6 +5418,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606010+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708061+00:00"
         }
       ],
       "regression_of": null,
@@ -4939,7 +5431,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-096",
@@ -4999,6 +5491,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606014+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708065+00:00"
         }
       ],
       "regression_of": null,
@@ -5006,7 +5504,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-094",
@@ -5138,6 +5636,36 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606007+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "PR CI 39930836495: pg INT-29 delivered all messages but observed no claim/flush error. Killing idle pool sockets does not exercise active SQL failure. Make test-owned UPDATE statements remain active across the existing 200 ms kill cadence; keep fault window/recovery assertions unchanged.",
+          "note": "PR CI 39930836495: pg INT-29 delivered all messages but observed no claim/flush error. Killing idle pool sockets does not exercise active SQL failure. Make test-owned UPDATE statements remain active across the existing 200 ms kill cadence; keep fault window/recovery assertions unchanged.",
+          "at": "2026-10-23T09:22:52.090193+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Targeted INT-29 passes both drivers after deterministic active-query fault injection; all 2000 rows done and claim/flush errors observed. Same kill cadence, 2 s window and 30 s recovery deadline.",
+          "note": "Targeted INT-29 passes both drivers after deterministic active-query fault injection; all 2000 rows done and claim/flush errors observed. Same kill cadence, 2 s window and 30 s recovery deadline.",
+          "at": "2026-10-23T09:24:53.892109+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Local full run after INT-29 fixture correction: INT-23/100 exceeded 3 s, pg INT-41 exceeded 60 s, both INT-29 exceeded 30 s; 178/183 integration tests passed. leases.test.ts cleanup also reported postgres.js CONNECTION_DESTROYED during type discovery. Host load observed near 60; cause not established, deadlines unchanged. Targeted isolation next.",
+          "note": "Local full run after INT-29 fixture correction: INT-23/100 exceeded 3 s, pg INT-41 exceeded 60 s, both INT-29 exceeded 30 s; 178/183 integration tests passed. leases.test.ts cleanup also reported postgres.js CONNECTION_DESTROYED during type discovery. Host load observed near 60; cause not established, deadlines unchanged. Targeted isolation next.",
+          "at": "2026-10-23T09:29:37.045172+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Isolated INT-29/41 retest passes all four driver scenarios with unchanged fault and completion deadlines; 30.47 s overall, no unhandled errors.",
+          "note": "Isolated INT-29/41 retest passes all four driver scenarios with unchanged fault and completion deadlines; 30.47 s overall, no unhandled errors.",
+          "at": "2026-10-23T09:31:34.246837+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708058+00:00"
         }
       ],
       "regression_of": "M2 passing INT-29 runs recorded before T-20",
@@ -5145,7 +5673,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-103",
@@ -5199,6 +5727,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606038+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708086+00:00"
         }
       ],
       "regression_of": null,
@@ -5206,7 +5740,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-104",
@@ -5260,6 +5794,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606042+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708090+00:00"
         }
       ],
       "regression_of": null,
@@ -5267,7 +5807,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-105",
@@ -5321,6 +5861,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606046+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708093+00:00"
         }
       ],
       "regression_of": null,
@@ -5328,7 +5874,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-106",
@@ -5382,6 +5928,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606050+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708096+00:00"
         }
       ],
       "regression_of": null,
@@ -5389,7 +5941,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-107",
@@ -5443,6 +5995,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606054+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708100+00:00"
         }
       ],
       "regression_of": null,
@@ -5450,7 +6008,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-114",
@@ -5528,6 +6086,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606082+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708124+00:00"
         }
       ],
       "regression_of": null,
@@ -5535,7 +6099,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-108",
@@ -5601,6 +6165,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606058+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708103+00:00"
         }
       ],
       "regression_of": null,
@@ -5608,7 +6178,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-110",
@@ -5674,6 +6244,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606066+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708110+00:00"
         }
       ],
       "regression_of": null,
@@ -5681,7 +6257,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-109",
@@ -5759,6 +6335,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606062+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708107+00:00"
         }
       ],
       "regression_of": null,
@@ -5766,7 +6348,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-111",
@@ -5844,6 +6426,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606070+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708114+00:00"
         }
       ],
       "regression_of": null,
@@ -5851,7 +6439,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-112",
@@ -5923,6 +6511,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606074+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708117+00:00"
         }
       ],
       "regression_of": "Passing targeted or full acceptance before T-21 full run",
@@ -5930,7 +6524,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-113",
@@ -5984,6 +6578,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606078+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708121+00:00"
         }
       ],
       "regression_of": null,
@@ -5991,7 +6591,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-115",
@@ -6063,6 +6663,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606086+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708128+00:00"
         }
       ],
       "regression_of": "Passing targeted or full acceptance before T-21 full run",
@@ -6070,7 +6676,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-116",
@@ -6112,6 +6718,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606090+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708131+00:00"
         }
       ],
       "regression_of": null,
@@ -6119,7 +6731,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-117",
@@ -6161,6 +6773,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606094+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708135+00:00"
         }
       ],
       "regression_of": null,
@@ -6168,7 +6786,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-120",
@@ -6210,6 +6828,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606108+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708146+00:00"
         }
       ],
       "regression_of": null,
@@ -6217,7 +6841,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-118",
@@ -6265,6 +6889,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606100+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708139+00:00"
         }
       ],
       "regression_of": null,
@@ -6272,7 +6902,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-119",
@@ -6332,6 +6962,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606104+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708142+00:00"
         }
       ],
       "regression_of": null,
@@ -6339,7 +6975,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-121",
@@ -6393,6 +7029,24 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606113+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Local full run after INT-29 fixture correction: INT-23/100 exceeded 3 s, pg INT-41 exceeded 60 s, both INT-29 exceeded 30 s; 178/183 integration tests passed. leases.test.ts cleanup also reported postgres.js CONNECTION_DESTROYED during type discovery. Host load observed near 60; cause not established, deadlines unchanged. Targeted isolation next.",
+          "note": "Local full run after INT-29 fixture correction: INT-23/100 exceeded 3 s, pg INT-41 exceeded 60 s, both INT-29 exceeded 30 s; 178/183 integration tests passed. leases.test.ts cleanup also reported postgres.js CONNECTION_DESTROYED during type discovery. Host load observed near 60; cause not established, deadlines unchanged. Targeted isolation next.",
+          "at": "2026-10-23T09:29:37.045162+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Isolated INT-29/41 retest passes all four driver scenarios with unchanged fault and completion deadlines; 30.47 s overall, no unhandled errors.",
+          "note": "Isolated INT-29/41 retest passes all four driver scenarios with unchanged fault and completion deadlines; 30.47 s overall, no unhandled errors.",
+          "at": "2026-10-23T09:31:34.247260+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708150+00:00"
         }
       ],
       "regression_of": null,
@@ -6400,7 +7054,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-122",
@@ -6448,6 +7102,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606117+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708154+00:00"
         }
       ],
       "regression_of": null,
@@ -6455,7 +7115,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-124",
@@ -6503,6 +7163,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606127+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708161+00:00"
         }
       ],
       "regression_of": null,
@@ -6510,7 +7176,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-128",
@@ -6582,6 +7248,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606145+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708176+00:00"
         }
       ],
       "regression_of": null,
@@ -6589,7 +7261,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-123",
@@ -6643,6 +7315,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606122+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708158+00:00"
         }
       ],
       "regression_of": null,
@@ -6650,7 +7328,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-125",
@@ -6716,6 +7394,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606132+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708165+00:00"
         }
       ],
       "regression_of": null,
@@ -6723,7 +7407,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-126",
@@ -6783,6 +7467,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606137+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708169+00:00"
         }
       ],
       "regression_of": null,
@@ -6790,7 +7480,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-127",
@@ -6850,6 +7540,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606141+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708173+00:00"
         }
       ],
       "regression_of": null,
@@ -6857,7 +7553,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-129",
@@ -6887,6 +7583,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606150+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708180+00:00"
         }
       ],
       "regression_of": null,
@@ -6894,7 +7596,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-130",
@@ -6924,6 +7626,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606154+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708184+00:00"
         }
       ],
       "regression_of": null,
@@ -6931,7 +7639,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-131",
@@ -6961,6 +7669,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606158+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708188+00:00"
         }
       ],
       "regression_of": null,
@@ -6968,7 +7682,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-132",
@@ -6998,6 +7712,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606163+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708192+00:00"
         }
       ],
       "regression_of": null,
@@ -7005,7 +7725,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-133",
@@ -7035,6 +7755,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606168+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708196+00:00"
         }
       ],
       "regression_of": null,
@@ -7042,7 +7768,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-134",
@@ -7072,6 +7798,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606173+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708200+00:00"
         }
       ],
       "regression_of": null,
@@ -7079,7 +7811,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     },
     {
       "tc_reference": "TC-140",
@@ -7121,6 +7853,12 @@
           "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
           "at": "2026-10-23T09:16:48.606177+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
+          "at": "2026-10-23T09:33:05.708204+00:00"
         }
       ],
       "regression_of": null,
@@ -7128,7 +7866,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
     }
   ]
 }
