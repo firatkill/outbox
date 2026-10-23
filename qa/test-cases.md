@@ -1503,3 +1503,13 @@ Designed from the normative ordering and LISTEN requirements before M4 implement
 - Preconditions: Task prerequisites complete; isolated PostgreSQL schema for integration; Redis for INT-85 and local HTTP server for INT-86/87.
 - Steps: Reproduce the published Standard Webhooks vector and committed raw-secret vector; verify valid and mutated requests, missing headers, timestamp boundaries and multiple signatures. Inject fetch responses for each status class, redirects, Retry-After forms and failures; inspect errors for secret leakage.
 - Expected result: Signing test vector; `whsec_` secret decoding; `verifyWebhook` accepts valid, rejects tampered body, wrong secret, missing header, timestamp outside tolerance, and accepts when one of several signatures matches; `Retry-After` parsing (`"3"`, HTTP-date, garbage); status classification table with an injected `fetch`; redirect not followed; secret absent from error messages
+
+## TC-144: Tracer callback failure isolation
+
+- Milestone: M5; task: T-27.
+- PRD: FR-80; FR-82; TRD/test reference: UT-23; INT-106; TRD §14.2.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Isolated migrated PostgreSQL schema, both drivers, throwing tracer fixture.
+- Steps: Throw separately from startSpan, setAttribute, recordException and end; deliver messages including one failed attempt, observe listener-phase errors and retry.
+- Expected result: Tracer failures produce listener-phase error events; relay delivery, retries and flush outcomes still complete.
