@@ -117,7 +117,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 
 - T-25 / M4: all six latency/polling checks passed three consecutive runs with both drivers. Full suite: 187 unit / 169 PG17 integration. Static/ledger gates and [implementation CI](https://github.com/firatkill/outbox/actions/runs/39663538826) pass; final report-commit CI enforced before merge. [M4 report](../qa/m4-report.md) and [review](../qa/m4-review.md) disclose the approved driver cleanup limitation, the initial latency outlier and deferred gates.
 
-- T-26: 204 unit / 183 PG17 integration tests pass, including INT-22/24/41/62. Static/build/package/approved size gates pass. Initial INT-70 fixture race corrected against the shutdown requirement; initial INT-23 startup timeout did not recur, cause unconfirmed. PR CI pending. Docs gates remain deferred to T-34 and chaos to T-30.
+- T-26: 204 unit / 183 PG17 integration tests pass, including INT-22/24/41/62. Static/build/package/approved size gates pass. Initial INT-70 fixture race corrected against the shutdown requirement; initial INT-23 startup timeout did not recur, cause unconfirmed. Initial PR CI exposed INT-29 terminating idle pg sockets without a claim/flush error; deterministic active-statement fault injection now passes. A subsequent local full run had five timeouts and a driver cleanup rejection; all targeted checks and the final 204/183 full run pass unchanged. Updated PR CI pending. Docs gates remain deferred to T-34 and chaos to T-30.
 
 ## Open questions for the owner
 
