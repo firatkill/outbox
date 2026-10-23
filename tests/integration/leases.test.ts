@@ -1,3 +1,4 @@
+import { recordingTracer } from '../helpers/tracing.js';
 import { spawn } from 'node:child_process';
 import { afterAll, describe, expect, it, vi } from 'vitest';
 import { createOutboxCore } from '../../src/core/outbox.js';
@@ -101,11 +102,13 @@ describe.each(ADAPTERS)('%s lease recovery', (name) => {
         await exited;
       }
     });
-  it('INT-24 TC-086 fences a late completion after another relay completes the newer attempt', async () => {
+  it('INT-24 TC-086 TC-135 fences a late completion after another relay completes the newer attempt', async () => {
     const { outbox, clock, relay: make, inspect } = await setup();
     const gate = deferred<undefined>(),
       started = deferred<undefined>();
+    const { tracer, spans } = recordingTracer();
     const a = make({
+      tracer,
       leaseMs: 120000,
       handlerTimeoutMs: 110000,
       publisher: async () => {
@@ -137,6 +140,9 @@ describe.each(ADAPTERS)('%s lease recovery', (name) => {
       gate.resolve(undefined);
       expect(await running).toMatchObject({ delivered: 0, leaseLost: 1 });
       expect(await lost).toMatchObject({ outcome: 'done', attempt: 1 });
+      const flushes = spans.filter((span) => span.name === 'outbox flush');
+      expect(flushes.reduce((sum, span) => sum + Number(span.attributes['outbox.lease_lost']), 0)).toBe(1);
+      expect(flushes.reduce((sum, span) => sum + Number(span.attributes['outbox.completed']), 0)).toBe(0);
       expect(deliveredA).not.toHaveBeenCalled();
       expect(await inspect()).toEqual(before);
       expect(before[0]).toMatchObject({ status: 'done', attempts: 2 });

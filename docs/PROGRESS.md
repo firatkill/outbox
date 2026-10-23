@@ -1,6 +1,6 @@
 # Progress
 
-Local repository setup completed on 2026-10-21. M0 (T-01..T-03), M1 (T-04..T-11), M2 (T-12..T-18), M3 (T-19..T-21) and M4 (T-22..T-25) are complete. M5 started with owner approval; T-26 inbox implementation and verification are complete; T-27 is next.
+Local repository setup completed on 2026-10-21. M0 (T-01..T-03), M1 (T-04..T-11), M2 (T-12..T-18), M3 (T-19..T-21) and M4 (T-22..T-25) are complete. M5 started with owner approval; T-26 inbox implementation and verification are complete; T-27 observability implementation and verification are in progress.
 
 - Read AGENTS.md and all four specification documents from start to finish.
 - Verified the required Git author and committer identity; enabled the executable `.githooks/commit-msg` hook.
@@ -40,7 +40,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-24 | M4 | NOTIFY and LISTEN in adapters | done | e84095c |
 | T-25 | M4 | Wake-up scheduling and latency | done | 695b2c3 |
 | T-26 | M5 | Inbox | done | `8d40d59` |
-| T-27 | M5 | Events, tracer and console fallback | todo | — |
+| T-27 | M5 | Events, tracer and console fallback | doing | — |
 | T-28 | M5 | BullMQ publisher | todo | — |
 | T-29 | M5 | Webhook publisher and verifyWebhook | todo | — |
 | T-30 | M6 | Chaos script | todo | — |
@@ -118,6 +118,8 @@ A completion commit is recorded only after the task meets its acceptance criteri
 - T-25 / M4: all six latency/polling checks passed three consecutive runs with both drivers. Full suite: 187 unit / 169 PG17 integration. Static/ledger gates and [implementation CI](https://github.com/firatkill/outbox/actions/runs/39663538826) pass; final report-commit CI enforced before merge. [M4 report](../qa/m4-report.md) and [review](../qa/m4-review.md) disclose the approved driver cleanup limitation, the initial latency outlier and deferred gates.
 
 - T-26: 204 unit / 183 PG17 integration tests pass, including INT-22/24/41/62. Static/build/package/approved size gates pass. Initial INT-70 fixture race corrected against the shutdown requirement; initial INT-23 startup timeout did not recur, cause unconfirmed. Initial PR CI exposed INT-29 terminating idle pg sockets without a claim/flush error; deterministic active-statement fault injection now passes. A subsequent local full run had five timeouts and a driver cleanup rejection; all targeted checks and the final 204/183 full run pass unchanged. [Implementation PR CI](https://github.com/firatkill/outbox/actions/runs/39932699712) passes; final documentation commit CI is enforced before merge. Docs gates remain deferred to T-34 and chaos to T-30.
+
+- T-27: tracer spans, callback isolation and rate-limited console fallback pass targeted acceptance. Full suite: 210 unit / 188 PG17 integration; INT-22/24/41/62 included. Static/build/package/14 kB size and ledger gates pass; PR CI pending. Docs and chaos retain D-61/D-66 scheduling.
 
 ## Open questions for the owner
 
