@@ -5666,6 +5666,12 @@
           "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
           "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
           "at": "2026-10-23T09:33:05.708058+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs.",
+          "note": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs.",
+          "at": "2026-10-23T09:35:29.728122+00:00"
         }
       ],
       "regression_of": "M2 passing INT-29 runs recorded before T-20",
@@ -5673,7 +5679,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
+      "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs."
     },
     {
       "tc_reference": "TC-103",
@@ -7589,6 +7595,12 @@
           "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
           "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
           "at": "2026-10-23T09:33:05.708180+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs.",
+          "note": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs.",
+          "at": "2026-10-23T09:35:29.727928+00:00"
         }
       ],
       "regression_of": null,
@@ -7596,7 +7608,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
+      "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs."
     },
     {
       "tc_reference": "TC-130",
@@ -7632,6 +7644,12 @@
           "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
           "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
           "at": "2026-10-23T09:33:05.708184+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs.",
+          "note": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs.",
+          "at": "2026-10-23T09:35:29.728093+00:00"
         }
       ],
       "regression_of": null,
@@ -7639,7 +7657,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
+      "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs."
     },
     {
       "tc_reference": "TC-131",
@@ -7675,6 +7693,12 @@
           "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
           "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
           "at": "2026-10-23T09:33:05.708188+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs.",
+          "note": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs.",
+          "at": "2026-10-23T09:35:29.728100+00:00"
         }
       ],
       "regression_of": null,
@@ -7682,7 +7706,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
+      "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs."
     },
     {
       "tc_reference": "TC-132",
@@ -7718,6 +7742,12 @@
           "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
           "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
           "at": "2026-10-23T09:33:05.708192+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs.",
+          "note": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs.",
+          "at": "2026-10-23T09:35:29.728105+00:00"
         }
       ],
       "regression_of": null,
@@ -7725,7 +7755,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
+      "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs."
     },
     {
       "tc_reference": "TC-133",
@@ -7761,6 +7791,12 @@
           "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
           "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
           "at": "2026-10-23T09:33:05.708196+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs.",
+          "note": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs.",
+          "at": "2026-10-23T09:35:29.728110+00:00"
         }
       ],
       "regression_of": null,
@@ -7768,7 +7804,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
+      "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs."
     },
     {
       "tc_reference": "TC-134",
@@ -7804,6 +7840,12 @@
           "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
           "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
           "at": "2026-10-23T09:33:05.708200+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs.",
+          "note": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs.",
+          "at": "2026-10-23T09:35:29.728114+00:00"
         }
       ],
       "regression_of": null,
@@ -7811,7 +7853,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
+      "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs."
     },
     {
       "tc_reference": "TC-140",
@@ -7859,6 +7901,12 @@
           "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
           "note": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed.",
           "at": "2026-10-23T09:33:05.708204+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs.",
+          "note": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs.",
+          "at": "2026-10-23T09:35:29.728118+00:00"
         }
       ],
       "regression_of": null,
@@ -7866,7 +7914,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "Final T-26 full rerun after fault-fixture correction: 204 unit / 183 PG17 integration tests pass, no unhandled errors. INT-22/24/41/62 included; no deadlines or concurrency settings changed."
+      "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39932699712 (8d40d59), including static and full PG17 integration jobs."
     }
   ]
 }
