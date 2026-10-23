@@ -1333,3 +1333,173 @@ Designed from the normative ordering and LISTEN requirements before M4 implement
 - Preconditions: Isolated migrated schema and both drivers.
 - Steps: Fail the first listener opening, enqueue without notifications, and observe retry; separately stop during a pending opening and release it.
 - Expected result: Polling remains running; error phase listen; retry wakes delivery; shutdown closes the late-opened handle exactly once.
+
+# M5 — Inbox and publishers
+
+| Case   | Requirement         | Behaviour                                                             | Priority | Automatable |
+| ------ | ------------------- | --------------------------------------------------------------------- | -------- | ----------- |
+| TC-129 | FR-75               | Inbox deduplication and consumer isolation (INT-60)                   | High     | yes         |
+| TC-130 | FR-75; FR-76; GU-05 | Inbox rollback and retry (INT-61)                                     | High     | yes         |
+| TC-131 | FR-76; GU-05        | Concurrent inbox duplicates (INT-62)                                  | High     | yes         |
+| TC-132 | FR-75; GU-05        | Inbox effects survive relay redelivery (INT-63)                       | High     | yes         |
+| TC-133 | FR-78               | Inbox retention uses database time (INT-64)                           | High     | yes         |
+| TC-134 | FR-75               | Standalone consumer inbox (INT-65)                                    | High     | yes         |
+| TC-135 | FR-80; FR-82..FR-84 | Tracer spans and listener isolation (INT-74)                          | High     | yes         |
+| TC-136 | FR-83               | Rate-limited error fallback (INT-75)                                  | High     | yes         |
+| TC-137 | FR-66; FR-67        | BullMQ retained job deduplication (INT-85)                            | High     | yes         |
+| TC-138 | FR-68; FR-69        | Webhook outcomes and retries (INT-86)                                 | High     | yes         |
+| TC-139 | FR-70               | Webhook wire signature verification (INT-87)                          | High     | yes         |
+| TC-140 | FR-75; FR-77        | Inbox identifier validation and original transaction (UT-22; INT-105) | High     | yes         |
+| TC-141 | FR-80; FR-83        | Emitter unsubscribe and fallback isolation (UT-14)                    | High     | yes         |
+| TC-142 | FR-66; FR-67        | BullMQ configuration and queue resolution (UT-13)                     | High     | yes         |
+| TC-143 | FR-68..FR-70        | Webhook fixed vectors and invalid requests (UT-11)                    | High     | yes         |
+
+## TC-129: Inbox deduplication and consumer isolation
+
+- Milestone: M5; task: T-26.
+- PRD: FR-75; TRD/test reference: INT-60; TRD §5.6/9.8/13/14/15 as applicable.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Task prerequisites complete; isolated PostgreSQL schema for integration; Redis for INT-85 and local HTTP server for INT-86/87.
+- Steps: `withInbox(tx, 'c1', 'm1', fn)` twice (two transactions), then with consumer `c2`
+- Expected result: `processed` with `fn`'s result, then `duplicate` (fn not called), then `processed` for `c2`
+
+## TC-130: Inbox rollback and retry
+
+- Milestone: M5; task: T-26.
+- PRD: FR-75; FR-76; GU-05; TRD/test reference: INT-61; TRD §5.6/9.8/13/14/15 as applicable.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Task prerequisites complete; isolated PostgreSQL schema for integration; Redis for INT-85 and local HTTP server for INT-86/87.
+- Steps: Transaction: `withInbox` with `fn` that inserts an effect row then throws; transaction rolls back; retry
+- Expected result: No inbox row and no effect after the first; second processes; one effect row
+
+## TC-131: Concurrent inbox duplicates
+
+- Milestone: M5; task: T-26.
+- PRD: FR-76; GU-05; TRD/test reference: INT-62; TRD §5.6/9.8/13/14/15 as applicable.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Task prerequisites complete; isolated PostgreSQL schema for integration; Redis for INT-85 and local HTTP server for INT-86/87.
+- Steps: 10 concurrent transactions (separate connections) each `withInbox(tx, 'c', 'm', fn inserting an effect, sleeping 50 ms)`
+- Expected result: Exactly 1 `processed`, 9 `duplicate`; exactly 1 effect row
+
+## TC-132: Inbox effects survive relay redelivery
+
+- Milestone: M5; task: T-26.
+- PRD: FR-75; GU-05; TRD/test reference: INT-63; TRD §5.6/9.8/13/14/15 as applicable.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Task prerequisites complete; isolated PostgreSQL schema for integration; Redis for INT-85 and local HTTP server for INT-86/87.
+- Steps: Relay handler: `withInbox(tx, 'mailer', msg.id, insert effect)`. Force a redelivery with the INT-24 pattern (A's handler commits its inbox transaction, then A loses its lease; B redelivers)
+- Expected result: Two deliveries, one effect row; B's `withInbox` returned `duplicate`
+
+## TC-133: Inbox retention uses database time
+
+- Milestone: M5; task: T-26.
+- PRD: FR-78; TRD/test reference: INT-64; TRD §5.6/9.8/13/14/15 as applicable.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Task prerequisites complete; isolated PostgreSQL schema for integration; Redis for INT-85 and local HTTP server for INT-86/87.
+- Steps: 3 old inbox rows (advance clock 8 days), 2 recent; `purgeInbox({ olderThanMs: 7 days })`
+- Expected result: Deletes 3
+
+## TC-134: Standalone consumer inbox
+
+- Milestone: M5; task: T-26.
+- PRD: FR-75; TRD/test reference: INT-65; TRD §5.6/9.8/13/14/15 as applicable.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Task prerequisites complete; isolated PostgreSQL schema for integration; Redis for INT-85 and local HTTP server for INT-86/87.
+- Steps: `createInbox({ db, schema: 'consumer_x' })` in a different schema than the outbox; migrate it; `withInbox`
+- Expected result: Row lands in `consumer_x.outbox_inbox`; works without any outbox messages table being used
+
+## TC-135: Tracer spans and listener isolation
+
+- Milestone: M5; task: T-27.
+- PRD: FR-80; FR-82..FR-84; TRD/test reference: INT-74; TRD §5.6/9.8/13/14/15 as applicable.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Task prerequisites complete; isolated PostgreSQL schema for integration; Redis for INT-85 and local HTTP server for INT-86/87.
+- Steps: Fake tracer recording spans; listeners for every event, one `delivered` listener that throws; deliver 3 (one fails once)
+- Expected result: Spans `outbox claim`, `outbox deliver` ×4, `outbox flush` with attributes from §14.2; deliver span for the failure ended with `error` and `recordException`; the throwing listener produced `error` phase `listener`; all 3 delivered
+
+## TC-136: Rate-limited error fallback
+
+- Milestone: M5; task: T-27.
+- PRD: FR-83; TRD/test reference: INT-75; TRD §5.6/9.8/13/14/15 as applicable.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Task prerequisites complete; isolated PostgreSQL schema for integration; Redis for INT-85 and local HTTP server for INT-86/87.
+- Steps: No `error` listener; terminate connections to force claim errors for 3 s; spy `console.error`
+- Expected result: At most one line per phase per 10 s; line format `[outbox] <relayId> claim: ...`
+
+## TC-137: BullMQ retained job deduplication
+
+- Milestone: M5; task: T-28.
+- PRD: FR-66; FR-67; TRD/test reference: INT-85; TRD §5.6/9.8/13/14/15 as applicable.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Task prerequisites complete; isolated PostgreSQL schema for integration; Redis for INT-85 and local HTTP server for INT-86/87.
+- Steps: Real Redis (`REDIS_URL`), BullMQ `Queue('emails')`; publisher with `jobOptions: { attempts: 5, backoff: { type: 'exponential', delay: 1000 }, removeOnComplete: { age: 3600 } }`; deliver one message, then force a redelivery (INT-25 pattern)
+- Expected result: `queue.getJobCounts()` shows 1 job; `job.id = 'outbox-<id>'`; `job.opts.attempts = 5`; `job.data.outboxId` = id
+
+## TC-138: Webhook outcomes and retries
+
+- Milestone: M5; task: T-29.
+- PRD: FR-68; FR-69; TRD/test reference: INT-86; TRD §5.6/9.8/13/14/15 as applicable.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Task prerequisites complete; isolated PostgreSQL schema for integration; Redis for INT-85 and local HTTP server for INT-86/87.
+- Steps: Local `node:http` server whose response is scripted per request: 200; 500 then 200; 400; 408; 429 with `Retry-After: 3`; 302; sleep 1 s with `timeoutMs: 200`
+- Expected result: 200 → `done`; 500 → retried then `done`; 400 → `dead`; 408 → `pending` with backoff; 429 → `available_at - now` ≈ 3000 ms; 302 → `dead`, Location not requested; timeout → `pending`, `last_error` starts with `OUTBOX_RETRYABLE: OUTBOX_WEBHOOK_TIMEOUT` (§5.9 webhook errors)
+
+## TC-139: Webhook wire signature verification
+
+- Milestone: M5; task: T-29.
+- PRD: FR-70; TRD/test reference: INT-87; TRD §5.6/9.8/13/14/15 as applicable.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Task prerequisites complete; isolated PostgreSQL schema for integration; Redis for INT-85 and local HTTP server for INT-86/87.
+- Steps: The server verifies each request with `verifyWebhook` and the raw body; secret both raw and `whsec_`
+- Expected result: Verification passes; `webhook-id` = message id; body bytes signed equal bytes received
+
+## TC-140: Inbox identifier validation and original transaction
+
+- Milestone: M5; task: T-26.
+- PRD: FR-75; FR-77; TRD/test reference: UT-22; INT-105; TRD §5.6/9.8/13/14/15 as applicable.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Task prerequisites complete; isolated PostgreSQL schema for integration; Redis for INT-85 and local HTTP server for INT-86/87.
+- Steps: Exercise valid boundary identifiers and invalid types, lengths, characters before SQL; pass a transaction sentinel to the callback; retry a concurrent insert after the first transaction rolls back.
+- Expected result: Invalid inputs reject with OUTBOX_INVALID_MESSAGE before any SQL; original transaction identity and callback result/errors are preserved; a concurrent waiter processes after rollback.
+
+## TC-141: Emitter unsubscribe and fallback isolation
+
+- Milestone: M5; task: T-27.
+- PRD: FR-80; FR-83; TRD/test reference: UT-14; TRD §5.6/9.8/13/14/15 as applicable.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Task prerequisites complete; isolated PostgreSQL schema for integration; Redis for INT-85 and local HTTP server for INT-86/87.
+- Steps: Register a throwing listener and a normal listener; emit, unsubscribe and emit again. Emit repeated errors without an error listener while advancing fake timers through 10 seconds; attach an error listener that throws.
+- Expected result: Listener isolation (throwing listener does not stop others, produces `error` phase `listener`); `on` returns an unsubscribe function; console fallback when no `error` listener, rate-limited to one line per phase per 10 s (fake timers)
+
+## TC-142: BullMQ configuration and queue resolution
+
+- Milestone: M5; task: T-28.
+- PRD: FR-66; FR-67; TRD/test reference: UT-13; TRD §5.6/9.8/13/14/15 as applicable.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Task prerequisites complete; isolated PostgreSQL schema for integration; Redis for INT-85 and local HTTP server for INT-86/87.
+- Steps: Publish through fake direct, mapped and resolver queues; inspect job options and deterministic id. Exercise missing attempts, user jobId and unknown topics in static and per-message configuration.
+- Expected result: Fake queue: `jobId = 'outbox-' + id`, matching `^outbox-[0-9a-f-]{36}$` (no `:`, not an integer); job options passed through; missing `attempts` → `OUTBOX_CONFIG` (static) or `NonRetryableError` (per message); user `jobId` rejected; topic map and function resolution; unknown topic → `NonRetryableError`
+
+## TC-143: Webhook fixed vectors and invalid requests
+
+- Milestone: M5; task: T-29.
+- PRD: FR-68..FR-70; TRD/test reference: UT-11; TRD §5.6/9.8/13/14/15 as applicable.
+- Priority: High.
+- Automatable: yes.
+- Preconditions: Task prerequisites complete; isolated PostgreSQL schema for integration; Redis for INT-85 and local HTTP server for INT-86/87.
+- Steps: Reproduce the published Standard Webhooks vector and committed raw-secret vector; verify valid and mutated requests, missing headers, timestamp boundaries and multiple signatures. Inject fetch responses for each status class, redirects, Retry-After forms and failures; inspect errors for secret leakage.
+- Expected result: Signing test vector; `whsec_` secret decoding; `verifyWebhook` accepts valid, rejects tampered body, wrong secret, missing header, timestamp outside tolerance, and accepts when one of several signatures matches; `Retry-After` parsing (`"3"`, HTTP-date, garbage); status classification table with an injected `fetch`; redirect not followed; secret absent from error messages

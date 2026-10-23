@@ -58,7 +58,7 @@ Fırat builds queue-driven systems with PostgreSQL, BullMQ and Azure queues at w
 | G-1 | Give library users an outbox they can adopt in 15 minutes with either PostgreSQL driver | The README quick start (15 lines) runs unchanged against a fresh database after `npx outbox migrate`; docs quick start pages for postgres.js and pg (FR-100) |
 | G-2 | State delivery guarantees precisely and prove them | Guarantees GU-01..GU-09 each map to at least one INT or CHAOS test (TRD §12.3); CHAOS-01 and CHAOS-02 pass in CI on every push to `main` |
 | G-3 | Show distributed-systems judgement to a backend reviewer in a 15-minute read | The docs pages "Guarantees and failure modes" and "Ordering" plus `src/core/sql/*.ts` explain claim, lease, fencing, backoff, ordering and the crash-point table with no gaps |
-| G-4 | Stay small and dependency-free | Zero runtime `dependencies`; core entry ≤ 13 kB min+brotli (NFR-20) |
+| G-4 | Stay small and dependency-free | Zero runtime `dependencies`; core entry ≤ 14 kB min+brotli (NFR-20) |
 | G-5 | Be reproducible by anyone | `pnpm install && pnpm db:up && pnpm test` passes on a clean machine with Docker and Node 22+ |
 | G-6 | Cost nothing to host | npm package plus a static docs site on Vercel Hobby; no servers, no paid services (NFR-50) |
 
@@ -310,7 +310,7 @@ Not guaranteed, stated explicitly: exactly-once delivery; ordering without order
 
 | ID | Pri | Requirement |
 |---|---|---|
-| NFR-20 | Must | size-limit (min + brotli): core entry ≤ 13 kB; `postgres-js` and `pg` entries with `createOutbox` ≤ 13 kB each; `webhook` ≤ 3 kB; `bullmq` ≤ 2 kB; `testing` ≤ 2 kB. |
+| NFR-20 | Must | size-limit (min + brotli): core entry ≤ 14 kB; `postgres-js` and `pg` entries with `createOutbox` ≤ 14 kB each; `webhook` ≤ 3 kB; `bullmq` ≤ 2 kB; `testing` ≤ 2 kB. |
 | NFR-21 | Must | Zero runtime dependencies. Only Node built-ins (`node:crypto`, `node:os`) and the user's driver are imported. |
 | NFR-22 | Must | `publint` reports no errors or warnings; `attw --pack --profile node16` reports no problems for any entry point. |
 | NFR-23 | Must | The published tarball contains only `dist/`, `README.md`, `LICENSE`, `CHANGELOG.md`, `package.json` (checked with `npm pack --dry-run` in CI). |
@@ -499,3 +499,5 @@ Decisions from the brief are fixed. Decisions marked "made in docs" were made wh
 | D-73 | Move relay LISTEN lifecycle, reconnect retries and wake wiring from T-25 into T-24; T-25 retains latency/polling/backoff acceptance and resulting fixes. | Owner approval in conversation: continue with your suggestion. you decide. | T-24 INT-52/INT-54 require a listening, waking relay; this resolves the task dependency conflict without changing behavior or gates. |
 
 | D-74 | Accept the documented postgres.js 3.4.9 post-reconnect unlisten limitation: immediately suppress adapter callbacks on close and call unlisten; a retained driver subscription is cleaned up when the caller ends its pool. Recommend a dedicated listen pool for deterministic cleanup. | Owner approval: Approve documented workaround | M4-LISTEN-PROPOSAL.md records the driver-only reproduction. Keep delivery/reconnect deadlines and pg unsubscribe guarantees unchanged; no caller-owned pool is ended by the library. |
+
+| D-75 | Core and both adapter size ceilings are 14 kB, with unchanged measurement imports/compression and all other entry limits. | Owner approval in conversation (2026-10-23): Approve 14 kB limits | T-26 measured core 13,122 B and pg 13,059 B after sharing validation; see M5-SIZE-PROPOSAL.md. Further increases require approval. |

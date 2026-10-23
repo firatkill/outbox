@@ -1,6 +1,6 @@
 # Progress
 
-Local repository setup completed on 2026-10-21. M0 (T-01..T-03), M1 (T-04..T-11), M2 (T-12..T-18), M3 (T-19..T-21) and M4 (T-22..T-25) are complete. Stopped at the M4 boundary for owner review; T-26 has not started.
+Local repository setup completed on 2026-10-21. M0 (T-01..T-03), M1 (T-04..T-11), M2 (T-12..T-18), M3 (T-19..T-21) and M4 (T-22..T-25) are complete. M5 started with owner approval; T-26 inbox implementation and verification are in progress.
 
 - Read AGENTS.md and all four specification documents from start to finish.
 - Verified the required Git author and committer identity; enabled the executable `.githooks/commit-msg` hook.
@@ -39,7 +39,7 @@ A completion commit is recorded only after the task meets its acceptance criteri
 | T-23 | M4 | Ordering under concurrency | done | 1ffbea3 |
 | T-24 | M4 | NOTIFY and LISTEN in adapters | done | e84095c |
 | T-25 | M4 | Wake-up scheduling and latency | done | 695b2c3 |
-| T-26 | M5 | Inbox | todo | — |
+| T-26 | M5 | Inbox | doing | — |
 | T-27 | M5 | Events, tracer and console fallback | todo | — |
 | T-28 | M5 | BullMQ publisher | todo | — |
 | T-29 | M5 | Webhook publisher and verifyWebhook | todo | — |
@@ -117,7 +117,12 @@ A completion commit is recorded only after the task meets its acceptance criteri
 
 - T-25 / M4: all six latency/polling checks passed three consecutive runs with both drivers. Full suite: 187 unit / 169 PG17 integration. Static/ledger gates and [implementation CI](https://github.com/firatkill/outbox/actions/runs/39663538826) pass; final report-commit CI enforced before merge. [M4 report](../qa/m4-report.md) and [review](../qa/m4-review.md) disclose the approved driver cleanup limitation, the initial latency outlier and deferred gates.
 
+- T-26: 204 unit / 183 PG17 integration tests pass, including INT-22/24/41/62. Static/build/package/approved size gates pass. Initial INT-70 fixture race corrected against the shutdown requirement; initial INT-23 startup timeout did not recur, cause unconfirmed. PR CI pending. Docs gates remain deferred to T-34 and chaos to T-30.
+
 ## Open questions for the owner
+
+- T-26: owner approved the [M5 size proposal](M5-SIZE-PROPOSAL.md), recorded as D-75. No open owner decision; task verification continues.
+
 
 None. Owner approved the [postgres.js reconnect cleanup workaround](M4-LISTEN-PROPOSAL.md), recorded as D-74; the approved contract passes verification.
 

@@ -244,6 +244,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.311629+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605650+00:00"
         }
       ],
       "regression_of": null,
@@ -251,7 +257,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-007",
@@ -312,6 +318,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312011+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605807+00:00"
         }
       ],
       "regression_of": null,
@@ -319,7 +331,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-024",
@@ -343,6 +355,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312063+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605832+00:00"
         }
       ],
       "regression_of": null,
@@ -350,7 +368,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-008",
@@ -461,6 +479,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312024+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605811+00:00"
         }
       ],
       "regression_of": null,
@@ -468,7 +492,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-013",
@@ -492,6 +516,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312032+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605814+00:00"
         }
       ],
       "regression_of": null,
@@ -499,7 +529,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-014",
@@ -523,6 +553,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312036+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605816+00:00"
         }
       ],
       "regression_of": null,
@@ -530,7 +566,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-015",
@@ -554,6 +590,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312040+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605818+00:00"
         }
       ],
       "regression_of": null,
@@ -561,7 +603,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-016",
@@ -585,6 +627,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312044+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605820+00:00"
         }
       ],
       "regression_of": null,
@@ -592,7 +640,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-017",
@@ -616,6 +664,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312048+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605822+00:00"
         }
       ],
       "regression_of": null,
@@ -623,7 +677,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-018",
@@ -647,6 +701,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312051+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605824+00:00"
         }
       ],
       "regression_of": null,
@@ -654,7 +714,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-019",
@@ -678,6 +738,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312056+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605826+00:00"
         }
       ],
       "regression_of": null,
@@ -685,7 +751,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-020",
@@ -709,6 +775,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312060+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605830+00:00"
         }
       ],
       "regression_of": null,
@@ -716,7 +788,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-021",
@@ -821,6 +893,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312069+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605834+00:00"
         }
       ],
       "regression_of": null,
@@ -828,7 +906,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-026",
@@ -858,6 +936,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312073+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605836+00:00"
         }
       ],
       "regression_of": null,
@@ -865,7 +949,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-027",
@@ -895,6 +979,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312079+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605838+00:00"
         }
       ],
       "regression_of": null,
@@ -902,7 +992,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-028",
@@ -944,6 +1034,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312082+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605840+00:00"
         }
       ],
       "regression_of": null,
@@ -951,7 +1047,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-029",
@@ -981,6 +1077,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312087+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605842+00:00"
         }
       ],
       "regression_of": null,
@@ -988,7 +1090,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-030",
@@ -1018,6 +1120,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312091+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605844+00:00"
         }
       ],
       "regression_of": null,
@@ -1025,7 +1133,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-063",
@@ -1049,6 +1157,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312239+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605919+00:00"
         }
       ],
       "regression_of": null,
@@ -1056,7 +1170,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-031",
@@ -1098,6 +1212,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312096+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605847+00:00"
         }
       ],
       "regression_of": null,
@@ -1105,7 +1225,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-032",
@@ -1135,6 +1255,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312102+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605849+00:00"
         }
       ],
       "regression_of": null,
@@ -1142,7 +1268,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-033",
@@ -1172,6 +1298,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312106+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605851+00:00"
         }
       ],
       "regression_of": null,
@@ -1179,7 +1311,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-034",
@@ -1209,6 +1341,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312111+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605853+00:00"
         }
       ],
       "regression_of": null,
@@ -1216,7 +1354,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-035",
@@ -1246,6 +1384,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312115+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605856+00:00"
         }
       ],
       "regression_of": null,
@@ -1253,7 +1397,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-064",
@@ -1283,6 +1427,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312244+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605922+00:00"
         }
       ],
       "regression_of": null,
@@ -1290,7 +1440,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-065",
@@ -1320,6 +1470,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312248+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605924+00:00"
         }
       ],
       "regression_of": null,
@@ -1327,7 +1483,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-036",
@@ -1357,6 +1513,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312120+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605860+00:00"
         }
       ],
       "regression_of": null,
@@ -1364,7 +1526,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-037",
@@ -1394,6 +1556,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312126+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605863+00:00"
         }
       ],
       "regression_of": null,
@@ -1401,7 +1569,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-038",
@@ -1431,6 +1599,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312131+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605865+00:00"
         }
       ],
       "regression_of": null,
@@ -1438,7 +1612,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-039",
@@ -1468,6 +1642,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312135+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605868+00:00"
         }
       ],
       "regression_of": null,
@@ -1475,7 +1655,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-040",
@@ -1505,6 +1685,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312140+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605870+00:00"
         }
       ],
       "regression_of": null,
@@ -1512,7 +1698,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-066",
@@ -1957,6 +2143,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312147+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605873+00:00"
         }
       ],
       "regression_of": null,
@@ -1964,7 +2156,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-047",
@@ -2006,6 +2198,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312155+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605876+00:00"
         }
       ],
       "regression_of": null,
@@ -2013,7 +2211,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-048",
@@ -2043,6 +2241,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312160+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605878+00:00"
         }
       ],
       "regression_of": null,
@@ -2050,7 +2254,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-049",
@@ -2086,6 +2290,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312165+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605881+00:00"
         }
       ],
       "regression_of": null,
@@ -2093,7 +2303,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-058",
@@ -2154,6 +2364,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312182+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605889+00:00"
         }
       ],
       "regression_of": null,
@@ -2161,7 +2377,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-050",
@@ -2191,6 +2407,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312172+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605884+00:00"
         }
       ],
       "regression_of": null,
@@ -2198,7 +2420,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-051",
@@ -2228,6 +2450,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312177+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605887+00:00"
         }
       ],
       "regression_of": null,
@@ -2235,7 +2463,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-053",
@@ -2265,6 +2493,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312188+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605892+00:00"
         }
       ],
       "regression_of": null,
@@ -2272,7 +2506,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-054",
@@ -2302,6 +2536,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312193+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605895+00:00"
         }
       ],
       "regression_of": null,
@@ -2309,7 +2549,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-055",
@@ -2339,6 +2579,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312199+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605898+00:00"
         }
       ],
       "regression_of": null,
@@ -2346,7 +2592,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-056",
@@ -2376,6 +2622,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312204+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605901+00:00"
         }
       ],
       "regression_of": null,
@@ -2383,7 +2635,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-057",
@@ -2413,6 +2665,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312210+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605905+00:00"
         }
       ],
       "regression_of": null,
@@ -2420,7 +2678,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-059",
@@ -2462,6 +2720,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312215+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605908+00:00"
         }
       ],
       "regression_of": null,
@@ -2469,7 +2733,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-060",
@@ -2499,6 +2763,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312223+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605911+00:00"
         }
       ],
       "regression_of": null,
@@ -2506,7 +2776,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-061",
@@ -2536,6 +2806,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312229+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605914+00:00"
         }
       ],
       "regression_of": null,
@@ -2543,7 +2819,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-062",
@@ -2573,6 +2849,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312235+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605917+00:00"
         }
       ],
       "regression_of": null,
@@ -2580,7 +2862,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-068",
@@ -2634,6 +2916,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312259+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605927+00:00"
         }
       ],
       "regression_of": null,
@@ -2641,7 +2929,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-069",
@@ -2695,6 +2983,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312266+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605930+00:00"
         }
       ],
       "regression_of": null,
@@ -2702,7 +2996,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-070",
@@ -2750,6 +3044,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312272+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605933+00:00"
         }
       ],
       "regression_of": null,
@@ -2757,7 +3057,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-071",
@@ -2805,6 +3105,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312278+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605936+00:00"
         }
       ],
       "regression_of": null,
@@ -2812,7 +3118,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-072",
@@ -2860,6 +3166,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312284+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605939+00:00"
         }
       ],
       "regression_of": null,
@@ -2867,7 +3179,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-073",
@@ -2915,6 +3227,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312291+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605942+00:00"
         }
       ],
       "regression_of": null,
@@ -2922,7 +3240,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-074",
@@ -2970,6 +3288,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312297+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605945+00:00"
         }
       ],
       "regression_of": null,
@@ -2977,7 +3301,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-075",
@@ -3025,6 +3349,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312303+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605949+00:00"
         }
       ],
       "regression_of": null,
@@ -3032,7 +3362,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-076",
@@ -3074,6 +3404,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312310+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605952+00:00"
         }
       ],
       "regression_of": null,
@@ -3081,7 +3417,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-077",
@@ -3123,6 +3459,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312316+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605955+00:00"
         }
       ],
       "regression_of": null,
@@ -3130,7 +3472,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-078",
@@ -3215,6 +3557,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312349+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605958+00:00"
         }
       ],
       "regression_of": null,
@@ -3222,7 +3570,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-098",
@@ -3268,6 +3616,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312419+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606021+00:00"
         }
       ],
       "regression_of": null,
@@ -3275,7 +3629,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-080",
@@ -3317,6 +3671,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312363+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605962+00:00"
         }
       ],
       "regression_of": null,
@@ -3324,7 +3684,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-081",
@@ -3366,6 +3726,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312366+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605965+00:00"
         }
       ],
       "regression_of": null,
@@ -3373,7 +3739,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-082",
@@ -3415,6 +3781,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312369+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605968+00:00"
         }
       ],
       "regression_of": null,
@@ -3422,7 +3794,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-083",
@@ -3500,6 +3872,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312373+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605971+00:00"
         }
       ],
       "regression_of": "Passing targeted or full acceptance before T-21 full run",
@@ -3507,7 +3885,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-099",
@@ -3543,6 +3921,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312422+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606024+00:00"
         }
       ],
       "regression_of": null,
@@ -3550,7 +3934,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-100",
@@ -3586,6 +3970,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312425+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606027+00:00"
         }
       ],
       "regression_of": null,
@@ -3593,7 +3983,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-084",
@@ -3659,6 +4049,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312380+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605975+00:00"
         }
       ],
       "regression_of": null,
@@ -3666,7 +4062,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-085",
@@ -3708,6 +4104,24 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312383+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Full T-26 regression run: INT-23 child process did not insert started marker within unchanged 3 s condition deadline; host load observed around 44, causality unconfirmed.",
+          "note": "Full T-26 regression run: INT-23 child process did not insert started marker within unchanged 3 s condition deadline; host load observed around 44, causality unconfirmed.",
+          "at": "2026-10-23T09:12:33.464506+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Unchanged INT-23 targeted retest passes; child marker appears within 3 s. Original full-run timeout remains recorded; cause unconfirmed.",
+          "note": "Unchanged INT-23 targeted retest passes; child marker appears within 3 s. Original full-run timeout remains recorded; cause unconfirmed.",
+          "at": "2026-10-23T09:13:29.639464+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605978+00:00"
         }
       ],
       "regression_of": null,
@@ -3715,7 +4129,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-086",
@@ -3757,6 +4171,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312386+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605982+00:00"
         }
       ],
       "regression_of": null,
@@ -3764,7 +4184,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-087",
@@ -3842,6 +4262,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312389+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605985+00:00"
         }
       ],
       "regression_of": "Passing targeted or full acceptance before T-21 full run",
@@ -3849,7 +4275,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-101",
@@ -3927,6 +4353,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312445+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606031+00:00"
         }
       ],
       "regression_of": "Passing targeted or full acceptance before T-21 full run",
@@ -3934,7 +4366,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-089",
@@ -3976,6 +4408,24 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312392+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Full T-26 regression run: INT-70 postgres.js observed 30 done instead of 20. Fixture enqueued the second batch before requesting stop, permitting another legitimate claim if its 300 ms handlers finish first. Synchronize the shutdown boundary without changing workload, deadline or assertions.",
+          "note": "Full T-26 regression run: INT-70 postgres.js observed 30 done instead of 20. Fixture enqueued the second batch before requesting stop, permitting another legitimate claim if its 300 ms handlers finish first. Synchronize the shutdown boundary without changing workload, deadline or assertions.",
+          "at": "2026-10-23T09:12:33.534551+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "INT-70 passes for both drivers after holding handler completion until stop is requested. Retained 300 ms workload, 5 s drain limit and all 20 done/10 pending assertions.",
+          "note": "INT-70 passes for both drivers after holding handler completion until stop is requested. Retained 300 ms workload, 5 s drain limit and all 20 done/10 pending assertions.",
+          "at": "2026-10-23T09:13:29.678777+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605988+00:00"
         }
       ],
       "regression_of": null,
@@ -3983,7 +4433,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-090",
@@ -4025,6 +4475,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312395+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605992+00:00"
         }
       ],
       "regression_of": null,
@@ -4032,7 +4488,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-091",
@@ -4080,6 +4536,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312398+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605996+00:00"
         }
       ],
       "regression_of": null,
@@ -4087,7 +4549,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-092",
@@ -4129,6 +4591,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312401+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.605999+00:00"
         }
       ],
       "regression_of": null,
@@ -4136,7 +4604,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-088",
@@ -4233,6 +4701,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312468+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606034+00:00"
         }
       ],
       "regression_of": null,
@@ -4240,7 +4714,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-093",
@@ -4324,6 +4798,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312404+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606003+00:00"
         }
       ],
       "regression_of": "Passing targeted or full acceptance before T-21 full run",
@@ -4331,7 +4811,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-097",
@@ -4379,6 +4859,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312417+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606018+00:00"
         }
       ],
       "regression_of": null,
@@ -4386,7 +4872,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-095",
@@ -4440,6 +4926,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312411+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606010+00:00"
         }
       ],
       "regression_of": null,
@@ -4447,7 +4939,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-096",
@@ -4501,6 +4993,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312414+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606014+00:00"
         }
       ],
       "regression_of": null,
@@ -4508,7 +5006,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-094",
@@ -4634,6 +5132,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312408+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606007+00:00"
         }
       ],
       "regression_of": "M2 passing INT-29 runs recorded before T-20",
@@ -4641,7 +5145,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-103",
@@ -4689,6 +5193,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312478+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606038+00:00"
         }
       ],
       "regression_of": null,
@@ -4696,7 +5206,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-104",
@@ -4744,6 +5254,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312508+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606042+00:00"
         }
       ],
       "regression_of": null,
@@ -4751,7 +5267,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-105",
@@ -4799,6 +5315,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312535+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606046+00:00"
         }
       ],
       "regression_of": null,
@@ -4806,7 +5328,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-106",
@@ -4854,6 +5376,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312548+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606050+00:00"
         }
       ],
       "regression_of": null,
@@ -4861,7 +5389,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-107",
@@ -4909,6 +5437,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312559+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606054+00:00"
         }
       ],
       "regression_of": null,
@@ -4916,7 +5450,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-114",
@@ -4988,6 +5522,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312600+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606082+00:00"
         }
       ],
       "regression_of": null,
@@ -4995,7 +5535,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-108",
@@ -5055,6 +5595,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312575+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606058+00:00"
         }
       ],
       "regression_of": null,
@@ -5062,7 +5608,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-110",
@@ -5122,6 +5668,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312585+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606066+00:00"
         }
       ],
       "regression_of": null,
@@ -5129,7 +5681,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-109",
@@ -5201,6 +5753,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312581+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606062+00:00"
         }
       ],
       "regression_of": null,
@@ -5208,7 +5766,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-111",
@@ -5280,6 +5838,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312588+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606070+00:00"
         }
       ],
       "regression_of": null,
@@ -5287,7 +5851,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-112",
@@ -5353,6 +5917,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312591+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606074+00:00"
         }
       ],
       "regression_of": "Passing targeted or full acceptance before T-21 full run",
@@ -5360,7 +5930,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-113",
@@ -5408,6 +5978,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312596+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606078+00:00"
         }
       ],
       "regression_of": null,
@@ -5415,7 +5991,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-115",
@@ -5481,6 +6057,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312603+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606086+00:00"
         }
       ],
       "regression_of": "Passing targeted or full acceptance before T-21 full run",
@@ -5488,7 +6070,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-116",
@@ -5524,6 +6106,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312606+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606090+00:00"
         }
       ],
       "regression_of": null,
@@ -5531,7 +6119,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-117",
@@ -5567,6 +6155,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312612+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606094+00:00"
         }
       ],
       "regression_of": null,
@@ -5574,7 +6168,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-120",
@@ -5610,6 +6204,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312621+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606108+00:00"
         }
       ],
       "regression_of": null,
@@ -5617,7 +6217,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-118",
@@ -5659,6 +6259,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312615+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606100+00:00"
         }
       ],
       "regression_of": null,
@@ -5666,7 +6272,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-119",
@@ -5720,6 +6326,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312618+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606104+00:00"
         }
       ],
       "regression_of": null,
@@ -5727,7 +6339,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-121",
@@ -5775,6 +6387,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312624+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606113+00:00"
         }
       ],
       "regression_of": null,
@@ -5782,7 +6400,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-122",
@@ -5824,6 +6442,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312627+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606117+00:00"
         }
       ],
       "regression_of": null,
@@ -5831,7 +6455,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-124",
@@ -5873,6 +6497,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312634+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606127+00:00"
         }
       ],
       "regression_of": null,
@@ -5880,7 +6510,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-128",
@@ -5946,6 +6576,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312647+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606145+00:00"
         }
       ],
       "regression_of": null,
@@ -5953,7 +6589,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-123",
@@ -6001,6 +6637,12 @@
           "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "note": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained.",
           "at": "2026-10-21T19:39:25.312631+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606122+00:00"
         }
       ],
       "regression_of": null,
@@ -6008,7 +6650,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 final standard full-suite regression: all 187 unit and 169 PG17 integration tests passed with no skips/todos; this case is referenced by an executed test file. Earlier failure history is retained."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-125",
@@ -6068,6 +6710,12 @@
           "actual_result": "T-25 implementation CI 39663538826 passed static/package/size and integration jobs. Duplicate initial CI was cancelled by the no-changeset label event. Final M4 report-commit checks remain required before merge.",
           "note": "T-25 implementation CI 39663538826 passed static/package/size and integration jobs. Duplicate initial CI was cancelled by the no-changeset label event. Final M4 report-commit checks remain required before merge.",
           "at": "2026-10-21T19:41:46.356186+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606132+00:00"
         }
       ],
       "regression_of": null,
@@ -6075,7 +6723,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 implementation CI 39663538826 passed static/package/size and integration jobs. Duplicate initial CI was cancelled by the no-changeset label event. Final M4 report-commit checks remain required before merge."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-126",
@@ -6129,6 +6777,12 @@
           "actual_result": "T-25 implementation CI 39663538826 passed static/package/size and integration jobs. Duplicate initial CI was cancelled by the no-changeset label event. Final M4 report-commit checks remain required before merge.",
           "note": "T-25 implementation CI 39663538826 passed static/package/size and integration jobs. Duplicate initial CI was cancelled by the no-changeset label event. Final M4 report-commit checks remain required before merge.",
           "at": "2026-10-21T19:41:46.357110+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606137+00:00"
         }
       ],
       "regression_of": null,
@@ -6136,7 +6790,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 implementation CI 39663538826 passed static/package/size and integration jobs. Duplicate initial CI was cancelled by the no-changeset label event. Final M4 report-commit checks remain required before merge."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     },
     {
       "tc_reference": "TC-127",
@@ -6190,6 +6844,12 @@
           "actual_result": "T-25 implementation CI 39663538826 passed static/package/size and integration jobs. Duplicate initial CI was cancelled by the no-changeset label event. Final M4 report-commit checks remain required before merge.",
           "note": "T-25 implementation CI 39663538826 passed static/package/size and integration jobs. Duplicate initial CI was cancelled by the no-changeset label event. Final M4 report-commit checks remain required before merge.",
           "at": "2026-10-21T19:41:46.357116+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606141+00:00"
         }
       ],
       "regression_of": null,
@@ -6197,7 +6857,278 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-25 implementation CI 39663538826 passed static/package/size and integration jobs. Duplicate initial CI was cancelled by the no-changeset label event. Final M4 report-commit checks remain required before merge."
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+    },
+    {
+      "tc_reference": "TC-129",
+      "ac_reference": "FR-75",
+      "milestone": "M5",
+      "title": "Inbox deduplication and consumer isolation",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "`withInbox(tx, 'c1', 'm1', fn)` twice (two transactions), then with consumer `c2`",
+      "expected_result": "`processed` with `fn`'s result, then `duplicate` (fn not called), then `processed` for `c2`",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Targeted UT-22 and INT-60..65/105: 28 tests pass on PostgreSQL 17 with both drivers.",
+          "note": "Targeted UT-22 and INT-60..65/105: 28 tests pass on PostgreSQL 17 with both drivers.",
+          "at": "2026-10-23T09:05:01.409983+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "After shared-validation refactor, targeted inbox plus enqueue-validation regression tests pass: 69 tests, both PostgreSQL 17 adapters.",
+          "note": "After shared-validation refactor, targeted inbox plus enqueue-validation regression tests pass: 69 tests, both PostgreSQL 17 adapters.",
+          "at": "2026-10-23T09:08:15.969100+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606150+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+    },
+    {
+      "tc_reference": "TC-130",
+      "ac_reference": "FR-75; FR-76; GU-05",
+      "milestone": "M5",
+      "title": "Inbox rollback and retry",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Transaction: `withInbox` with `fn` that inserts an effect row then throws; transaction rolls back; retry",
+      "expected_result": "No inbox row and no effect after the first; second processes; one effect row",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Targeted UT-22 and INT-60..65/105: 28 tests pass on PostgreSQL 17 with both drivers.",
+          "note": "Targeted UT-22 and INT-60..65/105: 28 tests pass on PostgreSQL 17 with both drivers.",
+          "at": "2026-10-23T09:05:01.412614+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "After shared-validation refactor, targeted inbox plus enqueue-validation regression tests pass: 69 tests, both PostgreSQL 17 adapters.",
+          "note": "After shared-validation refactor, targeted inbox plus enqueue-validation regression tests pass: 69 tests, both PostgreSQL 17 adapters.",
+          "at": "2026-10-23T09:08:15.988126+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606154+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+    },
+    {
+      "tc_reference": "TC-131",
+      "ac_reference": "FR-76; GU-05",
+      "milestone": "M5",
+      "title": "Concurrent inbox duplicates",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "10 concurrent transactions (separate connections) each `withInbox(tx, 'c', 'm', fn inserting an effect, sleeping 50 ms)`",
+      "expected_result": "Exactly 1 `processed`, 9 `duplicate`; exactly 1 effect row",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Targeted UT-22 and INT-60..65/105: 28 tests pass on PostgreSQL 17 with both drivers.",
+          "note": "Targeted UT-22 and INT-60..65/105: 28 tests pass on PostgreSQL 17 with both drivers.",
+          "at": "2026-10-23T09:05:01.413670+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "After shared-validation refactor, targeted inbox plus enqueue-validation regression tests pass: 69 tests, both PostgreSQL 17 adapters.",
+          "note": "After shared-validation refactor, targeted inbox plus enqueue-validation regression tests pass: 69 tests, both PostgreSQL 17 adapters.",
+          "at": "2026-10-23T09:08:15.988137+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606158+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+    },
+    {
+      "tc_reference": "TC-132",
+      "ac_reference": "FR-75; GU-05",
+      "milestone": "M5",
+      "title": "Inbox effects survive relay redelivery",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Relay handler: `withInbox(tx, 'mailer', msg.id, insert effect)`. Force a redelivery with the INT-24 pattern (A's handler commits its inbox transaction, then A loses its lease; B redelivers)",
+      "expected_result": "Two deliveries, one effect row; B's `withInbox` returned `duplicate`",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Targeted UT-22 and INT-60..65/105: 28 tests pass on PostgreSQL 17 with both drivers.",
+          "note": "Targeted UT-22 and INT-60..65/105: 28 tests pass on PostgreSQL 17 with both drivers.",
+          "at": "2026-10-23T09:05:01.414194+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "After shared-validation refactor, targeted inbox plus enqueue-validation regression tests pass: 69 tests, both PostgreSQL 17 adapters.",
+          "note": "After shared-validation refactor, targeted inbox plus enqueue-validation regression tests pass: 69 tests, both PostgreSQL 17 adapters.",
+          "at": "2026-10-23T09:08:15.988143+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606163+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+    },
+    {
+      "tc_reference": "TC-133",
+      "ac_reference": "FR-78",
+      "milestone": "M5",
+      "title": "Inbox retention uses database time",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "3 old inbox rows (advance clock 8 days), 2 recent; `purgeInbox({ olderThanMs: 7 days })`",
+      "expected_result": "Deletes 3",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Targeted UT-22 and INT-60..65/105: 28 tests pass on PostgreSQL 17 with both drivers.",
+          "note": "Targeted UT-22 and INT-60..65/105: 28 tests pass on PostgreSQL 17 with both drivers.",
+          "at": "2026-10-23T09:05:01.414675+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "After shared-validation refactor, targeted inbox plus enqueue-validation regression tests pass: 69 tests, both PostgreSQL 17 adapters.",
+          "note": "After shared-validation refactor, targeted inbox plus enqueue-validation regression tests pass: 69 tests, both PostgreSQL 17 adapters.",
+          "at": "2026-10-23T09:08:15.988147+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606168+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+    },
+    {
+      "tc_reference": "TC-134",
+      "ac_reference": "FR-75",
+      "milestone": "M5",
+      "title": "Standalone consumer inbox",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "`createInbox({ db, schema: 'consumer_x' })` in a different schema than the outbox; migrate it; `withInbox`",
+      "expected_result": "Row lands in `consumer_x.outbox_inbox`; works without any outbox messages table being used",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Targeted UT-22 and INT-60..65/105: 28 tests pass on PostgreSQL 17 with both drivers.",
+          "note": "Targeted UT-22 and INT-60..65/105: 28 tests pass on PostgreSQL 17 with both drivers.",
+          "at": "2026-10-23T09:05:01.415855+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "After shared-validation refactor, targeted inbox plus enqueue-validation regression tests pass: 69 tests, both PostgreSQL 17 adapters.",
+          "note": "After shared-validation refactor, targeted inbox plus enqueue-validation regression tests pass: 69 tests, both PostgreSQL 17 adapters.",
+          "at": "2026-10-23T09:08:15.988151+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606173+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
+    },
+    {
+      "tc_reference": "TC-140",
+      "ac_reference": "FR-75; FR-77",
+      "milestone": "M5",
+      "title": "Inbox identifier validation and original transaction",
+      "description": "Acceptance case derived from the PRD and TRD.",
+      "steps_to_reproduce": "Exercise valid boundary identifiers and invalid types, lengths, characters before SQL; pass a transaction sentinel to the callback; retry a concurrent insert after the first transaction rolls back.",
+      "expected_result": "Invalid inputs reject with OUTBOX_INVALID_MESSAGE before any SQL; original transaction identity and callback result/errors are preserved; a concurrent waiter processes after rollback.",
+      "status": "resolved",
+      "environment": "macOS arm64; repository-local Node 22; pnpm 10.18.3",
+      "attempts": [
+        {
+          "result": "pass",
+          "actual_result": "Targeted UT-22 and INT-60..65/105: 28 tests pass on PostgreSQL 17 with both drivers.",
+          "note": "Targeted UT-22 and INT-60..65/105: 28 tests pass on PostgreSQL 17 with both drivers.",
+          "at": "2026-10-23T09:05:01.418920+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Task lint found seven test-only typing/style errors; size gate exceeded core by 126 B and pg by 84 B. Limits unchanged; correcting lint and checking shared validation.",
+          "note": "Task lint found seven test-only typing/style errors; size gate exceeded core by 126 B and pg by 84 B. Limits unchanged; correcting lint and checking shared validation.",
+          "at": "2026-10-23T09:05:01.805009+00:00"
+        },
+        {
+          "result": "fail",
+          "actual_result": "Second lint pass cleared TypeScript ESLint findings but found changeset formatting; formatted the changeset. Shared validation still exceeds core by 122 B and pg by 59 B; owner proposal pending.",
+          "note": "Second lint pass cleared TypeScript ESLint findings but found changeset formatting; formatted the changeset. Shared validation still exceeds core by 122 B and pg by 59 B; owner proposal pending.",
+          "at": "2026-10-23T09:08:15.481735+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "After shared-validation refactor, targeted inbox plus enqueue-validation regression tests pass: 69 tests, both PostgreSQL 17 adapters.",
+          "note": "After shared-validation refactor, targeted inbox plus enqueue-validation regression tests pass: 69 tests, both PostgreSQL 17 adapters.",
+          "at": "2026-10-23T09:08:15.988156+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "note": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included.",
+          "at": "2026-10-23T09:16:48.606177+00:00"
+        }
+      ],
+      "regression_of": null,
+      "root_cause_group": null,
+      "clickup_task": null,
+      "retraction_reason": null,
+      "automatable": true,
+      "actual_result": "T-26 final full suite: 204 unit and 183 PostgreSQL 17 integration tests pass, both drivers; this case is referenced by an executed test file. INT-22/24/41/62 are included."
     }
   ]
 }
