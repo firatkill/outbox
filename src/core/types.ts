@@ -335,10 +335,20 @@ export interface Span {
 
 /** Consumer inbox bound to a caller-owned transaction type. */
 export interface Inbox<TTx> {
-  /** Apply effects at most once for this consumer/message pair. */
+  /** Apply effects at most once for this consumer/message pair.
+   * Let callback errors roll back the caller's transaction. External effects are not covered.
+   * @example
+   * await inbox.withInbox(tx, 'mailer', message.id, tx => saveEffect(tx, message));
+   */
   withInbox<T>(tx: TTx, consumer: string, messageId: string, fn: (tx: TTx) => Promise<T>): Promise<InboxResult<T>>;
-  /** Remove expired dedupe entries. */
+  /** Remove expired dedupe entries; retain records beyond the longest redelivery window.
+   * @example
+   * await inbox.purgeInbox({ olderThanMs: 7 * 86400000 });
+   */
   purgeInbox(options: { olderThanMs: number; batchSize?: number }): Promise<{ deleted: number }>;
-  /** Install the consumer schema. */
+  /** Install the consumer schema using the shared migrations.
+   * @example
+   * await inbox.migrate();
+   */
   migrate(options?: { dryRun?: boolean }): Promise<MigrateResult>;
 }

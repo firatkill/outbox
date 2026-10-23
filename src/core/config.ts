@@ -2,13 +2,14 @@ import { OutboxError } from './errors.js';
 import { quoteIdent, validateIdentifier } from './identifiers.js';
 import type { ResolvedOutboxConfig } from './types.js';
 
+const INBOX_KEYS = new Set(['db', 'schema', 'tablePrefix']);
 const KEYS = new Set(['db', 'schema', 'tablePrefix', 'maxAttempts', 'notify', 'maxPayloadBytes']);
 
 /** Resolve defaults and report every invalid or unknown option synchronously.
  * @example
  * parseOutboxConfig({ db: driver, schema: 'app_events' });
  */
-export function parseOutboxConfig(input: unknown): ResolvedOutboxConfig {
+export function parseOutboxConfig(input: unknown, inbox = false): ResolvedOutboxConfig {
   if (typeof input !== 'object' || input === null || Array.isArray(input)) {
     throw new OutboxError('OUTBOX_CONFIG', 'config must be an object', {
       details: { issues: ['config must be an object'] },
@@ -16,7 +17,8 @@ export function parseOutboxConfig(input: unknown): ResolvedOutboxConfig {
   }
   const config = input as Record<string, unknown>;
   const issues: string[] = [];
-  for (const key of Object.keys(config)) if (!KEYS.has(key)) issues.push(`Unknown option: ${key}`);
+  for (const key of Object.keys(config))
+    if (!(inbox ? INBOX_KEYS : KEYS).has(key)) issues.push(`Unknown option: ${key}`);
   if (config['db'] === undefined || config['db'] === null) issues.push('db is required');
   const schema = config['schema'] === undefined ? 'public' : config['schema'];
   const tablePrefix = config['tablePrefix'] === undefined ? 'outbox_' : config['tablePrefix'];

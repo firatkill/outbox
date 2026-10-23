@@ -18,7 +18,8 @@ const fields = new Set(['topic', 'payload', 'key', 'headers', 'dedupeKey', 'dela
 function invalid(index: number, field: string, reason: string): never {
   throw new OutboxError('OUTBOX_INVALID_MESSAGE', reason, { details: { index, field, reason } });
 }
-function stringLength(value: unknown, min: number, max: number): value is string {
+/** Check string length in Unicode code points. */
+export function stringLength(value: unknown, min: number, max: number): value is string {
   return typeof value === 'string' && Array.from(value).length >= min && Array.from(value).length <= max;
 }
 function plainObject(value: unknown): value is Record<string, unknown> {
@@ -27,6 +28,10 @@ function plainObject(value: unknown): value is Record<string, unknown> {
     value !== null &&
     (Object.getPrototypeOf(value) === Object.prototype || Object.getPrototypeOf(value) === null)
   );
+}
+/** Check the shared topic and consumer name grammar. */
+export function validTopic(value: unknown): value is string {
+  return typeof value === 'string' && /^[A-Za-z0-9][A-Za-z0-9._:/-]{0,199}$/.exec(value)?.[0] === value;
 }
 /** Validate the entire batch before its caller can issue any SQL. */
 export function validateMessages(input: unknown, config: ResolvedOutboxConfig): ValidatedMessage[] {
@@ -37,8 +42,7 @@ export function validateMessages(input: unknown, config: ResolvedOutboxConfig): 
       if (!fields.has(field)) invalid(index, field, 'Unknown property');
     }
     const { topic, key, dedupeKey, delayMs, availableAt, maxAttempts } = message;
-    if (typeof topic !== 'string' || !/^[A-Za-z0-9][A-Za-z0-9._:/-]{0,199}$/.test(topic) || topic.endsWith('\n'))
-      invalid(index, 'topic', 'Invalid topic');
+    if (!validTopic(topic)) invalid(index, 'topic', 'Invalid topic');
     if (key !== undefined && key !== null && !stringLength(key, 1, 200))
       invalid(index, 'key', 'Expected 1..200 characters');
     if (dedupeKey !== undefined && !stringLength(dedupeKey, 1, 200))

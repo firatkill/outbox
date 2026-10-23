@@ -1,3 +1,4 @@
+import { createWithInbox } from './inbox.js';
 import { createAdmin, readStats } from './admin.js';
 import { createRelay } from './relay/relay.js';
 import { enqueueValidated } from './sql/enqueue.js';
@@ -18,9 +19,6 @@ export function createOutboxCore<TDb, TTx, Topics extends TopicMap = DefaultTopi
   config: Omit<OutboxConfig<TDb>, 'db'>,
 ): Outbox<TTx, Topics> {
   const resolved = parseOutboxConfig({ ...config, db: adapter.db });
-  const notImplemented = (): never => {
-    throw new OutboxError('OUTBOX_INTERNAL', 'not implemented');
-  };
   function enqueue(tx: TTx, message: MessageInput<Topics>): Promise<EnqueueResult>;
   function enqueue(tx: TTx, messages: readonly MessageInput<Topics>[]): Promise<EnqueueResult[]>;
   async function enqueue(
@@ -42,7 +40,7 @@ export function createOutboxCore<TDb, TTx, Topics extends TopicMap = DefaultTopi
     schemaVersion: () => schemaVersion(adapter, resolved),
     enqueue,
     createRelay: (options) => createRelay(adapter, resolved, options),
-    withInbox: notImplemented,
+    withInbox: createWithInbox(adapter, resolved),
     ...createAdmin(adapter, resolved),
     stats: (options) => readStats(adapter, resolved, options),
   };
