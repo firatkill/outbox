@@ -8622,6 +8622,12 @@
           "actual_result": "T-27 final full suite: 210 unit / 188 PostgreSQL 17 integration tests pass with both drivers; INT-22/24/41/62 included, no unhandled errors. This case is referenced by an executed test file.",
           "note": "T-27 final full suite: 210 unit / 188 PostgreSQL 17 integration tests pass with both drivers; INT-22/24/41/62 included, no unhandled errors. This case is referenced by an executed test file.",
           "at": "2026-10-23T09:45:49.536448+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39934241647 (afeed29), static and full PG17 integration jobs.",
+          "note": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39934241647 (afeed29), static and full PG17 integration jobs.",
+          "at": "2026-10-23T09:49:02.738572+00:00"
         }
       ],
       "regression_of": null,
@@ -8629,7 +8635,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-27 final full suite: 210 unit / 188 PostgreSQL 17 integration tests pass with both drivers; INT-22/24/41/62 included, no unhandled errors. This case is referenced by an executed test file."
+      "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39934241647 (afeed29), static and full PG17 integration jobs."
     },
     {
       "tc_reference": "TC-136",
@@ -8653,6 +8659,12 @@
           "actual_result": "T-27 final full suite: 210 unit / 188 PostgreSQL 17 integration tests pass with both drivers; INT-22/24/41/62 included, no unhandled errors. This case is referenced by an executed test file.",
           "note": "T-27 final full suite: 210 unit / 188 PostgreSQL 17 integration tests pass with both drivers; INT-22/24/41/62 included, no unhandled errors. This case is referenced by an executed test file.",
           "at": "2026-10-23T09:45:49.536458+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39934241647 (afeed29), static and full PG17 integration jobs.",
+          "note": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39934241647 (afeed29), static and full PG17 integration jobs.",
+          "at": "2026-10-23T09:49:02.738806+00:00"
         }
       ],
       "regression_of": null,
@@ -8660,7 +8672,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-27 final full suite: 210 unit / 188 PostgreSQL 17 integration tests pass with both drivers; INT-22/24/41/62 included, no unhandled errors. This case is referenced by an executed test file."
+      "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39934241647 (afeed29), static and full PG17 integration jobs."
     },
     {
       "tc_reference": "TC-141",
@@ -8690,6 +8702,12 @@
           "actual_result": "T-27 final full suite: 210 unit / 188 PostgreSQL 17 integration tests pass with both drivers; INT-22/24/41/62 included, no unhandled errors. This case is referenced by an executed test file.",
           "note": "T-27 final full suite: 210 unit / 188 PostgreSQL 17 integration tests pass with both drivers; INT-22/24/41/62 included, no unhandled errors. This case is referenced by an executed test file.",
           "at": "2026-10-23T09:45:49.536533+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39934241647 (afeed29), static and full PG17 integration jobs.",
+          "note": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39934241647 (afeed29), static and full PG17 integration jobs.",
+          "at": "2026-10-23T09:49:02.738811+00:00"
         }
       ],
       "regression_of": null,
@@ -8697,7 +8715,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-27 final full suite: 210 unit / 188 PostgreSQL 17 integration tests pass with both drivers; INT-22/24/41/62 included, no unhandled errors. This case is referenced by an executed test file."
+      "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39934241647 (afeed29), static and full PG17 integration jobs."
     },
     {
       "tc_reference": "TC-144",
@@ -8721,6 +8739,12 @@
           "actual_result": "T-27 final full suite: 210 unit / 188 PostgreSQL 17 integration tests pass with both drivers; INT-22/24/41/62 included, no unhandled errors. This case is referenced by an executed test file.",
           "note": "T-27 final full suite: 210 unit / 188 PostgreSQL 17 integration tests pass with both drivers; INT-22/24/41/62 included, no unhandled errors. This case is referenced by an executed test file.",
           "at": "2026-10-23T09:45:49.536543+00:00"
+        },
+        {
+          "result": "pass",
+          "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39934241647 (afeed29), static and full PG17 integration jobs.",
+          "note": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39934241647 (afeed29), static and full PG17 integration jobs.",
+          "at": "2026-10-23T09:49:02.738816+00:00"
         }
       ],
       "regression_of": null,
@@ -8728,7 +8752,7 @@
       "clickup_task": null,
       "retraction_reason": null,
       "automatable": true,
-      "actual_result": "T-27 final full suite: 210 unit / 188 PostgreSQL 17 integration tests pass with both drivers; INT-22/24/41/62 included, no unhandled errors. This case is referenced by an executed test file."
+      "actual_result": "Implementation PR CI passes: https://github.com/firatkill/outbox/actions/runs/39934241647 (afeed29), static and full PG17 integration jobs."
     }
   ]
 }
